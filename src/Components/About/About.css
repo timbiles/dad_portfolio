@@ -1,0 +1,144 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .bio_name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8%;
+    width: 100%;
+    opacity: 1;
+    background-color: #fdfdfd;
+  }
+  
+  .bio_name_sub {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+  }
+  
+  .bio_sub p {
+    text-align: center;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  
+  .about_name {
+    text-align: center;
+    padding-top: 2%;
+    height: 100%;
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    color: rgb(60, 60, 60);
+  }
+  
+  .about_container {
+    background-color: #fdfdfd;
+    padding: 5% 10% 0 10%;
+    margin-bottom: 2%;
+    opacity: 1;
+  }
+  
+  .profile_pic {
+    float: left;
+    margin: 1% 2%;
+  }
+  
+  .about_container p {
+    font-size: 0.9rem;
+  }
+  
+  .about_ed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .about_ed p {
+    font-size: 0.9rem;
+  }
+  
+  .line_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 2%;
+  }
+  
+  .a_line {
+    width: 40px;
+    border: 1px solid rgb(173, 173, 173);
+    background-color: rgb(173, 173, 173);
+    margin: 5%;
+  }
+  
+  @keyframes fadeInOutAbout {
+    0% {
+      opacity: 0.1;
+    }
+  
+    100% {
+      opacity: 0.3;
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .bio_name_sub {
+      margin-top: 4%;
+    }
+  
+    .about_name {
+      font-size: 3rem;
+      letter-spacing: 2px;
+    }
+  
+    .bio_sub p {
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+    }
+  }
+  
+  @media (max-width: 650px) {
+    .about_name {
+      font-size: 3rem;
+      letter-spacing: 2px;
+    }
+  
+    .bio_sub p {
+      font-size: 0.6rem;
+    }
+  
+    .profile_pic {
+      float: none;
+    }
+  
+    .about_container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .about_container p {
+      text-align: justify;
+      font-size: 0.7rem;
+    }
+  
+    .about_ed p {
+      font-size: 0.7rem;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .bio_name_sub {
+      margin-top: 8%;
+    }
+  }
+  

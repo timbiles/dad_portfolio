@@ -1,0 +1,160 @@
+.portfolio {
+    padding-top: 8%;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .portfolio_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .portfolio_container h1 {
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    color: rgb(60, 60, 60);
+    padding-top: 2%;
+  }
+  
+  .portfolio_sub {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2%;
+  }
+  
+  .portfolio_sub > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    border-bottom: 1px solid grey;
+    padding: 1%;
+  }
+  
+  .portfolio_sub p {
+    padding: 1%;
+  }
+  
+  .portfolio_sub h2 {
+    padding: 0 2%;
+    animation: titleFade 1.5s;
+  }
+  
+  .portfolio_sub div:nth-of-type(2) {
+    text-align: end;
+  }
+  
+  .book {
+    height: 300px;
+    box-shadow: 1px 1px 5px grey;
+    border-radius: 1%;
+    transform: rotateY(180deg);
+    animation: flip-vertical-right 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  }
+  
+  .library_carousel {
+    margin: 3% 0;
+  }
+  
+  .library_carousel h2 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+  
+  .library_carousel h4 {
+    text-align: center;
+  }
+  
+  .lib_btns {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .lib_btn {
+    border: none;
+  }
+  
+  .lib_btn:hover {
+    transform: scale(0.95);
+  }
+  
+  .lib_btn:active {
+    transform: scale(0.92);
+  }
+  
+  .lib_btn:focus {
+    outline: none;
+  }
+  
+  .library_carousel img {
+    display:block;
+    margin:auto;
+    width: 98%;
+  }
+  
+  @keyframes titleFade {
+    0% {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+  
+    30% {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes flip-vertical-right {
+    0% {
+      transform: rotateY(180deg);
+    }
+    100% {
+      transform: rotateY(0);
+    }
+  }
+  
+  @media (max-width: 1000px) {
+    .portfolio_sub > div {
+      flex-direction: column;
+    }
+    .portfolio_sub > div h2 {
+      text-align: center;
+    }
+  
+    .portfolio_sub > div:nth-of-type(2) {
+      flex-direction: column-reverse;
+      text-align: start;
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .portfolio_sub > div {
+      text-align: justify;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .portfolio_sub > div p {
+      font-size: 0.8rem;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .library_carousel h2 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .library_carousel h2 {
+      font-size: 1.3rem;
+    }
+  }
+  
