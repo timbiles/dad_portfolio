@@ -1,10 +1,48 @@
 .form {
-    height: 100vh;
 }
 
 .form_container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 300px;
+
+    padding: 4% 0;
 }
+
+.form_main {
+    width: 80%;
+}
+
+.has-float-label {
+    margin-top: 4%;
+  }
+  
+  .input_field {
+    width: 60%;
+}
+
+.ce_title {
+    font-size: .7rem;
+
+  }
+  
+  .floating_placeholder {
+    position: absolute;
+    pointer-events: none;
+    left: 20px;
+    top: 18px;
+    transition: 0.2s ease all;
+    opacity: 0.7;
+  }
+  
+  .cinput_field:focus ~ .floating_placeholder,
+  .cinput_field:not(:focus):valid .floating_placeholder {
+    top: 8px;
+    bottom: 10px;
+    left: 20px;
+    font-size: 1px;
+    opacity: 1;
+  }
+
+  
