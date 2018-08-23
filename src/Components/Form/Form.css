@@ -2,47 +2,64 @@
 }
 
 .form_container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    padding: 4% 0;
+  padding: 8% 0;
 }
 
 .form_main {
-    width: 80%;
+  width: 50%;
+}
+
+.form_main h2,
+.form_main h3 {
+  text-align: center;
 }
 
 .has-float-label {
-    margin-top: 4%;
-  }
-  
-  .input_field {
-    width: 60%;
+  margin-top: 4%;
+  /* width: 50%; */
+  font-size: 75%;
 }
 
-.ce_title {
-    font-size: .7rem;
+.input_field {
+  width: 60%;
+}
 
-  }
-  
-  .floating_placeholder {
-    position: absolute;
-    pointer-events: none;
-    left: 20px;
-    top: 18px;
-    transition: 0.2s ease all;
-    opacity: 0.7;
-  }
-  
-  .cinput_field:focus ~ .floating_placeholder,
-  .cinput_field:not(:focus):valid .floating_placeholder {
-    top: 8px;
-    bottom: 10px;
-    left: 20px;
-    font-size: 1px;
-    opacity: 1;
-  }
+.floating_placeholder {
+  position: absolute;
+  pointer-events: none;
+  left: 20px;
+  top: 18px;
+  transition: 0.2s ease all;
+  opacity: 0.7;
+}
 
-  
+.input_field:focus ~ .floating_placeholder,
+.input_field:not(:focus):valid .floating_placeholder {
+  top: 8px;
+  bottom: 10px;
+  left: 20px;
+  font-size: 1px;
+  opacity: 1;
+}
+
+/* -------- */
+
+.form_btn {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.form_btn:hover {
+  transform: scale(0.98);
+}
+
+.form_btn:active {
+  transform: scale(0.96);
+}
+
+
