@@ -188,9 +188,12 @@ class Form extends Component {
               />
               <span id="ce_title">Email Address</span>
             </label>
-            <h3 className="form_btn" onClick={e => this.toggleClick1(e)}>
+            <div className="form_btn" > 
+
+            <h3 onClick={e => this.toggleClick1(e)}>
               Next
             </h3>
+            </div>
           </div>
 
           {two && (

@@ -17,17 +17,36 @@ class Requests extends Component {
     const map = requests.map((e, i) => {
       return (
         <div className="request_map" key={i}>
-        <h2>Request from {e.organization_name}</h2>
+          <div className="request_title">
+            <h2>Request from {e.organization_name}</h2>
+            <h3>
+              Date requested:{' '}
+              {moment.utc(e.request_date).format('MMM Do, YYYY')}
+            </h3>
+          </div>
           <div className="request_sub">
-          <h3>Requestor Information</h3>
+            <h3>Requestor Information</h3>
             <p>Contact Name: {e.contact_name}</p>
             <p>Phone Number: {e.phone_number}</p>
-            <p>Email: {e.email}</p>
+            <div className='email_holder'>
+              Email: {e.email}
+              <div >
+                <a className="request_email" href={'mailto:' + e.email}>
+                  <img
+                    className="email_icon"
+                    src="https://image.flaticon.com/icons/svg/263/263093.svg"
+                    alt={e.email}
+                  />
+                </a>
+              </div>
+            </div>
           </div>
           <div className="request_sub">
             <h3>Event Information</h3>
             <p>Name of event: {e.event_name}</p>
-            <p>Date of event: {moment.utc(e.event_date).format('MMM Do, YYYY')}</p>
+            <p>
+              Date of event: {moment.utc(e.event_date).format('MMM Do, YYYY')}
+            </p>
             <p>Time of event: {e.event_time}</p>
             <p>Speaker requested to attend entire event? {e.speaker_request}</p>
             <p>Arrival Time: {e.arrival_time}</p>
@@ -44,11 +63,19 @@ class Requests extends Component {
           <div className="request_sub">
             <h3>Travel Information</h3>
             <p>Preferred airport: {e.airport}</p>
-            <p>Is airport transportation available? {e.airport_transportation}</p>
+            <p>
+              Is airport transportation available? {e.airport_transportation}
+            </p>
             <p>Lodgeing to be booked by? {e.lodging}</p>
             <p>Nearest Lodging or Location booked? {e.lodging_location}</p>
-            <p>Requestor will reimburse the following expenses? {e.travel_expenses}</p>
-            <p>Reimbursement receipts should be sent to? {e.reimbursement_receipts}</p>
+            <p>
+              Requestor will reimburse the following expenses?{' '}
+              {e.travel_expenses}
+            </p>
+            <p>
+              Reimbursement receipts should be sent to?{' '}
+              {e.reimbursement_receipts}
+            </p>
           </div>
           <div className="request_sub">
             <h3>Additional Information</h3>

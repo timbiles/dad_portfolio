@@ -16,6 +16,8 @@
     flex-direction: column;
     align-items: center;
     padding: 5% 0;
+    width: 100%;
+    
   }
 
   .contact_form {
@@ -25,13 +27,35 @@
 
   .contact_sub > div {
     display: flex;
+    justify-content: space-around;
+    width: 100px;
   }
 
   .social_icon {
     height: 35px;
-    padding: 30%;
+  }
+
+  .social_icon:hover {
+    transform: scale(1.02)
   }
 
   .twitter {
     border-radius: 50%;
+  }
+
+  .contact_email {
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: #000;
+    cursor: pointer;
+    /* margin: 0 5%; */
+  }
+  
+  .cont_email:hover {
+    transform: scale(1.02)
+  }
+  
+  .contact_holder p {
+    text-align: center;
+    letter-spacing: 2px;
   }

@@ -52,7 +52,7 @@ const Library = () => (
               "Deron Biles is a man after God's heart. In his book he wishes to
               challenge all men to find the transforming power of God's Word.
               Learn how to be God's man!"
-              <br /> -Jim Richards, Executive Director,{' '}
+              <br /> -Jim Richards, Executive Director
             </p>
             <p>
               "In a day when the church has been largely overtaken by feminism

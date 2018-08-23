@@ -18,6 +18,14 @@ const Contact = () => (
           <div className="a_line" />
         </div>
       </div>
+      <div className="contact_holder">
+        <p>Office phone: 817-923-1921 x 6700</p>
+        <div className="cont_email">
+          <a className="contact_email" href={'mailto:dbiles@swbts.com'}>
+            <p>dbiles@swbts.com</p>
+          </a>
+        </div>
+      </div>
       <div className="contact_sub">
         <h3>
           If you would like Dr. Biles to speak at an event, please follow the
