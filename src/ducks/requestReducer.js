@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const initialState = {
+  requests: [],
   organizationName: '',
   contactName: '',
   phoneNumber: '',
@@ -24,9 +25,11 @@ const initialState = {
   reimbursementReceipts: '',
   bio: '',
   img: '',
-  w2: ''
+  w2: '',
+  didErr: false
 };
 
+const GET_REQUESTS = 'GET_REQUESTS';
 const UPDATE_ORGANIZATION_NAME = 'UPDATE_ORGANIZATION_NAME';
 const UPDATE_CONTACT_NAME = 'UPDATE_CONTACT_NAME';
 const UPDATE_PHONE_NUMBER = 'UPDATE_PHONE_NUMBER';
@@ -51,6 +54,13 @@ const UPDATE_REIMBURSEMENT_RECEIPTS = 'UPDATE_REIMBURSEMENT_RECEIPTS';
 const UPDATE_BIO = 'UPDATE_BIO';
 const UPDATE_IMG = 'UPDATE_IMG';
 const UPDATE_W2 = 'UPDATE_W2';
+
+export const getRequests = () => {
+  return {
+    type: GET_REQUESTS,
+    payload: axios.get('/api/speaker-request')
+  };
+};
 
 export const updateOrganization = organizationName => {
   return {
@@ -222,6 +232,17 @@ export const updateW2 = w2 => {
 
 export default function locationReducer(state = initialState, action) {
   switch (action.type) {
+    case `${GET_REQUESTS}_FULFILLED`:
+      return {
+        ...state,
+        requests: action.payload.data
+      };
+    case `${GET_REQUESTS}_REJECTED`:
+      return {
+        ...state,
+        didErr: true
+      };
+
     case UPDATE_ORGANIZATION_NAME:
       return {
         ...state,
@@ -275,7 +296,7 @@ export default function locationReducer(state = initialState, action) {
     case UPDATE_EVENT_DESCRIPTION:
       return {
         ...state,
-        eventLocation: action.payload
+        eventDescription: action.payload
       };
     case UPDATE_EVENT_TOPIC:
       return {

@@ -32,7 +32,7 @@
   
   .about_name {
     text-align: center;
-    padding-top: 2%;
+    /* padding-top: 2%; */
     height: 100%;
     font-size: 3.5rem;
     letter-spacing: 2px;

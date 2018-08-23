@@ -8,13 +8,15 @@
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "massive": "^5.2.0",
+    "moment": "^2.22.2",
     "pure-react-carousel": "^1.13.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "redux-promise-middleware": "^5.1.1"
   },
   "scripts": {
     "start": "concurrently --kill-others \"nodemon server/index.js\" \"react-scripts start\"",

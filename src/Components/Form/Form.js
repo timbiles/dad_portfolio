@@ -1,7 +1,36 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import axios from 'axios';
 
 import './Form.css';
+
+import {
+  getRequests,
+  updateOrganization,
+  updateContactName,
+  updatePhoneNumber,
+  updateEmail,
+  updateEventName,
+  updateEventDate,
+  updateEventTime,
+  updateSpeakerRequest,
+  updateArrivalTime,
+  updateEventLocation,
+  updateEventDescription,
+  updateEventTopic,
+  updatePresentationLength,
+  updatePresentationTime,
+  updatePresentationComments,
+  updateAirport,
+  updateAirportTransportation,
+  updateLodging,
+  updateLodgingLocation,
+  updateTravelExpenses,
+  updateReimbursementReceipts,
+  updateBio,
+  updateImg,
+  updateW2
+} from '../../ducks/requestReducer';
 
 class Form extends Component {
   state = {
@@ -12,14 +41,8 @@ class Form extends Component {
     five: false
   };
   componentDidMount() {
-    this.getForm();
+    this.props.getRequests();
   }
-
-  getForm = () => {
-    axios.get('/api/speaker-request').then(res => {
-      console.log(res);
-    });
-  };
 
   toggleClick1 = e => {
     this.setState({ two: true });
@@ -34,10 +57,90 @@ class Form extends Component {
   toggleClick4 = e => {
     this.setState({ five: true });
   };
-  submitForm = e => {};
+  submitForm = e => {
+    let {
+      organizationName,
+      contactName,
+      phoneNumber,
+      email,
+      eventName,
+      eventDate,
+      eventTime,
+      speakerRequest,
+      arrivalTime,
+      eventLocation,
+      eventDescription,
+      eventTopic,
+      presentationLength,
+      presentationTime,
+      presentationComments,
+      airport,
+      airportTransportation,
+      lodging,
+      lodgingLocation,
+      travelExpenses,
+      reimbursementReceipts,
+      bio,
+      img,
+      w2
+    } = this.props;
+
+    axios.post(`/api/create-form`, {
+      organizationName,
+      contactName,
+      phoneNumber,
+      email,
+      eventName,
+      eventDate,
+      eventTime,
+      speakerRequest,
+      arrivalTime,
+      eventLocation,
+      eventDescription,
+      eventTopic,
+      presentationLength,
+      presentationTime,
+      presentationComments,
+      airport,
+      airportTransportation,
+      lodging,
+      lodgingLocation,
+      travelExpenses,
+      reimbursementReceipts,
+      bio,
+      img,
+      w2
+    });
+  };
 
   render() {
     const { two, three, four, five } = this.state;
+    const {
+      updateOrganization,
+      updateContactName,
+      updatePhoneNumber,
+      updateEmail,
+      updateEventName,
+      updateEventDate,
+      updateEventTime,
+      updateSpeakerRequest,
+      updateArrivalTime,
+      updateEventLocation,
+      updateEventDescription,
+      updateEventTopic,
+      updatePresentationLength,
+      updatePresentationTime,
+      updatePresentationComments,
+      updateAirport,
+      updateAirportTransportation,
+      updateLodging,
+      updateLodgingLocation,
+      updateTravelExpenses,
+      updateReimbursementReceipts,
+      updateBio,
+      updateImg,
+      updateW2
+    } = this.props;
 
     return (
       <div className="form">
@@ -51,7 +154,7 @@ class Form extends Component {
                 className="input_field"
                 type="text"
                 placeholder="..."
-                // onChange={e => updateFirstName(e.target.value)}
+                onChange={e => updateOrganization(e.target.value)}
               />
               <span id="ce_title">Organization Name</span>
             </label>
@@ -61,7 +164,7 @@ class Form extends Component {
                 className="input_field"
                 type="text"
                 placeholder="Contact Name"
-                // onChange={e => updateFirstName(e.target.value)}
+                onChange={e => updateContactName(e.target.value)}
               />
               <span id="ce_title">Contact Name</span>
             </label>
@@ -71,7 +174,7 @@ class Form extends Component {
                 className="input_field"
                 type="text"
                 placeholder="Phone Number"
-                // onChange={e => updateFirstName(e.target.value)}
+                onChange={e => updatePhoneNumber(e.target.value)}
               />
               <span id="ce_title">Phone Number</span>
             </label>
@@ -81,7 +184,7 @@ class Form extends Component {
                 className="input_field"
                 type="text"
                 placeholder="Email Address"
-                // onChange={e => updateFirstName(e.target.value)}
+                onChange={e => updateEmail(e.target.value)}
               />
               <span id="ce_title">Email Address</span>
             </label>
@@ -99,7 +202,7 @@ class Form extends Component {
                   className="input_field"
                   type="text"
                   placeholder="Event Name"
-                  // onChange={e => updateFirstName(e.target.value)}
+                  onChange={e => updateEventName(e.target.value)}
                 />
                 <span id="ce_title">Name of Event</span>
               </label>
@@ -109,7 +212,7 @@ class Form extends Component {
                   className="input_field"
                   type="text"
                   placeholder="Event Date"
-                  // onChange={e => updateFirstName(e.target.value)}
+                  onChange={e => updateEventDate(e.target.value)}
                 />
                 <span id="ce_title">Date of Event</span>
               </label>
@@ -119,7 +222,7 @@ class Form extends Component {
                   className="input_field"
                   type="text"
                   placeholder="12:00"
-                  // onChange={e => updateFirstName(e.target.value)}
+                  onChange={e => updateEventTime(e.target.value)}
                 />
                 <span id="ce_title">Time of Event (start to end)</span>
               </label>
@@ -129,7 +232,7 @@ class Form extends Component {
                   className="input_field"
                   type="text"
                   placeholder="Event"
-                  // onChange={e => updateFirstName(e.target.value)}
+                  onChange={e => updateSpeakerRequest(e.target.value)}
                 />
                 <span id="ce_title">
                   Speaker Requested to attend entire event
@@ -140,8 +243,8 @@ class Form extends Component {
                   required
                   className="input_field"
                   type="text"
-                  placeholder="Event Location"
-                  // onChange={e => updateFirstName(e.target.value)}
+                  placeholder="..."
+                  onChange={e => updateArrivalTime(e.target.value)}
                 />
                 <span id="ce_title">Arrival Time</span>
               </label>
@@ -150,8 +253,8 @@ class Form extends Component {
                   required
                   className="input_field"
                   type="text"
-                  placeholder="Event Location"
-                  // onChange={e => updateFirstName(e.target.value)}
+                  placeholder="..."
+                  onChange={e => updateEventLocation(e.target.value)}
                 />
                 <span id="ce_title">Event Location</span>
               </label>
@@ -160,8 +263,8 @@ class Form extends Component {
                   required
                   className="input_field"
                   type="text"
-                  placeholder="Event Description"
-                  // onChange={e => updateFirstName(e.target.value)}
+                  placeholder="..."
+                  onChange={e => updateEventDescription(e.target.value)}
                 />
                 <span id="ce_title">Event Description</span>
               </label>
@@ -179,7 +282,7 @@ class Form extends Component {
                   className="input_field"
                   type="text"
                   placeholder="..."
-                  // onChange={e => updateFirstName(e.target.value)}
+                  onChange={e => updateEventTopic(e.target.value)}
                 />
                 <span id="ce_title">
                   What is the topic or theme for the event?
@@ -191,7 +294,7 @@ class Form extends Component {
                   className="input_field"
                   type="text"
                   placeholder="..."
-                  // onChange={e => updateFirstName(e.target.value)}
+                  onChange={e => updatePresentationLength(e.target.value)}
                 />
                 <span id="ce_title">How long should the speaker present?</span>
               </label>
@@ -201,7 +304,7 @@ class Form extends Component {
                   className="input_field"
                   type="text"
                   placeholder="..."
-                  // onChange={e => updateFirstName(e.target.value)}
+                  onChange={e => updatePresentationTime(e.target.value)}
                 />
                 <span id="ce_title">What time(s) will he speak</span>
               </label>
@@ -211,7 +314,7 @@ class Form extends Component {
                   className="input_field"
                   type="text"
                   placeholder="..."
-                  // onChange={e => updateFirstName(e.target.value)}
+                  onChange={e => updatePresentationComments(e.target.value)}
                 />
                 <span id="ce_title">Additional information</span>
               </label>
@@ -229,7 +332,7 @@ class Form extends Component {
                   className="input_field"
                   type="text"
                   placeholder="..."
-                  // onChange={e => updateFirstName(e.target.value)}
+                  onChange={e => updateAirport(e.target.value)}
                 />
                 <span id="ce_title">Nearest airport to your location?</span>
               </label>
@@ -239,7 +342,7 @@ class Form extends Component {
                   className="input_field"
                   type="text"
                   placeholder="..."
-                  // onChange={e => updateFirstName(e.target.value)}
+                  onChange={e => updateAirportTransportation(e.target.value)}
                 />
                 <span id="ce_title">Is airport transportation available</span>
               </label>
@@ -249,7 +352,7 @@ class Form extends Component {
                   className="input_field"
                   type="text"
                   placeholder="..."
-                  // onChange={e => updateFirstName(e.target.value)}
+                  onChange={e => updateLodging(e.target.value)}
                 />
                 <span id="ce_title">Lodging to be booked by...</span>
               </label>
@@ -259,7 +362,7 @@ class Form extends Component {
                   className="input_field"
                   type="text"
                   placeholder="..."
-                  // onChange={e => updateFirstName(e.target.value)}
+                  onChange={e => updateLodgingLocation(e.target.value)}
                 />
                 <span id="ce_title">Nearest Lodging or Location booked</span>
               </label>
@@ -269,7 +372,7 @@ class Form extends Component {
                   className="input_field"
                   type="text"
                   placeholder="..."
-                  // onChange={e => updateFirstName(e.target.value)}
+                  onChange={e => updateTravelExpenses(e.target.value)}
                 />
                 <span id="ce_title">
                   Requester will reimburse the following expenses
@@ -281,7 +384,7 @@ class Form extends Component {
                   className="input_field"
                   type="text"
                   placeholder="..."
-                  // onChange={e => updateFirstName(e.target.value)}
+                  onChange={e => updateReimbursementReceipts(e.target.value)}
                 />
                 <span id="ce_title">
                   Reimbursement receipts should be sent to
@@ -301,7 +404,7 @@ class Form extends Component {
                   className="input_field"
                   type="text"
                   placeholder="..."
-                  // onChange={e => updateFirstName(e.target.value)}
+                  onChange={e => updateBio(e.target.value)}
                 />
                 <span id="ce_title">Do you need biographical information</span>
               </label>
@@ -311,7 +414,7 @@ class Form extends Component {
                   className="input_field"
                   type="text"
                   placeholder="..."
-                  // onChange={e => updateFirstName(e.target.value)}
+                  onChange={e => updateImg(e.target.value)}
                 />
                 <span id="ce_title">Do you need a photo</span>
               </label>
@@ -321,7 +424,7 @@ class Form extends Component {
                   className="input_field"
                   type="text"
                   placeholder="..."
-                  // onChange={e => updateFirstName(e.target.value)}
+                  onChange={e => updateW2(e.target.value)}
                 />
                 <span id="ce_title">Do you need a W-2</span>
               </label>
@@ -336,4 +439,35 @@ class Form extends Component {
   }
 }
 
-export default Form;
+const mapStateToProps = state => state;
+
+export default connect(
+  mapStateToProps,
+  {
+    getRequests,
+    updateOrganization,
+    updateContactName,
+    updatePhoneNumber,
+    updateEmail,
+    updateEventName,
+    updateEventDate,
+    updateEventTime,
+    updateSpeakerRequest,
+    updateArrivalTime,
+    updateEventLocation,
+    updateEventDescription,
+    updateEventTopic,
+    updatePresentationLength,
+    updatePresentationTime,
+    updatePresentationComments,
+    updateAirport,
+    updateAirportTransportation,
+    updateLodging,
+    updateLodgingLocation,
+    updateTravelExpenses,
+    updateReimbursementReceipts,
+    updateBio,
+    updateImg,
+    updateW2
+  }
+)(Form);

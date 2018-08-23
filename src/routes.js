@@ -6,6 +6,7 @@ import About from './Components/About/About';
 import Contact from './Components/Contact/Contact';
 import Library from './Components/Library/Library';
 import Form from './Components/Form/Form';
+import Requests from './Components/Requests/Requests';
 
 export default (
   <Switch>
@@ -13,7 +14,7 @@ export default (
     <Route path="/library" component={Library} />
     <Route path="/contact" component={Contact} />   
     <Route path="/form" component={Form} />   
-    
+    <Route path="/requests" component={Requests} />       
     <Route path="/" component={Home} />
   </Switch>
 );
