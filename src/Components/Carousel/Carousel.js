@@ -16,7 +16,7 @@ export default () => (
     <CarouselProvider
       naturalSlideWidth={100}
       naturalSlideHeight={100}
-      totalSlides={6}
+      totalSlides={18}
       interval={4000}
       // isPlaying={true}
     >
@@ -87,6 +87,138 @@ export default () => (
           </a>
           <h4>Pastors and Rookie Mistakes</h4>
         </Slide>
+        <Slide index={6}>
+        <a target='blank' href="https://theologicalmatters.com/2014/07/28/functional-obedience/">
+        
+          <img
+            src="https://theologicalmatters.com/wp-content/uploads/2013/11/directions1.jpg"
+            alt="Article 7"
+          />
+          </a>
+          <h4>Functional Obedience</h4>
+        </Slide>
+        <Slide index={7}>
+        <a target='blank' href="https://theologicalmatters.com/2013/12/05/godless-churches/">
+        
+          <img
+            src="https://theologicalmatters.com/wp-content/uploads/2013/11/church1.jpg"
+            alt="Article 8"
+          />
+          </a>
+          <h4>Godless Churches</h4>
+        </Slide>
+        <Slide index={8}>
+        <a target='blank' href="https://theologicalmatters.com/2013/11/14/on-being-a-pastors-kid-part-three/">
+        
+          <img
+            src="https://theologicalmatters.com/wp-content/uploads/2013/11/boy_home_school1.jpg"
+            alt="Article 9"
+          />
+          </a>
+          <h4>On Being a Pastor's kid, Part Three</h4>
+        </Slide>
+        <Slide index={9}>
+        <a target='blank' href="https://theologicalmatters.com/2013/10/18/on-being-a-pastors-kid-part-2/">
+        
+          <img
+            src="https://theologicalmatters.com/wp-content/uploads/2013/11/boy_home_school1.jpg"
+            alt="Article 10"
+          />
+          </a>
+          <h4>On Being a Pastor's kid, Part Two</h4>
+        </Slide>
+        <Slide index={10}>
+        <a target='blank' href="https://theologicalmatters.com/2013/09/12/on-being-a-pastors-kid-part-1/">
+        
+          <img
+            src="https://theologicalmatters.com/wp-content/uploads/2013/11/boy_home_school1.jpg"
+            alt="Article 11"
+          />
+          </a>
+          <h4>On Being a Pastor's kid, Part One</h4>
+        </Slide>
+        <Slide index={11}>
+        <a target='blank' href="https://theologicalmatters.com/2013/08/16/we-are-the-body-of-christ/">
+        
+          <img
+            src="https://theologicalmatters.com/wp-content/uploads/2013/11/church1.jpg"
+            alt="Article 12"
+          />
+          </a>
+          <h4>We are the Body of Christ</h4>
+        </Slide>
+        <Slide index={12}>
+        <a target='blank' href="https://theologicalmatters.com/2013/07/11/somebodys-poisoned-the-water-hole/">
+        
+          <img
+            src="https://theologicalmatters.com/wp-content/uploads/2013/11/MinistryofaShepherd1.jpg"
+            alt="Article 13"
+          />
+          </a>
+          <h4>Somebody's Poisoned the Water Hole!</h4>
+        </Slide>
+        <Slide index={13}>
+        <a target='blank' href="https://theologicalmatters.com/2013/06/13/2517/">
+        
+          <img
+            src="https://theologicalmatters.com/wp-content/uploads/2013/11/MinistryofaShepherd1.jpg"
+            alt="Article 14"
+          />
+          </a>
+          <h4>The Good of the One vs. The Good of the Many</h4>
+        </Slide>
+        <Slide index={14}>
+        <a target='blank' href="https://theologicalmatters.com/2013/05/09/the-ministry-of-a-shepherd-they-dont-need-to-go-away/">
+        
+          <img
+            src="https://theologicalmatters.com/wp-content/uploads/2013/11/MinistryofaShepherd1.jpg"
+            alt="Article 15"
+          />
+          </a>
+          <h4>The Ministry of a Shepherd: They Don't Need to Go Away</h4>
+        </Slide>
+        <Slide index={15}>
+        <a target='blank' href="https://theologicalmatters.com/2013/04/10/lets-be-careful-out-there/">
+        
+          <img
+            src="https://theologicalmatters.com/wp-content/uploads/2013/11/MinistryofaShepherd1.jpg"
+            alt="Article 16"
+          />
+          </a>
+          <h4>The Ministry of a Shepherd: Let's Be Careful Out There</h4>
+        </Slide>
+        <Slide index={16}>
+        <a target='blank' href="https://theologicalmatters.com/2013/03/13/the-ministry-of-a-shepherd-binding-up-the-broken/">
+        
+          <img
+            src="https://theologicalmatters.com/wp-content/uploads/2013/11/MinistryofaShepherd1.jpg"
+            alt="Article 17"
+          />
+          </a>
+          <h4>The Ministry of a Shepherd: Binding Up the Broken</h4>
+        </Slide>
+         <Slide index={17}>
+        <a target='blank' href="https://theologicalmatters.com/2013/02/13/is-there-no-balm-in-gilead/">
+        
+          <img
+            src="https://theologicalmatters.com/wp-content/uploads/2013/11/MinistryofaShepherd1.jpg"
+            alt="Article 18"
+          />
+          </a>
+          <h4>The Ministry of a Shepherd: Is there no balm in Gilead?</h4>
+        </Slide>
+        {/* <Slide index={}>
+        <a target='blank' href="">
+        
+          <img
+            src=""
+            alt="Article "
+          />
+          </a>
+          <h4></h4>
+        </Slide> */}
+
+
       </Slider>
       <div className="lib_btns">
         <ButtonBack className="lib_btn">Back</ButtonBack>

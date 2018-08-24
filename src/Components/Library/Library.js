@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Carousel from '../Carousel/Carousel';
-
+import Verse from '../VerseGenerator/VerseGenerator';
 import './Library.css'
 
 const Library = () => (
@@ -54,20 +54,7 @@ const Library = () => (
               Learn how to be God's man!"
               <br /> -Jim Richards, Executive Director
             </p>
-            <p>
-              "In a day when the church has been largely overtaken by feminism
-              together with its marginalization, either intentionally or by
-              accident, of men, professor Deron Biles of Southwestern Seminary
-              has written a superb assessment of what it means to be a 'man
-              after God's own heart' in this volume Becoming the Man God is
-              Seeking, Dr. Biles has presented a highly readable but profoundly
-              thoughtful presentation that any man who loves God will want to
-              read and make a part of his service to the Lord. If I were a
-              pastor I would want every man in my church to have a copy of this
-              book."
-              <br /> -Paige Patterson President, Southwestern Baptist
-              Theological Seminary
-            </p>
+           
           </div>
           <img
             className="book"
@@ -108,6 +95,7 @@ const Library = () => (
         </div>
       </div>
       <Carousel />
+      <Verse />
     </div>
   </div>
 )

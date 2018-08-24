@@ -1,7 +1,6 @@
 .contact {
     padding-top: 8%;
     font-family: 'Roboto', sans-serif;
-    height: 100vh;
   }
   
   .contact_container {
@@ -17,18 +16,31 @@
     align-items: center;
     padding: 5% 0;
     width: 100%;
-    
+  }
+
+  .request_form {
+    box-shadow: 1px 1px 5px grey;
+    width: 50%;
   }
 
   .contact_form {
     text-decoration: none;
     color: rgb(26, 26, 26);
+    cursor: pointer;
+  }
+
+  .contact_form:hover {
+
+  }
+
+  .contact_form:active {
+    transform: scale(.98)
   }
 
   .contact_sub > div {
     display: flex;
     justify-content: space-around;
-    width: 100px;
+    width: 200px;
   }
 
   .social_icon {

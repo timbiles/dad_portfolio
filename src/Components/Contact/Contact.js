@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './Contact.css';
+import Verse from '../VerseGenerator/VerseGenerator';
 
 const Contact = () => (
   <div className="contact">
@@ -26,13 +27,13 @@ const Contact = () => (
           </a>
         </div>
       </div>
-      <div className="contact_sub">
+      <div className="contact_sub request_form">
         <h3>
           If you would like Dr. Biles to speak at an event, please follow the
-          link to fill out the following form!
+          link to fill out the form!
         </h3>
         <Link className="contact_form" to="/form">
-          Form
+          Speaker Request Form
         </Link>
       </div>
 
@@ -56,8 +57,20 @@ const Contact = () => (
               alt="Facebook logo"
             />
           </a>
+
+          <a
+            href="https://scholar.google.com/citations?user=D_syC7YAAAAJ&hl=en"
+            target="blank"
+          >
+            <img
+              className="social_icon"
+              src="http://s3.amazonaws.com/libapps/customers/1627/images/google_scholar.PNG"
+              alt="Google Scholar logo"
+            />
+          </a>
         </div>
       </div>
+      <Verse />
     </div>
   </div>
 );

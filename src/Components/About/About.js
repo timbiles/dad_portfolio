@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Verse from '../VerseGenerator/VerseGenerator';
 import './About.css'
 
 const About = () => (
@@ -77,6 +78,7 @@ const About = () => (
       <p>M.Div., Southwestern Baptist Theological Seminary, 1992</p>
       <p>B.A., History and Bible, Howard Payne University, 1989</p>
     </div>
+    <Verse/>
   </div>
 )
 
