@@ -18,18 +18,19 @@
   
   .portfolio_sub {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
-    margin-top: 2%;
+    justify-content: space-evenly;
+    margin: 2% 0 5% 0;
+    width: 100%;
   }
   
   .portfolio_sub > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    border-bottom: 1px solid grey;
-    padding: 1%;
+    margin: 1%;
+  }
+
+  .portfolio_book {
+    display: none;
   }
   
   .portfolio_sub p {
@@ -55,6 +56,7 @@
   
   .library_carousel {
     margin: 3% 0;
+    
   }
   
   .library_carousel h2 {
@@ -91,6 +93,59 @@
     display:block;
     margin:auto;
     width: 98%;
+  }
+
+  .resources_bottom {
+    width: 100%;
+    border-top: 1px solid rgb(240, 240, 240)
+  }
+
+  .resources_bottom > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chapel_sermons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: 60%; */
+  }
+
+  .chapel_sermons a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: rgb(146, 125, 125);
+    cursor: pointer;
+  }
+  
+  .chapel_sermons > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: flex-start; */
+    width: 100%;
+  }
+  
+  .chapel_sermons p {
+      width: 100%;
+      text-align: center;
+      padding: 1%;
+  }
+
+  .chapel_sub {
+    display: flex;
+    margin: 5% 0;
+    width: 100%;
+  }
+
+  .chapel_sermons img {
+    width: 175px;
+    height: 100px;
+    padding-right: 5%;
+    border-right: 1px solid grey;
   }
   
   @keyframes titleFade {

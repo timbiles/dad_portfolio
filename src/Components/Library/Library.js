@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
 import Carousel from '../Carousel/Carousel';
 import Verse from '../VerseGenerator/VerseGenerator';
-import './Library.css'
+import './Library.css';
 
 const Library = () => (
   <div className="portfolio">
@@ -18,6 +18,7 @@ const Library = () => (
           <div className="a_line" />
         </div>
       </div>
+
       <div className="portfolio_sub">
         <div>
           <img
@@ -25,7 +26,7 @@ const Library = () => (
             src="https://images-na.ssl-images-amazon.com/images/I/71MhnxAXIxL.jpg"
             alt="The Ministry of a Shephard"
           />
-          <div>
+          <div className="portfolio_book">
             <h2>The Ministry of a Shephard</h2>
             <p>
               "So he shepherded them according to the integrity of his heart,
@@ -45,8 +46,14 @@ const Library = () => (
             </p>
           </div>
         </div>
+
         <div>
-          <div>
+          <img
+            className="book"
+            src="https://images-na.ssl-images-amazon.com/images/I/41Zm54tcECL._SX322_BO1,204,203,200_.jpg"
+            alt="After God's Heart"
+          />
+          <div className="portfolio_book">
             <h2>After God's Heart</h2>
             <p>
               "Deron Biles is a man after God's heart. In his book he wishes to
@@ -54,13 +61,7 @@ const Library = () => (
               Learn how to be God's man!"
               <br /> -Jim Richards, Executive Director
             </p>
-           
           </div>
-          <img
-            className="book"
-            src="https://images-na.ssl-images-amazon.com/images/I/41Zm54tcECL._SX322_BO1,204,203,200_.jpg"
-            alt="After God's Heart"
-          />
         </div>
         <div>
           <img
@@ -68,7 +69,7 @@ const Library = () => (
             src="http://csm-publishing.org/wp-content/uploads/2015/03/SEE_FA-194x300.jpg"
             alt="Seminary Education"
           />
-          <div>
+          <div className="portfolio_book">
             <h2>Seminary Education By Extension</h2>
             <p>
               Technology has changed every facet of our lives. It is even
@@ -94,10 +95,65 @@ const Library = () => (
           </div>
         </div>
       </div>
-      <Carousel />
+      <div className="resources_bottom">
+        <div>
+          <Carousel />
+        </div>
+      </div>
+      <div className="chapel_sermons">
+        <h2>SWBTS Chapel Sermons</h2>
+        <div>
+          <a href="http://media.swbts.edu/item/1015/how-will-you-be-remembered">
+            How will you be remembered?
+          </a>
+          <div className="chapel_sub">
+            <img
+              src="http://cdn1.swbts.edu/media/2014/10/10-29-14_DeronBiles72_NW_2137.jpg"
+              alt="Chapel 1"
+            />
+            <p>October 29, 2014</p>
+          </div>
+        </div>
+        <div>
+          <a href="http://media.swbts.edu/item/2302/choosing-gods-way">
+            Choosing God's way
+          </a>
+          <div className="chapel_sub">
+            <img
+              src="http://cdn1.swbts.edu/media/2017/5/20170413DeronBiles024Web.jpg"
+              alt="Chapel 2"
+            />
+            <p>April 13, 2017</p>
+          </div>
+        </div>
+        <div>
+          <a href="http://preachingsource.com/sermon/swbts-chapel-deron-biles-2008/">
+            Ezekiel Sermon
+          </a>
+          <div className="chapel_sub">
+            <img
+              src="http://cdn1.swbts.edu/media/2017/5/20170413DeronBiles024Web.jpg"
+              alt="Chapel 2"
+            />
+            <p>October 14, 2008</p>
+          </div>
+        </div>
+        <div>
+          <a href="http://preachingsource.com/sermon/swbts-chapel-deron-biles-2006/">
+            Ezra Sermon
+          </a>
+          <div className="chapel_sub">
+            <img
+              src="http://cdn1.swbts.edu/media/2017/5/20170413DeronBiles024Web.jpg"
+              alt="Chapel 2"
+            />
+            <p>November 14, 2006</p>
+          </div>
+        </div>
+      </div>
       <Verse />
     </div>
   </div>
-)
+);
 
-export default Library
+export default Library;

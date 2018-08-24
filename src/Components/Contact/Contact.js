@@ -26,6 +26,11 @@ const Contact = () => (
             <p>dbiles@swbts.com</p>
           </a>
         </div>
+        <div className="cont_email">
+          <a className="contact_email" href='https://swbts.edu/academics/faculty/theology/deron-biles/'>
+            <p>Faculty Page</p>
+          </a>
+        </div>
       </div>
       <div className="contact_sub request_form">
         <h3>
