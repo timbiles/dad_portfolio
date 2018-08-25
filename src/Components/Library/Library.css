@@ -132,17 +132,16 @@
 
 .cs1 {
   border-right: 1px solid rgb(240, 240, 240);
-  margin: 1% 0;
 }
 
 .chapel_sermons_sub div {
   width: 100%;
 }
 
-.chapel_sermons p {
-  width: 100%;
-  text-align: center;
-  padding: 1%;
+.chapel_sub p {
+  width: 50%;
+  padding-left: 2%;
+  align-self: center;
 }
 
 .chapel_sub {
@@ -151,11 +150,9 @@
   width: 100%;
 }
 
-.chapel_sermons img {
-  /* width: 175px;
-  height: 100px; */
-  width: 12rem;
-  height: 8rem;
+.chapel_img {
+  width: 175px;
+  height: 100px;
   padding-right: 5%;
   border-right: 1px solid grey;
 }
@@ -167,19 +164,19 @@
   width: 100%;
 }
 
-.chapel_sub1 > div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
+.chapel_sub1 a {
+  text-align: center;
+  margin: 2% 0;
+  font-size: 1rem;
 }
 
-.chapel_sub1 > div p {
+
+.chapel_sub1 > p {
   font-size: 0.9rem;
   letter-spacing: 1px;
   width: 80%;
   text-align: justify;
-
+  padding: 0 10%;
 }
 
 .preaching_source {

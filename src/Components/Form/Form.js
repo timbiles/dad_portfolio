@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import swal from 'sweetalert2';
 
 import './Form.css';
 
@@ -62,32 +63,45 @@ class Form extends Component {
       w2
     } = this.props;
 
-    axios.post(`/api/create-form`, {
-      organizationName,
-      contactName,
-      phoneNumber,
-      email,
-      eventName,
-      eventDate,
-      eventTime,
-      speakerRequest,
-      arrivalTime,
-      eventLocation,
-      eventDescription,
-      eventTopic,
-      presentationLength,
-      presentationTime,
-      presentationComments,
-      airport,
-      airportTransportation,
-      lodging,
-      lodgingLocation,
-      travelExpenses,
-      reimbursementReceipts,
-      bio,
-      img,
-      w2
-    });
+    axios
+      .post(`/api/create-form`, {
+        organizationName,
+        contactName,
+        phoneNumber,
+        email,
+        eventName,
+        eventDate,
+        eventTime,
+        speakerRequest,
+        arrivalTime,
+        eventLocation,
+        eventDescription,
+        eventTopic,
+        presentationLength,
+        presentationTime,
+        presentationComments,
+        airport,
+        airportTransportation,
+        lodging,
+        lodgingLocation,
+        travelExpenses,
+        reimbursementReceipts,
+        bio,
+        img,
+        w2
+      })
+      .then(() => {
+        this.props.history.push('/');
+      })
+      .then(() => {
+        swal({
+          position: 'bottom-end',
+          title: 'Your form has been submitted!',
+          showConfirmButton: false,
+          background: '#000',
+          timer: 2000
+        });
+      });
   };
 
   render() {

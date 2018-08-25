@@ -16,7 +16,8 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5",
     "redux": "^4.0.0",
-    "redux-promise-middleware": "^5.1.1"
+    "redux-promise-middleware": "^5.1.1",
+    "sweetalert2": "^7.26.12"
   },
   "scripts": {
     "start": "concurrently --kill-others \"nodemon server/index.js\" \"react-scripts start\"",

@@ -104,11 +104,15 @@ const Library = () => (
         <div className="chapel_sermons_sub cs1">
           <h2>SWBTS Chapel Sermons</h2>
           <div>
-            <a href="http://media.swbts.edu/item/1015/how-will-you-be-remembered">
+            <a
+              target="_blank"
+              href="http://preachingsource.com/sermon/how-will-you-be-remembered/"
+            >
               How will you be remembered?
             </a>
             <div className="chapel_sub">
               <img
+                className="chapel_img"
                 src="http://cdn1.swbts.edu/media/2014/10/10-29-14_DeronBiles72_NW_2137.jpg"
                 alt="Chapel 1"
               />
@@ -116,11 +120,14 @@ const Library = () => (
             </div>
           </div>
           <div>
-            <a href="http://media.swbts.edu/item/2302/choosing-gods-way">
+            <a 
+            target='_blank'            
+            href="http://preachingsource.com/sermon/choosing-gods-way/">
               Choosing God's way
             </a>
             <div className="chapel_sub">
               <img
+                className="chapel_img"
                 src="http://cdn1.swbts.edu/media/2017/5/20170413DeronBiles024Web.jpg"
                 alt="Chapel 2"
               />
@@ -128,11 +135,14 @@ const Library = () => (
             </div>
           </div>
           <div>
-            <a href="http://preachingsource.com/sermon/swbts-chapel-deron-biles-2008/">
+            <a 
+            target='_blank'            
+            href="http://preachingsource.com/sermon/swbts-chapel-deron-biles-2008/">
               Ezekiel Sermon
             </a>
             <div className="chapel_sub">
               <img
+                className="chapel_img"
                 src="http://cdn1.swbts.edu/media/2017/5/20170413DeronBiles024Web.jpg"
                 alt="Chapel 2"
               />
@@ -140,11 +150,14 @@ const Library = () => (
             </div>
           </div>
           <div>
-            <a href="http://preachingsource.com/sermon/swbts-chapel-deron-biles-2006/">
+            <a 
+            target='_blank'            
+            href="http://preachingsource.com/sermon/swbts-chapel-deron-biles-2006/">
               Ezra Sermon
             </a>
             <div className="chapel_sub">
               <img
+                className="chapel_img"
                 src="http://cdn1.swbts.edu/media/2017/5/20170413DeronBiles024Web.jpg"
                 alt="Chapel 2"
               />
@@ -157,21 +170,22 @@ const Library = () => (
           <div className="chapel_sub1">
             <img
               className="preaching_source"
-              src="http://preachingsource.com/wp-content/themes/preachingsource/images/preaching-source-logo.png"
-              alt="Preaching Source"
+              src="http://preachingsource.com/wp-content/uploads/2016/08/Genesis.jpg"
+              alt="Genesis"
             />
-            <div>
-              <p>
-                Preaching Source is a text-driven resource of Southwestern
-                Baptist Theological Seminary dedicated to equip preachers in the
-                art and craft of text-driven preaching.
-              </p>
-
-              <p>
-                Dr. Biles is a General Contributor to the site, committing
-                several blogs and two book series on Genesis and 2 Timothy
-              </p>
-            </div>
+            <a 
+            target='_blank'
+            href="http://preachingsource.com/sermon-structures/genesis-sermon-structures/">
+              Genesis Sermon Structures
+            </a>
+            <a 
+            target='_blank'
+            href="http://preachingsource.com/sermon-starter/genesis-sermon-starter/">
+              Genesis Sermon Starter
+            </a>
+            <p>
+              The Genesis Sermon Structures were written by Dr. Deron Biles.
+            </p>
           </div>
         </div>
       </div>

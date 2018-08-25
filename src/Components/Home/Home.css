@@ -21,14 +21,16 @@
   }
 
   .home_sub {
-    background-color: rgb(236, 236, 236);
+    /* background-color: rgb(236, 236, 236); */
+    background-image: url('./dust_scratches.png');
     height: 40vh;
     display: flex;
     justify-content: space-around;
   }
 
   .calendar {
-    
+    height: 200px;
+    width: 300px;
   }
   
   .home_container h1 {
