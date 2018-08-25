@@ -1,214 +1,254 @@
 .portfolio {
-    padding-top: 8%;
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  .portfolio_container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .portfolio_container h1 {
-    font-size: 3.5rem;
-    letter-spacing: 2px;
-    color: rgb(60, 60, 60);
-  }
-  
-  .portfolio_sub {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
-    margin: 2% 0 5% 0;
-    width: 100%;
-  }
-  
-  .portfolio_sub > div {
-    margin: 1%;
+  padding-top: 8%;
+  font-family: 'Roboto', sans-serif;
+}
+
+.portfolio_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio_container h1 {
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+  color: rgb(60, 60, 60);
+}
+
+.portfolio_sub {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 2% 0 5% 0;
+  width: 100%;
+}
+
+.portfolio_sub > div {
+  margin: 1%;
+}
+
+.portfolio_book {
+  display: none;
+}
+
+.portfolio_sub p {
+  padding: 1%;
+}
+
+.portfolio_sub h2 {
+  padding: 0 2%;
+  animation: titleFade 1.5s;
+}
+
+.portfolio_sub div:nth-of-type(2) {
+  text-align: end;
+}
+
+.book {
+  height: 300px;
+  box-shadow: 1px 1px 5px grey;
+  border-radius: 1%;
+  transform: rotateY(180deg);
+  animation: flip-vertical-right 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+    both;
+}
+
+.library_carousel {
+  margin: 3% 0;
+}
+
+.library_carousel h2 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+.library_carousel h4 {
+  text-align: center;
+}
+
+.lib_btns {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.lib_btn {
+  border: none;
+}
+
+.lib_btn:hover {
+  transform: scale(0.95);
+}
+
+.lib_btn:active {
+  transform: scale(0.92);
+}
+
+.lib_btn:focus {
+  outline: none;
+}
+
+.library_carousel img {
+  display: block;
+  margin: auto;
+  width: 98%;
+}
+
+.resources_bottom {
+  width: 100%;
+  border-top: 1px solid rgb(240, 240, 240);
+  border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+.resources_bottom > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chapel_sermons {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-around;
+  width: 70%;
+}
+
+.chapel_sermons a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: rgb(146, 125, 125);
+  cursor: pointer;
+  width: 100%;
+}
+
+.chapel_sermons_sub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.cs1 {
+  border-right: 1px solid rgb(240, 240, 240);
+  margin: 1% 0;
+}
+
+.chapel_sermons_sub div {
+  width: 100%;
+}
+
+.chapel_sermons p {
+  width: 100%;
+  text-align: center;
+  padding: 1%;
+}
+
+.chapel_sub {
+  display: flex;
+  margin: 5% 0;
+  width: 100%;
+}
+
+.chapel_sermons img {
+  /* width: 175px;
+  height: 100px; */
+  width: 12rem;
+  height: 8rem;
+  padding-right: 5%;
+  border-right: 1px solid grey;
+}
+
+.chapel_sub1 {
+  display: flex;
+  flex-direction: column;
+  margin: 5% 0;
+  width: 100%;
+}
+
+.chapel_sub1 > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.chapel_sub1 > div p {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  width: 80%;
+  text-align: justify;
+
+}
+
+.preaching_source {
+  margin-left: 2%;
+  align-self: center;
+  width: 250px !important;
+  border-right: none !important;
+}
+
+@keyframes titleFade {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
   }
 
-  .portfolio_book {
-    display: none;
+  30% {
+    opacity: 0;
+    transform: translateX(-40px);
   }
-  
-  .portfolio_sub p {
-    padding: 1%;
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
-  
-  .portfolio_sub h2 {
-    padding: 0 2%;
-    animation: titleFade 1.5s;
-  }
-  
-  .portfolio_sub div:nth-of-type(2) {
-    text-align: end;
-  }
-  
-  .book {
-    height: 300px;
-    box-shadow: 1px 1px 5px grey;
-    border-radius: 1%;
+}
+
+@keyframes flip-vertical-right {
+  0% {
     transform: rotateY(180deg);
-    animation: flip-vertical-right 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
   }
-  
-  .library_carousel {
-    margin: 3% 0;
-    
+  100% {
+    transform: rotateY(0);
   }
-  
-  .library_carousel h2 {
-    font-size: 2rem;
-    letter-spacing: 2px;
+}
+
+@media (max-width: 1000px) {
+  .portfolio_sub > div {
+    flex-direction: column;
   }
-  
-  .library_carousel h4 {
+  .portfolio_sub > div h2 {
     text-align: center;
   }
-  
-  .lib_btns {
-    display: flex;
-    justify-content: space-evenly;
-  }
-  
-  .lib_btn {
-    border: none;
-  }
-  
-  .lib_btn:hover {
-    transform: scale(0.95);
-  }
-  
-  .lib_btn:active {
-    transform: scale(0.92);
-  }
-  
-  .lib_btn:focus {
-    outline: none;
-  }
-  
-  .library_carousel img {
-    display:block;
-    margin:auto;
-    width: 98%;
-  }
 
-  .resources_bottom {
-    width: 100%;
-    border-top: 1px solid rgb(240, 240, 240)
+  .portfolio_sub > div:nth-of-type(2) {
+    flex-direction: column-reverse;
+    text-align: start;
   }
+}
 
-  .resources_bottom > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+@media (max-width: 800px) {
+  .portfolio_sub > div {
+    text-align: justify;
   }
+}
 
-  .chapel_sermons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* width: 60%; */
+@media (max-width: 700px) {
+  .portfolio_sub > div p {
+    font-size: 0.8rem;
   }
+}
 
-  .chapel_sermons a {
-    text-decoration: none;
+@media (max-width: 500px) {
+  .library_carousel h2 {
     font-size: 1.5rem;
-    font-weight: 800;
-    color: rgb(146, 125, 125);
-    cursor: pointer;
   }
-  
-  .chapel_sermons > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* justify-content: flex-start; */
-    width: 100%;
-  }
-  
-  .chapel_sermons p {
-      width: 100%;
-      text-align: center;
-      padding: 1%;
-  }
+}
 
-  .chapel_sub {
-    display: flex;
-    margin: 5% 0;
-    width: 100%;
+@media (max-width: 400px) {
+  .library_carousel h2 {
+    font-size: 1.3rem;
   }
-
-  .chapel_sermons img {
-    width: 175px;
-    height: 100px;
-    padding-right: 5%;
-    border-right: 1px solid grey;
-  }
-  
-  @keyframes titleFade {
-    0% {
-      opacity: 0;
-      transform: translateX(-40px);
-    }
-  
-    30% {
-      opacity: 0;
-      transform: translateX(-40px);
-    }
-  
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  
-  @keyframes flip-vertical-right {
-    0% {
-      transform: rotateY(180deg);
-    }
-    100% {
-      transform: rotateY(0);
-    }
-  }
-  
-  @media (max-width: 1000px) {
-    .portfolio_sub > div {
-      flex-direction: column;
-    }
-    .portfolio_sub > div h2 {
-      text-align: center;
-    }
-  
-    .portfolio_sub > div:nth-of-type(2) {
-      flex-direction: column-reverse;
-      text-align: start;
-    }
-  }
-  
-  @media (max-width: 800px) {
-    .portfolio_sub > div {
-      text-align: justify;
-    }
-  }
-  
-  @media (max-width: 700px) {
-    .portfolio_sub > div p {
-      font-size: 0.8rem;
-    }
-  }
-  
-  @media (max-width: 500px) {
-    .library_carousel h2 {
-      font-size: 1.5rem;
-    }
-  }
-  
-  @media (max-width: 400px) {
-    .library_carousel h2 {
-      font-size: 1.3rem;
-    }
-  }
-  
+}

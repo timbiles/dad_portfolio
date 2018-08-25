@@ -5,7 +5,7 @@ import { updateBio, updateImg, updateW2 } from '../../../ducks/requestReducer';
 
 class Form5 extends Component {
   render() {
-    const { updateBio, updateImg, updateW2 } = this.props;
+    const { updateBio, updateImg, updateW2, bio, img, w2 } = this.props;
 
     return (
       <div className="form_main">
@@ -16,6 +16,7 @@ class Form5 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
+            value={bio}
             onChange={e => updateBio(e.target.value)}
           />
           <span id="ce_title">Do you need biographical information</span>
@@ -26,6 +27,7 @@ class Form5 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
+            value={img}
             onChange={e => updateImg(e.target.value)}
           />
           <span id="ce_title">Do you need a photo</span>
@@ -36,13 +38,22 @@ class Form5 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
+            value={w2}
             onChange={e => updateW2(e.target.value)}
           />
           <span id="ce_title">Do you need a W-2</span>
         </label>
-        <h3 className="form_btn" onClick={this.props.submitForm}>
-          Submit
-        </h3>
+        <div className="form_btn">
+          <img
+            onClick={this.props.toggleClickd}
+            src="https://image.flaticon.com/icons/svg/118/118739.svg"
+            alt="Previous arrow"
+          />
+
+          <h3 className="form_btn" onClick={this.props.submitForm}>
+            Submit
+          </h3>
+        </div>
       </div>
     );
   }

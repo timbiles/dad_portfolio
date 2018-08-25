@@ -1,15 +1,32 @@
-import React from 'react'
+import React from 'react';
 
 import './Home.css';
 
 const IndexPage = () => (
   <div>
-    <div className='home_img' />
-    <div className='home_container'>
+    <div className="home_img" />
+    <body className="home_container">
       <h1>Preach the Word</h1>
-    </div>
-    
-  </div>
-)
+    </body>
+    <footer className="home_sub">
+      <div>
+        <h3>Connect with Dr. Biles</h3>
+      </div>
+      <div>
+        <h3>Follow me on...</h3>
+      </div>
+      <div>
+        <h3>Calendar</h3>
+        <iframe
 
-export default IndexPage
+            className="calendar"
+            frameBorder="0"
+            scrolling="no"
+            title="Deron Calendar"
+          />
+      </div>
+    </footer>
+  </div>
+);
+
+export default IndexPage;

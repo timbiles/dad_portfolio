@@ -101,53 +101,77 @@ const Library = () => (
         </div>
       </div>
       <div className="chapel_sermons">
-        <h2>SWBTS Chapel Sermons</h2>
-        <div>
-          <a href="http://media.swbts.edu/item/1015/how-will-you-be-remembered">
-            How will you be remembered?
-          </a>
-          <div className="chapel_sub">
-            <img
-              src="http://cdn1.swbts.edu/media/2014/10/10-29-14_DeronBiles72_NW_2137.jpg"
-              alt="Chapel 1"
-            />
-            <p>October 29, 2014</p>
+        <div className="chapel_sermons_sub cs1">
+          <h2>SWBTS Chapel Sermons</h2>
+          <div>
+            <a href="http://media.swbts.edu/item/1015/how-will-you-be-remembered">
+              How will you be remembered?
+            </a>
+            <div className="chapel_sub">
+              <img
+                src="http://cdn1.swbts.edu/media/2014/10/10-29-14_DeronBiles72_NW_2137.jpg"
+                alt="Chapel 1"
+              />
+              <p>October 29, 2014</p>
+            </div>
+          </div>
+          <div>
+            <a href="http://media.swbts.edu/item/2302/choosing-gods-way">
+              Choosing God's way
+            </a>
+            <div className="chapel_sub">
+              <img
+                src="http://cdn1.swbts.edu/media/2017/5/20170413DeronBiles024Web.jpg"
+                alt="Chapel 2"
+              />
+              <p>April 13, 2017</p>
+            </div>
+          </div>
+          <div>
+            <a href="http://preachingsource.com/sermon/swbts-chapel-deron-biles-2008/">
+              Ezekiel Sermon
+            </a>
+            <div className="chapel_sub">
+              <img
+                src="http://cdn1.swbts.edu/media/2017/5/20170413DeronBiles024Web.jpg"
+                alt="Chapel 2"
+              />
+              <p>October 14, 2008</p>
+            </div>
+          </div>
+          <div>
+            <a href="http://preachingsource.com/sermon/swbts-chapel-deron-biles-2006/">
+              Ezra Sermon
+            </a>
+            <div className="chapel_sub">
+              <img
+                src="http://cdn1.swbts.edu/media/2017/5/20170413DeronBiles024Web.jpg"
+                alt="Chapel 2"
+              />
+              <p>November 14, 2006</p>
+            </div>
           </div>
         </div>
-        <div>
-          <a href="http://media.swbts.edu/item/2302/choosing-gods-way">
-            Choosing God's way
-          </a>
-          <div className="chapel_sub">
+        <div className="chapel_sermons_sub">
+          <h2>Preaching Source</h2>
+          <div className="chapel_sub1">
             <img
-              src="http://cdn1.swbts.edu/media/2017/5/20170413DeronBiles024Web.jpg"
-              alt="Chapel 2"
+              className="preaching_source"
+              src="http://preachingsource.com/wp-content/themes/preachingsource/images/preaching-source-logo.png"
+              alt="Preaching Source"
             />
-            <p>April 13, 2017</p>
-          </div>
-        </div>
-        <div>
-          <a href="http://preachingsource.com/sermon/swbts-chapel-deron-biles-2008/">
-            Ezekiel Sermon
-          </a>
-          <div className="chapel_sub">
-            <img
-              src="http://cdn1.swbts.edu/media/2017/5/20170413DeronBiles024Web.jpg"
-              alt="Chapel 2"
-            />
-            <p>October 14, 2008</p>
-          </div>
-        </div>
-        <div>
-          <a href="http://preachingsource.com/sermon/swbts-chapel-deron-biles-2006/">
-            Ezra Sermon
-          </a>
-          <div className="chapel_sub">
-            <img
-              src="http://cdn1.swbts.edu/media/2017/5/20170413DeronBiles024Web.jpg"
-              alt="Chapel 2"
-            />
-            <p>November 14, 2006</p>
+            <div>
+              <p>
+                Preaching Source is a text-driven resource of Southwestern
+                Baptist Theological Seminary dedicated to equip preachers in the
+                art and craft of text-driven preaching.
+              </p>
+
+              <p>
+                Dr. Biles is a General Contributor to the site, committing
+                several blogs and two book series on Genesis and 2 Timothy
+              </p>
+            </div>
           </div>
         </div>
       </div>

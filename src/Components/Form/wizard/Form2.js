@@ -20,7 +20,14 @@ class Form2 extends Component {
       updateSpeakerRequest,
       updateArrivalTime,
       updateEventLocation,
-      updateEventDescription
+      updateEventDescription,
+      eventName,
+      eventDate,
+      eventTime,
+      speakerRequest,
+      arrivalTime,
+      eventLocation,
+      eventDescription
     } = this.props;
 
     return (
@@ -31,7 +38,8 @@ class Form2 extends Component {
             required
             className="input_field"
             type="text"
-            placeholder="Event Name"
+            placeholder="..."
+            value={eventName}            
             onChange={e => updateEventName(e.target.value)}
           />
           <span id="ce_title">Name of Event</span>
@@ -41,7 +49,8 @@ class Form2 extends Component {
             required
             className="input_field"
             type="text"
-            placeholder="Event Date"
+            placeholder="..."
+            value={eventDate}            
             onChange={e => updateEventDate(e.target.value)}
           />
           <span id="ce_title">Date of Event</span>
@@ -52,6 +61,7 @@ class Form2 extends Component {
             className="input_field"
             type="text"
             placeholder="12:00"
+            value={eventTime}            
             onChange={e => updateEventTime(e.target.value)}
           />
           <span id="ce_title">Time of Event (start to end)</span>
@@ -61,7 +71,8 @@ class Form2 extends Component {
             required
             className="input_field"
             type="text"
-            placeholder="Event"
+            placeholder="..."
+            value={speakerRequest}            
             onChange={e => updateSpeakerRequest(e.target.value)}
           />
           <span id="ce_title">Speaker Requested to attend entire event</span>
@@ -72,6 +83,7 @@ class Form2 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
+            value={arrivalTime}            
             onChange={e => updateArrivalTime(e.target.value)}
           />
           <span id="ce_title">Arrival Time</span>
@@ -82,6 +94,7 @@ class Form2 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
+            value={eventLocation}            
             onChange={e => updateEventLocation(e.target.value)}
           />
           <span id="ce_title">Event Location</span>
@@ -92,13 +105,23 @@ class Form2 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
+            value={eventDescription}            
             onChange={e => updateEventDescription(e.target.value)}
           />
           <span id="ce_title">Event Description</span>
         </label>
-        <h3 className="form_btn" onClick={this.props.toggleClick2}>
-          Next
-        </h3>
+        <div className="form_btn">
+          <img
+            onClick={this.props.toggleClicka}          
+            src="https://image.flaticon.com/icons/svg/118/118739.svg"
+            alt="Previous arrow"
+          />
+          <img
+            onClick={this.props.toggleClick2}
+            src="https://image.flaticon.com/icons/svg/118/118740.svg"
+            alt="Next arrow"
+          />
+        </div>
       </div>
     );
   }

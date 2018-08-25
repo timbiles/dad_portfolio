@@ -18,7 +18,13 @@ class Form4 extends Component {
       updateLodging,
       updateLodgingLocation,
       updateTravelExpenses,
-      updateReimbursementReceipts
+      updateReimbursementReceipts,
+      airport,
+      airportTransportation,
+      lodging,
+      lodgingLocation,
+      travelExpenses,
+      reimbursementReceipts
     } = this.props;
 
     return (
@@ -30,6 +36,7 @@ class Form4 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
+            value={airport}                        
             onChange={e => updateAirport(e.target.value)}
           />
           <span id="ce_title">Nearest airport to your location?</span>
@@ -40,6 +47,7 @@ class Form4 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
+            value={airportTransportation}                        
             onChange={e => updateAirportTransportation(e.target.value)}
           />
           <span id="ce_title">Is airport transportation available</span>
@@ -50,6 +58,7 @@ class Form4 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
+            value={lodging}                        
             onChange={e => updateLodging(e.target.value)}
           />
           <span id="ce_title">Lodging to be booked by...</span>
@@ -60,6 +69,7 @@ class Form4 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
+            value={lodgingLocation}                        
             onChange={e => updateLodgingLocation(e.target.value)}
           />
           <span id="ce_title">Nearest Lodging or Location booked</span>
@@ -70,6 +80,7 @@ class Form4 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
+            value={travelExpenses}                        
             onChange={e => updateTravelExpenses(e.target.value)}
           />
           <span id="ce_title">
@@ -82,13 +93,23 @@ class Form4 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
+            value={reimbursementReceipts}                        
             onChange={e => updateReimbursementReceipts(e.target.value)}
           />
           <span id="ce_title">Reimbursement receipts should be sent to</span>
         </label>
-        <h3 className="form_btn" onClick={this.props.toggleClick4}>
-          Next
-        </h3>
+        <div className="form_btn">
+          <img
+            onClick={this.props.toggleClickc}                    
+            src="https://image.flaticon.com/icons/svg/118/118739.svg"
+            alt="Previous arrow"
+          />
+          <img
+            onClick={this.props.toggleClick4}
+            src="https://image.flaticon.com/icons/svg/118/118740.svg"
+            alt="Next arrow"
+          />
+        </div>
       </div>
     );
   }

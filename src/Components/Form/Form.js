@@ -24,13 +24,15 @@ class Form extends Component {
     this.props.getRequests();
   }
 
-  toggleClick1 = e => this.setState({ two: true });
+  toggleClick1 = e => this.setState({ two: true, one: false });
+  toggleClick2 = e => this.setState({ three: true, two: false });
+  toggleClick3 = e => this.setState({ four: true, three: false });
+  toggleClick4 = e => this.setState({ five: true, four: false });
 
-  toggleClick2 = e => this.setState({ three: true });
-
-  toggleClick3 = e => this.setState({ four: true });
-
-  toggleClick4 = e => this.setState({ five: true });
+  toggleClicka = e => this.setState({ one: true, two: false });
+  toggleClickb = e => this.setState({ two: true, three: false });
+  toggleClickc = e => this.setState({ three: true, four: false });
+  toggleClickd = e => this.setState({ four: true, five: false });
 
   submitForm = e => {
     let {
@@ -89,18 +91,38 @@ class Form extends Component {
   };
 
   render() {
-    const { two, three, four, five } = this.state;
+    const { one, two, three, four, five } = this.state;
     return (
       <div className="form">
         <div className="form_container">
           <h1>Form</h1>
 
-          <Form1 toggleClick1={e => this.toggleClick1(e)} />
+          {one && <Form1 toggleClick1={e => this.toggleClick1(e)} />}
 
-          {two && <Form2 toggleClick2={e => this.toggleClick2(e)} />}
-          {three && <Form3 toggleClick3={e => this.toggleClick3(e)} />}
-          {four && <Form4 toggleClick4={e => this.toggleClick4(e)} />}
-          {five && <Form5 submitForm={e => this.submitForm(e)} />}
+          {two && (
+            <Form2
+              toggleClicka={e => this.toggleClicka(e)}
+              toggleClick2={e => this.toggleClick2(e)}
+            />
+          )}
+          {three && (
+            <Form3
+              toggleClickb={e => this.toggleClickb(e)}
+              toggleClick3={e => this.toggleClick3(e)}
+            />
+          )}
+          {four && (
+            <Form4
+              toggleClickc={e => this.toggleClickc(e)}
+              toggleClick4={e => this.toggleClick4(e)}
+            />
+          )}
+          {five && (
+            <Form5
+              toggleClickd={e => this.toggleClickd(e)}
+              submitForm={e => this.submitForm(e)}
+            />
+          )}
         </div>
       </div>
     );

@@ -21,6 +21,11 @@
   .request_form {
     box-shadow: 1px 1px 5px grey;
     width: 50%;
+    padding: 2%;
+  }
+
+  .request_form h3 {
+    text-align: center;
   }
 
   .contact_form {
@@ -30,7 +35,7 @@
   }
 
   .contact_form:hover {
-
+    transform: scale(1.02)
   }
 
   .contact_form:active {

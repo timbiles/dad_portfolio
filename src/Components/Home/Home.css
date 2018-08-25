@@ -19,6 +19,17 @@
     align-items: center;
     height: 100vh;
   }
+
+  .home_sub {
+    background-color: rgb(236, 236, 236);
+    height: 40vh;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .calendar {
+    
+  }
   
   .home_container h1 {
     font-family: 'Lato', sans-serif;
