@@ -2,6 +2,7 @@ import React from 'react';
 import Fade from 'react-reveal/Fade';
 
 import './Home.css';
+import Calendar from '../Calendar/Calendar';
 
 const IndexPage = () => (
   <div>
@@ -68,34 +69,8 @@ const IndexPage = () => (
         </Fade>
       </div>
     </div>
-      <div className="upcoming_events">
-        <h3>Upcoming Events</h3>
-        <Fade top cascade>
-          <div>
-            <p> September 6</p>
-            <p>Preaching - SWBTS Chapel</p>
-            <p> October 8</p>
-            <p>
-              Preaching the book of Job Session at Text Driven Preaching
-              Workshop - SWBTS
-            </p>
-            <p> November 5 - 9</p>
-            <p>Seminar on Preaching the Old Testament Prophets - Rio, Brazil</p>
-            <p> January 7 - 11</p>
+    <Calendar />
 
-            <p>Seminar on Pastoral Ministry - Trinidad and Tobago</p>
-            <p>March 4</p>
-
-            <p>
-              Pastoral Ministry Session & Preaching Session at Text Driven
-              Preaching Workshop - SWBTS
-            </p>
-            <p> May 14 - 16</p>
-
-            <p>Preaching Conference - Abuja, Nigeria</p>
-          </div>
-        </Fade>
-      </div>
     </footer>
   </div>
 );
