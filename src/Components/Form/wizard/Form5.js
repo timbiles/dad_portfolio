@@ -50,7 +50,7 @@ class Form5 extends Component {
             alt="Previous arrow"
           />
 
-          <h3 className="form_btn" onClick={this.props.submitForm}>
+          <h3 className="submit_btn" onClick={this.props.submitForm}>
             Submit
           </h3>
         </div>

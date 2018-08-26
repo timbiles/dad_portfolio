@@ -95,10 +95,10 @@ class Form extends Component {
       })
       .then(() => {
         swal({
-          position: 'bottom-end',
+          position: 'top-end',
           title: 'Your form has been submitted!',
           showConfirmButton: false,
-          background: '#000',
+          background: 'rgb(204,204,204)',
           timer: 2000
         });
       });

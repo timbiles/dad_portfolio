@@ -30,7 +30,7 @@ const SpeakerRequest = () => (
         </Link>
       </div>
 
-      <Verse />
+      <Verse/>
     </div>
   </div>
 );
