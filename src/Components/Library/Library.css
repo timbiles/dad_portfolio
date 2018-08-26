@@ -238,6 +238,19 @@
   }
 }
 
+@media (max-width: 600px) {
+  .chapel_sermons {
+    flex-direction: column;
+  }
+
+  .cs1 {
+    border-right: none;
+  border-bottom: 1px solid rgb(240, 240, 240);
+    padding-bottom: 3%;
+  }
+}
+
+
 @media (max-width: 500px) {
   .library_carousel h2 {
     font-size: 1.5rem;
