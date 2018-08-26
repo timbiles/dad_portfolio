@@ -22,6 +22,7 @@ const IndexPage = () => (
           className='calendar'
           frameborder="0"
           scrolling="no"
+          title='Derons calendar'
         />
       
       </div>

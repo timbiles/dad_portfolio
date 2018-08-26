@@ -106,6 +106,7 @@ const Library = () => (
           <div>
             <a
               target="_blank"
+              rel='noreferrer noopener'
               href="http://preachingsource.com/sermon/how-will-you-be-remembered/"
             >
               How will you be remembered?
@@ -121,7 +122,8 @@ const Library = () => (
           </div>
           <div>
             <a 
-            target='_blank'            
+            target='_blank'           
+            rel='noreferrer noopener' 
             href="http://preachingsource.com/sermon/choosing-gods-way/">
               Choosing God's way
             </a>
@@ -136,14 +138,15 @@ const Library = () => (
           </div>
           <div>
             <a 
-            target='_blank'            
+            target='_blank'   
+            rel='noreferrer noopener'         
             href="http://preachingsource.com/sermon/swbts-chapel-deron-biles-2008/">
               Ezekiel Sermon
             </a>
             <div className="chapel_sub">
               <img
                 className="chapel_img"
-                src="http://cdn1.swbts.edu/media/2017/5/20170413DeronBiles024Web.jpg"
+                src="https://scontent-dfw5-2.xx.fbcdn.net/v/t31.0-8/21014185_10155431459670661_5619186887203882438_o.jpg?_nc_cat=0&oh=ba3efcb8348927471d0652f883d2eff7&oe=5BF39DBE"
                 alt="Chapel 2"
               />
               <p>October 14, 2008</p>
@@ -151,7 +154,8 @@ const Library = () => (
           </div>
           <div>
             <a 
-            target='_blank'            
+            target='_blank'   
+            rel='noreferrer noopener'         
             href="http://preachingsource.com/sermon/swbts-chapel-deron-biles-2006/">
               Ezra Sermon
             </a>
@@ -175,11 +179,13 @@ const Library = () => (
             />
             <a 
             target='_blank'
+            rel='noreferrer noopener'
             href="http://preachingsource.com/sermon-structures/genesis-sermon-structures/">
               Genesis Sermon Structures
             </a>
             <a 
             target='_blank'
+            rel='noreferrer noopener'
             href="http://preachingsource.com/sermon-starter/genesis-sermon-starter/">
               Genesis Sermon Starter
             </a>

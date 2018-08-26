@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 import Verse from '../VerseGenerator/VerseGenerator';
-import './About.css'
+import './About.css';
 
 const About = () => (
   <div className="about">
@@ -70,16 +70,56 @@ const About = () => (
       </p>
       <p>Dr. Biles and his wife reside in North Richland Hills, Texas.</p>
     </div>
-    <div className='about_ed'>
-      <h2>Education</h2>
-      <p>
-        Ph.D., Old Testament, Southwestern Baptist Theological Seminary, 1997{' '}
-      </p>
-      <p>M.Div., Southwestern Baptist Theological Seminary, 1992</p>
-      <p>B.A., History and Bible, Howard Payne University, 1989</p>
-    </div>
-    <Verse/>
+    <footer className="about_bottom">
+      <div className="about_ed education1">
+        <div className="about_ed_sub1">
+          <div className="btm_line_container">
+            <div className="btm_a_line" />
+            <div className="btm_a_line" />
+          </div>
+          <h2>Education</h2>
+          <div className="btm_line_container">
+            <div className="btm_a_line" />
+            <div className="btm_a_line" />
+          </div>
+        </div>
+        <img
+          className="education_img img1"
+          src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/Howard_Payne_University_seal.png/200px-Howard_Payne_University_seal.png"
+          alt=""
+        />
+        <img
+          className="education_img img2"
+          src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/Southwestern_Baptist_Theological_Seminary_Logo.png/220px-Southwestern_Baptist_Theological_Seminary_Logo.png"
+          alt=""
+        />
+        <p>
+          Ph.D., Old Testament, Southwestern Baptist Theological Seminary, 1997{' '}
+        </p>
+        <p>M.Div., Southwestern Baptist Theological Seminary, 1992</p>
+        <p>B.A., History and Bible, Howard Payne University, 1989</p>
+      </div>
+      <div className="about_ed">
+        <div className="about_ed_sub1">
+          <div className="btm_line_container">
+            <div className="btm_a_line" />
+            <div className="btm_a_line" />
+          </div>
+          <h2>Family</h2>
+          <div className="btm_line_container">
+            <div className="btm_a_line" />
+            <div className="btm_a_line" />
+          </div>
+        </div>
+        <img
+          className="family_img"
+          src="https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-9/25659655_1537495519638482_3830396310849525525_n.jpg?_nc_cat=0&oh=3a0372af5861d966d878a76696bf4801&oe=5BEFDCB2"
+          alt=""
+        />
+      </div>
+    </footer>
+    <Verse />
   </div>
-)
+);
 
-export default About
+export default About;
