@@ -73,13 +73,7 @@ const About = () => (
     <footer className="about_bottom">
       <div className="about_ed education1">
         <div className="about_ed_sub1 education_title">
-          {/* <div className="btm_line_container">
-            <div className="btm_a_line" />
-          </div> */}
           <h2>Education</h2>
-          {/* <div className="btm_line_container">
-            <div className="btm_a_line" />
-          </div> */}
         </div>
         <img
           className="education_img img1"
@@ -101,13 +95,7 @@ const About = () => (
       </div>
       <div className="about_ed">
         <div className="about_ed_sub1">
-          {/* <div className="btm_line_container">
-            <div className="btm_a_line" />
-          </div> */}
           <h2>Family</h2>
-          {/* <div className="btm_line_container">
-            <div className="btm_a_line" />
-          </div> */}
         </div>
         <img
           className="family_img"

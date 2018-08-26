@@ -1,135 +1,206 @@
 .home_img {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    background-image: url(http://cdn1.swbts.edu/media/2014/10/10-29-14_DeronBiles72_NW_2137.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.9;
-    z-index: -1;
-    animation: fadeInOut 1s;
-  }
-  
-  .home_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url(http://cdn1.swbts.edu/media/2014/10/10-29-14_DeronBiles72_NW_2137.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.9;
+  z-index: -1;
+  animation: fadeInOut 1s;
+}
 
-  .home_sub {
-    background-image: url('./dust_scratches.png');
-    margin-bottom: -60px;
-    height: 40vh;
-    display: flex;
-    justify-content: space-around;
-    padding-top: 2%;
-  }
+.home_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-  .home_sub h3 {
+.home_sub {
+  background-image: url('./dust_scratches.png');
+  margin-bottom: -60px;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2%;
+}
+
+.home_sub h3 {
   color: rgb(146, 125, 125);
-    
+}
+
+.calendar {
+  height: 200px;
+  width: 300px;
+}
+
+.home_container h1 {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 200;
+  letter-spacing: 2px;
+  color: #fff;
+  animation: fadeInOutText 2s;
+}
+
+.contact_holder {
+  padding: 1%;
+  height: 175px;
+}
+
+.contact_holder h3 {
+  text-align: center;
+}
+
+.contact_email {
+  text-decoration: none;
+  letter-spacing: 2px;
+  color: #000;
+  cursor: pointer;
+}
+
+.cont_email:hover {
+  transform: scale(1.02);
+}
+
+.ch1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact_holder p {
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: rgb(82, 82, 82);
+}
+
+.social_media {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 5%;
+}
+
+.social_icon {
+  height: 35px;
+}
+
+.social_icon:hover {
+  transform: scale(1.02);
+}
+
+.twitter {
+  border-radius: 50%;
+}
+
+.upcoming_events {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+}
+
+.upcoming_events h5 {
+  display: inline-block;
+}
+
+.upcoming_events > div {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  margin-bottom: 70px;
+}
+
+.upcoming_events p {
+  margin: 0.5% 0;
+}
+
+.upcoming_events p:nth-of-type(2n - 1) {
+  border-bottom: 1px solid rgb(197, 197, 197);
+  padding-bottom: 1%;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-top: 1%;
+  align-self: center;
+}
+
+.home_sub_2 {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  justify-content: space-around;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0.4;
   }
 
-  .calendar {
-    height: 200px;
-    width: 300px;
+  100% {
+    opacity: 0.9;
   }
-  
-  .home_container h1 {
-    font-family: 'Lato', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 200;
-    letter-spacing: 2px;
-    color: #fff;
-    animation: fadeInOutText 2s;
+}
+
+@keyframes fadeInOutText {
+  0% {
+    opacity: 0;
+    transform: translate(-10px);
   }
 
-  .contact_holder {
-    /* box-shadow: 1px 1px 1px grey; */
-    /* border-bottom: 1px solid rgb(216, 216, 216); */
-    padding: 1%;
-    height: 175px;
+  40% {
+    opacity: 0;
+    transform: translate(-10px);
   }
 
-  .contact_holder h3 {
-    text-align: center;
+  100% {
+    opacity: 1;
+    transform: translate(0);
   }
+}
 
-  .contact_email {
-    text-decoration: none;
-    letter-spacing: 2px;
-    color: #000;
-    cursor: pointer;
-    /* margin: 0 5%; */
-  }
-  
-  .cont_email:hover {
-    transform: scale(1.02)
-  }
 
-  .ch1 {
-    display: flex;
+@media (max-width: 1100px) {
+  .home_sub_2 {
     flex-direction: column;
-    align-items: center;
+    width: 40%;
   }
-  
-  .contact_holder p {
-    text-align: center;
-    font-size: .9rem;
-    letter-spacing: 2px;
-    color: rgb(82, 82, 82);
+
+  .upcoming_events {
+    width: 50%;
   }
 
   .social_media {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    width: 100%;
-    margin-top: 5%;
+    width: 50%;
+  }
+}
+
+@media (max-width: 900px) {
+  .home_sub {
+    flex-direction: column-reverse;
+    align-items: center;
   }
 
-  .social_icon {
-    height: 35px;
+  .upcoming_events {
+    width: 90%;
+  border-bottom: 1px solid rgb(197, 197, 197);
+    
   }
 
-  .social_icon:hover {
-    transform: scale(1.02)
+  .home_sub_2 {
+    flex-direction: row;
+    width: 90%;
+    margin-bottom: 60px;
   }
 
-  .twitter {
-    border-radius: 50%;
+  .contact_holder {
+    width: 50%;
   }
-
-
-  
-  @keyframes fadeInOut {
-    0% {
-      opacity: .4;
-  
-    }
-  
-    100% {
-      opacity: .9;
-    }
-  }
-  
-  @keyframes fadeInOutText {
-    0% {
-      opacity: 0;
-      transform: translate(-10px)
-    }
-  
-    40% {
-      opacity: 0;
-      transform: translate(-10px)
-  
-    }
-  
-    100% {
-      opacity: 1;
-      transform: translate(0);
-    }
-  }
+ 
+}
