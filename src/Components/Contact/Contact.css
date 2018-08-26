@@ -1,6 +1,15 @@
 .contact {
     padding-top: 8%;
     font-family: 'Roboto', sans-serif;
+    height: 100vh;
+  }
+
+  .speaker_name {
+    text-align: center;
+    height: 100%;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    color: rgb(60, 60, 60);
   }
   
   .contact_container {
@@ -22,6 +31,7 @@
     box-shadow: 1px 1px 5px grey;
     width: 50%;
     padding: 2%;
+    margin-top: 5%;
   }
 
   .request_form h3 {
@@ -48,31 +58,4 @@
     width: 200px;
   }
 
-  .social_icon {
-    height: 35px;
-  }
 
-  .social_icon:hover {
-    transform: scale(1.02)
-  }
-
-  .twitter {
-    border-radius: 50%;
-  }
-
-  .contact_email {
-    text-decoration: none;
-    letter-spacing: 2px;
-    color: #000;
-    cursor: pointer;
-    /* margin: 0 5%; */
-  }
-  
-  .cont_email:hover {
-    transform: scale(1.02)
-  }
-  
-  .contact_holder p {
-    text-align: center;
-    letter-spacing: 2px;
-  }

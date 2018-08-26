@@ -72,12 +72,12 @@ const About = () => (
     </div>
     <footer className="about_bottom">
       <div className="about_ed education1">
-        <div className="about_ed_sub1">
+        <div className="about_ed_sub1 education_title">
           <div className="btm_line_container">
             <div className="btm_a_line" />
             <div className="btm_a_line" />
           </div>
-          <h2>Education</h2>
+          <h2 >Education</h2>
           <div className="btm_line_container">
             <div className="btm_a_line" />
             <div className="btm_a_line" />
@@ -93,6 +93,8 @@ const About = () => (
           src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/Southwestern_Baptist_Theological_Seminary_Logo.png/220px-Southwestern_Baptist_Theological_Seminary_Logo.png"
           alt=""
         />
+        <br />
+        <br/>
         <p>
           Ph.D., Old Testament, Southwestern Baptist Theological Seminary, 1997{' '}
         </p>

@@ -26,6 +26,12 @@
     height: 40vh;
     display: flex;
     justify-content: space-around;
+    padding-top: 2%;
+  }
+
+  .home_sub h3 {
+  color: rgb(146, 125, 125);
+    
   }
 
   .calendar {
@@ -41,6 +47,63 @@
     color: #fff;
     animation: fadeInOutText 2s;
   }
+
+  .contact_holder {
+    /* box-shadow: 1px 1px 1px grey; */
+    border-bottom: 1px solid rgb(216, 216, 216);
+    padding: 1%;
+    height: 175px;
+  }
+
+  .contact_holder h3 {
+    text-align: center;
+  }
+
+  .contact_email {
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: #000;
+    cursor: pointer;
+    /* margin: 0 5%; */
+  }
+  
+  .cont_email:hover {
+    transform: scale(1.02)
+  }
+
+  .ch1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact_holder p {
+    text-align: center;
+    font-size: .9rem;
+    letter-spacing: 2px;
+    color: rgb(82, 82, 82);
+  }
+
+  .social_media {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  .social_icon {
+    height: 35px;
+  }
+
+  .social_icon:hover {
+    transform: scale(1.02)
+  }
+
+  .twitter {
+    border-radius: 50%;
+  }
+
+
   
   @keyframes fadeInOut {
     0% {

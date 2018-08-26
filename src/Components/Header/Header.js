@@ -31,7 +31,7 @@ const Header = ({ siteTitle }) => (
           </Link>
 
           <Link className="header_link" to="/contact">
-            Contact
+            Speaker Request
           </Link>
           
         </div>
@@ -66,7 +66,7 @@ const Header = ({ siteTitle }) => (
           </Link>
 
           <Link className="header_link" to="/contact">
-            Contact
+            Speaker Request
           </Link>
         </div>
       </div>
