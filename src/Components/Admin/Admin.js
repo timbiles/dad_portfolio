@@ -31,6 +31,7 @@ class Admin extends Component {
         <Link className='admin_link' to="/requests">
           <h2 >View Requests</h2>
         </Link>
+        <h2 className='ce_title'>Create New Event</h2>
         <div className="events_input">
           <div>
               <h2>Event Name</h2>
@@ -42,6 +43,8 @@ class Admin extends Component {
           </div>
           <h3 onClick={this.handleClick}>Submit</h3>
         </div>
+        <h2 className='calendar_view'>Calendar View</h2>
+
         <Calendar />        
       </div>
     );

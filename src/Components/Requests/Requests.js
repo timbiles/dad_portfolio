@@ -12,7 +12,7 @@ class Requests extends Component {
   }
 
   render() {
-    const { requests } = this.props;
+    const { requests } = this.props.reducer;
 
     const map = requests.map((e, i) => {
       return (
