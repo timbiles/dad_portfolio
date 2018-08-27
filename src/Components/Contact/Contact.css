@@ -1,5 +1,5 @@
 .contact {
-    padding-top: 8%;
+    padding-top: 70px;
     font-family: 'Roboto', sans-serif;
     height: 100vh;
   }
@@ -59,5 +59,28 @@
     width: 200px;
   }
 
+  @media (max-width: 980px) {
+ 
 
+    .contact_1 {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 700px) {
+  .speaker_name {
+    font-size: 1.5rem;
+  }
+
+  .request_form h3 {
+    font-size: 1rem;
+  }
+  }
+
+
+  @media (max-width: 500px) {
+    .speaker_name {
+      font-size: 1rem;
+    }
+  }
 

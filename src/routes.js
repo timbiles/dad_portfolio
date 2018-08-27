@@ -18,7 +18,7 @@ export default (
     <Route path="/form" component={Form} />   
     <Route path="/admin" component={Admin} />  
     <Route path="/resources" component={Resources} />    
-    <Route path="/requests" component={Requests} />                    
+    <Route path="/requests/:id" component={Requests} />                    
     <Route path="/" component={Home} />
   </Switch>
 );

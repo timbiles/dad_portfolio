@@ -1,60 +1,78 @@
 .admin {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    padding-top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding-top: 9%;
+}
+
+.admin h1 {
+    font-size: 2.5rem;
 }
 
 .events_input {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 70%;
-    box-shadow: 1px 1px 5px rgb(175, 175, 175);
-    padding: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  box-shadow: 1px 1px 5px rgb(175, 175, 175);
+  padding: 2%;
 }
 
 .ce_title {
-margin-top: 5%;
+  margin-top: 5%;
 }
 
 .events_input > div {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .events_input h3 {
-    align-self: center;
-    cursor: pointer;
+  align-self: center;
+  cursor: pointer;
 }
 
 .events_input h3:hover {
-    transform: scale(1.02)
+  transform: scale(1.02);
 }
 
 .events_input h3:active {
-    transform: scale(.98)
+  transform: scale(0.98);
 }
 
 .admin_link {
-    color: rgb(56, 56, 56);
-    text-decoration: none;
-    width: 50%;
-    box-shadow: 1px 1px 5px rgb(175, 175, 175);
-    display: flex;
-    justify-content: center;
+  color: rgb(56, 56, 56);
+  text-decoration: none;
 }
 
 .admin_link:hover {
-    transform: scale(1.02)
+  transform: scale(1.02);
 }
 
 .admin_link:active {
-    transform: scale(.98)
+  transform: scale(0.98);
 }
 
 .calendar_view {
-    border-bottom: 1px solid rgb(214, 214, 214);
-    padding-bottom: 1%;
+  border-bottom: 1px solid rgb(214, 214, 214);
+  padding-bottom: 1%;
+}
+
+.admin_map {
+    width: 40%;
+}
+
+.requests_map {
+    border: 1px solid #000;
+    width: 100%;
+    padding: 1%;
+    margin-bottom: 1%;
+}
+
+.requests_map h5 {
+  letter-spacing: 1px;
+ border-bottom: 1px solid rgb(190, 190, 190);
+  margin: 5% 0;
+  width: 100%;
 }

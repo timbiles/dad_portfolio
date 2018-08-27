@@ -23,7 +23,7 @@ export default () => (
         </Link>
 
         <Link className="header_link" to="/contact">
-          Contact
+          Speaker Request
         </Link>
       </div>
     ) : (
@@ -49,7 +49,7 @@ export default () => (
           style={{ color: '#1B1A1B' }}
           to="/contact"
         >
-          Contact
+          Speaker Request
         </Link>
       </div>
     )}

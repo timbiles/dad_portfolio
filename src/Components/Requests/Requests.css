@@ -1,25 +1,16 @@
 .requests {
+  padding-top: 10%;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-.requests_container {
+.request_container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-  margin-top: 10%;
-}
-
-.request_map {
-  display: flex;
-  flex-direction: column;
-  box-shadow: 1px 1px 10px rgb(128, 128, 128);
+  /* box-shadow: 1px 1px 10px rgb(128, 128, 128); */
   padding: 1%;
-  margin: 1% 1% 5% 1%;
-  width: 100%;
+  margin: 1%;
+  width: 90%;
 }
 
 .request_title {

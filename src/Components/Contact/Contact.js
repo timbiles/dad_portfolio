@@ -7,7 +7,7 @@ import Verse from '../VerseGenerator/VerseGenerator';
 const SpeakerRequest = () => (
   <div className="contact">
     <div className="contact_container">
-      <div className="bio_name_sub">
+      <div className="bio_name_sub contact_1">
         <div className="line_container">
           <div className="a_line" />
           <div className="a_line" />
