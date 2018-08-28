@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
-import Request from '../Requests/Requests';
 import Calendar from '../Calendar/Calendar';
 import './Admin.css';
 

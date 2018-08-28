@@ -10,6 +10,7 @@
     "massive": "^5.2.0",
     "moment": "^2.22.2",
     "pure-react-carousel": "^1.13.2",
+    "rc-print": "^1.0.4",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-redux": "^5.0.7",
