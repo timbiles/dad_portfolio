@@ -33,10 +33,6 @@
   width: 90%;
 }
 
-.request_container p {
-  /* font-size: .7rem; */
-}
-
 .request_title {
   display: flex;
   justify-content: space-between;

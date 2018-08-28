@@ -69,7 +69,10 @@ const IndexPage = () => (
         </Fade>
       </div>
     </div>
+    <div className='home_calendar'>
+
     <Calendar />
+    </div>
 
     </footer>
   </div>

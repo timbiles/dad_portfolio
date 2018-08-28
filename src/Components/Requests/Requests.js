@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {Link} from 'react-router-dom';
 import moment from 'moment';
 import Print from 'rc-print';
 
@@ -20,6 +21,9 @@ class Requests extends Component {
 
     return (
       <div className="requests">
+      <Link to='/admin'>
+        <h3>Back to admin</h3>
+      </Link>
         <Print ref="test">
           <div className="request_container">
             <div className="request_title">
