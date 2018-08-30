@@ -12,7 +12,12 @@ class Calendar extends Component {
 
   componentDidMount() {
     this.getCalendar();
+    this.deleteOld();
   }
+
+  deleteOld = () => {
+    axios.delete('/api/delete');
+  };
 
   getCalendar = () => {
     axios.get('/api/calendar').then(res => {
@@ -27,7 +32,7 @@ class Calendar extends Component {
         return (
           <div key={e.id} className="upcoming_events">
             <Fade top cascade>
-              <div className='ue_div'>
+              <div className="ue_div">
                 <p>{moment.utc(e.date).format('MMMM D, YYYY')}</p>
                 <p>
                   {e.event} - {e.location}

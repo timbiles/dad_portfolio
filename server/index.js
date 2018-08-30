@@ -6,7 +6,7 @@ const axios = require('axios');
 
 const port = process.env.PORT || 3001;
 
-const { getForm, addForm, getCalendar, addCalendar } = require('./Ctrl/formCtrl');
+const { getForm, addForm, getCalendar, addCalendar, deleteOld } = require('./Ctrl/formCtrl');
 
 const app = express();
 app.use(bodyParser.json());
@@ -28,6 +28,7 @@ app.post('/api/create-form', addForm);
 
 app.get('/api/calendar', getCalendar);
 app.post('/api/add-to-calendar', addCalendar);
+app.delete('/api/delete', deleteOld)
 
 //run build
 app.get('*', (req, res) => {

@@ -3,6 +3,8 @@ import React from 'react';
 import Verse from '../VerseGenerator/VerseGenerator';
 import './About.css';
 
+import pic from './family.JPG';
+
 const About = () => (
   <div className="about">
     <div className="bio_name">
@@ -99,7 +101,7 @@ const About = () => (
         </div>
         <img
           className="family_img"
-          src="https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-9/25659655_1537495519638482_3830396310849525525_n.jpg?_nc_cat=0&oh=3a0372af5861d966d878a76696bf4801&oe=5BEFDCB2"
+          src={pic}
           alt=""
         />
       </div>
