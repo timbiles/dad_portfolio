@@ -29,7 +29,6 @@ const SpeakerRequest = () => (
           Speaker Request Form
         </Link>
       </div>
-
       <Verse/>
     </div>
   </div>
