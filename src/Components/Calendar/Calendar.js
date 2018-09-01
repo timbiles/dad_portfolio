@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import axios from 'axios';
 import moment from 'moment';
 import Fade from 'react-reveal/Fade';
 
 import './Calendar.css';
 
-class Calendar extends Component {
-  state = {
-    events: []
-  };
+import { getCalendar } from '../../ducks/eventsReducer';
 
+class Calendar extends Component {
   componentDidMount() {
-    this.getCalendar();
+    this.props.getCalendar();
     this.deleteOld();
   }
 
@@ -19,16 +18,11 @@ class Calendar extends Component {
     axios.delete('/api/delete');
   };
 
-  getCalendar = () => {
-    axios.get('/api/calendar').then(res => {
-      this.setState({ events: res.data });
-    });
-  };
-
   render() {
+    const { calendar } = this.props.eventReducer;
     const map =
-      this.state.events &&
-      this.state.events.map(e => {
+      calendar &&
+      calendar.map(e => {
         return (
           <div key={e.id} className="upcoming_events">
             <Fade top cascade>
@@ -43,14 +37,38 @@ class Calendar extends Component {
         );
       });
 
-    return (
+      const map2 =
+      calendar &&
+      calendar.map(e => { 
+        return (
+          <div key={e.id} className='admin_calview'>
+            <Fade top cascade>
+            <div className="admin_cal_sub">
+                <p>{moment.utc(e.date).format('MMMM D, YYYY')}</p>
+                <p>
+                  {e.event} - {e.location}
+                </p>
+              </div>
+            </Fade>
+          </div>
+        )
+      })     
+
+    return this.props.type === 'homepage' ? (
       <div className="calendar">
         <h3>Upcoming Events</h3>
 
         {map}
       </div>
+    ) : (
+      <p>{map2}</p>
     );
   }
 }
 
-export default Calendar;
+const mapStateToProps = state => state;
+
+export default connect(
+  mapStateToProps,
+  { getCalendar }
+)(Calendar);

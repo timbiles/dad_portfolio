@@ -29,10 +29,6 @@
   margin: 1%;
 }
 
-.portfolio_book {
-  display: none;
-}
-
 .portfolio_sub p {
   padding: 1%;
 }
@@ -53,6 +49,11 @@
   transform: rotateY(180deg);
   animation: flip-vertical-right 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955)
     both;
+}
+
+.book:hover {
+  opacity: .8;
+  box-shadow: 1px 1px 10px #000;
 }
 
 .library_carousel {
@@ -109,7 +110,6 @@
 
 .chapel_sermons {
   display: flex;
-  /* align-items: center; */
   justify-content: space-around;
   width: 70%;
 }
@@ -121,6 +121,11 @@
   color: rgb(146, 125, 125);
   cursor: pointer;
   width: 100%;
+}
+
+.chapel_sermons a:hover {
+  opacity: .8;
+  text-shadow: 0 .5px grey;
 }
 
 .chapel_sermons_sub {

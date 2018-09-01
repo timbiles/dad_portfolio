@@ -85,7 +85,7 @@ const IndexPage = () => (
         </div>
       </div>
       <div className="home_calendar">
-        <Calendar />
+        <Calendar type='homepage'/>
       </div>
     </footer>
   </div>

@@ -2,14 +2,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
   height: 100%;
   padding-top: 60px;
+  position: relative;
+  
 }
 
 .admin_main {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   width: 100%;
 }
 
@@ -134,8 +136,38 @@ transform: scale(.98)
 
 .admin_sub1 {
   width: 30%;
+  margin-bottom: 3%;  
 }
+
+.admin_sub2 {
+  width: 50%;
+  margin-bottom: 3%;
+}
+
+.admin_sub3 {
+  width: 100%;
+}
+
 
 .admin_calendar {
   width: 100%;
+}
+
+.admin_title {
+text-align: center;
+}
+
+.modal_open {
+position: fixed;
+right: 4%;
+border-bottom: 1px solid #000;
+cursor: pointer;
+}
+
+.modal_open:hover {
+  transform: scale(1.02);
+}
+
+.modal_open:active {
+  transform: scale(.98);
 }

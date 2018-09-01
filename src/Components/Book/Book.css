@@ -42,3 +42,33 @@
   border-radius: 1%;
   margin-right: 6%;
 }
+
+.book_sub > div {
+  display: flex;
+  align-items: center;
+  width: 85%;
+}
+
+.book_sub > div p {
+  margin-left: 5%;
+  width: 100%;
+}
+
+.book_sub > div p:hover {
+  transform: scale(1.02)
+}
+
+.book_sub > div p:active {
+  transform: scale(.98)
+}
+
+
+.book_sub > div a {
+  text-decoration: none;
+  color: rgb(28, 107, 153);
+}
+
+.book_icon {
+  height: 35px;
+  width: 40px;  
+}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import Modal from 'react-modal';
 
 import Calendar from '../Calendar/Calendar';
 import './Admin.css';
@@ -9,21 +10,46 @@ import './Admin.css';
 import {
   updateEvent,
   updateDate,
-  updateLocation
+  updateLocation,
+  getCalendar
 } from '../../ducks/eventsReducer';
 
 import { getRequests } from '../../ducks/requestReducer';
 
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    fontFamily: 'Lato, sans-serif',
+    width: '50%'
+  }
+};
+
+Modal.setAppElement(document.getElementById('root'));
+
 class Admin extends Component {
   state = {
-    pass: true,
-    main: false,
+    modalIsOpen: false,
+    pass: false,
+    main: true,
     username: '',
     password: ''
   };
   componentDidMount() {
     this.props.getRequests();
   }
+
+  openModal = () => {
+    this.setState({ modalIsOpen: true });
+  };
+
+  closeModal = () => {
+    this.setState({ modalIsOpen: false });
+  };
 
   handleUsername = e => {
     this.setState({ username: e.target.value });
@@ -43,16 +69,37 @@ class Admin extends Component {
 
   handleClick = e => {
     const { event, date, location } = this.props.eventReducer;
-    axios.post('/api/add-to-calendar', {
-      event,
-      date,
-      location
-    });
+    axios
+      .post('/api/add-to-calendar', {
+        event,
+        date,
+        location
+      })
+      .then(() => {
+        this.props.getCalendar();
+        this.closeModal();
+      });
+  };
+
+  handleKeyDown = e => {
+    const { event, date, location } = this.props.eventReducer;
+
+    e.keyCode === 13 &&
+      axios
+        .post('/api/add-to-calendar', {
+          event,
+          date,
+          location
+        })
+        .then(() => {
+          this.props.getCalendar();
+          this.closeModal();
+        });
   };
   render() {
     const { updateEvent, updateDate, updateLocation } = this.props;
     const { requests } = this.props.reducer;
-    const { pass, main, username, password } = this.state;
+    const { pass, main } = this.state;
 
     const map = requests.map(e => {
       return (
@@ -69,12 +116,11 @@ class Admin extends Component {
       <div className="admin">
         {pass && (
           <div className="admin_login">
-          <h1>Welcome Deron!</h1>
-          <div>
-
-            <input type="text" onChange={this.handleUsername} />
-            <input type="password" onChange={this.handlePassword} />
-          </div>
+            <h1>Welcome Deron!</h1>
+            <div>
+              <input type="text" onChange={this.handleUsername} />
+              <input type="password" onChange={this.handlePassword} />
+            </div>
             <div>
               <h3 onClick={e => this.submitAdmin(e)}>Submit</h3>
             </div>
@@ -86,40 +132,51 @@ class Admin extends Component {
               <h1>Welcome, Deron!</h1>
               <div>
                 <div className="admin_sub1">
-                  <h2>Incoming Requests</h2>
+                  <h2 className="admin_title">Incoming Requests</h2>
                   <div className="admin_map">{map}</div>
                 </div>
-                <div className="admin_sub1">
-                  <h2>Create New Event</h2>
-                  <div className="events_input">
-                    <div>
-                      <h2>Event Name</h2>
-                      <input
-                        type="text"
-                        onChange={e => updateEvent(e.target.value)}
-                      />
-                      <h2>Event Date</h2>
-                      <input
-                        type="text"
-                        onChange={e => updateDate(e.target.value)}
-                      />
-                      <h2>Event Location</h2>
-                      <input
-                        type="text"
-                        onChange={e => updateLocation(e.target.value)}
-                      />
-                    </div>
-                    <h3 onClick={this.handleClick}>Submit</h3>
-                  </div>
-                </div>
-                <div className="admin_sub1">
-                  <h2>Calendar View</h2>
+                <div className="admin_sub2">
+                  <h2 className="admin_title">Calendar View</h2>
                   <div className="admin_calendar">
                     <Calendar />
                   </div>
                 </div>
               </div>
             </div>
+            <h2 className="modal_open" onClick={() => this.openModal()}>
+              Add Event
+            </h2>
+            <Modal
+              isOpen={this.state.modalIsOpen}
+              onAfterOpen={this.afterOpenModal}
+              onRequestClose={this.closeModal}
+              style={customStyles}
+            >
+              <div className="admin_sub3">
+                <h2 className="admin_title">Create New Event</h2>
+                <div className="events_input">
+                  <div>
+                    <h2>Event Name</h2>
+                    <input
+                      type="text"
+                      onChange={e => updateEvent(e.target.value)}
+                    />
+                    <h2>Event Date</h2>
+                    <input
+                      type="text"
+                      onChange={e => updateDate(e.target.value)}
+                    />
+                    <h2>Event Location</h2>
+                    <input
+                      type="text"
+                      onChange={e => updateLocation(e.target.value)}
+                      onKeyDown={e => this.handleKeyDown(e)}
+                    />
+                  </div>
+                  <h3 onClick={this.handleClick}>Submit</h3>
+                </div>
+              </div>
+            </Modal>
           </div>
         )}
       </div>
@@ -135,6 +192,7 @@ export default connect(
     updateEvent,
     updateDate,
     updateLocation,
-    getRequests
+    getRequests,
+    getCalendar
   }
 )(Admin);

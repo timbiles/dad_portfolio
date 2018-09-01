@@ -1,12 +1,17 @@
+import axios from 'axios';
+
 const initialState = {
   event: '',
   date: '',
-  location: ''
+  location: '',
+  calendar: [],
+  didErr: false,
 };
 
 const UPDATE_EVENT = 'UPDATE_EVENT';
 const UPDATE_DATE = 'UPDATE_DATE';
 const UPDATE_LOCATION = 'UPDATE_LOCATION';
+const GET_CALENDAR = 'GET_CALENDAR'
 
 export const updateEvent = event => {
   return {
@@ -29,8 +34,25 @@ export const updateLocation = location => {
   };
 };
 
+export function getCalendar() {
+  return {
+    type: GET_CALENDAR,
+    payload: axios.get('/api/calendar')
+  };
+}
+
 export default function locationReducer(state = initialState, action) {
   switch (action.type) {
+    case `${GET_CALENDAR}_FULFILLED`:
+      return {
+        ...state,
+        calendar: action.payload.data
+      };
+    case `${GET_CALENDAR}_REJECTED`:
+      return {
+        ...state,
+        didErr: true
+      };
     case UPDATE_EVENT:
       return {
         ...state,
