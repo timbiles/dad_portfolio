@@ -9,6 +9,8 @@
     "express": "^4.16.3",
     "massive": "^5.2.0",
     "moment": "^2.22.2",
+    "nodemailer": "^4.6.8",
+    "nodemailer-ses-transport": "^1.5.1",
     "pure-react-carousel": "^1.13.2",
     "rc-print": "^1.0.4",
     "react": "^16.4.2",

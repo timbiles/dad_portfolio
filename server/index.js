@@ -6,7 +6,14 @@ const axios = require('axios');
 
 const port = process.env.PORT || 3001;
 
-const { getForm, addForm, getCalendar, addCalendar, deleteOld } = require('./Ctrl/formCtrl');
+const {
+  getForm,
+  addForm,
+  getCalendar,
+  addCalendar,
+  deleteOld
+} = require('./Ctrl/formCtrl');
+const { requestEmail } = require('./Ctrl/nodeCtrl');
 
 const app = express();
 app.use(bodyParser.json());
@@ -25,10 +32,12 @@ massive(process.env.CONNECTION_STRING)
 //endpoints
 app.get('/api/speaker-request', getForm);
 app.post('/api/create-form', addForm);
-
 app.get('/api/calendar', getCalendar);
 app.post('/api/add-to-calendar', addCalendar);
-app.delete('/api/delete', deleteOld)
+app.delete('/api/delete', deleteOld);
+
+//node endpoints
+app.post('/api/email', requestEmail)
 
 //run build
 app.get('*', (req, res) => {

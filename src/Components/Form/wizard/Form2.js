@@ -12,7 +12,7 @@ import {
 } from '../../../ducks/requestReducer';
 
 class Form2 extends Component {
-  render() {
+  render() {    
     const {
       updateEventName,
       updateEventDate,

@@ -14,7 +14,6 @@ import {
 class Form1 extends Component {
   
   render() {
-    console.log(this.props)
     const {
       updateOrganization,
       updateContactName,

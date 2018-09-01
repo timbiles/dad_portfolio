@@ -35,7 +35,7 @@ class Form extends Component {
   toggleClickc = e => this.setState({ three: true, four: false });
   toggleClickd = e => this.setState({ four: true, five: false });
 
-  submitForm = e => {
+  submitForm = id => {
     let {
       organizationName,
       contactName,
@@ -60,8 +60,9 @@ class Form extends Component {
       reimbursementReceipts,
       bio,
       img,
-      w2
-    } = this.props;
+      w2,
+      requests
+    } = this.props.reducer;
 
     axios
       .post(`/api/create-form`, {
@@ -92,8 +93,6 @@ class Form extends Component {
       })
       .then(() => {
         this.props.history.push('/');
-      })
-      .then(() => {
         swal({
           position: 'top-end',
           title: 'Your form has been submitted!',
@@ -101,6 +100,11 @@ class Form extends Component {
           background: 'rgb(204,204,204)',
           timer: 2000
         });
+        axios.post('/api/email', {
+          id: requests.length && requests[requests.length-1].id + 1,
+          contactName, 
+          organizationName,
+        })
       });
   };
 
@@ -134,7 +138,7 @@ class Form extends Component {
           {five && (
             <Form5
               toggleClickd={e => this.toggleClickd(e)}
-              submitForm={e => this.submitForm(e)}
+              submitForm={id => this.submitForm(id)}
             />
           )}
         </div>

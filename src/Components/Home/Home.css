@@ -81,14 +81,20 @@
 
 .social_media {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  flex-direction: column;
   width: 100%;
   margin-top: 5%;
 }
 
+.social_media > div{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2% 0;
+}
+
 .social_icon {
   height: 35px;
+  width: 40px;  
 }
 
 .social_icon:hover {
