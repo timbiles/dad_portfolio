@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import moment from 'moment';
 import Fade from 'react-reveal/Fade';
+import swal from 'sweetalert2';
 
 import './Calendar.css';
 
@@ -18,6 +19,44 @@ class Calendar extends Component {
     axios.delete('/api/delete');
   };
 
+  deleteEvent = id => {
+    swal({
+      position: 'top-end',
+      type: 'warning',
+      title: 'Removing this event is permanant.',
+      text: 'Do you wish to continue?',
+      confirmButtonText: 'Yes, remove it!',
+      showCancelButton: true
+    }).then(res => {
+      if (res.value) {
+        swal({
+          position: 'top-end',
+          type: 'success',
+          title: 'Deleted',
+          text: 'Your Event has been deleted!',
+          showConfirmButton: false,
+          timer: 1500
+        });
+        axios
+          .delete(`/api/delete-event/${id}`)
+          .then(() => {
+            this.props.getCalendar();
+          })
+
+          .catch(() => {
+            swal({
+              position: 'top-end',
+              type: 'warning',
+              title:
+                'You cannot remove an event that someone has already signed up for!'
+            });
+          });
+      } else if (res.dismiss === swal.DismissReason.cancel) {
+        swal('Cancelled', 'Your Event is still here :)', 'error');
+      }
+    });
+  };
+
   render() {
     const { calendar } = this.props.eventReducer;
     const map =
@@ -28,11 +67,11 @@ class Calendar extends Component {
             <Fade top cascade>
               <div className="ue_div">
                 <h5>{moment.utc(e.date).format('MMMM D, YYYY')}</h5>
-                <div className='ue_sub'>
-                  <div className='ue_1'>
+                <div className="ue_sub">
+                  <div className="ue_1">
                     <p>Time</p>
                   </div>
-                  <div className='ue_2'>
+                  <div className="ue_2">
                     <p>{e.event}</p>
                     <p>{e.location}</p>
                   </div>
@@ -47,13 +86,25 @@ class Calendar extends Component {
       calendar &&
       calendar.map(e => {
         return (
-          <div key={e.id} className="admin_calview">
+          <div key={e.id} className="upcoming_events1">
             <Fade top cascade>
-              <div className="admin_cal_sub">
-                <p>{moment.utc(e.date).format('MMMM D, YYYY')}</p>
-                <p>
-                  {e.event} - {e.location}
-                </p>
+              <div className="ue_div">
+                <h5>{moment.utc(e.date).format('MMMM D, YYYY')}</h5>
+                <div className="ue_sub">
+                  <div className="ue_1">
+                    <p>Time</p>
+                  </div>
+                  <div className="ue_2">
+                    <p>{e.event}</p>
+                    <p>{e.location}</p>
+                  </div>
+                  <p
+                    className="admin_delete btn"
+                    onClick={id => this.deleteEvent(e.id)}
+                  >
+                    Delete
+                  </p>
+                </div>
               </div>
             </Fade>
           </div>
@@ -67,7 +118,7 @@ class Calendar extends Component {
         {map}
       </div>
     ) : (
-      <p>{map2}</p>
+      <div className="admin_calendar">{map2}</div>
     );
   }
 }

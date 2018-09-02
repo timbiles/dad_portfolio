@@ -90,7 +90,7 @@ const getCalendar = (req, res) => {
 
 const addCalendar = (req, res) => {
   const db = req.app.get('db');
-  const {event, date, location} = req.body
+  const { event, date, location } = req.body;
 
   db.add_to_calendar([event, date, location])
     .then(response => {
@@ -102,11 +102,12 @@ const addCalendar = (req, res) => {
     });
 };
 
-const deleteOld = (req, res) => {
+const deleteEvent = (req, res) => {
   const db = req.app.get('db');
+  const { id } = req.params;
+  console.log(req.params);
 
-  db
-    .delete_old()
+  db.delete_event([id])
     .then(response => {
       res.status(200).send(response);
     })
@@ -114,12 +115,26 @@ const deleteOld = (req, res) => {
       console.log(err);
       res.status(500).send(err);
     });
-}
+};
+
+const deleteOld = (req, res) => {
+  const db = req.app.get('db');
+
+  db.delete_old()
+    .then(response => {
+      res.status(200).send(response);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).send(err);
+    });
+};
 
 module.exports = {
   getForm,
   addForm,
   getCalendar,
   addCalendar,
+  deleteEvent,
   deleteOld
 };

@@ -36,7 +36,7 @@ class Requests extends Component {
         </div>
       </div>
       <Link className='back_to_admin' to='/admin'>
-        <h3 className='btn'>Back to admin</h3>
+        <h3 className='bt_admin btn'>Back to admin</h3>
       </Link>
         <Print ref="test">
           <div className="request_container">

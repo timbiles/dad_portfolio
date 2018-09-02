@@ -11,6 +11,7 @@ const {
   addForm,
   getCalendar,
   addCalendar,
+  deleteEvent,
   deleteOld
 } = require('./Ctrl/formCtrl');
 const { requestEmail } = require('./Ctrl/nodeCtrl');
@@ -34,6 +35,7 @@ app.get('/api/speaker-request', getForm);
 app.post('/api/create-form', addForm);
 app.get('/api/calendar', getCalendar);
 app.post('/api/add-to-calendar', addCalendar);
+app.delete('/api/delete-event/:id', deleteEvent);
 app.delete('/api/delete', deleteOld);
 
 //node endpoints

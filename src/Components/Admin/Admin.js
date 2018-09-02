@@ -96,6 +96,9 @@ class Admin extends Component {
           this.closeModal();
         });
   };
+
+
+
   render() {
     const { updateEvent, updateDate, updateLocation } = this.props;
     const { requests } = this.props.reducer;
@@ -138,7 +141,7 @@ class Admin extends Component {
                 <div className="admin_sub2">
                   <h2 className="admin_title">Calendar View</h2>
                   <div className="admin_calendar">
-                    <Calendar type='homepage'/>
+                    <Calendar />
                   </div>
                 </div>
               </div>
