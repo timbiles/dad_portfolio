@@ -90,9 +90,9 @@ const getCalendar = (req, res) => {
 
 const addCalendar = (req, res) => {
   const db = req.app.get('db');
-  const { event, date, location } = req.body;
+  const { event, date, time, location } = req.body;
 
-  db.add_to_calendar([event, date, location])
+  db.add_to_calendar([event, date, time, location])
     .then(response => {
       res.status(200).send(response);
     })

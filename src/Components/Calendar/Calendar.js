@@ -69,7 +69,7 @@ class Calendar extends Component {
                 <h5>{moment.utc(e.date).format('MMMM D, YYYY')}</h5>
                 <div className="ue_sub">
                   <div className="ue_1">
-                    <p>Time</p>
+                    <p>{e.time}</p>
                   </div>
                   <div className="ue_2">
                     <p>{e.event}</p>
@@ -92,7 +92,7 @@ class Calendar extends Component {
                 <h5>{moment.utc(e.date).format('MMMM D, YYYY')}</h5>
                 <div className="ue_sub">
                   <div className="ue_1">
-                    <p>Time</p>
+                    <p>{e.time}</p>
                   </div>
                   <div className="ue_2">
                     <p>{e.event}</p>

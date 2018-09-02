@@ -3,15 +3,17 @@ import axios from 'axios';
 const initialState = {
   event: '',
   date: '',
+  time: '',
   location: '',
   calendar: [],
-  didErr: false,
+  didErr: false
 };
 
 const UPDATE_EVENT = 'UPDATE_EVENT';
 const UPDATE_DATE = 'UPDATE_DATE';
+const UPDATE_TIME = 'UPDATE_TIME';
 const UPDATE_LOCATION = 'UPDATE_LOCATION';
-const GET_CALENDAR = 'GET_CALENDAR'
+const GET_CALENDAR = 'GET_CALENDAR';
 
 export const updateEvent = event => {
   return {
@@ -24,6 +26,13 @@ export const updateDate = date => {
   return {
     type: UPDATE_DATE,
     payload: date
+  };
+};
+
+export const updateTime = time => {
+  return {
+    type: UPDATE_TIME,
+    payload: time
   };
 };
 
@@ -62,6 +71,11 @@ export default function locationReducer(state = initialState, action) {
       return {
         ...state,
         date: action.payload
+      };
+    case UPDATE_TIME:
+      return {
+        ...state,
+        time: action.payload
       };
     case UPDATE_LOCATION:
       return {

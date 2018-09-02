@@ -10,6 +10,7 @@ import './Admin.css';
 import {
   updateEvent,
   updateDate,
+  updateTime,
   updateLocation,
   getCalendar
 } from '../../ducks/eventsReducer';
@@ -68,11 +69,12 @@ class Admin extends Component {
   };
 
   handleClick = e => {
-    const { event, date, location } = this.props.eventReducer;
+    const { event, date, time, location } = this.props.eventReducer;
     axios
       .post('/api/add-to-calendar', {
         event,
         date,
+        time,
         location
       })
       .then(() => {
@@ -82,13 +84,14 @@ class Admin extends Component {
   };
 
   handleKeyDown = e => {
-    const { event, date, location } = this.props.eventReducer;
+    const { event, date, time, location } = this.props.eventReducer;
 
     e.keyCode === 13 &&
       axios
         .post('/api/add-to-calendar', {
           event,
           date,
+          time,
           location
         })
         .then(() => {
@@ -100,7 +103,7 @@ class Admin extends Component {
 
 
   render() {
-    const { updateEvent, updateDate, updateLocation } = this.props;
+    const { updateEvent, updateDate, updateTime, updateLocation } = this.props;
     const { requests } = this.props.reducer;
     const { pass, main } = this.state;
 
@@ -169,6 +172,11 @@ class Admin extends Component {
                       type="text"
                       onChange={e => updateDate(e.target.value)}
                     />
+                    <h2>Event Time</h2>
+                    <input
+                      type="text"
+                      onChange={e => updateTime(e.target.value)}
+                    />
                     <h2>Event Location</h2>
                     <input
                       type="text"
@@ -194,6 +202,7 @@ export default connect(
   {
     updateEvent,
     updateDate,
+    updateTime,
     updateLocation,
     getRequests,
     getCalendar
