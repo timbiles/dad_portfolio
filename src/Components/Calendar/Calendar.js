@@ -27,6 +27,29 @@ class Calendar extends Component {
           <div key={e.id} className="upcoming_events">
             <Fade top cascade>
               <div className="ue_div">
+                <h5>{moment.utc(e.date).format('MMMM D, YYYY')}</h5>
+                <div className='ue_sub'>
+                  <div className='ue_1'>
+                    <p>Time</p>
+                  </div>
+                  <div className='ue_2'>
+                    <p>{e.event}</p>
+                    <p>{e.location}</p>
+                  </div>
+                </div>
+              </div>
+            </Fade>
+          </div>
+        );
+      });
+
+    const map2 =
+      calendar &&
+      calendar.map(e => {
+        return (
+          <div key={e.id} className="admin_calview">
+            <Fade top cascade>
+              <div className="admin_cal_sub">
                 <p>{moment.utc(e.date).format('MMMM D, YYYY')}</p>
                 <p>
                   {e.event} - {e.location}
@@ -36,23 +59,6 @@ class Calendar extends Component {
           </div>
         );
       });
-
-      const map2 =
-      calendar &&
-      calendar.map(e => { 
-        return (
-          <div key={e.id} className='admin_calview'>
-            <Fade top cascade>
-            <div className="admin_cal_sub">
-                <p>{moment.utc(e.date).format('MMMM D, YYYY')}</p>
-                <p>
-                  {e.event} - {e.location}
-                </p>
-              </div>
-            </Fade>
-          </div>
-        )
-      })     
 
     return this.props.type === 'homepage' ? (
       <div className="calendar">

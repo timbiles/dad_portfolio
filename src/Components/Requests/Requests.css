@@ -1,9 +1,15 @@
 .requests {
-  padding-top: 10%;
+  padding-top: 6%;
   display: flex;
   justify-content: center;
-  display: flex;
   flex-direction: column;
+}
+
+.requests_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .requests_btn_holder {
@@ -76,4 +82,22 @@
 
 .email_icon:hover {
   transform: scale(1.05);
+}
+
+.back_to_admin {
+  color: rgb(90, 102, 156);
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  margin: 1%;
+}
+
+.btn:hover {
+  transform: scale(1.02);
+}
+
+.btn:active {
+  transform: scale(.98);  
 }

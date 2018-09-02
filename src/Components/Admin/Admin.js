@@ -138,7 +138,7 @@ class Admin extends Component {
                 <div className="admin_sub2">
                   <h2 className="admin_title">Calendar View</h2>
                   <div className="admin_calendar">
-                    <Calendar />
+                    <Calendar type='homepage'/>
                   </div>
                 </div>
               </div>
