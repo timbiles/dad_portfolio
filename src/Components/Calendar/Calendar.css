@@ -38,8 +38,14 @@
   position: relative;
 }
 
+.ue_1 {
+  display: flex;
+  align-items: center;
+}
+
 .ue_1 p {
   margin-right: 10px;
+  width: 70px;
 }
 
 .ue_2 {

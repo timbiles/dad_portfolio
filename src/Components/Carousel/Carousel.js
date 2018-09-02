@@ -16,9 +16,9 @@ export default () => (
     <CarouselProvider
       naturalSlideWidth={100}
       naturalSlideHeight={100}
-      totalSlides={18}
+      totalSlides={26}
       interval={4000}
-      isPlaying={true}
+      // isPlaying={true}
     >
       <Slider>
         <Slide index={0}>
@@ -45,6 +45,7 @@ export default () => (
           </a>
           <h4>Why I Love the Cooperative Program and Why You Should Too</h4>
         </Slide>
+        
         <Slide index={2}>
           <a
             target="blank"
@@ -207,18 +208,86 @@ export default () => (
           </a>
           <h4>The Ministry of a Shepherd: Is there no balm in Gilead?</h4>
         </Slide>
-        {/* <Slide index={}>
-        <a target='blank' href="">
+        <Slide index={18}>
+        <a target='blank' href="https://theologicalmatters.com/2013/01/09/wheres-that-bar-of-soap/">
         
           <img
-            src=""
-            alt="Article "
+            src="https://theologicalmatters.com/wp-content/uploads/2013/11/Naylor-web1.jpg"
+            alt="Article 19"
           />
           </a>
-          <h4></h4>
-        </Slide> */}
-
-
+          <h4>Where's that bar of soap?</h4>
+        </Slide>
+        <Slide index={19}>
+        <a target='blank' href="https://theologicalmatters.com/2012/12/12/in-weakness-not-made-strong/">
+        
+          <img
+            src="https://theologicalmatters.com/wp-content/uploads/2013/11/MinistryofaShepherd1.jpg"
+            alt="Article 20"
+          />
+          </a>
+          <h4>The Ministry of a Shepherd: In Weakness, Not Made Strong</h4>
+        </Slide>
+        <Slide index={20}>
+        <a target='blank' href="https://theologicalmatters.com/2012/11/14/the-ministry-of-a-shepherd-feed-your-lamb-feed-it/">
+        
+          <img
+            src="https://theologicalmatters.com/wp-content/uploads/2013/11/MinistryofaShepherd1.jpg"
+            alt="Article 21"
+          />
+          </a>
+          <h4>The Ministry of a Shepherd: Feed your Lamb. Feed it.</h4>
+        </Slide>
+        <Slide index={21}>
+        <a target='blank' href="https://theologicalmatters.com/2012/10/10/the-ministry-of-a-shepherd-replacement-shepherds/">
+        
+          <img
+            src="https://theologicalmatters.com/wp-content/uploads/2013/11/MinistryofaShepherd1.jpg"
+            alt="Article 22"
+          />
+          </a>
+          <h4>The Ministry of a Shepherd: Replacement Shepherds</h4>
+        </Slide>
+        <Slide index={22}>
+        <a target='blank' href="https://theologicalmatters.com/2012/09/12/the-physiognomy-of-ministry/">
+        
+          <img
+            src="https://theologicalmatters.com/wp-content/uploads/2013/11/church1.jpg"
+            alt="Article 23"
+          />
+          </a>
+          <h4>The Physiognomy of Ministry</h4>
+        </Slide>
+        <Slide index={23}>
+        <a target='blank' href="https://theologicalmatters.com/2012/08/08/biles/">
+        
+          <img
+            src="https://theologicalmatters.com/wp-content/themes/theologicalmatters/images/default_preach.jpg"
+            alt="Article 24"
+          />
+          </a>
+          <h4>There's Not an App for That</h4>
+        </Slide>
+        <Slide index={24}>
+        <a target='blank' href="https://theologicalmatters.com/2012/04/27/monopoly-and-the-game-of-life/">
+        
+          <img
+            src="https://theologicalmatters.com/wp-content/uploads/2013/11/go_monopoly.jpg1_.jpeg"
+            alt="Article 25"
+          />
+          </a>
+          <h4>Monopoly and the Game of Life</h4>
+        </Slide>
+        <Slide index={25}>
+        <a target='blank' href="https://theologicalmatters.com/2011/11/09/the-lord-called-me-to-seminary-now-what/">
+        
+          <img
+            src="https://theologicalmatters.com/wp-content/themes/theologicalmatters/images/default_preach.jpg"
+            alt="Article 26"
+          />
+          </a>
+          <h4>The Lord called me to seminary ... Now what?</h4>
+        </Slide>
       </Slider>
       <div className="lib_btns">
         <ButtonBack className="lib_btn">Back</ButtonBack>

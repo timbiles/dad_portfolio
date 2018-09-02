@@ -4,6 +4,7 @@ import Fade from 'react-reveal/Fade';
 
 import './Contact.css';
 import Verse from '../VerseGenerator/VerseGenerator';
+import deron from './deron.jpg';
 
 const SpeakerRequest = () => (
   <div className="contact">
@@ -25,11 +26,14 @@ const SpeakerRequest = () => (
       <div className="contact_sub request_form">
         <h3>
           If you would like Dr. Biles to speak at an event, please follow the
-          link to fill out the form!
+          link below!
         </h3>
         <Link className="contact_form" to="/form">
           Speaker Request Form
         </Link>
+      </div>
+      <div className="ci_holder">
+        <img className="contact_img" src={deron} alt="Deron conference" />
       </div>
       <Verse />
     </div>

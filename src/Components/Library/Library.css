@@ -52,13 +52,13 @@
 }
 
 .book:hover {
-  opacity: .8;
+  opacity: 0.8;
   box-shadow: 1px 1px 10px #000;
+
 }
 
 .library_carousel {
   margin: 3% 0;
-
 }
 
 .library_carousel h2 {
@@ -125,7 +125,7 @@
 }
 
 .chapel_sermons a:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .chapel_sermons_sub {
@@ -160,6 +160,13 @@
   height: 100px;
   padding-right: 5%;
   border-right: 1px solid grey;
+  transition: 0.5s;
+}
+
+.chapel_img:hover {
+  padding-left: 5%;
+  border-right: 1px solid rgb(231, 231, 231);
+  padding-right: 0;
 }
 
 .chapel_sub1 {
@@ -174,7 +181,6 @@
   margin: 2% 0;
   font-size: 1rem;
 }
-
 
 .chapel_sub1 > p {
   font-size: 0.9rem;
@@ -250,11 +256,10 @@
 
   .cs1 {
     border-right: none;
-  border-bottom: 1px solid rgb(240, 240, 240);
+    border-bottom: 1px solid rgb(240, 240, 240);
     padding-bottom: 3%;
   }
 }
-
 
 @media (max-width: 500px) {
   .library_carousel h2 {

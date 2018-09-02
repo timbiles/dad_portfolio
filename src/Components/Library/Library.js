@@ -4,6 +4,7 @@ import Fade from 'react-reveal/Fade';
 
 
 import Carousel from '../Carousel/Carousel';
+import NewCarousel from '../Carousel/NewCarousel';
 import Verse from '../VerseGenerator/VerseGenerator';
 import './Library.css';
 
@@ -56,7 +57,8 @@ class Library extends Component {
           <div className="portfolio_sub">{bookMap}</div>
           <div className="resources_bottom">
             <div>
-              <Carousel />
+              {/* <Carousel /> */}
+              <NewCarousel />
             </div>
           </div>
           <div className="chapel_sermons">
@@ -71,6 +73,7 @@ class Library extends Component {
                   Choosing God's way
                 </a>
                 <div className="chapel_sub">
+                
                   <img
                     className="chapel_img"
                     src="http://cdn1.swbts.edu/media/2017/5/20170413DeronBiles024Web.jpg"
