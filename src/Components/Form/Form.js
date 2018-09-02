@@ -101,10 +101,10 @@ class Form extends Component {
           timer: 2000
         });
         axios.post('/api/email', {
-          id: requests.length && requests[requests.length-1].id + 1,
-          contactName, 
-          organizationName,
-        })
+          id: requests.length && requests[requests.length - 1].id + 1,
+          contactName,
+          organizationName
+        });
       });
   };
 
@@ -113,6 +113,13 @@ class Form extends Component {
     return (
       <div className="form">
         <div className="form_container">
+          <div className="form_tracker">
+            {one ? <div /> : <p />}
+            {two ? <div /> : <p />}
+            {three ? <div /> : <p />}
+            {four ? <div /> : <p />}
+            {five ? <div /> : <p />}
+          </div>
           <h1>Form</h1>
 
           {one && <Form1 toggleClick1={e => this.toggleClick1(e)} />}

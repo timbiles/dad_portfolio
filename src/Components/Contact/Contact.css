@@ -1,73 +1,71 @@
 .contact {
-    padding-top: 70px;
-    font-family: 'Roboto', sans-serif;
-    height: 100vh;
-  }
+  padding-top: 8%;
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+}
 
-  .speaker_name {
-    text-align: center;
-    height: 100%;
-    font-size: 2.5rem;
-    letter-spacing: 2px;
-    color: rgb(60, 60, 60);
-  }
-  
-  .contact_container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+.speaker_name {
+  text-align: center;
+  height: 100%;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  color: rgb(60, 60, 60);
+}
 
-  .contact_sub {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5% 0;
+.contact_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact_sub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5% 0;
+  width: 100%;
+}
+
+.request_form {
+  box-shadow: 1px 1px 5px grey;
+  width: 50%;
+  padding: 2%;
+  margin-top: 5%;
+  margin-bottom: 15%;
+}
+
+.request_form h3 {
+  text-align: center;
+}
+
+.contact_form {
+  text-decoration: none;
+  color: rgb(26, 26, 26);
+  cursor: pointer;
+}
+
+.contact_form:hover {
+  transform: scale(1.02);
+}
+
+.contact_form:active {
+  transform: scale(0.98);
+}
+
+.contact_sub > div {
+  display: flex;
+  justify-content: space-around;
+  width: 200px;
+}
+
+@media (max-width: 980px) {
+  .contact_1 {
     width: 100%;
   }
+}
 
-  .request_form {
-    box-shadow: 1px 1px 5px grey;
-    width: 50%;
-    padding: 2%;
-    margin-top: 5%;
-    margin-bottom: 15%;
-  }
-
-  .request_form h3 {
-    text-align: center;
-  }
-
-  .contact_form {
-    text-decoration: none;
-    color: rgb(26, 26, 26);
-    cursor: pointer;
-  }
-
-  .contact_form:hover {
-    transform: scale(1.02)
-  }
-
-  .contact_form:active {
-    transform: scale(.98)
-  }
-
-  .contact_sub > div {
-    display: flex;
-    justify-content: space-around;
-    width: 200px;
-  }
-
-  @media (max-width: 980px) {
- 
-
-    .contact_1 {
-      width: 100%;
-    }
-  }
-
-  @media (max-width: 700px) {
+@media (max-width: 700px) {
   .speaker_name {
     font-size: 1.5rem;
   }
@@ -75,12 +73,10 @@
   .request_form h3 {
     font-size: 1rem;
   }
+}
+
+@media (max-width: 500px) {
+  .speaker_name {
+    font-size: 1rem;
   }
-
-
-  @media (max-width: 500px) {
-    .speaker_name {
-      font-size: 1rem;
-    }
-  }
-
+}

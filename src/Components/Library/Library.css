@@ -58,6 +58,7 @@
 
 .library_carousel {
   margin: 3% 0;
+
 }
 
 .library_carousel h2 {
@@ -125,7 +126,6 @@
 
 .chapel_sermons a:hover {
   opacity: .8;
-  text-shadow: 0 .5px grey;
 }
 
 .chapel_sermons_sub {

@@ -6,6 +6,28 @@
   padding: 8% 0;
 }
 
+.form_tracker {
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.form_tracker div {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: grey;
+}
+
+.form_tracker p {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: grey;
+  opacity: .2;
+}
+
 .form_main {
   width: 50%;
 }

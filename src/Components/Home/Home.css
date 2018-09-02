@@ -62,7 +62,7 @@
   cursor: pointer;
 }
 
-.cont_email:hover {
+.cont_email p:hover {
   transform: scale(1.02);
 }
 

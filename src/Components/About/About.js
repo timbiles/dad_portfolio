@@ -1,4 +1,5 @@
 import React from 'react';
+import Fade from 'react-reveal/Fade';
 
 import Verse from '../VerseGenerator/VerseGenerator';
 import './About.css';
@@ -13,8 +14,9 @@ const About = () => (
           <div className="a_line" />
           <div className="a_line" />
         </div>
-
+        <Fade cascade>
         <h1 className="about_name">About</h1>
+        </Fade>
         <div className="line_container">
           <div className="a_line" />
           <div className="a_line" />

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Fade from 'react-reveal/Fade';
+
 
 import Carousel from '../Carousel/Carousel';
 import Verse from '../VerseGenerator/VerseGenerator';
@@ -43,7 +45,9 @@ class Library extends Component {
               <div className="a_line" />
               <div className="a_line" />
             </div>
-            <h1>Library</h1>
+            <Fade cascade>
+              <h1>Library</h1>
+            </Fade>
             <div className="line_container">
               <div className="a_line" />
               <div className="a_line" />

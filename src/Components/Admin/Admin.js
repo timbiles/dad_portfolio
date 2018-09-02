@@ -34,8 +34,8 @@ Modal.setAppElement(document.getElementById('root'));
 class Admin extends Component {
   state = {
     modalIsOpen: false,
-    pass: false,
-    main: true,
+    pass: true,
+    main: false,
     username: '',
     password: ''
   };

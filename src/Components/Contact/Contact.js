@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Fade from 'react-reveal/Fade';
 
 import './Contact.css';
 import Verse from '../VerseGenerator/VerseGenerator';
@@ -12,14 +13,15 @@ const SpeakerRequest = () => (
           <div className="a_line" />
           <div className="a_line" />
         </div>
-
-        <h1 className="speaker_name">Speaker Request Form</h1>
+        <Fade cascade>
+          <h1 className="speaker_name">Speaker Request Form</h1>
+        </Fade>
         <div className="line_container">
           <div className="a_line" />
           <div className="a_line" />
         </div>
       </div>
-      
+
       <div className="contact_sub request_form">
         <h3>
           If you would like Dr. Biles to speak at an event, please follow the
@@ -29,7 +31,7 @@ const SpeakerRequest = () => (
           Speaker Request Form
         </Link>
       </div>
-      <Verse/>
+      <Verse />
     </div>
   </div>
 );

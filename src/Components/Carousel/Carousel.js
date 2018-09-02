@@ -18,7 +18,7 @@ export default () => (
       naturalSlideHeight={100}
       totalSlides={18}
       interval={4000}
-      // isPlaying={true}
+      isPlaying={true}
     >
       <Slider>
         <Slide index={0}>
