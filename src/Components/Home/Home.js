@@ -3,6 +3,7 @@ import Fade from 'react-reveal/Fade';
 
 import './Home.css';
 import Calendar from '../Calendar/Calendar';
+import deron from './deron.jpg'
 
 const IndexPage = () => (
   <div>
@@ -11,6 +12,8 @@ const IndexPage = () => (
       <h1>Preach the Word</h1>
     </header>
     <footer className="home_sub">
+    <div className='home_sub12'>
+
       <div className="home_sub_2">
         <div className="contact_holder">
           <Fade top>
@@ -83,6 +86,13 @@ const IndexPage = () => (
             </div>
           </Fade>
         </div>
+    </div>
+    <div className='img_home_holder'>
+    <div className='test_img'>
+
+    <img className='home_image'src={deron} alt=""/>
+    </div>
+    </div>
       </div>
       <div className="home_calendar">
         <Calendar type='homepage'/>

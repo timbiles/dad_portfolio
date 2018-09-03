@@ -142,7 +142,10 @@ class Library extends Component {
                   className="preaching_source"
                   src="http://preachingsource.com/wp-content/uploads/2016/08/Genesis.jpg"
                   alt="Genesis"
-                />
+                  />
+                  <p>
+                      The Genesis Sermon Structures were written by Dr. Deron Biles.
+                    </p>
                 <a
                   target="_blank"
                   rel="noreferrer noopener"
@@ -157,9 +160,7 @@ class Library extends Component {
                 >
                   Genesis Sermon Starter
                 </a>
-                <p>
-                  The Genesis Sermon Structures were written by Dr. Deron Biles.
-                </p>
+              
               </div>
             </div>
           </div>

@@ -162,10 +162,12 @@ position: fixed;
 right: 4%;
 border-bottom: 1px solid #000;
 cursor: pointer;
+opacity: .6;
 }
 
 .modal_open:hover {
-  transform: scale(1.02);
+  transform: scale(1.01);
+  opacity: 1;
 }
 
 .modal_open:active {

@@ -86,7 +86,7 @@
   margin-top: 5%;
 }
 
-.social_media > div{
+.social_media > div {
   display: flex;
   justify-content: space-evenly;
   margin: 2% 0;
@@ -94,7 +94,7 @@
 
 .social_icon {
   height: 35px;
-  width: 40px;  
+  width: 40px;
 }
 
 .social_icon:hover {
@@ -107,14 +107,33 @@
 
 .home_sub_2 {
   display: flex;
-  width: 50%;
-  height: 100%;
+  width: 100%;
   justify-content: space-around;
 }
 
 .home_calendar {
   width: 50%;
   margin-bottom: 70px;
+}
+
+.home_sub12 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  margin-bottom: 80px;  
+  align-items: center;
+}
+
+.home_image {
+  margin-top: 5%;
+  align-self: center;
+  width: 80%;
+}
+
+.test_img {
+  display: flex;
+  justify-content: center;
 }
 
 @keyframes fadeInOut {
@@ -143,7 +162,6 @@
     transform: translate(0);
   }
 }
-
 
 @media (max-width: 1100px) {
   .home_sub_2 {
@@ -179,5 +197,4 @@
   .contact_holder {
     width: 50%;
   }
- 
 }

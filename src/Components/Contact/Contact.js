@@ -4,7 +4,7 @@ import Fade from 'react-reveal/Fade';
 
 import './Contact.css';
 import Verse from '../VerseGenerator/VerseGenerator';
-import deron from './deron.jpg';
+import dad from './dad1.jpg';
 
 const SpeakerRequest = () => (
   <div className="contact">
@@ -32,11 +32,14 @@ const SpeakerRequest = () => (
           Speaker Request Form
         </Link>
       </div>
-      <div className="ci_holder">
+      {/* <div className="ci_holder">
         <img className="contact_img" src={deron} alt="Deron conference" />
-      </div>
+      </div> */}
       <Verse />
     </div>
+    <div className="ci_holder">
+        <img className="contact_img" src={dad} alt="Deron conference" />
+      </div>
   </div>
 );
 
