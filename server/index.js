@@ -5,7 +5,7 @@ const massive = require('massive');
 const axios = require('axios');
 const path = require('path');
 
-const port = process.env.PORT || 3001;
+const port = process.env.SERVER_PORT || 3001;
 
 const {
   getForm,
