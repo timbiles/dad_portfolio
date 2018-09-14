@@ -66,39 +66,50 @@ class Book extends Component {
             <p>{book.description}</p>
             <p>Buy now on:</p>
             {window.location.pathname === '/books/Pastoral%20Ministry' ? (
-              <div>
-              
-                <img
-                  className="book_icon"
-                  src="http://www.vmastoryboard.com/wp-content/uploads/2014/08/Amazon-A-Logo.jpg"
-                  alt="Amazon logo"
-                />
-              <a
-                href="https://www.amazon.com/gp/product/1462751024/ref=dbs_a_def_rwt_bibl_vppi_i0"
-                target="blank"
-              >
-              <p>Amazon</p>
-              </a>
+              <div className='buy'>
+                <div className="book_buy">
+                  <img
+                    className="book_icon"
+                    src="http://www.vmastoryboard.com/wp-content/uploads/2014/08/Amazon-A-Logo.jpg"
+                    alt="Amazon logo"
+                  />
+                  <a
+                    href="https://www.amazon.com/gp/product/1462751024/ref=dbs_a_def_rwt_bibl_vppi_i0"
+                    target="blank"
+                  >
+                    <p>Amazon</p>
+                  </a>
+                </div>
+                <div className="book_buy">
+                  <img
+                    className="book_icon"
+                    src="https://s3.amazonaws.com/LWbranding/aem-imgs/logo/lw-icon-social.png"
+                    alt="Lifeway logo"
+                  />
+                  <a
+                    href="https://www.lifeway.com/en/product/pastoral-ministry-P005794959"
+                    target="blank"
+                  >
+                    <p>Lifeway</p>
+                  </a>
+                </div>
               </div>
             ) : window.location.pathname === `/books/After%20God's%20Heart` ? (
               <div>
-
                 <img
                   className="book_icon"
                   src="http://www.vmastoryboard.com/wp-content/uploads/2014/08/Amazon-A-Logo.jpg"
                   alt="Amazon logo"
                 />
-              <a
-                href="https://www.amazon.com/gp/product/143274836X/ref=dbs_a_def_rwt_bibl_vppi_i1"
-                target="blank"
-              >
-              <p>Amazon</p>
-              </a>
-              
+                <a
+                  href="https://www.amazon.com/gp/product/143274836X/ref=dbs_a_def_rwt_bibl_vppi_i1"
+                  target="blank"
+                >
+                  <p>Amazon</p>
+                </a>
               </div>
             ) : (
               <div>
-
                 <img
                   className="book_icon"
                   src="https://pbs.twimg.com/profile_images/634254671708729344/dSkivS_4_400x400.jpg"
@@ -108,10 +119,9 @@ class Book extends Component {
                   href="http://csm-publishing.org/products-page/book/seminary-education-by-extension-process-principles-practices/"
                   target="blank"
                 >
-                <p>CMS Publishing</p>
+                  <p>CMS Publishing</p>
                 </a>
               </div>
-              
             )}
           </div>
         </div>

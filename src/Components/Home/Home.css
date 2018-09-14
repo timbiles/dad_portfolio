@@ -63,7 +63,7 @@
 }
 
 .cont_email p:hover {
-  transform: scale(1.02);
+  opacity: .8;
 }
 
 .ch1 {

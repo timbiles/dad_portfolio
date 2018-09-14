@@ -43,12 +43,6 @@
   margin-right: 6%;
 }
 
-.book_sub > div {
-  display: flex;
-  align-items: center;
-  width: 85%;
-}
-
 .book_sub > div p {
   margin-left: 5%;
   width: 100%;
@@ -66,6 +60,18 @@
 .book_sub > div a {
   text-decoration: none;
   color: rgb(28, 107, 153);
+}
+
+.buy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 85%;
+}
+
+.book_buy {
+  display: flex;
+  align-items: center;
 }
 
 .book_icon {

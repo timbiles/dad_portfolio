@@ -10,7 +10,8 @@ export default () => (
     </div>
     {typeof window !== `undefined` && window.location.pathname === '/' ? (
       <div className="dropdown">
-        <Link className="header_link" to="/">
+        <Link className="header_link" to="/"
+        >
           Home
         </Link>
 

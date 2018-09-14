@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
 
-
 import Carousel from '../Carousel/Carousel';
 import NewCarousel from '../Carousel/NewCarousel';
 import Verse from '../VerseGenerator/VerseGenerator';
@@ -73,13 +72,18 @@ class Library extends Component {
                   Choosing God's way
                 </a>
                 <div className="chapel_sub">
-                
                   <img
                     className="chapel_img"
                     src="http://cdn1.swbts.edu/media/2017/5/20170413DeronBiles024Web.jpg"
                     alt="Chapel 2"
                   />
-                  <p>April 13, 2017</p>
+                  <div>
+                    <p>April 13, 2017</p>
+                    <p>
+                      His faithfulness challenges believers today to run the Way
+                      of His Word.
+                    </p>
+                  </div>
                 </div>
               </div>
               <div>
@@ -106,7 +110,7 @@ class Library extends Component {
                   rel="noreferrer noopener"
                   href="http://preachingsource.com/sermon/swbts-chapel-deron-biles-2008/"
                 >
-                  Ezekiel Sermon
+                  Be a Pastor
                 </a>
                 <div className="chapel_sub">
                   <img
@@ -114,7 +118,13 @@ class Library extends Component {
                     src="https://scontent-dfw5-2.xx.fbcdn.net/v/t31.0-8/21014185_10155431459670661_5619186887203882438_o.jpg?_nc_cat=0&oh=ba3efcb8348927471d0652f883d2eff7&oe=5BF39DBE"
                     alt="Chapel 2"
                   />
-                  <p>October 14, 2008</p>
+                  <div>
+                    <p>October 14, 2008</p>
+                    <p>
+                      God does not leave the care of the sheep only to earthly
+                      shepherds. God, Himself, promises to care for His sheep.
+                    </p>
+                  </div>
                 </div>
               </div>
               <div>
@@ -123,7 +133,7 @@ class Library extends Component {
                   rel="noreferrer noopener"
                   href="http://preachingsource.com/sermon/swbts-chapel-deron-biles-2006/"
                 >
-                  Ezra Sermon
+                  A Model for Faithful Ministry
                 </a>
                 <div className="chapel_sub">
                   <img
@@ -131,7 +141,14 @@ class Library extends Component {
                     src="http://cdn1.swbts.edu/media/2017/5/20170413DeronBiles024Web.jpg"
                     alt="Chapel 2"
                   />
-                  <p>November 14, 2006</p>
+                  <div>
+                    <p>November 14, 2006</p>
+                    <p>
+                      In Ezra 7:10, we find the secret to his effectiveness.
+                      Ezra prepared his heart to study, do, and teach the Word
+                      of God.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -142,10 +159,10 @@ class Library extends Component {
                   className="preaching_source"
                   src="http://preachingsource.com/wp-content/uploads/2016/08/Genesis.jpg"
                   alt="Genesis"
-                  />
-                  <p>
-                      The Genesis Sermon Structures were written by Dr. Deron Biles.
-                    </p>
+                />
+                <p>
+                  The Genesis Sermon Structures were written by Dr. Deron Biles.
+                </p>
                 <a
                   target="_blank"
                   rel="noreferrer noopener"
@@ -160,7 +177,6 @@ class Library extends Component {
                 >
                   Genesis Sermon Starter
                 </a>
-              
               </div>
             </div>
           </div>

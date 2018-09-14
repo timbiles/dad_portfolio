@@ -32,9 +32,6 @@ const SpeakerRequest = () => (
           Speaker Request Form
         </Link>
       </div>
-      {/* <div className="ci_holder">
-        <img className="contact_img" src={deron} alt="Deron conference" />
-      </div> */}
       <Verse />
     </div>
     <div className="ci_holder">

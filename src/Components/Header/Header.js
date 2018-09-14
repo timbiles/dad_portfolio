@@ -12,7 +12,8 @@ const Header = ({ siteTitle }) => (
         style={{ backgroundColor: 'transparent' }}
       >
         <div className="header_main">
-          <Link className="header_link" to="/">
+          <Link className="header_link name_main" to="/">
+          <h1 className='name_link'>Dr.</h1>
             <h1>Deron Biles</h1>
           </Link>
         </div>

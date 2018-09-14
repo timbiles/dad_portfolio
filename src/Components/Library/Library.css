@@ -144,9 +144,10 @@
 }
 
 .chapel_sub p {
-  width: 50%;
+  /* width: 50%; */
   padding-left: 2%;
-  align-self: center;
+  align-self: start;
+  text-align: justify
 }
 
 .chapel_sub {

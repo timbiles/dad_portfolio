@@ -38,6 +38,10 @@
   opacity: 0.95;
 }
 
+.dropdown:active {
+  display: none;
+}
+
 .dropdown_links:hover {
   transform: scale(1.05);
   color: rgb(61, 180, 168);
@@ -80,6 +84,21 @@
   flex-direction: column;
 }
 
+.name_main {
+  display: flex;
+  justify-content: space-between;
+  width: 225px;
+}
+
+.name_link {
+  display: none;
+animation: leftEntrance 1s;
+}
+
+.name_main:hover .name_link{
+  display: block;
+}
+
 @media (max-width: 950px) {
   .header_right {
     display: none;
@@ -107,5 +126,17 @@
   100% {
     opacity: 0.95;
     transform: translateY(0);
+  }
+}
+
+@keyframes leftEntrance {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px)
+  } 
+  100% {
+    opacity: 1;
+    transform: translateX()
+    
   }
 }
