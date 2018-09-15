@@ -69,7 +69,6 @@
   flex-direction: row;
 }
 
-
 .about_ed_sub1 {
   display: flex;
   letter-spacing: 2px;
@@ -102,21 +101,26 @@
   opacity: 0.3;
 }
 
+.img1 {
+  left: 2%
+}
+
+.img2 {
+  right: 2%;
+}
+
 .education_title {
   margin-top: 3.5%;
 }
 
-.img1 {
-  left: 5%;
-}
-
-.img2 {
-  right: 5%;
+#slideshow > div {
+  display: flex;
+  align-items: center;
 }
 
 .about_ed p {
   font-size: 0.9rem;
-  line-height: .3rem;
+  line-height: 0.3rem;
 }
 
 .family_img {
@@ -237,5 +241,28 @@
 @media (max-width: 500px) {
   .bio_name_sub {
     margin-top: 8%;
+  }
+
+  .family_img {
+    width: 250px;
+    height: 200px;
+  }
+  
+  .tall_img {
+    width: 250px;
+    height: 350px;
+  }
+
+  #slideshow {
+    width: 250px;
+    height: 350px;
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  .bio_name_sub {
+    width: 100%;
   }
 }

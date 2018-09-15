@@ -20,7 +20,7 @@
   color: rgb(212, 212, 212);
 }
 
-.header_link:focus {
+.hl1:focus {
   border-bottom: 2px solid rgb(42, 158, 123);
 }
 

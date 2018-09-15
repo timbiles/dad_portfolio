@@ -3,3 +3,9 @@
     margin: 5% 5% 2% 5%;
     width: 90%;
 }
+
+@media (max-width: 550px) {
+    .verse {
+        font-size: .8rem;
+    }
+}

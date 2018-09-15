@@ -19,19 +19,19 @@ const Header = ({ siteTitle }) => (
         </div>
         <Hamburger />
         <div className="header_right">
-          <Link className="header_link" to="/">
+          <Link className="header_link hl1" to="/">
             Home
           </Link>
 
-          <Link className="header_link" to="/about">
+          <Link className="header_link hl1" to="/about">
             About
           </Link>
 
-          <Link className="header_link" to="/library">
+          <Link className="header_link hl1" to="/library">
             Library
           </Link>
 
-          <Link className="header_link" to="/contact">
+          <Link className="header_link hl1" to="/contact">
             Speaker Request
           </Link>
           
@@ -54,19 +54,19 @@ const Header = ({ siteTitle }) => (
         <Hamburger />
 
         <div className="header_right">
-          <Link className="header_link" to="/">
+          <Link className="header_link hl1" to="/">
             Home
           </Link>
 
-          <Link className="header_link" to="/about">
+          <Link className="header_link hl1" to="/about">
             About
           </Link>
 
-          <Link className="header_link" to="/library">
+          <Link className="header_link hl1" to="/library">
             Library
           </Link>
 
-          <Link className="header_link" to="/contact">
+          <Link className="header_link hl1" to="/contact">
             Speaker Request
           </Link>
         </div>
