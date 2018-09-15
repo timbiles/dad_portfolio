@@ -7,6 +7,8 @@ import NewCarousel from '../Carousel/NewCarousel';
 import Verse from '../VerseGenerator/VerseGenerator';
 import './Library.css';
 
+import sermon2018 from './images/sermon2018.jpg';
+
 class Library extends Component {
   state = {
     books: [
@@ -37,6 +39,67 @@ class Library extends Component {
         </Link>
       );
     });
+
+    const sermons = [
+      {
+        title: `Is Doubt Sin`,
+        img: `http://cdn1.swbts.edu/media/2018/9/20180906DeronBiles042Web.jpg`,
+        date: `September 6, 2018`,
+        desc: `something`,
+        url: `http://media.swbts.edu/item/2399/is-doubt-sin`
+      },
+      {
+        title: `Choosing God's Way`,
+        img: `http://cdn1.swbts.edu/media/2017/5/20170413DeronBiles024Web.jpg`,
+        date: `April 13, 2017`,
+        desc: `His faithfulness challenges believers today to run the Way
+        of His Word.`,
+        url: `http://preachingsource.com/sermon/choosing-gods-way/`
+      },
+      {
+        title: `How will you be remembered?`,
+        img: `http://cdn1.swbts.edu/media/2014/10/10-29-14_DeronBiles72_NW_2137.jpg`,
+        date: `October 29, 2014`,
+        desc: `Something`,
+        url: `http://preachingsource.com/sermon/how-will-you-be-remembered/`
+      },
+      {
+        title: `Be a Pastor`,
+        img: `https://scontent-dfw5-2.xx.fbcdn.net/v/t31.0-8/21014185_10155431459670661_5619186887203882438_o.jpg?_nc_cat=0&oh=ba3efcb8348927471d0652f883d2eff7&oe=5BF39DBE`,
+        date: `October 14, 2008`,
+        desc: `God does not leave the care of the sheep only to earthly
+        shepherds. God, Himself, promises to care for His sheep.`,
+        url: `http://preachingsource.com/sermon/swbts-chapel-deron-biles-2008/`
+      },
+      {
+        title: `A Model for Faithful Ministry`,
+        img: `http://cdn1.swbts.edu/media/2017/5/20170413DeronBiles024Web.jpg`,
+        date: `November 14, 2006`,
+        desc: `In Ezra 7:10, we find the secret to his effectiveness.
+        Ezra prepared his heart to study, do, and teach the Word
+        of God.`,
+        url: `http://preachingsource.com/sermon/swbts-chapel-deron-biles-2006/`
+      }
+    ];
+
+    const sermonMap = sermons.map((e, i) => {
+      return (
+        <div className="sermons_map" key={i}>
+          <a target="_blank" rel="noreferrer noopener" href={e.url}>
+            {e.title}
+          </a>
+          <div className="chapel_sub">
+            <div className="cs-1">
+              <img className="chapel_img" src={e.img} alt="Chapel 2" />
+            </div>
+            <div className="cs2">
+              <p>{e.date}</p>
+              <p>{e.desc}</p>
+            </div>
+          </div>
+        </div>
+      );
+    });
     return (
       <div className="portfolio">
         <div className="portfolio_container">
@@ -56,101 +119,13 @@ class Library extends Component {
           <div className="portfolio_sub">{bookMap}</div>
           <div className="resources_bottom">
             <div>
-              {/* <Carousel /> */}
               <NewCarousel />
             </div>
           </div>
           <div className="chapel_sermons">
             <div className="chapel_sermons_sub cs1">
               <h2>SWBTS Chapel Sermons</h2>
-              <div>
-                <a
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  href="http://preachingsource.com/sermon/choosing-gods-way/"
-                >
-                  Choosing God's way
-                </a>
-                <div className="chapel_sub">
-                  <img
-                    className="chapel_img"
-                    src="http://cdn1.swbts.edu/media/2017/5/20170413DeronBiles024Web.jpg"
-                    alt="Chapel 2"
-                  />
-                  <div>
-                    <p>April 13, 2017</p>
-                    <p>
-                      His faithfulness challenges believers today to run the Way
-                      of His Word.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <a
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  href="http://preachingsource.com/sermon/how-will-you-be-remembered/"
-                >
-                  How will you be remembered?
-                </a>
-                <div className="chapel_sub">
-                  <img
-                    className="chapel_img"
-                    src="http://cdn1.swbts.edu/media/2014/10/10-29-14_DeronBiles72_NW_2137.jpg"
-                    alt="Chapel 1"
-                  />
-                  <p>October 29, 2014</p>
-                </div>
-              </div>
-
-              <div>
-                <a
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  href="http://preachingsource.com/sermon/swbts-chapel-deron-biles-2008/"
-                >
-                  Be a Pastor
-                </a>
-                <div className="chapel_sub">
-                  <img
-                    className="chapel_img"
-                    src="https://scontent-dfw5-2.xx.fbcdn.net/v/t31.0-8/21014185_10155431459670661_5619186887203882438_o.jpg?_nc_cat=0&oh=ba3efcb8348927471d0652f883d2eff7&oe=5BF39DBE"
-                    alt="Chapel 2"
-                  />
-                  <div>
-                    <p>October 14, 2008</p>
-                    <p>
-                      God does not leave the care of the sheep only to earthly
-                      shepherds. God, Himself, promises to care for His sheep.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <a
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  href="http://preachingsource.com/sermon/swbts-chapel-deron-biles-2006/"
-                >
-                  A Model for Faithful Ministry
-                </a>
-                <div className="chapel_sub">
-                  <img
-                    className="chapel_img"
-                    src="http://cdn1.swbts.edu/media/2017/5/20170413DeronBiles024Web.jpg"
-                    alt="Chapel 2"
-                  />
-                  <div>
-                    <p>November 14, 2006</p>
-                    <p>
-                      In Ezra 7:10, we find the secret to his effectiveness.
-                      Ezra prepared his heart to study, do, and teach the Word
-                      of God.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              {sermonMap}
             </div>
             <div className="chapel_sermons_sub">
               <h2>Preaching Source</h2>
