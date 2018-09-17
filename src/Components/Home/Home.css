@@ -131,11 +131,12 @@
   width: 80%;
 }
 
-.test_img, .home_article {
+.home_article {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 5%;
 }
 
 @keyframes fadeInOut {
@@ -190,6 +191,9 @@
     width: 90%;
   }
 
+  .home_sub12, .home_article {
+    width: 95%;
+  }
   .home_sub_2 {
     flex-direction: row;
     width: 90%;
@@ -198,5 +202,26 @@
 
   .contact_holder {
     width: 50%;
+  }
+
+  .home_calendar {
+    width: 90%;
+  }
+
+}
+
+@media (max-width: 500px) {
+  .home_sub_2 {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5%;
+  }
+
+  .contact_holder {
+    width: 95%;
+  }
+
+  .ue_2 p {
+    font-size: .7rem;
   }
 }

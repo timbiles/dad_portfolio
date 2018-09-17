@@ -15,6 +15,10 @@ const IndexPage = () => (
     </header>
     <footer className="home_sub">
       <div className="home_sub12">
+      <div className="home_article">
+            <h3>Latest Posts by Dr. Biles</h3>
+            <ArticleList />
+          </div>
         <div className="home_sub_2">
           <div className="contact_holder">
             <Fade top>
@@ -88,16 +92,10 @@ const IndexPage = () => (
             </Fade>
           </div>
         </div>
-        <div className="img_home_holder">
-          <div className="home_article">
-            <h3>Latest Posts by Dr. Biles</h3>
-            <ArticleList />
-          </div>
-          {/* <div className='test_img'>
 
-    <img className='home_image'src={deron} alt=""/>
-    </div> */}
-        </div>
+          
+          
+
       </div>
       <div className="home_calendar">
         <Calendar type="homepage" />

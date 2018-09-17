@@ -1,40 +1,46 @@
 .article {
-  padding-top: 8%;    
+  padding-top: 8%;
 }
 
 .article_list_map {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .article_top_map {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .article a,
 .article_top_map a {
-    display: inline-block;
-    color: rgb(82, 82, 82);
-    text-decoration: none;
+  display: inline-block;
+  color: rgb(82, 82, 82);
+  text-decoration: none;
 }
 
 .article a:hover,
 .article_top_map a:hover {
-    /* color: rgb(122, 122, 122); */
-    opacity: .8;
+  opacity: 0.8;
 }
 
 .article_top_map h2 {
-    font-size: 1rem;
-    text-align: center;
+  color: rgb(82, 82, 82);    
+  font-size: 1rem;
+  display: list-item;
+  list-style-image: url('https://image.flaticon.com/icons/svg/171/171322.svg');
 }
 
 .article_wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media (max-width: 1000px) {
+    .article_wrapper {
+        width: 80%;
+    }
 }
