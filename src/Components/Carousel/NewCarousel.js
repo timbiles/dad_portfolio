@@ -16,7 +16,7 @@ export default class NewCarousel extends Component {
             target="blank"
             href="https://theologicalmatters.com/2017/06/13/remembering-the-value-of-the-individual/"
           >
-            <h2>Remembering the Value of the Individual</h2>
+            <h2></h2>
             <img
               src="https://theologicalmatters.com/wp-content/uploads/2017/06/20170612BartBarber006web.jpg"
               alt="Article 1"

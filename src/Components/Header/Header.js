@@ -31,6 +31,10 @@ const Header = ({ siteTitle }) => (
             Library
           </Link>
 
+          <Link className="header_link hl1" to="/article">
+            Articles
+          </Link>
+
           <Link className="header_link hl1" to="/contact">
             Speaker Request
           </Link>
@@ -64,6 +68,10 @@ const Header = ({ siteTitle }) => (
 
           <Link className="header_link hl1" to="/library">
             Library
+          </Link>
+
+          <Link className="header_link hl1" to="/article">
+            Articles
           </Link>
 
           <Link className="header_link hl1" to="/contact">

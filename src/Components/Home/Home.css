@@ -32,10 +32,10 @@
   color: rgb(146, 125, 125);
 }
 
-.calendar {
+/* .calendar {
   height: 200px;
   width: 300px;
-}
+} */
 
 .home_container h1 {
   font-family: 'Lato', sans-serif;
@@ -131,8 +131,10 @@
   width: 80%;
 }
 
-.test_img {
+.test_img, .home_article {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
