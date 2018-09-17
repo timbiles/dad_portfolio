@@ -120,7 +120,7 @@
 
 .about_ed p {
   font-size: 0.9rem;
-  line-height: 0.3rem;
+  /* line-height: 0.3rem; */
 }
 
 .family_img {

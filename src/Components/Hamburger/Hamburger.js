@@ -1,5 +1,5 @@
-import React from 'react'
-import {Link} from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default () => (
   <div className="hamburger">
@@ -10,8 +10,7 @@ export default () => (
     </div>
     {typeof window !== `undefined` && window.location.pathname === '/' ? (
       <div className="dropdown">
-        <Link className="header_link" to="/"
-        >
+        <Link className="header_link" to="/">
           Home
         </Link>
 
@@ -23,9 +22,9 @@ export default () => (
           Library
         </Link>
 
-        <Link className="header_link hl1" to="/article">
-            Articles
-          </Link>
+        <Link className="header_link" to="/article">
+          Articles
+        </Link>
 
         <Link className="header_link" to="/contact">
           Speaker Request
@@ -52,6 +51,14 @@ export default () => (
         <Link
           className="header_link"
           style={{ color: '#1B1A1B' }}
+          to="/article"
+        >
+          Articles
+        </Link>
+
+        <Link
+          className="header_link"
+          style={{ color: '#1B1A1B' }}
           to="/contact"
         >
           Speaker Request
@@ -59,4 +66,4 @@ export default () => (
       </div>
     )}
   </div>
-)
+);

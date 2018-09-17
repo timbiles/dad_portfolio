@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 
 class ArticleList extends Component {
+  state = {
+    filtered: []
+  };
+
+  handleChange = e => {
+    this.setState({ filtered: e.toLowerCase() });
+
+  }
   render() {
     const articles = [
       {
@@ -9,7 +17,8 @@ class ArticleList extends Component {
           'https://theologicalmatters.com/wp-content/uploads/2017/06/20170612BartBarber006web.jpg',
         url:
           'https://theologicalmatters.com/2017/06/13/remembering-the-value-of-the-individual/',
-        date: 'June 13, 2017'
+        date: 'June 13, 2017',
+        topic: 'bible'
       },
       {
         title: 'Why I Love the Cooperative Program and Why You Should Too',
@@ -207,21 +216,54 @@ class ArticleList extends Component {
         date: 'November 9, 2011'
       }
     ];
-    return this.props.type === 'main' ? (
-      <div className="main_articles">
-        {articles.map((e, i) => {
-          return (
-            <div key={i} className="article_list_map">
+
+    const { filtered } = this.state;
+
+    const filter = articles
+      .filter((e, i) => {
+        return (
+            e.title.toLowerCase().includes(filtered) || 
+           e.topic && e.topic.toLocaleLowerCase().includes(filtered)
+            
+        )
+      })
+      .map((e, i) => {
+        return (
+          <div key={i} className="article_list_map">
+            <a className="a-tag" href={e.url} target="blank">
               <div className="alm_content">
-                <a href={e.url} target="blank">
-                  <h2>{e.title}</h2>
-                </a>
+                <h2>{e.title}</h2>
                 <p>{e.date}</p>
               </div>
-              <img className='article_img'src={e.img} alt={e.title} />
+            </a>
+            <img className="article_img" src={e.img} alt={e.title} />
+          </div>
+        );
+      });
+
+      
+
+    return this.props.type === 'main' ? (
+      <div className="main_articles">
+        <input type="text"
+                onChange={e => this.handleChange(e.target.value)}
+                placeholder='Search by Title or Topic'
+
+         />
+        {/* {articles.map((e, i) => {
+          return (
+            <div key={i} className="article_list_map">
+              <a className="a-tag" href={e.url} target="blank">
+                <div className="alm_content">
+                  <h2>{e.title}</h2>
+                  <p>{e.date}</p>
+                </div>
+              </a>
+              <img className="article_img" src={e.img} alt={e.title} />
             </div>
           );
-        })}
+        })} */}
+        {filter}
       </div>
     ) : (
       <div className="article_wrapper">
