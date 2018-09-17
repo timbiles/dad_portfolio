@@ -25,6 +25,11 @@
   width: 100%;
 }
 
+.books_top {
+  padding-bottom: 4%;
+  border-bottom: 1px solid rgb(240, 240, 240);
+}
+
 .portfolio_sub > div {
   margin: 1%;
 }
@@ -54,7 +59,6 @@
 .book:hover {
   opacity: 0.8;
   box-shadow: 1px 1px 10px #000;
-
 }
 
 .library_carousel {
@@ -112,7 +116,7 @@
 .chapel_sermons {
   display: flex;
   justify-content: space-around;
-  width: 70%;
+  width: 95%;
 }
 
 .chapel_sermons a {
@@ -121,7 +125,6 @@
   font-weight: 800;
   color: rgb(146, 125, 125);
   cursor: pointer;
-  width: 100%;
 }
 
 .chapel_sermons a:hover {
@@ -144,7 +147,7 @@
   /* width: 50%; */
   padding-left: 2%;
   align-self: start;
-  text-align: justify
+  text-align: justify;
 }
 
 .chapel_sub {
@@ -160,11 +163,12 @@
   border-right: 1px solid grey;
   transition: 0.5s;
 }
-
-.chapel_img:hover {
-  padding-left: 5%;
-  border-right: 1px solid rgb(231, 231, 231);
-  padding-right: 0;
+@media (min-width: 501px) {
+  .chapel_img:hover {
+    padding-left: 5%;
+    border-right: 1px solid rgb(231, 231, 231);
+    padding-right: 0;
+  }
 }
 
 .chapel_sub1 {
@@ -193,6 +197,8 @@
 }
 
 .cs-1 {
+  display: flex;
+  align-items: center;
   width: 40%;
 }
 
@@ -207,6 +213,10 @@
   align-self: center;
   width: 250px !important;
   border-right: none !important;
+}
+
+.small_map {
+  display: none;
 }
 
 @keyframes titleFade {
@@ -249,6 +259,25 @@
   }
 }
 
+@media (max-width: 975px) {
+  .chapel_sermons {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .cs2 {
+    width: 60%;
+    height: 100%;
+  }
+
+  .cs1 {
+    border-right: none;
+    border-bottom: 1px solid rgb(240, 240, 240);
+    padding-bottom: 3%;
+    padding-right: 0;
+  }
+}
+
 @media (max-width: 800px) {
   .portfolio_sub > div {
     text-align: justify;
@@ -262,20 +291,90 @@
 }
 
 @media (max-width: 600px) {
-  .chapel_sermons {
-    flex-direction: column;
-  }
-
-  .cs1 {
-    border-right: none;
-    border-bottom: 1px solid rgb(240, 240, 240);
-    padding-bottom: 3%;
+  .cs2 p {
+    font-size: 0.8rem;
   }
 }
 
 @media (max-width: 500px) {
+  .big_map {
+    display: none;
+  }
+
+  .small_map {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chapel_sub {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cs-1 {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .cs2 {
+    width: 90%;
+  }
+
+  .cs2 p:nth-of-type(1) {
+    position: absolute;
+    top: 0;
+    right: 2%;
+    color: rgb(235, 235, 235);
+  }
+
+  .chapel_img {
+    width: 100%;
+    height: 300px;
+    float: top;
+    padding-right: 0;
+    border: none;
+    transition: none;
+  }
+
+  .sermons_map {
+    margin: 4% 0;
+    box-shadow: 1px 1px 5px rgb(163, 163, 163);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    /* justify-content: space-between; */
+  }
+
   .library_carousel h2 {
     font-size: 1.5rem;
+  }
+
+  .sermon_title {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+  }
+
+  .sermon_title:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(146, 125, 125);
+
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+  }
+
+  .sermon_title:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
   }
 }
 

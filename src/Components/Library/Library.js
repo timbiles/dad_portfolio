@@ -59,7 +59,7 @@ class Library extends Component {
         title: `How will you be remembered?`,
         img: `http://cdn1.swbts.edu/media/2014/10/10-29-14_DeronBiles72_NW_2137.jpg`,
         date: `October 29, 2014`,
-        desc: `Something`,
+        desc: `Hidden in a story of Jehoshaphat’s mighty men is the story of a man named, Amasiah. His story challenges us to consider how we will be remembered.`,
         url: `http://preachingsource.com/sermon/how-will-you-be-remembered/`
       },
       {
@@ -84,13 +84,41 @@ class Library extends Component {
     const sermonMap = sermons.map((e, i) => {
       return (
         <div className="sermons_map" key={i}>
-          <a target="_blank" rel="noreferrer noopener" href={e.url}>
+          <a
+            className="sermon_title"
+            target="_blank"
+            rel="noreferrer noopener"
+            href={e.url}
+          >
             {e.title}
           </a>
           <div className="chapel_sub">
             <div className="cs-1">
               <img className="chapel_img" src={e.img} alt="Chapel 2" />
             </div>
+            <div className="cs2">
+              <p>{e.date}</p>
+              <p>{e.desc}</p>
+            </div>
+          </div>
+        </div>
+      );
+    });
+    const sermonMap2 = sermons.map((e, i) => {
+      return (
+        <div className="sermons_map" key={i}>
+          <div className="cs-1">
+            <img className="chapel_img" src={e.img} alt="Chapel 2" />
+          </div>
+          <div className="chapel_sub">
+            <a
+              className="sermon_title"
+              target="_blank"
+              rel="noreferrer noopener"
+              href={e.url}
+            >
+              {e.title}
+            </a>
             <div className="cs2">
               <p>{e.date}</p>
               <p>{e.desc}</p>
@@ -115,12 +143,14 @@ class Library extends Component {
               <div className="a_line" />
             </div>
           </div>
-          <div className="portfolio_sub">{bookMap}</div>
-          
+          <div className="portfolio_sub books_top">{bookMap}</div>
+
           <div className="chapel_sermons">
             <div className="chapel_sermons_sub cs1">
               <h2>SWBTS Chapel Sermons</h2>
-              {sermonMap}
+              <div className="big_map">{sermonMap}</div>
+              <div className="small_map">{sermonMap2}</div>
+              <div />
             </div>
             <div className="chapel_sermons_sub">
               <h2>Preaching Source</h2>
