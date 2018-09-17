@@ -23,6 +23,10 @@ export default () => (
           Library
         </Link>
 
+        <Link className="header_link hl1" to="/article">
+            Articles
+          </Link>
+
         <Link className="header_link" to="/contact">
           Speaker Request
         </Link>

@@ -3,9 +3,9 @@ import Fade from 'react-reveal/Fade';
 
 import './Home.css';
 import Calendar from '../Calendar/Calendar';
-import deron from './deron.jpg';
+// import deron from './deron.jpg';
 import ArticleList from '../Article/ArticleList';
-import Article from '../Article/Article';
+// import Article from '../Article/Article';
 
 const IndexPage = () => (
   <div>

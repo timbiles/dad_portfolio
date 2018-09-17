@@ -1,12 +1,51 @@
 .article {
   padding-top: 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+/* article cards */
 
 .article_list_map {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  position: relative;
+  height: 300px;
+  width: 98%;
+  margin: 1%;
+  overflow: hidden;
 }
+.article_list_map:hover .article_img {
+  transform: scale(1.05);
+  opacity: .8s;
+}
+
+.article_list_map img {
+  transition: .5s;
+  position: absolute;
+  opacity: 0.9;
+  height: 300px;
+  width: 100%;
+  z-index: -1;
+}
+
+.alm_content {
+  width: 35%;
+  height: 95%;
+  background-color: #fff;
+  margin: 2%;
+}
+
+.article_list_map h2,
+.article_list_map p {
+  /* color: transparent; */
+}
+
+
+
+/* ---- */
 
 .article_top_map {
   display: flex;
@@ -27,7 +66,7 @@
 }
 
 .article_top_map h2 {
-  color: rgb(82, 82, 82);    
+  color: rgb(82, 82, 82);
   font-size: 1rem;
   display: list-item;
   list-style-image: url('https://image.flaticon.com/icons/svg/171/171322.svg');
@@ -39,8 +78,12 @@
   align-items: flex-start;
 }
 
+.article_main {
+
+}
+
 @media (max-width: 1000px) {
-    .article_wrapper {
-        width: 80%;
-    }
+  .article_wrapper {
+    width: 80%;
+  }
 }

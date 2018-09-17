@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
 
-import Carousel from '../Carousel/Carousel';
+// import Carousel from '../Carousel/Carousel';
 import Verse from '../VerseGenerator/VerseGenerator';
 import './Library.css';
 
-import sermon2018 from './images/sermon2018.jpg';
+// import sermon2018 from './images/sermon2018.jpg';
 
 class Library extends Component {
   state = {

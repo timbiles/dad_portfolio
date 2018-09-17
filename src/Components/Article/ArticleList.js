@@ -97,80 +97,138 @@ class ArticleList extends Component {
         date: 'August 16, 2013'
       },
       {
-        title: '',
-        img: '',
-        url: '',
-        date: ''
+        title: `Somebody's Poisoned the Water Hole!`,
+        img:
+          'https://theologicalmatters.com/wp-content/uploads/2013/11/MinistryofaShepherd1.jpg',
+        url:
+          'https://theologicalmatters.com/2013/07/11/somebodys-poisoned-the-water-hole/',
+        date: 'July 11, 2013'
       },
       {
-        title: '',
-        img: '',
-        url: '',
-        date: ''
+        title: 'The Good of the One vs. The Good of the Many',
+        img:
+          'https://theologicalmatters.com/wp-content/uploads/2013/11/MinistryofaShepherd1.jpg',
+        url: 'https://theologicalmatters.com/2013/06/13/2517/',
+        date: 'June 13, 2013'
       },
       {
-        title: '',
-        img: '',
-        url: '',
-        date: ''
+        title: `The Ministry of a Shepherd: They Don't Need to Go Away`,
+        img:
+          'https://theologicalmatters.com/wp-content/uploads/2013/11/MinistryofaShepherd1.jpg',
+        url:
+          'https://theologicalmatters.com/2013/05/09/the-ministry-of-a-shepherd-they-dont-need-to-go-away/',
+        date: 'May 9, 2013'
       },
       {
-        title: '',
-        img: '',
-        url: '',
-        date: ''
+        title: `The Ministry of a Shepherd: Let's Be Careful Out There`,
+        img:
+          'https://theologicalmatters.com/wp-content/uploads/2013/11/MinistryofaShepherd1.jpg',
+        url:
+          'https://theologicalmatters.com/2013/04/10/lets-be-careful-out-there/',
+        date: 'April 10, 2013'
       },
       {
-        title: '',
-        img: '',
-        url: '',
-        date: ''
+        title: 'The Ministry of a Shepherd: Binding Up the Broken',
+        img:
+          'https://theologicalmatters.com/wp-content/uploads/2013/11/MinistryofaShepherd1.jpg',
+        url:
+          'https://theologicalmatters.com/2013/03/13/the-ministry-of-a-shepherd-binding-up-the-broken/',
+        date: 'March 13, 2013'
       },
       {
-        title: '',
-        img: '',
-        url: '',
-        date: ''
+        title: 'The Ministry of a Shepherd: Is there no balm in Gilead?',
+        img:
+          'https://theologicalmatters.com/wp-content/uploads/2013/11/MinistryofaShepherd1.jpg',
+        url:
+          'https://theologicalmatters.com/2013/02/13/is-there-no-balm-in-gilead/',
+        date: 'February 13, 2013'
       },
       {
-        title: '',
-        img: '',
-        url: '',
-        date: ''
+        title: `Where's that bar of soap?`,
+        img:
+          'https://theologicalmatters.com/wp-content/uploads/2013/11/Naylor-web1.jpg',
+        url:
+          'https://theologicalmatters.com/2013/01/09/wheres-that-bar-of-soap/',
+        date: 'January 9, 2013'
       },
       {
-        title: '',
-        img: '',
-        url: '',
-        date: ''
+        title: 'The Ministry of a Shepherd: In Weakness, Not Made Strong',
+        img:
+          'https://theologicalmatters.com/wp-content/uploads/2013/11/Naylor-web1.jpg',
+        url:
+          'https://theologicalmatters.com/2012/12/12/in-weakness-not-made-strong/',
+        date: 'December 12, 2012'
       },
       {
-        title: '',
-        img: '',
-        url: '',
-        date: ''
+        title: 'The Ministry of a Shepherd: Feed your Lamb. Feed it.',
+        img:
+          'https://theologicalmatters.com/wp-content/uploads/2013/11/MinistryofaShepherd1.jpg',
+        url:
+          'https://theologicalmatters.com/2012/11/14/the-ministry-of-a-shepherd-feed-your-lamb-feed-it/',
+        date: 'November 14, 2012'
+      },
+      {
+        title: 'The Ministry of a Shepherd: Replacement Shepherds',
+        img:
+          'https://theologicalmatters.com/wp-content/uploads/2013/11/MinistryofaShepherd1.jpg',
+        url:
+          'https://theologicalmatters.com/2012/10/10/the-ministry-of-a-shepherd-replacement-shepherds/',
+        date: 'October 10, 2012'
+      },
+      {
+        title: 'The Physiognomy of Ministry',
+        img:
+          'https://theologicalmatters.com/wp-content/uploads/2013/11/church1.jpg',
+        url:
+          'https://theologicalmatters.com/2012/09/12/the-physiognomy-of-ministry/',
+        date: 'September 12, 2012'
+      },
+      {
+        title: `There's Not an App for That`,
+        img:
+          'https://theologicalmatters.com/wp-content/themes/theologicalmatters/images/default_preach.jpg',
+        url: 'https://theologicalmatters.com/2012/08/08/biles/',
+        date: 'August 8, 2012'
+      },
+      {
+        title: 'Monopoly and the Game of Life',
+        img:
+          'https://theologicalmatters.com/wp-content/uploads/2013/11/go_monopoly.jpg1_.jpeg',
+        url:
+          'https://theologicalmatters.com/2012/04/27/monopoly-and-the-game-of-life/',
+        date: 'April 27, 2012'
+      },
+      {
+        title: 'The Lord called me to seminary ... Now what?',
+        img:
+          'https://theologicalmatters.com/wp-content/themes/theologicalmatters/images/default_preach.jpg',
+        url:
+          'https://theologicalmatters.com/2011/11/09/the-lord-called-me-to-seminary-now-what/',
+        date: 'November 9, 2011'
       }
     ];
     return this.props.type === 'main' ? (
-      <div>
+      <div className="main_articles">
         {articles.map((e, i) => {
           return (
             <div key={i} className="article_list_map">
-              <a href={e.url}>
-                <h2>{e.title}</h2>
-              </a>
-              <img src={e.img} alt={e.title} />
-              <p>{e.date}</p>
+              <div className="alm_content">
+                <a href={e.url} target="blank">
+                  <h2>{e.title}</h2>
+                </a>
+                <p>{e.date}</p>
+              </div>
+              <img className='article_img'src={e.img} alt={e.title} />
             </div>
           );
         })}
       </div>
     ) : (
-      <div className='article_wrapper'>
+      <div className="article_wrapper">
         {articles.splice(0, 3).map((e, i) => {
           return (
             <div key={i} className="article_top_map">
-              <a href={e.url}>
+              <a href={e.url} target="blank">
                 <h2>{e.title}</h2>
               </a>
             </div>
