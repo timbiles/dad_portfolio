@@ -177,6 +177,12 @@ class Library extends Component {
                 >
                   Genesis Sermon Starter
                 </a>
+                <a 
+                  target="_blank"
+                
+                href="http://preachingsource.com/sermon-structure/2-timothy-sermon-structures/">
+                2 Timothy Sermon Structures
+                </a>
               </div>
             </div>
           </div>

@@ -18,12 +18,13 @@
 
 .portfolio_sub {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
   margin: 2% 0 5% 0;
   width: 100%;
 }
+
+
 
 .books_top {
   padding-bottom: 4%;
@@ -188,7 +189,7 @@
   font-size: 0.9rem;
   letter-spacing: 1px;
   width: 80%;
-  text-align: justify;
+  text-align: center;
   padding: 0 10%;
 }
 
@@ -291,6 +292,12 @@
 }
 
 @media (max-width: 600px) {
+  .portfolio_sub {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
   .cs2 p {
     font-size: 0.8rem;
   }
@@ -381,5 +388,10 @@
 @media (max-width: 400px) {
   .library_carousel h2 {
     font-size: 1.3rem;
+  }
+
+  .portfolio h1 {
+    margin-top: 10%;
+    font-size: 2rem;
   }
 }
