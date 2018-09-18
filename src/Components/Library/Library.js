@@ -32,7 +32,7 @@ class Library extends Component {
     const bookMap = this.state.books.map((e, i) => {
       return (
         <Link key={i} to={`/books/${e.title}`}>
-          <div className="portfolio_sub">
+          <div className="portfolio_sub1">
             <img className="book" src={e.img} alt={e.title} />
           </div>
         </Link>

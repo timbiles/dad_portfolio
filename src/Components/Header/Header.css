@@ -99,6 +99,17 @@ animation: leftEntrance 1s;
   display: block;
 }
 
+@media (max-width: 1100px) {
+  .hl1 {
+    font-size: .8rem;
+  }
+ 
+  .header_right {
+    justify-content: space-between;
+    margin-right: 5%;
+  }
+}
+
 @media (max-width: 950px) {
   .header_right {
     display: none;
