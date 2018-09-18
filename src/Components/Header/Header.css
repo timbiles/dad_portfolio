@@ -28,20 +28,6 @@
   color: #fff;
 }
 
-.dropdown {
-  display: none;
-  position: absolute;
-  min-width: 160px;
-  padding-top: 2%;
-  z-index: 9999;
-  animation: downFade 1.5s;
-  opacity: 0.95;
-}
-
-.dropdown:active {
-  display: none;
-}
-
 .dropdown_links:hover {
   transform: scale(1.05);
   color: rgb(61, 180, 168);
@@ -79,10 +65,21 @@
   width: 22px;
 }
 
-.hamburger:hover .dropdown {
+.dropdown {
+  position: absolute;
   display: flex;
   flex-direction: column;
+  min-width: 160px;
+  padding-top: 2%;
+  /* z-index: 9999; */
+  animation: downFade 1.5s;
+  opacity: 0.95;
 }
+
+/* .hamburger:hover .dropdown {
+  display: flex;
+  flex-direction: column;
+} */
 
 .name_main {
   display: flex;

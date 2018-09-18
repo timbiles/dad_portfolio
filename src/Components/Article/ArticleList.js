@@ -11,6 +11,13 @@ class ArticleList extends Component {
   render() {
     const articles = [
       {
+        title: 'The Narrative and Characterization: How Biblical Characters Inform the Meaning of a Text',
+        img: 'http://preachingsource.com/wp-content/uploads/2017/02/shutterstock_246986977.jpg',
+        url: 'http://preachingsource.com/blog/the-narrative-and-characterization-how-biblical-characters-inform-the-meaning-of-a-text/',
+        date: 'September 7, 2018',
+        topic: ''
+      },
+      {
         title: 'Remembering the Value of the Individual',
         img:
           'https://theologicalmatters.com/wp-content/uploads/2017/06/20170612BartBarber006web.jpg',
@@ -244,7 +251,7 @@ class ArticleList extends Component {
         <input
           type="text"
           onChange={e => this.handleChange(e.target.value)}
-          placeholder="Search by Title or Topic"
+          placeholder="Search by Title or Topic..."
           className="article_search"
         />
         <div className='filter_content'>

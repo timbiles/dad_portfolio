@@ -46,14 +46,14 @@ class Library extends Component {
         title: `Is Doubt Sin`,
         img: `http://cdn1.swbts.edu/media/2018/9/20180906DeronBiles042Web.jpg`,
         date: `September 6, 2018`,
-        desc: `something`,
+        desc: `What should we do when we are waiting on God?  That's the situation in which the Prophet Habakkuk found himself.`,
         url: `http://media.swbts.edu/item/2399/is-doubt-sin`
       },
       {
         title: `Choosing God's Way`,
         img: `http://cdn1.swbts.edu/media/2017/5/20170413DeronBiles024Web.jpg`,
         date: `April 13, 2017`,
-        desc: `His faithfulness challenges believers today to run the Way
+        desc: `God's faithfulness challenges believers today to run the Way
         of His Word.`,
         url: `http://preachingsource.com/sermon/choosing-gods-way/`
       },
