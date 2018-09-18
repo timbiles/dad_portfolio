@@ -3,7 +3,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
 }
 
 .book_title {
@@ -15,13 +16,18 @@
 }
 
 .book_title h1 {
-    font-size: 3rem;
-    letter-spacing: 2px;
+  font-size: 3rem;
+  letter-spacing: 2px;
 }
 
-.book_container {
+.book_container,
+.book_container2 {
   display: flex;
   width: 70%;
+}
+
+.book_container2 {
+  display: none;
 }
 
 .book_sub {
@@ -49,13 +55,12 @@
 }
 
 .book_sub > div p:hover {
-  transform: scale(1.02)
+  transform: scale(1.02);
 }
 
 .book_sub > div p:active {
-  transform: scale(.98)
+  transform: scale(0.98);
 }
-
 
 .book_sub > div a {
   text-decoration: none;
@@ -76,5 +81,50 @@
 
 .book_icon {
   height: 35px;
-  width: 40px;  
+  width: 40px;
+}
+
+@media (max-width: 1000px) {
+  .book_container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 850px) {
+  .book_container {
+    display: none;
+  }
+
+  .book_container2 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5%;
+    width: 90%;
+  }
+
+  .book_sub {
+    border-left: 0;
+  }
+
+  .book2 {
+    float: left;
+    margin-bottom: 2%;
+  }
+
+  .book_sub {
+    border-top: 1px solid rgb(221, 221, 221);
+  }
+}
+
+@media (max-width: 415px) {
+  .bc_top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .book2 {
+    width: 200px
+
+  }
 }

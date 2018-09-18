@@ -45,7 +45,7 @@ const Header = ({ siteTitle }) => (
       <div
         className="header_container"
         style={{
-          backgroundColor: '#1B1A1B',
+          backgroundColor: '#232F3E',
           position: 'fixed',
           width: '100%',
         }}

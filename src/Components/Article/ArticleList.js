@@ -7,8 +7,7 @@ class ArticleList extends Component {
 
   handleChange = e => {
     this.setState({ filtered: e.toLowerCase() });
-
-  }
+  };
   render() {
     const articles = [
       {
@@ -222,47 +221,32 @@ class ArticleList extends Component {
     const filter = articles
       .filter((e, i) => {
         return (
-            e.title.toLowerCase().includes(filtered) || 
-           e.topic && e.topic.toLocaleLowerCase().includes(filtered)
-            
-        )
+          e.title.toLowerCase().includes(filtered) ||
+          (e.topic && e.topic.toLocaleLowerCase().includes(filtered))
+        );
       })
       .map((e, i) => {
         return (
-          <div key={i} className="article_list_map">
-            <a className="a-tag" href={e.url} target="blank">
+            <a key={i} className="a-tag" href={e.url} target="blank">
+          <div className="article_list_map">
               <div className="alm_content">
                 <h2>{e.title}</h2>
                 <p>{e.date}</p>
               </div>
-            </a>
             <img className="article_img" src={e.img} alt={e.title} />
           </div>
+            </a>
         );
       });
 
-      
-
     return this.props.type === 'main' ? (
       <div className="main_articles">
-        <input type="text"
-                onChange={e => this.handleChange(e.target.value)}
-                placeholder='Search by Title or Topic'
-
-         />
-        {/* {articles.map((e, i) => {
-          return (
-            <div key={i} className="article_list_map">
-              <a className="a-tag" href={e.url} target="blank">
-                <div className="alm_content">
-                  <h2>{e.title}</h2>
-                  <p>{e.date}</p>
-                </div>
-              </a>
-              <img className="article_img" src={e.img} alt={e.title} />
-            </div>
-          );
-        })} */}
+        <input
+          type="text"
+          onChange={e => this.handleChange(e.target.value)}
+          placeholder="Search by Title or Topic"
+          className="article_search"
+        />
         {filter}
       </div>
     ) : (

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
 
 import './Home.css';
@@ -14,18 +14,17 @@ const IndexPage = () => (
     <header className="home_container">
       <h1>Preach the Word</h1>
     </header>
-    <footer className="home_sub">
+    <div className="home_sub">
       <div className="home_sub12">
-      <div className="home_article">
-            <h3>Latest Posts by Dr. Biles</h3>
-            <Fade top>
-            
+        <div className="home_article">
+          <h3>Latest Posts by Dr. Biles</h3>
+          <Fade top>
             <ArticleList />
-            <Link className='article_link' to='/article'>
+            <Link className="article_link" to="/article">
               <p>See more...</p>
             </Link>
-            </Fade>
-          </div>
+          </Fade>
+        </div>
         <div className="home_sub_2">
           <div className="contact_holder">
             <Fade top>
@@ -99,15 +98,11 @@ const IndexPage = () => (
             </Fade>
           </div>
         </div>
-
-          
-          
-
       </div>
       <div className="home_calendar">
         <Calendar type="homepage" />
       </div>
-    </footer>
+    </div>
   </div>
 );
 

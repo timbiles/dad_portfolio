@@ -86,7 +86,7 @@ class Library extends Component {
         <div className="sermons_map" key={i}>
           <a
             className="sermon_title"
-            target="_blank"
+            target="blank"
             rel="noreferrer noopener"
             href={e.url}
           >
@@ -113,7 +113,7 @@ class Library extends Component {
           <div className="chapel_sub">
             <a
               className="sermon_title"
-              target="_blank"
+              target="blank"
               rel="noreferrer noopener"
               href={e.url}
             >
@@ -164,24 +164,24 @@ class Library extends Component {
                   The Genesis Sermon Structures were written by Dr. Deron Biles.
                 </p>
                 <a
-                  target="_blank"
+                  target="blank"
                   rel="noreferrer noopener"
                   href="http://preachingsource.com/sermon-structures/genesis-sermon-structures/"
                 >
                   Genesis Sermon Structures
                 </a>
                 <a
-                  target="_blank"
+                  target="blank"
                   rel="noreferrer noopener"
                   href="http://preachingsource.com/sermon-starter/genesis-sermon-starter/"
                 >
                   Genesis Sermon Starter
                 </a>
-                <a 
-                  target="_blank"
-                
-                href="http://preachingsource.com/sermon-structure/2-timothy-sermon-structures/">
-                2 Timothy Sermon Structures
+                <a
+                  target="blank"
+                  href="http://preachingsource.com/sermon-structure/2-timothy-sermon-structures/"
+                >
+                  2 Timothy Sermon Structures
                 </a>
               </div>
             </div>

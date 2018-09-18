@@ -94,7 +94,7 @@ setInterval(function() {
           </p>
           <p>Dr. Biles and his wife reside in North Richland Hills, Texas.</p>
         </div>
-        <footer className="about_bottom">
+        <div className="about_bottom">
           <div className="about_ed education1">
             <div className="about_ed_sub1 education_title">
               <h2>Education</h2>
@@ -129,10 +129,20 @@ setInterval(function() {
               <div>
                 <img className="tall_img" src={beach} alt="" />
               </div>
+              <div>
+                <img className="family_img" src="https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/10696368_737231526331556_3415798884919189700_n.jpg?_nc_cat=0&oh=e087773fa879b8050eec18192c01a0b4&oe=5C23F559" alt=""/>
+              </div>
+              <div>
+                <img className="family_img" src="https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/31948468_10155713207046379_7759025674840440832_o.jpg?_nc_cat=0&oh=c5a63acf8a47935d37ce5f77530dbeb5&oe=5C23D568" alt=""/>
+              </div>
+              <div>
+                <img className="tall_img" src="https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/36293286_1724448360943196_7299023609308119040_n.jpg?_nc_cat=0&oh=7dbedba3a4dc2542d5081d4374f12e1a&oe=5C184ACB" alt=""/>
+              </div>
+
               
             </div>
           </div>
-        </footer>
+        </div>
         <Verse />
       </div>
     );
