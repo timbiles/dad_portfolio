@@ -247,7 +247,10 @@ class ArticleList extends Component {
           placeholder="Search by Title or Topic"
           className="article_search"
         />
+        <div className='filter_content'>
+
         {filter}
+        </div>
       </div>
     ) : (
       <div className="article_wrapper">

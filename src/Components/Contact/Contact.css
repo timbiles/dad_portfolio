@@ -20,8 +20,8 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 70%;
-  height: 100vh;
+  width: 100vw;
+  min-height: 100vh;
 }
 
 .contact_sub {
@@ -37,6 +37,8 @@
   width: 50%;
   padding: 2%;
   margin: 5% 0;
+  z-index: 1;
+  background-color: #fff;  
 }
 
 .request_form h3 {
@@ -66,26 +68,15 @@
 .ci_holder {
   width: 30%;
   height: 100%;
-  /* margin-bottom: 5%; */
   position: absolute;
   right: 0;
-  opacity: .7;
+  opacity: .5;
 }
 
 .contact_img {
   height: 100%;
   width: 100%;
 }
-
-/* .ci_holder::after {
-  display: block;
-  position: relative;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #fff 100%);
-  margin-top: -150px;
-  height: 150px;
-  width: 100%;
-  content: '';
-} */
 
 @media (max-width: 980px) {
   .contact_1 {
