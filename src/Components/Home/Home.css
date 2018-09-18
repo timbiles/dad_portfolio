@@ -151,6 +151,46 @@
   margin: 0 10%;
 }
 
+/* Arrow */
+
+.scroll_to_top{
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%) rotate(180deg);
+  bottom: 15px;
+  width: 25px;
+  height: 25px;
+  background-image: url('https://image.flaticon.com/icons/svg/118/118738.svg');
+  background-position: center;
+  background-size: contain;
+  border-radius: 50%;
+  /* opacity: .05; */
+  cursor: pointer;
+  animation: bounce 2.5s infinite;
+}
+
+.scroll_to_top:hover{
+  opacity: .3;
+  /* border: 1px solid #000; */
+  /* transition: .5s; */
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
 @keyframes fadeInOut {
   0% {
     opacity: 0.4;

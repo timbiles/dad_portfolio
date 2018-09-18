@@ -103,6 +103,12 @@ const IndexPage = () => (
         <Calendar type="homepage" />
       </div>
     </div>
+    <div
+      className="scroll_to_top"
+      onClick={() => {
+        window.scroll({ top: 800, behavior: 'smooth' });
+      }}
+    />
   </div>
 );
 
