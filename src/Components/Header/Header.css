@@ -95,6 +95,11 @@
 animation: leftEntrance 1s;
 }
 
+.header_main {
+  transition: .5s;
+}
+
+
 .name_main:hover .name_link{
   display: block;
 }

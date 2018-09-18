@@ -7,6 +7,7 @@ import './About.css';
 
 import pic from './family.JPG';
 import beach from './beach.jpg';
+import elijah from './elijah.jpg';
 
 export default class About extends Component {
 
@@ -138,7 +139,9 @@ setInterval(function() {
               <div>
                 <img className="tall_img" src="https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/36293286_1724448360943196_7299023609308119040_n.jpg?_nc_cat=0&oh=7dbedba3a4dc2542d5081d4374f12e1a&oe=5C184ACB" alt=""/>
               </div>
-
+              <div>
+                <img className='tall_img' src={elijah} alt=""/>
+              </div>
               
             </div>
           </div>

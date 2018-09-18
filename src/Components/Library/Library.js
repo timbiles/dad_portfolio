@@ -5,7 +5,8 @@ import Fade from 'react-reveal/Fade';
 // import Carousel from '../Carousel/Carousel';
 import Verse from '../VerseGenerator/VerseGenerator';
 import './Library.css';
-
+import preachingsource from './images/preaching-source-logo.png';
+import preaching1 from './images/preaching1.jpg';
 // import sermon2018 from './images/sermon2018.jpg';
 
 class Library extends Component {
@@ -35,6 +36,7 @@ class Library extends Component {
           <div className="portfolio_sub1">
             <img className="book" src={e.img} alt={e.title} />
           </div>
+        
         </Link>
       );
     });
@@ -72,7 +74,8 @@ class Library extends Component {
       },
       {
         title: `A Model for Faithful Ministry`,
-        img: `http://cdn1.swbts.edu/media/2017/5/20170413DeronBiles024Web.jpg`,
+        // img: `http://cdn1.swbts.edu/media/2017/5/20170413DeronBiles024Web.jpg`,
+        img: preaching1,
         date: `November 14, 2006`,
         desc: `In Ezra 7:10, we find the secret to his effectiveness.
         Ezra prepared his heart to study, do, and teach the Word
@@ -157,11 +160,13 @@ class Library extends Component {
               <div className="chapel_sub1">
                 <img
                   className="preaching_source"
-                  src="http://preachingsource.com/wp-content/uploads/2016/08/Genesis.jpg"
+                  src={preachingsource}
                   alt="Genesis"
                 />
                 <p>
-                  The Genesis Sermon Structures were written by Dr. Deron Biles.
+                  Preaching Source is a text-driven resource of Southwestern
+                  Baptist Theological Seminary dedicated to equip preachers in
+                  the art and craft of text-driven preaching.
                 </p>
                 <a
                   target="blank"

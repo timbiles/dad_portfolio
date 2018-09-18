@@ -96,7 +96,7 @@ class Book extends Component {
                 </div>
               </div>
             ) : window.location.pathname === `/books/After%20God's%20Heart` ? (
-              <div>
+              <div className="buy buy2">
                 <img
                   className="book_icon"
                   src="http://www.vmastoryboard.com/wp-content/uploads/2014/08/Amazon-A-Logo.jpg"
@@ -110,7 +110,8 @@ class Book extends Component {
                 </a>
               </div>
             ) : (
-              <div>
+              <div className="buy buy2">
+
                 <img
                   className="book_icon"
                   src="https://pbs.twimg.com/profile_images/634254671708729344/dSkivS_4_400x400.jpg"
@@ -163,7 +164,8 @@ class Book extends Component {
                 </div>
               </div>
             ) : window.location.pathname === `/books/After%20God's%20Heart` ? (
-              <div>
+              <div className="buy buy_2">
+
                 <img
                   className="book_icon"
                   src="http://www.vmastoryboard.com/wp-content/uploads/2014/08/Amazon-A-Logo.jpg"
@@ -177,7 +179,8 @@ class Book extends Component {
                 </a>
               </div>
             ) : (
-              <div>
+              <div className="buy buy_2">
+
                 <img
                   className="book_icon"
                   src="https://pbs.twimg.com/profile_images/634254671708729344/dSkivS_4_400x400.jpg"

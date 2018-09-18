@@ -74,6 +74,12 @@
   width: 85%;
 }
 
+.buy_2 {
+  justify-content: flex-start;
+  width: 85%;
+  
+}
+
 .book_buy {
   display: flex;
   align-items: center;
@@ -83,6 +89,10 @@
   height: 35px;
   width: 40px;
 }
+
+/* 3d book test */
+
+
 
 @media (max-width: 1000px) {
   .book_container {

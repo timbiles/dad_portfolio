@@ -223,6 +223,8 @@
   display: none;
 }
 
+
+
 @keyframes titleFade {
   0% {
     opacity: 0;
