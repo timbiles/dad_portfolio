@@ -22,8 +22,8 @@
 
 .filter_content {
   display: flex;
-flex-wrap: wrap;
-justify-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .article_list_map {
@@ -35,11 +35,13 @@ justify-content: center;
   overflow: hidden;
   margin-bottom: 1%;
   border-bottom: 1px solid rgb(189, 189, 189);
+  padding: 0.5%;
+  transition: 1s;
 }
 
 .alm_content p:nth-of-type(2) {
-  color: #B67A46;
-} 
+  color: #b67a46;
+}
 
 .article_list_map img {
   border-radius: 3%;
@@ -48,7 +50,6 @@ justify-content: center;
   width: 500px;
   top: 0;
   opacity: 0.9;
-  
 }
 
 .alm_content {
@@ -65,11 +66,15 @@ justify-content: center;
 }
 
 .article_list_map h2:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
-
-
+.article_list_map:hover {
+  box-shadow: 1px 1px 5px grey;
+  transition: 1s;
+  background-color: rgb(250, 250, 250);
+  border-radius: 3%;
+}
 
 /* ---- */
 
@@ -113,7 +118,8 @@ justify-content: center;
 }
 
 @media (max-width: 1041px) {
-  .article_list_map, .article_list_map img {
+  .article_list_map,
+  .article_list_map img {
     width: 425px;
   }
 
@@ -123,7 +129,8 @@ justify-content: center;
 }
 
 @media (max-width: 886px) {
-  .article_list_map, .article_list_map img {
+  .article_list_map,
+  .article_list_map img {
     width: 600px;
   }
 
@@ -138,16 +145,16 @@ justify-content: center;
   }
   .article_list_map img {
     height: 250px;
-    width: 400px;    
+    width: 400px;
   }
 
   .alm_content p:nth-of-type(1) {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
-.article_search {
-  width: 400px;
-}  
+  .article_search {
+    width: 400px;
+  }
 
   .article_list_map h2 {
     font-size: 0.8rem;
@@ -158,18 +165,17 @@ justify-content: center;
   .article_list_map {
     width: 300px;
   }
-  .article_list_map img{
+  .article_list_map img {
     height: 200px;
-    width: 300px;    
+    width: 300px;
   }
 
-
-.article_search {
-  width: 300px;
-}  
-.alm_content p:nth-of-type(1) {
-  font-size: .6rem;
-}
+  .article_search {
+    width: 300px;
+  }
+  .alm_content p:nth-of-type(1) {
+    font-size: 0.6rem;
+  }
 
   .article_list_map h2 {
     font-size: 0.8rem;

@@ -8,6 +8,9 @@ import './About.css';
 import pic from './family.JPG';
 import beach from './beach.jpg';
 import elijah from './elijah.jpg';
+import dad from './dad.jpeg';
+import nanny from './nanny.jpg';
+import papa from './papa.jpg';
 
 export default class About extends Component {
 
@@ -53,7 +56,7 @@ setInterval(function() {
         <div className="about_container">
           <img
             className="profile_pic"
-            src="https://theologicalmatters.com/wp-content/uploads/2017/07/headshot-tm-deronbiles.jpg"
+            src={dad}
             alt="Deron Profile"
           />
           <p>
@@ -141,6 +144,12 @@ setInterval(function() {
               </div>
               <div>
                 <img className='tall_img' src={elijah} alt=""/>
+              </div>
+              <div>
+                <img className='tall_img' src={nanny} alt=""/>
+              </div>
+              <div>
+                <img className='tall_img' src={papa} alt=""/>
               </div>
               
             </div>

@@ -8,9 +8,7 @@
 
 .speaker_name {
   text-align: center;
-  height: 100%;
-  width: 100%;
-  font-size: 2.5rem;
+  font-size: 2rem;
   letter-spacing: 2px;
   color: rgb(60, 60, 60);
 }
@@ -33,22 +31,33 @@
 }
 
 .request_form {
-  box-shadow: 1px 1px 5px grey;
   width: 50%;
   padding: 2%;
   margin: 5% 0;
-  z-index: 1;
-  background-color: #fff;  
+  margin-left: 10%;
+
 }
 
 .request_form h3 {
   text-align: center;
+  color: rgb(58, 58, 58);
+  font-weight: 300;
+}
+
+.btn_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #232F3E;
+  width: 200px;
+  height: 50px;
+  border-radius: 5%;
+  cursor: pointer;
 }
 
 .contact_form {
   text-decoration: none;
-  color: rgb(26, 26, 26);
-  cursor: pointer;
+  color: rgb(238, 238, 238);
 }
 
 .contact_form:hover {
@@ -66,15 +75,21 @@
 }
 
 .ci_holder {
-  width: 30%;
-  height: 100%;
-  position: absolute;
+  width: 400px;
+  height: 500px;
   right: 0;
-  opacity: .5;
+  opacity: .9;
 }
 
 .contact_img {
   height: 100%;
+  width: 100%;
+}
+
+.form_pic_btm {
+  display: flex;
+  justify-content: space-between;
+
   width: 100%;
 }
 
@@ -83,6 +98,26 @@
     width: 100%;
   }
 }
+
+@media (max-width: 875px) {
+  .form_pic_btm {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact_sub {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .ci_holder {
+    width: auto;
+    height: auto;
+    margin: 0 10%;
+  }
+}
+
+
 
 @media (max-width: 700px) {
   .speaker_name {
@@ -97,5 +132,20 @@
 @media (max-width: 500px) {
   .speaker_name {
     font-size: 1rem;
+    margin-top: 10%;
   }
+
+  .form_pic_btm h3 {
+    font-size: .8rem;
+    margin: 5% 0 10% 0;
+  }
+
+  .ci_holder {
+    margin: 0;
+  }
+}
+
+
+@media (max-width: 415px) {
+
 }
