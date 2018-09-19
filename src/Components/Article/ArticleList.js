@@ -254,7 +254,7 @@ class ArticleList extends Component {
           'https://theologicalmatters.com/2012/10/10/the-ministry-of-a-shepherd-replacement-shepherds/',
         date: 'October 10, 2012',
         topic: '',
-        desc: ''
+        desc: 'As sports fans, we’ve just come through one of the most intriguing experiences in recent years … Replacement Referees. As the drama of these “scab” referees began to unfold, we began to hear stories about the background of the men assuming those roles. Some came to the NFL '
       },
       {
         title: 'The Physiognomy of Ministry',
@@ -264,7 +264,7 @@ class ArticleList extends Component {
           'https://theologicalmatters.com/2012/09/12/the-physiognomy-of-ministry/',
         date: 'September 12, 2012',
         topic: '',
-        desc: ''
+        desc: 'I just recently finished a 60-day exercise regimen called Insanity. While, I wouldn’t say I have a beach body as the package advertises (which probably has more to do with the candidate than the program), I will confess that the program is certainly well named!'
       },
       {
         title: `There's Not an App for That`,
@@ -273,7 +273,7 @@ class ArticleList extends Component {
         url: 'https://theologicalmatters.com/2012/08/08/biles/',
         date: 'August 8, 2012',
         topic: '',
-        desc: ''
+        desc: 'We live in an app-crazy time. One of the favorite motto’s of this generation is, “there’s an app for that.” Indeed, there are apps for many things. Some of them are helpful. Others are just plain weird. For example, did you know that there is actually an ACME lie detector app? I’m not sure if there is a falling anvil involved.'
       },
       {
         title: 'Monopoly and the Game of Life',
@@ -283,7 +283,7 @@ class ArticleList extends Component {
           'https://theologicalmatters.com/2012/04/27/monopoly-and-the-game-of-life/',
         date: 'April 27, 2012',
         topic: '',
-        desc: ''
+        desc: 'Not too long ago, one of our boys came home with a McDonald’s Monopoly game piece which promised that we were just one piece away from winning their grand prize. With his Park Place, we figured we were just Boardwalk away from retirement! Of course, us and 250 million other people who got Park Place,'
       },
       {
         title: 'The Lord called me to seminary ... Now what?',
@@ -293,7 +293,7 @@ class ArticleList extends Component {
           'https://theologicalmatters.com/2011/11/09/the-lord-called-me-to-seminary-now-what/',
         date: 'November 9, 2011',
         topic: '',
-        desc: ''
+        desc: 'So, the Lord has called you to seminary. That’s great! You are joining a family that is built on a solid foundation of the truth of God’s Word that touches the world and impacts eternity. No doubt, you are here because God has called you into ministry.'
       }
     ];
 
