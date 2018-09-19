@@ -12,6 +12,9 @@ import {
 } from '../../../ducks/requestReducer';
 
 class Form2 extends Component {
+  state = {
+    validate: false
+  }
   render() {    
     const {
       updateEventName,
@@ -21,6 +24,9 @@ class Form2 extends Component {
       updateArrivalTime,
       updateEventLocation,
       updateEventDescription,
+    } = this.props;
+
+    const {
       eventName,
       eventDate,
       eventTime,
@@ -28,7 +34,7 @@ class Form2 extends Component {
       arrivalTime,
       eventLocation,
       eventDescription
-    } = this.props;
+    } = this.props.reducer;
 
     return (
       <div className="form_main">
@@ -110,17 +116,27 @@ class Form2 extends Component {
           />
           <span id="ce_title">Event Description</span>
         </label>
+        {this.state.validate && <p className="validation">*Please complete each field.</p>}
         <div className="form_btn">
           <img
             onClick={this.props.toggleClicka}          
             src="https://image.flaticon.com/icons/svg/118/118739.svg"
             alt="Previous arrow"
           />
-          <img
+          {!eventName || !eventDate || !eventTime|| !speakerRequest || !arrivalTime || !eventLocation|| !eventDescription? (
+            <img
+              onClick={() => this.setState({ validate: true })}
+              src="https://image.flaticon.com/icons/svg/118/118740.svg"
+              alt="Next arrow"
+            />
+          ) : (
+             <img
             onClick={this.props.toggleClick2}
             src="https://image.flaticon.com/icons/svg/118/118740.svg"
             alt="Next arrow"
-          />
+          /> 
+          )}
+        
         </div>
       </div>
     );

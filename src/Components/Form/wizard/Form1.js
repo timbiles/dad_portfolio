@@ -12,19 +12,26 @@ import {
 } from '../../../ducks/requestReducer';
 
 class Form1 extends Component {
-  
+  state = {
+    validate: false
+  };
+
   render() {
     const {
       updateOrganization,
       updateContactName,
       updatePhoneNumber,
-      updateEmail,
+      updateEmail
+    } = this.props;
+
+    const {
       organizationName,
       contactName,
       phoneNumber,
       email
-    } = this.props;
+    } = this.props.reducer;
 
+    const { validate } = this.state;
     return (
       <div className="form_main form_1">
         <h2>Requester Information</h2>
@@ -56,7 +63,7 @@ class Form1 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
-            value={phoneNumber}            
+            value={phoneNumber}
             onChange={e => updatePhoneNumber(e.target.value)}
           />
           <span id="ce_title">Phone Number</span>
@@ -67,18 +74,26 @@ class Form1 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
-            value={email}            
+            value={email}
             onChange={e => updateEmail(e.target.value)}
           />
           <span id="ce_title">Email Address</span>
         </label>
+        {validate && <p className="validation">*Please complete each field.</p>}
         <div className="form_btn">
-          
-          <img
-            onClick={this.props.toggleClick1}
-            src="https://image.flaticon.com/icons/svg/118/118740.svg"
-            alt="Next arrow"
-          />
+          {!organizationName || !contactName || !phoneNumber || !email ? (            
+            <img
+              onClick={() => this.setState({ validate: true })}
+              src="https://image.flaticon.com/icons/svg/118/118740.svg"
+              alt="Next arrow"
+            />
+          ) : (
+            <img
+              onClick={this.props.toggleClick1}
+              src="https://image.flaticon.com/icons/svg/118/118740.svg"
+              alt="Next arrow"
+            />
+          )}
         </div>
       </div>
     );

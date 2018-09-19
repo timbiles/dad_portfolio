@@ -102,3 +102,7 @@
 .form_btn img:active {
   transform: scale(.98);
 }
+
+.validation {
+  color: red;
+}
