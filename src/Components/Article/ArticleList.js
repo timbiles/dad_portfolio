@@ -18,7 +18,7 @@ class ArticleList extends Component {
         url:
           'http://preachingsource.com/blog/the-narrative-and-characterization-how-biblical-characters-inform-the-meaning-of-a-text/',
         date: 'September 7, 2018',
-        topic: '',
+        topic: '2 Samuel',
         desc:
           'All of life is a story within a story.  Jaques in Shakespeare’s play, As you Like it, said it this way, “All the world’s a stage, and all the men and women merely players.”  At our best, you and I are merely a small part within a much larger drama.  The characters, roles, and scenes change, but the story moves on.'
       },
@@ -29,7 +29,7 @@ class ArticleList extends Component {
         url:
           'https://theologicalmatters.com/2017/06/13/remembering-the-value-of-the-individual/',
         date: 'June 13, 2017',
-        topic: 'bible',
+        topic: 'Numbers · John · Acts',
         desc:
           'The Southern Baptist Convention begins meeting today (June 13). During the next two days, messengers representing 46,793 churches with 15.3 million members[1] will make important decisions, hear reports about our work, worship together, and fellowship.'
       },
@@ -40,7 +40,7 @@ class ArticleList extends Component {
         url:
           'https://theologicalmatters.com/2015/09/08/why-i-love-the-cooperative-program-and-why-you-should-too/',
         date: 'September 8, 2015',
-        topic: '',
+        topic: 'Acts',
         desc:
           'I am a product of the Cooperative Program (CP). [1] I admit it and am proud of it. I was reared in a home where my father’s salary came whole or in part from gifts through the CP; my first ministry experience as a summer missionary was paid through CP gifts; I received a scholarship to college through the CP; later, in seminary, I received a substantial tuition benefit from the CP;'
       },
@@ -50,7 +50,7 @@ class ArticleList extends Component {
           'https://theologicalmatters.com/wp-content/uploads/2015/08/default_preach.jpg',
         url: 'https://theologicalmatters.com/2015/04/27/finishing-well/',
         date: 'April 27, 2015',
-        topic: '',
+        topic: '2 Timothy · Colossians · Proverbs',
         desc:
           'It happens about this same time every semester: students work feverishly to complete assignments, and faculty work diligently to grade them. Procrastination is no longer your friend. It’s easy to complain about the load or bemoan the fact that you didn’t start yesterday, but neither of those contributes to the completion of the assignments we carry today.'
       },
@@ -61,7 +61,7 @@ class ArticleList extends Component {
         url:
           'https://theologicalmatters.com/2014/10/20/theological-tailgating/',
         date: 'October 20, 2014',
-        topic: '',
+        topic: 'Romans · 1 Corinthians · Mark',
         desc:
           'You’ve seen them. They are the bumper bullies of the highway. Any day of the week, on any highway, and most any time of the day they are out there driving too fast, weaving in and out of lanes, and aggressively driving too close to the bumper of the car in front of them.'
       },
@@ -147,7 +147,7 @@ class ArticleList extends Component {
         url:
           'https://theologicalmatters.com/2013/08/16/we-are-the-body-of-christ/',
         date: 'August 16, 2013',
-        topic: '',
+        topic: '1 Corinthians · Ephesians · Colossians',
         desc:
           'Like many others, I have recently read and been blessed by Dr. Thom Rainer’s book, I am a Church Member. I’m convinced that Dr. Rainer has hit on a significant and timely issue. I am hopeful that his book will challenge believers around the world on the issue of church membership.'
       },
@@ -158,7 +158,7 @@ class ArticleList extends Component {
         url:
           'https://theologicalmatters.com/2013/07/11/somebodys-poisoned-the-water-hole/',
         date: 'July 11, 2013',
-        topic: '',
+        topic: 'Ezekiel',
         desc:
           'Sometimes we are better at talking about something than actually doing it. Nowhere is this more evident than in the topic of leadership. Pass through any bookstore and you’ll find shelves of books on leadership, leadership principles, leadership keys, and leadership according to [fill in the blank].'
       },
@@ -168,7 +168,7 @@ class ArticleList extends Component {
           'https://theologicalmatters.com/wp-content/uploads/2013/11/MinistryofaShepherd1.jpg',
         url: 'https://theologicalmatters.com/2013/06/13/2517/',
         date: 'June 13, 2013',
-        topic: '',
+        topic: 'Ezekiel',
         desc:
           'My kids are watching the new Star Trek movies. The most recent movie, Into Darkness, is currently in theaters. But those of you close to my age may remember the OLD Star Trek movies. The 1982 movie Wrath of Khan was famous for the phrase,'
       },
@@ -179,7 +179,7 @@ class ArticleList extends Component {
         url:
           'https://theologicalmatters.com/2013/05/09/the-ministry-of-a-shepherd-they-dont-need-to-go-away/',
         date: 'May 9, 2013',
-        topic: '',
+        topic: 'Ezekiel · Matthew · Mark',
         desc:
           'Matthew records an account during the ministry of Jesus that took place after the execution of John the Baptist. The Gospel accounts that after Jesus learned of those events, He withdrew to a deserted place alone. The people soon discovered where Jesus was, and a large crowd gathered on the north shore of the Sea'
       },
@@ -190,7 +190,7 @@ class ArticleList extends Component {
         url:
           'https://theologicalmatters.com/2013/04/10/lets-be-careful-out-there/',
         date: 'April 10, 2013',
-        topic: '',
+        topic: 'Ezekiel · Acts',
         desc:
           'Years ago, in the popular police television drama Hill Street Blues, every episode climaxed with Sergeant Esterhaus completing roll call with the admonition to his officers, “let’s be careful out there.” The phrase went that generations’ version of viral because it captured the stark'
       },
@@ -201,7 +201,7 @@ class ArticleList extends Component {
         url:
           'https://theologicalmatters.com/2013/03/13/the-ministry-of-a-shepherd-binding-up-the-broken/',
         date: 'March 13, 2013',
-        topic: '',
+        topic: 'Ezekiel · Psalms · Hosea',
         desc:
           'My wife and I have four boys. One of the things you learn quickly with multiple males in the household is that the world is a dangerous place. Boys aren’t looking for beauty; they are looking for adventure. But with great adventure comes great risk. In our case, injuries were a somewhat common occurrence.'
       },
@@ -212,7 +212,7 @@ class ArticleList extends Component {
         url:
           'https://theologicalmatters.com/2013/02/13/is-there-no-balm-in-gilead/',
         date: 'February 13, 2013',
-        topic: '',
+        topic: 'Ezekiel',
         desc:
           'February is the month we like to talk about love. Valentines are written, gifts are exchanged, and vows are made. It is estimated that this year 36 million heart-shaped boxes of candy will be sold, 50 million roses will be given, 1 billion cards will be sent, and 8 billion candy hearts will be produced.'
       },
@@ -233,7 +233,7 @@ class ArticleList extends Component {
         url:
           'https://theologicalmatters.com/2012/12/12/in-weakness-not-made-strong/',
         date: 'December 12, 2012',
-        topic: '',
+        topic: 'Ezekiel · Isaiah · Job',
         desc:
           'Scripture reveals the heart of the Heavenly Father for the vulnerable. He commands special care for those who are poor, sick, widowed, or distressed. Indeed, James suggested that the definition of pure and undefiled religion begins with visiting orphans and widows in their distress.'
       },
@@ -244,7 +244,7 @@ class ArticleList extends Component {
         url:
           'https://theologicalmatters.com/2012/11/14/the-ministry-of-a-shepherd-feed-your-lamb-feed-it/',
         date: 'November 14, 2012',
-        topic: '',
+        topic: 'Ezekiel · Judah · Ezra',
         desc:
           'I don’t always eat right. There, I said it. I should eat more vegetables and less Hot Tamales candy. In fact, I’m sure if I put my mind to it, I could come up with a much longer list of things that I should do … and maybe I should do that.'
       },
@@ -255,7 +255,7 @@ class ArticleList extends Component {
         url:
           'https://theologicalmatters.com/2012/10/10/the-ministry-of-a-shepherd-replacement-shepherds/',
         date: 'October 10, 2012',
-        topic: '',
+        topic: 'Ezekiel · John',
         desc:
           'As sports fans, we’ve just come through one of the most intriguing experiences in recent years … Replacement Referees. As the drama of these “scab” referees began to unfold, we began to hear stories about the background of the men assuming those roles. Some came to the NFL '
       },
@@ -266,7 +266,7 @@ class ArticleList extends Component {
         url:
           'https://theologicalmatters.com/2012/09/12/the-physiognomy-of-ministry/',
         date: 'September 12, 2012',
-        topic: '',
+        topic: 'Matthew',
         desc:
           'I just recently finished a 60-day exercise regimen called Insanity. While, I wouldn’t say I have a beach body as the package advertises (which probably has more to do with the candidate than the program), I will confess that the program is certainly well named!'
       },
@@ -276,7 +276,7 @@ class ArticleList extends Component {
           'https://theologicalmatters.com/wp-content/themes/theologicalmatters/images/default_preach.jpg',
         url: 'https://theologicalmatters.com/2012/08/08/biles/',
         date: 'August 8, 2012',
-        topic: '',
+        topic: '2 Chronicles · Exodus · Deuteronomy',
         desc:
           'We live in an app-crazy time. One of the favorite motto’s of this generation is, “there’s an app for that.” Indeed, there are apps for many things. Some of them are helpful. Others are just plain weird. For example, did you know that there is actually an ACME lie detector app? I’m not sure if there is a falling anvil involved.'
       },
@@ -287,7 +287,7 @@ class ArticleList extends Component {
         url:
           'https://theologicalmatters.com/2012/04/27/monopoly-and-the-game-of-life/',
         date: 'April 27, 2012',
-        topic: '',
+        topic: '1 Timothy · Titus',
         desc:
           'Not too long ago, one of our boys came home with a McDonald’s Monopoly game piece which promised that we were just one piece away from winning their grand prize. With his Park Place, we figured we were just Boardwalk away from retirement! Of course, us and 250 million other people who got Park Place,'
       },
@@ -298,7 +298,7 @@ class ArticleList extends Component {
         url:
           'https://theologicalmatters.com/2011/11/09/the-lord-called-me-to-seminary-now-what/',
         date: 'November 9, 2011',
-        topic: '',
+        topic: 'Luke · Matthew',
         desc:
           'So, the Lord has called you to seminary. That’s great! You are joining a family that is built on a solid foundation of the truth of God’s Word that touches the world and impacts eternity. No doubt, you are here because God has called you into ministry.'
       }
@@ -325,7 +325,11 @@ class ArticleList extends Component {
                 {e.desc && e.desc.substring(0, 200)}
                 ...
               </p>
+              <div className='alm_btm'>
+
               <p>{e.date}</p>
+              <p>{e.topic}</p>
+              </div>
             </div>
           </div>
         );
@@ -336,7 +340,7 @@ class ArticleList extends Component {
         <input
           type="text"
           onChange={e => this.handleChange(e.target.value)}
-          placeholder="Search by Title or Topic..."
+          placeholder="Search by Title or Book of the Bible..."
           className="article_search"
         />
         <div className="filter_content">{filter}</div>
