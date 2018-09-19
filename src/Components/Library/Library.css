@@ -223,7 +223,13 @@
   display: none;
 }
 
+.chapel_sermons_sub h2:nth-of-type(2){
+margin-bottom: 0;
+}
 
+.sbtc_logo {
+  margin: -30px 0;
+}
 
 @keyframes titleFade {
   0% {

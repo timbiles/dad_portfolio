@@ -188,7 +188,38 @@ class Library extends Component {
                 >
                   2 Timothy Sermon Structures
                 </a>
+                <a
+                  target="blank"
+                  href="http://preachingsource.com/conference/breakout-session-deron-biles/"
+                >
+                  Breakout Session - 2017
+                </a>
+                <a
+                  target="blank"
+                  href="http://preachingsource.com/conference/breakout-session-deron-biles-2/"
+                >
+                  Breakout Session - 2018
+
+                </a>
               </div>
+              <h2>Preaching Points</h2>
+              <div className="chapel_sub1">
+                <img
+                  className="preaching_source sbtc_logo"
+                  src='https://i.vimeocdn.com/portrait/14963457_300x300'
+                  alt="SBTC"
+                />
+                <p>
+                  Preaching Points from SBTC
+                </p>
+                <a
+                  target="blank"
+                  rel="noreferrer noopener"
+                  href="https://sbtexas.com/onlinetraining/preaching-points-series/year-1/minor-prophets-12-week-series/c-134/"
+                >
+                  Minor Prophets series
+                </a>
+                </div>
             </div>
           </div>
           <Verse />

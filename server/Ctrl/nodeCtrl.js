@@ -15,7 +15,7 @@ const requestEmail = (req, res) => {
   transporter
     .sendMail({
       from: 'convoke.meet@gmail.com',
-      to: 'timbilestimbiles@gmail.com',
+      to: 'DBiles@swbts.edu',
       subject: `You have a new Speaker Request from ${contactName}.`,
       text:
         `Hey Deron,` +
