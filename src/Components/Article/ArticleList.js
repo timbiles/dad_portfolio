@@ -148,6 +148,8 @@ class ArticleList extends Component {
           'https://theologicalmatters.com/2013/08/16/we-are-the-body-of-christ/',
         date: 'August 16, 2013',
         topic: '1 Corinthians · Ephesians · Colossians',
+        // topic: ['1 Corinthians', 'Ephesians', 'Colossians'],
+        
         desc:
           'Like many others, I have recently read and been blessed by Dr. Thom Rainer’s book, I am a Church Member. I’m convinced that Dr. Rainer has hit on a significant and timely issue. I am hopeful that his book will challenge believers around the world on the issue of church membership.'
       },

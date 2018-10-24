@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const massive = require('massive');
+const session = require('express-session');
 const axios = require('axios');
 const path = require('path');
 
@@ -31,6 +32,38 @@ massive(process.env.CONNECTION_STRING)
     console.log(err);
   });
 
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 24 * 7 * 2
+    }
+  })
+);
+
+// sessions
+app.put('/api/admin', (req, res) => {
+  const { user, pass } = req.body;
+  const { ADMIN_LOGIN, ADMIN_PASSWORD } = process.env;
+  
+  if (user === ADMIN_LOGIN && pass === ADMIN_PASSWORD) {
+    req.session.username = user;
+    res.status(200).send(req.session);
+  } else {
+    res.status(500).send('error')
+  }
+});
+
+app.get('/api/logged-in', (req, res) => {
+  if (req.session.username) {
+    return res.status(200).send(req.session);
+  } else {
+    return res.status(500);
+  }
+});
+
 //endpoints
 app.get('/api/speaker-request', getForm);
 app.post('/api/create-form', addForm);
@@ -40,7 +73,7 @@ app.delete('/api/delete-event/:id', deleteEvent);
 app.delete('/api/delete', deleteOld);
 
 //node endpoints
-app.post('/api/email', requestEmail)
+app.post('/api/email', requestEmail);
 
 //run build
 app.get('*', (req, res) => {

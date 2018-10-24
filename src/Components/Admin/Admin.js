@@ -35,13 +35,16 @@ Modal.setAppElement(document.getElementById('root'));
 class Admin extends Component {
   state = {
     modalIsOpen: false,
-    pass: true,
     main: false,
     username: '',
     password: ''
   };
   componentDidMount() {
     this.props.getRequests();
+
+    axios.get('/api/logged-in').then(res => {
+      this.setState({ main: true });
+    });
   }
 
   openModal = () => {
@@ -60,12 +63,25 @@ class Admin extends Component {
     this.setState({ password: e.target.value });
   };
 
-  submitAdmin = e => {
+  // submitAdmin = e => {
+  //   const { username, password } = this.state;
+
+  //   username === process.env.REACT_APP_LOGIN &&
+  //     password === process.env.REACT_APP_PASSWORD &&
+  //     this.setState({ pass: false, main: true });
+  // };
+
+  submitAdmin = () => {
     const { username, password } = this.state;
 
-    username === process.env.REACT_APP_LOGIN &&
-      password === process.env.REACT_APP_PASSWORD &&
-      this.setState({ pass: false, main: true });
+    axios
+      .put('/api/admin', { user: username, pass: password })
+      .then(res => {
+        this.setState({ main: true });
+      })
+      // .catch(() => {
+      //   this.setState({ err: true });
+      // });
   };
 
   handleClick = e => {
@@ -105,7 +121,7 @@ class Admin extends Component {
   render() {
     const { updateEvent, updateDate, updateTime, updateLocation } = this.props;
     const { requests } = this.props.reducer;
-    const { pass, main } = this.state;
+    const { main } = this.state;
 
     const map = requests.map(e => {
       return (
@@ -120,7 +136,7 @@ class Admin extends Component {
 
     return (
       <div className="admin">
-        {pass && (
+        {!main && (
           <div className="admin_login">
             <h1>Welcome Deron!</h1>
             <div>

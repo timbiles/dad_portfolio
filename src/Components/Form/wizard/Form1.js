@@ -80,8 +80,9 @@ class Form1 extends Component {
           <span id="ce_title">Email Address</span>
         </label>
         {validate && <p className="validation">*Please complete each field.</p>}
+
         <div className="form_btn">
-          {!organizationName || !contactName || !phoneNumber || !email ? (            
+          {!organizationName || !contactName || !phoneNumber || !email ? (
             <img
               onClick={() => this.setState({ validate: true })}
               src="https://image.flaticon.com/icons/svg/118/118740.svg"

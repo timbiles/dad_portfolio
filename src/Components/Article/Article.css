@@ -94,7 +94,7 @@
 
 .article_list_map:hover .alm_content{
   background-color: rgb(250, 250, 250);
-  
+  transition: 1s;  
 }
 
 /* ---- */
@@ -205,4 +205,9 @@
   .article h1 {
     font-size: 1.8rem;
   }
+}
+
+
+.svg {
+height: 40px;
 }
