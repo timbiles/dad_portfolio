@@ -36,6 +36,7 @@ class Admin extends Component {
   state = {
     modalIsOpen: false,
     main: false,
+    err: false,
     username: '',
     password: ''
   };
@@ -43,7 +44,6 @@ class Admin extends Component {
  async componentDidMount() {
   await this.props.getRequests();
   await axios.get('/api/logged-in').then(res => {
-        console.log('hit');
         this.setState({ main: true });
       })
       .catch(() => {
@@ -80,10 +80,10 @@ class Admin extends Component {
 
     axios.put('/api/admin', { user: username, pass: password }).then(res => {
       this.setState({ main: true });
+    })
+    .catch(() => {
+      this.setState({ err: true });
     });
-    // .catch(() => {
-    //   this.setState({ err: true });
-    // });
   };
 
   handleClick = e => {
@@ -119,10 +119,9 @@ class Admin extends Component {
   };
 
   render() {
-    console.log(this.state)
     const { updateEvent, updateDate, updateTime, updateLocation } = this.props;
     const { requests } = this.props.reducer;
-    const { main } = this.state;
+    const { main, err } = this.state;
 
     const map = requests.map(e => {
       return (
@@ -149,6 +148,11 @@ class Admin extends Component {
             <div>
               <h3 onClick={e => this.submitAdmin(e)}>Log In</h3>
             </div>
+            {err && (
+              <p className="invalid">
+                **Invalid credentials. Please try again.
+              </p>
+            )}
           </div>
         )}
         {main && (
