@@ -9,37 +9,13 @@ const initialState = {
   didErr: false
 };
 
-const UPDATE_EVENT = 'UPDATE_EVENT';
-const UPDATE_DATE = 'UPDATE_DATE';
-const UPDATE_TIME = 'UPDATE_TIME';
-const UPDATE_LOCATION = 'UPDATE_LOCATION';
+const UPDATE_INPUT = 'UPDATE_INPUT';
 const GET_CALENDAR = 'GET_CALENDAR';
 
-export const updateEvent = event => {
+export const updateInput = input => {
   return {
-    type: UPDATE_EVENT,
-    payload: event
-  };
-};
-
-export const updateDate = date => {
-  return {
-    type: UPDATE_DATE,
-    payload: date
-  };
-};
-
-export const updateTime = time => {
-  return {
-    type: UPDATE_TIME,
-    payload: time
-  };
-};
-
-export const updateLocation = location => {
-  return {
-    type: UPDATE_LOCATION,
-    payload: location
+    type: UPDATE_INPUT,
+    payload: input
   };
 };
 
@@ -62,25 +38,10 @@ export default function locationReducer(state = initialState, action) {
         ...state,
         didErr: true
       };
-    case UPDATE_EVENT:
+      case UPDATE_INPUT:
       return {
         ...state,
-        event: action.payload
-      };
-    case UPDATE_DATE:
-      return {
-        ...state,
-        date: action.payload
-      };
-    case UPDATE_TIME:
-      return {
-        ...state,
-        time: action.payload
-      };
-    case UPDATE_LOCATION:
-      return {
-        ...state,
-        location: action.payload
+        [action.payload.target.name]: action.payload.target.value
       };
     default:
       return state;
