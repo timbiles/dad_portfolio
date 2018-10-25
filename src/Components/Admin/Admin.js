@@ -39,12 +39,16 @@ class Admin extends Component {
     username: '',
     password: ''
   };
-  componentDidMount() {
-    this.props.getRequests();
 
-    axios.get('/api/logged-in').then(res => {
-      this.setState({ main: true });
-    });
+ async componentDidMount() {
+  await this.props.getRequests();
+  await axios.get('/api/logged-in').then(res => {
+        console.log('hit');
+        this.setState({ main: true });
+      })
+      .catch(() => {
+        console.log('Make sure to log in.');
+      });
   }
 
   openModal = () => {
@@ -74,14 +78,12 @@ class Admin extends Component {
   submitAdmin = () => {
     const { username, password } = this.state;
 
-    axios
-      .put('/api/admin', { user: username, pass: password })
-      .then(res => {
-        this.setState({ main: true });
-      })
-      // .catch(() => {
-      //   this.setState({ err: true });
-      // });
+    axios.put('/api/admin', { user: username, pass: password }).then(res => {
+      this.setState({ main: true });
+    });
+    // .catch(() => {
+    //   this.setState({ err: true });
+    // });
   };
 
   handleClick = e => {
@@ -116,9 +118,8 @@ class Admin extends Component {
         });
   };
 
-
-
   render() {
+    console.log(this.state)
     const { updateEvent, updateDate, updateTime, updateLocation } = this.props;
     const { requests } = this.props.reducer;
     const { main } = this.state;
@@ -135,16 +136,18 @@ class Admin extends Component {
     });
 
     return (
-      <div className="admin">
+      <div className={!main ? 'admin1' : 'admin'}>
         {!main && (
           <div className="admin_login">
             <h1>Welcome Deron!</h1>
             <div>
+              <p>Username</p>
               <input type="text" onChange={this.handleUsername} />
+              <p>Password</p>
               <input type="password" onChange={this.handlePassword} />
             </div>
             <div>
-              <h3 onClick={e => this.submitAdmin(e)}>Submit</h3>
+              <h3 onClick={e => this.submitAdmin(e)}>Log In</h3>
             </div>
           </div>
         )}

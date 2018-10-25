@@ -1,4 +1,5 @@
-.admin {
+.admin,
+.admin1 {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,7 +7,14 @@
   height: 100%;
   padding-top: 60px;
   position: relative;
-  
+}
+
+.admin1 {
+  background: url('https://wallpapertag.com/wallpaper/full/0/b/a/371175-free-download-blurry-background-3840x2160-lockscreen.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .admin_main {
@@ -16,28 +24,51 @@
 }
 
 .admin_login {
-  height: 100vh;
   margin-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.admin_login input {
-  margin: 1%;
+  padding: 3%;
+  height: 60vh;
+  box-shadow: 1px 1px 5px grey;
+  background: #fff;
 }
 
 .admin_login > div {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  width: 80%;
+  
+}
+
+.admin_login input {
+  margin: 1%;
+  background: #fff;
+  height: 20px;
+}
+.admin_login input:focus {
+  outline: none;
+}
+
+.admin_login p {
+  color: #343434;
+  margin-bottom: 0;
+  font-size: .6em;
+  letter-spacing: 1.5px;
 }
 
 .admin_login h3 {
+  font-weight: 200;
+  padding: 2%;
   display: inline-block;
+  text-align: center;
   cursor: pointer;
+  background: #232F3E;
+  color: #fff;
 }
 .admin_login h3:hover {
-transform: scale(1.04)
+transform: scale(1.005)
 }
 .admin_login h3:active {
 transform: scale(.98)
