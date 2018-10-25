@@ -8,7 +8,6 @@ import Calendar from '../Calendar/Calendar';
 import './Admin.css';
 
 import { getCalendar, updateInput } from '../../ducks/eventsReducer';
-
 import { getRequests } from '../../ducks/requestReducer';
 
 const customStyles = {
