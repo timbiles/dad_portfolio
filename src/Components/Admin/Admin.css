@@ -155,10 +155,19 @@ transform: scale(.98)
 }
 
 .requests_map {
-    border: 1px solid #000;
+    border-bottom: 2px solid #5e5e5e52;
+    box-shadow: 1px 1px 10px -2px #5e5e5e52;
     width: 100%;
     padding: 1%;
     margin-bottom: 1%;
+    position: relative;
+}
+
+.form_del {
+  position: absolute;
+  top: 0;
+  right: 3%;
+  cursor: pointer;
 }
 
 .requests_map h5 {

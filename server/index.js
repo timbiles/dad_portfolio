@@ -14,7 +14,8 @@ const {
   getCalendar,
   addCalendar,
   deleteEvent,
-  deleteOld
+  deleteOld,
+  deleteForm
 } = require('./Ctrl/formCtrl');
 const { requestEmail } = require('./Ctrl/nodeCtrl');
 
@@ -71,6 +72,7 @@ app.get('/api/calendar', getCalendar);
 app.post('/api/add-to-calendar', addCalendar);
 app.delete('/api/delete-event/:id', deleteEvent);
 app.delete('/api/delete', deleteOld);
+app.delete('/api/delete-form/:id', deleteForm)
 
 //node endpoints
 app.post('/api/email', requestEmail);

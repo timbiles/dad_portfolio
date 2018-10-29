@@ -84,14 +84,12 @@
   transform: scale(1.05);
 }
 
-.back_to_admin {
-  color: rgb(90, 102, 156);
-  text-decoration: none;
-}
-
 .bt_admin {
   display: inline-block;
+  width: max-content;
   margin: 1%;
+  cursor: pointer;
+  color: #5a669c;
 }
 
 .btn:hover {

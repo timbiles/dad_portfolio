@@ -58,7 +58,6 @@ class Calendar extends Component {
   };
 
   render() {
-    console.log(this.props)
     const { calendar } = this.props.eventReducer;
     const map =
       calendar &&

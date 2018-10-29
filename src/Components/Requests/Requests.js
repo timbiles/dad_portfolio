@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import moment from 'moment';
 import Print from 'rc-print';
 import Fade from 'react-reveal/Fade';
@@ -22,22 +22,23 @@ class Requests extends Component {
 
     return (
       <div className="requests">
-      <div className="requests_title">
-        <div className="line_container">
-          <div className="a_line" />
-          <div className="a_line" />
+        <div className="requests_title">
+          <div className="line_container">
+            <div className="a_line" />
+            <div className="a_line" />
+          </div>
+          <Fade cascade>
+            <h1 className="about_name">Request Form</h1>
+          </Fade>
+          <div className="line_container">
+            <div className="a_line" />
+            <div className="a_line" />
+          </div>
         </div>
-        <Fade cascade>
-        <h1 className="about_name">Request Form</h1>
-        </Fade>
-        <div className="line_container">
-          <div className="a_line" />
-          <div className="a_line" />
-        </div>
-      </div>
-      <Link className='back_to_admin' to='/admin'>
-        <h3 className='bt_admin btn'>Back to admin</h3>
-      </Link>
+
+        <p className="bt_admin btn" onClick={() => this.props.history.goBack()}>
+          Back to admin
+        </p>
         <Print ref="test">
           <div className="request_container">
             <div className="request_title">

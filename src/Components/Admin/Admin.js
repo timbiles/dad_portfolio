@@ -13,6 +13,10 @@ class Admin extends Component {
   };
 
   componentDidMount() {
+    this.login();
+  }
+
+  login = () => {
     axios
       .get('/api/logged-in')
       .then(res => {
@@ -21,7 +25,7 @@ class Admin extends Component {
       .catch(() => {
         console.log('Make sure to log in.');
       });
-  }
+  };
 
   handleUsername = e => {
     this.setState({ username: e.target.value });

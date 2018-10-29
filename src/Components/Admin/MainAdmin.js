@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Modal from 'react-modal';
+import swal from 'sweetalert2';
 
 import Calendar from '../Calendar/Calendar';
 import './Admin.css';
@@ -74,18 +75,60 @@ class MainAdmin extends Component {
         });
   };
 
+  deleteForm = e => {
+    swal({
+      position: 'top-end',
+      type: 'warning',
+      title: 'Removing this request is permanant.',
+      text: 'Do you wish to continue?',
+      confirmButtonText: 'Yes, remove it!',
+      showCancelButton: true
+    }).then(res => {
+      if (res.value) {
+        swal({
+          position: 'top-end',
+          type: 'success',
+          title: 'Deleted',
+          text: 'This Request has been deleted!',
+          showConfirmButton: false,
+          timer: 1500
+        });
+        axios.delete(`/api/delete-form/${e}`).then(()=> {
+          this.props.getRequests()
+        })
+
+          .catch(() => {
+            swal({
+              position: 'top-end',
+              type: 'warning',
+              title:
+                'You cannot remove this form!'
+            });
+          });
+      } else if (res.dismiss === swal.DismissReason.cancel) {
+        swal('Cancelled', 'The request is still here :)', 'error');
+      }
+    });
+
+
+    
+  };
+
   render() {
     const { updateInput } = this.props;
     const { requests } = this.props.reducer;
 
     const map = requests.map(e => {
       return (
-        <Link key={e.id} className="admin_link" to={`/requests/${e.id}`}>
-          <div className="requests_map" key={e.id}>
+        <div key={e.id} className="requests_map" key={e.id}>
+          <Link className="admin_link" to={`/requests/${e.id}`}>
             <h5>{e.organization_name}</h5>
-            <p>{e.contact_name}</p>
-          </div>
-        </Link>
+          </Link>
+          <p>{e.contact_name}</p>
+          <p className="form_del" onClick={() => this.deleteForm(e.id)}>
+            X
+          </p>
+        </div>
       );
     });
     return (
