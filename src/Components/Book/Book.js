@@ -41,6 +41,13 @@ class Book extends Component {
                 a generation!`,
         img:
           'http://csm-publishing.org/wp-content/uploads/2015/03/SEE_FA-194x300.jpg'
+      },
+      {
+        title: 'Bible Dictionary',
+
+        description: `This volume is an outstanding one-volume resource in Biblical study.  The work was edited by Tremper Longman and includes a comprehensive list of articles on a vast array of Biblical topics.  Dr. Biles contributed 65 articles for this volume.`,
+        img:
+          'https://images-na.ssl-images-amazon.com/images/I/51%2Bzx0gtW2L._SX343_BO1,204,203,200_.jpg'
       }
     ]
   };
@@ -109,9 +116,23 @@ class Book extends Component {
                   <p>Amazon</p>
                 </a>
               </div>
+            ) : window.location.pathname ===
+            `/books/Bible%20Dictionary` ? (
+              <div className="buy buy2">
+                <img
+                  className="book_icon"
+                  src="http://www.vmastoryboard.com/wp-content/uploads/2014/08/Amazon-A-Logo.jpg"
+                  alt="Amazon logo"
+                />
+                <a
+                  href="https://www.amazon.com/Baker-Illustrated-Bible-Dictionary/dp/080101297X"
+                  target="blank"
+                >
+                  <p>Amazon</p>
+                </a>
+              </div>
             ) : (
               <div className="buy buy2">
-
                 <img
                   className="book_icon"
                   src="https://pbs.twimg.com/profile_images/634254671708729344/dSkivS_4_400x400.jpg"
@@ -128,7 +149,7 @@ class Book extends Component {
           </div>
         </div>
         <div className="book_container2">
-          <div className='bc_top'>
+          <div className="bc_top">
             <img className="book2" src={book.img} alt={book.title} />
             <p>{book.description}</p>
           </div>
@@ -165,7 +186,6 @@ class Book extends Component {
               </div>
             ) : window.location.pathname === `/books/After%20God's%20Heart` ? (
               <div className="buy buy_2">
-
                 <img
                   className="book_icon"
                   src="http://www.vmastoryboard.com/wp-content/uploads/2014/08/Amazon-A-Logo.jpg"
@@ -180,7 +200,6 @@ class Book extends Component {
               </div>
             ) : (
               <div className="buy buy_2">
-
                 <img
                   className="book_icon"
                   src="https://pbs.twimg.com/profile_images/634254671708729344/dSkivS_4_400x400.jpg"
@@ -196,7 +215,7 @@ class Book extends Component {
             )}
           </div>
         </div>
-        <VerseGenerator/>
+        <VerseGenerator />
       </div>
     );
   }

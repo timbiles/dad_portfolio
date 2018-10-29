@@ -12,6 +12,30 @@ class ArticleList extends Component {
     const articles = [
       {
         title:
+          '10 Reasons to consider pursuiing a Doctor of Ministry (DMin)',
+        img:
+          'http://dailypastor.com/wp-content/uploads/2018/10/2018-10-29-consider-dmin.jpg',
+        url:
+          'http://dailypastor.com/consider-pursuing-a-doctor-of-ministry-dmin/',
+        date: 'October 29, 2018',
+        topic: '',
+        desc:
+          'People have often asked me, “What is a DMin and why should I pursue one?”  The Doctor of Ministry (DMin) is an advanced, professional degree designed for those already in ministry. The primary difference between a DMin and a Ph.D. is its focus.'
+      },
+      {
+        title:
+          'Preaching the Old Testament Prophets - Annotated Bibliography',
+        img:
+          '',
+        url:
+          'http://preachingsource.com/wp-content/uploads/2018/10/Preaching-Old-Testament-Prophets-Annotated-Bibliography.pdf',
+        date: 'October 2018',
+        topic: '',
+        desc:
+          'Are you looking to study Old Testament prophets? I have put together an annotated bibliography on some helpful resources in the field.  This is only one of many sources you can find to help you in your preaching on @preachingsource.'
+      },
+      {
+        title:
           'The Narrative and Characterization: How Biblical Characters Inform the Meaning of a Text',
         img:
           'http://preachingsource.com/wp-content/uploads/2017/02/shutterstock_246986977.jpg',
@@ -316,6 +340,7 @@ class ArticleList extends Component {
         );
       })
       .map((e, i) => {
+        if (!e.img) e.img = 'http://blog.lightstock.com/wp-content/uploads/2014/07/000015_Lightstock-16.jpg'
         return (
           <div key={i} className="article_list_map">
             <img className="article_img" src={e.img} alt={e.title} />
