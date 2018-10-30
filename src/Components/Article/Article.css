@@ -60,6 +60,7 @@
   flex-direction: column;
   justify-content: space-between;
   min-height: 300px;
+  min-width: 95%;
   transition: 1s;  
 }
 

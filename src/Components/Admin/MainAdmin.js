@@ -130,7 +130,6 @@ class MainAdmin extends Component {
   }
 
   render() {
-    console.log(this.state)
     const { updateInput } = this.props;
     const { requests } = this.props.reducer;
 
