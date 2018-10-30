@@ -1,30 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import {
-  updateEventName,
-  updateEventDate,
-  updateEventTime,
-  updateSpeakerRequest,
-  updateArrivalTime,
-  updateEventLocation,
-  updateEventDescription
-} from '../../../ducks/requestReducer';
+import { updateInput } from '../../../ducks/requestReducer';
 
 class Form2 extends Component {
   state = {
     validate: false
-  }
-  render() {    
-    const {
-      updateEventName,
-      updateEventDate,
-      updateEventTime,
-      updateSpeakerRequest,
-      updateArrivalTime,
-      updateEventLocation,
-      updateEventDescription,
-    } = this.props;
+  };
+  render() {
+    const { updateInput } = this.props;
 
     const {
       eventName,
@@ -45,8 +29,9 @@ class Form2 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
-            value={eventName}            
-            onChange={e => updateEventName(e.target.value)}
+            value={eventName}
+            name="eventName"
+            onChange={e => updateInput(e)}
           />
           <span id="ce_title">Name of Event</span>
         </label>
@@ -56,8 +41,9 @@ class Form2 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
-            value={eventDate}            
-            onChange={e => updateEventDate(e.target.value)}
+            value={eventDate}
+            name="eventDate"
+            onChange={e => updateInput(e)}
           />
           <span id="ce_title">Date of Event</span>
         </label>
@@ -67,8 +53,9 @@ class Form2 extends Component {
             className="input_field"
             type="text"
             placeholder="12:00"
-            value={eventTime}            
-            onChange={e => updateEventTime(e.target.value)}
+            value={eventTime}
+            name="eventTime"
+            onChange={e => updateInput(e)}
           />
           <span id="ce_title">Time of Event (start to end)</span>
         </label>
@@ -78,8 +65,9 @@ class Form2 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
-            value={speakerRequest}            
-            onChange={e => updateSpeakerRequest(e.target.value)}
+            value={speakerRequest}
+            name="speakerRequest"
+            onChange={e => updateInput(e)}
           />
           <span id="ce_title">Speaker Requested to attend entire event</span>
         </label>
@@ -89,8 +77,9 @@ class Form2 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
-            value={arrivalTime}            
-            onChange={e => updateArrivalTime(e.target.value)}
+            value={arrivalTime}
+            name="arrivalTime"
+            onChange={e => updateInput(e)}
           />
           <span id="ce_title">Arrival Time</span>
         </label>
@@ -100,8 +89,9 @@ class Form2 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
-            value={eventLocation}            
-            onChange={e => updateEventLocation(e.target.value)}
+            value={eventLocation}
+            name="eventLocation"
+            onChange={e => updateInput(e)}
           />
           <span id="ce_title">Event Location</span>
         </label>
@@ -111,32 +101,40 @@ class Form2 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
-            value={eventDescription}            
-            onChange={e => updateEventDescription(e.target.value)}
+            value={eventDescription}
+            name="eventDescription"
+            onChange={e => updateInput(e)}
           />
           <span id="ce_title">Event Description</span>
         </label>
-        {this.state.validate && <p className="validation">*Please complete each field.</p>}
+        {this.state.validate && (
+          <p className="validation">*Please complete each field.</p>
+        )}
         <div className="form_btn">
           <img
-            onClick={this.props.toggleClicka}          
+            onClick={this.props.toggleClicka}
             src="https://image.flaticon.com/icons/svg/118/118739.svg"
             alt="Previous arrow"
           />
-          {!eventName || !eventDate || !eventTime|| !speakerRequest || !arrivalTime || !eventLocation|| !eventDescription? (
+          {!eventName ||
+          !eventDate ||
+          !eventTime ||
+          !speakerRequest ||
+          !arrivalTime ||
+          !eventLocation ||
+          !eventDescription ? (
             <img
               onClick={() => this.setState({ validate: true })}
               src="https://image.flaticon.com/icons/svg/118/118740.svg"
               alt="Next arrow"
             />
           ) : (
-             <img
-            onClick={this.props.toggleClick2}
-            src="https://image.flaticon.com/icons/svg/118/118740.svg"
-            alt="Next arrow"
-          /> 
+            <img
+              onClick={this.props.toggleClick2}
+              src="https://image.flaticon.com/icons/svg/118/118740.svg"
+              alt="Next arrow"
+            />
           )}
-        
         </div>
       </div>
     );
@@ -148,12 +146,6 @@ const mapStateToProps = state => state;
 export default connect(
   mapStateToProps,
   {
-    updateEventName,
-    updateEventDate,
-    updateEventTime,
-    updateSpeakerRequest,
-    updateArrivalTime,
-    updateEventLocation,
-    updateEventDescription
+    updateInput
   }
 )(Form2);

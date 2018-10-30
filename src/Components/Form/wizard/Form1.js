@@ -3,13 +3,7 @@ import { connect } from 'react-redux';
 
 import '../Form.css';
 
-import {
-  getRequests,
-  updateOrganization,
-  updateContactName,
-  updatePhoneNumber,
-  updateEmail
-} from '../../../ducks/requestReducer';
+import { getRequests, updateInput } from '../../../ducks/requestReducer';
 
 class Form1 extends Component {
   state = {
@@ -17,12 +11,7 @@ class Form1 extends Component {
   };
 
   render() {
-    const {
-      updateOrganization,
-      updateContactName,
-      updatePhoneNumber,
-      updateEmail
-    } = this.props;
+    const { updateInput } = this.props;
 
     const {
       organizationName,
@@ -42,7 +31,8 @@ class Form1 extends Component {
             type="text"
             placeholder="..."
             value={organizationName}
-            onChange={e => updateOrganization(e.target.value)}
+            name="organizationName"
+            onChange={e => updateInput(e)}
           />
           <span id="ce_title">Organization Name</span>
         </label>
@@ -53,7 +43,8 @@ class Form1 extends Component {
             type="text"
             placeholder="..."
             value={contactName}
-            onChange={e => updateContactName(e.target.value)}
+            name="contactName"
+            onChange={e => updateInput(e)}
           />
           <span id="ce_title">Contact Name</span>
         </label>
@@ -64,7 +55,8 @@ class Form1 extends Component {
             type="text"
             placeholder="..."
             value={phoneNumber}
-            onChange={e => updatePhoneNumber(e.target.value)}
+            name="phoneNumber"
+            onChange={e => updateInput(e)}
           />
           <span id="ce_title">Phone Number</span>
         </label>
@@ -75,7 +67,8 @@ class Form1 extends Component {
             type="text"
             placeholder="..."
             value={email}
-            onChange={e => updateEmail(e.target.value)}
+            name="email"
+            onChange={e => updateInput(e)}
           />
           <span id="ce_title">Email Address</span>
         </label>
@@ -107,9 +100,6 @@ export default connect(
   mapStateToProps,
   {
     getRequests,
-    updateOrganization,
-    updateContactName,
-    updatePhoneNumber,
-    updateEmail
+    updateInput
   }
 )(Form1);

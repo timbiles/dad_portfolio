@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { updateBio, updateImg, updateW2 } from '../../../ducks/requestReducer';
+import { updateInput } from '../../../ducks/requestReducer';
 
 class Form5 extends Component {
   render() {
-    const { updateBio, updateImg, updateW2, bio, img, w2 } = this.props;
+    const { updateInput } = this.props;
+      
+      const { bio, img, w2 } = this.props.reducer;
 
     return (
       <div className="form_main">
@@ -17,7 +19,8 @@ class Form5 extends Component {
             type="text"
             placeholder="..."
             value={bio}
-            onChange={e => updateBio(e.target.value)}
+            name='bio'
+            onChange={e => updateInput(e)}
           />
           <span id="ce_title">Do you need biographical information</span>
         </label>
@@ -28,7 +31,8 @@ class Form5 extends Component {
             type="text"
             placeholder="..."
             value={img}
-            onChange={e => updateImg(e.target.value)}
+            name='img'
+            onChange={e => updateInput(e)}
           />
           <span id="ce_title">Do you need a photo</span>
         </label>
@@ -39,7 +43,8 @@ class Form5 extends Component {
             type="text"
             placeholder="..."
             value={w2}
-            onChange={e => updateW2(e.target.value)}
+            name='w2'
+            onChange={e => updateInput(e)}
           />
           <span id="ce_title">Do you need a W-2</span>
         </label>
@@ -64,8 +69,6 @@ const mapStateToProps = state => state;
 export default connect(
   mapStateToProps,
   {
-    updateBio,
-    updateImg,
-    updateW2
+    updateInput
   }
 )(Form5);

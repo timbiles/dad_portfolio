@@ -7,7 +7,7 @@ const getArticles = (req, res) => {
     .get_articles()
     .then(response => {
       response.map(e => {
-        e.date = moment.utc(e.date).format('MMMM D, YYYY');
+        e.date = moment.utc(e.date, 'MMMM D, YYYY').format('MMMM D, YYYY');
       });
       res.status(200).send(response);
     })

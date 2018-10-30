@@ -32,6 +32,7 @@
 .books_top {
   padding-bottom: 4%;
   border-bottom: 1px solid rgb(240, 240, 240);
+  flex-wrap: wrap;
 }
 
 .portfolio_sub > div {
@@ -53,6 +54,7 @@
 
 .book {
   height: 300px;
+  width: 200px;
   box-shadow: 1px 1px 5px grey;
   border-radius: 1%;
   transform: rotateY(180deg);

@@ -1,31 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import {
-  updateAirport,
-  updateAirportTransportation,
-  updateLodging,
-  updateLodgingLocation,
-  updateTravelExpenses,
-  updateReimbursementReceipts
-} from '../../../ducks/requestReducer';
+import { updateInput } from '../../../ducks/requestReducer';
 
 class Form4 extends Component {
   render() {
+    const { updateInput } = this.props;
+
     const {
-      updateAirport,
-      updateAirportTransportation,
-      updateLodging,
-      updateLodgingLocation,
-      updateTravelExpenses,
-      updateReimbursementReceipts,
       airport,
       airportTransportation,
       lodging,
       lodgingLocation,
       travelExpenses,
       reimbursementReceipts
-    } = this.props;
+    } = this.props.reducer;
 
     return (
       <div className="form_main">
@@ -36,8 +25,9 @@ class Form4 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
-            value={airport}                        
-            onChange={e => updateAirport(e.target.value)}
+            value={airport}
+            name="airport"
+            onChange={e => updateInput(e)}
           />
           <span id="ce_title">Nearest airport to your location?</span>
         </label>
@@ -47,8 +37,9 @@ class Form4 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
-            value={airportTransportation}                        
-            onChange={e => updateAirportTransportation(e.target.value)}
+            value={airportTransportation}
+            name="airportTransportation"
+            onChange={e => updateInput(e)}
           />
           <span id="ce_title">Is airport transportation available</span>
         </label>
@@ -58,8 +49,9 @@ class Form4 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
-            value={lodging}                        
-            onChange={e => updateLodging(e.target.value)}
+            value={lodging}
+            name="lodging"
+            onChange={e => updateInput(e)}
           />
           <span id="ce_title">Lodging to be booked by...</span>
         </label>
@@ -69,8 +61,9 @@ class Form4 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
-            value={lodgingLocation}                        
-            onChange={e => updateLodgingLocation(e.target.value)}
+            value={lodgingLocation}
+            name="lodgingLocation"
+            onChange={e => updateInput(e)}
           />
           <span id="ce_title">Nearest Lodging or Location booked</span>
         </label>
@@ -80,8 +73,9 @@ class Form4 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
-            value={travelExpenses}                        
-            onChange={e => updateTravelExpenses(e.target.value)}
+            value={travelExpenses}
+            name="travelExpenses"
+            onChange={e => updateInput(e)}
           />
           <span id="ce_title">
             Requester will reimburse the following expenses
@@ -93,14 +87,15 @@ class Form4 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
-            value={reimbursementReceipts}                        
-            onChange={e => updateReimbursementReceipts(e.target.value)}
+            value={reimbursementReceipts}
+            name="reimbursementReceipts"
+            onChange={e => updateInput(e)}
           />
           <span id="ce_title">Reimbursement receipts should be sent to</span>
         </label>
         <div className="form_btn">
           <img
-            onClick={this.props.toggleClickc}                    
+            onClick={this.props.toggleClickc}
             src="https://image.flaticon.com/icons/svg/118/118739.svg"
             alt="Previous arrow"
           />
@@ -120,11 +115,6 @@ const mapStateToProps = state => state;
 export default connect(
   mapStateToProps,
   {
-    updateAirport,
-    updateAirportTransportation,
-    updateLodging,
-    updateLodgingLocation,
-    updateTravelExpenses,
-    updateReimbursementReceipts
+    updateInput
   }
 )(Form4);

@@ -1,25 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import {
-  updateEventTopic,
-  updatePresentationLength,
-  updatePresentationTime,
-  updatePresentationComments
-} from '../../../ducks/requestReducer';
+import { updateInput } from '../../../ducks/requestReducer';
 
 class Form3 extends Component {
   render() {
+    const { updateInput } = this.props;
+
     const {
-      updateEventTopic,
-      updatePresentationLength,
-      updatePresentationTime,
-      updatePresentationComments,
       eventTopic,
       presentationLength,
       presentationTime,
-      presentationComments,
-    } = this.props;
+      presentationComments
+    } = this.props.reducer;
+
     return (
       <div className="form_main">
         <h2>Speaker Request</h2>
@@ -30,7 +24,8 @@ class Form3 extends Component {
             type="text"
             placeholder="..."
             value={eventTopic}
-            onChange={e => updateEventTopic(e.target.value)}
+            name='eventTopic'
+            onChange={e => updateInput(e)}
           />
           <span id="ce_title">What is the topic or theme for the event?</span>
         </label>
@@ -40,8 +35,9 @@ class Form3 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
-            value={presentationLength}            
-            onChange={e => updatePresentationLength(e.target.value)}
+            value={presentationLength}
+            name='presentationLength'
+            onChange={e => updateInput(e)}
           />
           <span id="ce_title">How long should the speaker present?</span>
         </label>
@@ -51,8 +47,9 @@ class Form3 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
-            value={presentationTime}                        
-            onChange={e => updatePresentationTime(e.target.value)}
+            value={presentationTime}
+            name='presentationTime'
+            onChange={e => updateInput(e)}
           />
           <span id="ce_title">What time(s) will he speak</span>
         </label>
@@ -62,8 +59,9 @@ class Form3 extends Component {
             className="input_field"
             type="text"
             placeholder="..."
-            value={presentationComments}                        
-            onChange={e => updatePresentationComments(e.target.value)}
+            value={presentationComments}
+            name='presentationComments'
+            onChange={e => updateInput(e)}
           />
           <span id="ce_title">Additional information</span>
         </label>
@@ -89,9 +87,6 @@ const mapStateToProps = state => state;
 export default connect(
   mapStateToProps,
   {
-    updateEventTopic,
-    updatePresentationLength,
-    updatePresentationTime,
-    updatePresentationComments
+    updateInput
   }
 )(Form3);

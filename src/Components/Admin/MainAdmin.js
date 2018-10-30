@@ -120,7 +120,7 @@ class MainAdmin extends Component {
 
     const map = requests.map(e => {
       return (
-        <div key={e.id} className="requests_map" key={e.id}>
+        <div className="requests_map" key={e.id}>
           <Link className="admin_link" to={`/requests/${e.id}`}>
             <h5>{e.organization_name}</h5>
           </Link>
