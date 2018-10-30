@@ -8,15 +8,14 @@ const path = require('path');
 
 const port = process.env.SERVER_PORT || 3001;
 
+const { getForm, addForm, deleteForm } = require('./Ctrl/formCtrl');
 const {
-  getForm,
-  addForm,
   getCalendar,
   addCalendar,
   deleteEvent,
-  deleteOld,
-  deleteForm
-} = require('./Ctrl/formCtrl');
+  deleteOld
+} = require('./Ctrl/calendarCtrl');
+const { getArticles } = require('./Ctrl/articleCtrl');
 const { requestEmail } = require('./Ctrl/nodeCtrl');
 
 const app = express();
@@ -48,12 +47,12 @@ app.use(
 app.put('/api/admin', (req, res) => {
   const { user, pass } = req.body;
   const { ADMIN_LOGIN, ADMIN_PASSWORD } = process.env;
-  
+
   if (user === ADMIN_LOGIN && pass === ADMIN_PASSWORD) {
     req.session.username = user;
     res.status(200).send(req.session);
   } else {
-    res.status(500).send('error')
+    res.status(500).send('error');
   }
 });
 
@@ -68,11 +67,14 @@ app.get('/api/logged-in', (req, res) => {
 //endpoints
 app.get('/api/speaker-request', getForm);
 app.post('/api/create-form', addForm);
+app.delete('/api/delete-form/:id', deleteForm);
+
 app.get('/api/calendar', getCalendar);
 app.post('/api/add-to-calendar', addCalendar);
 app.delete('/api/delete-event/:id', deleteEvent);
 app.delete('/api/delete', deleteOld);
-app.delete('/api/delete-form/:id', deleteForm)
+
+app.get('/api/articles', getArticles);
 
 //node endpoints
 app.post('/api/email', requestEmail);
