@@ -15,7 +15,7 @@ const {
   deleteEvent,
   deleteOld
 } = require('./Ctrl/calendarCtrl');
-const { getArticles } = require('./Ctrl/articleCtrl');
+const { getArticles, addArticle } = require('./Ctrl/articleCtrl');
 const { requestEmail } = require('./Ctrl/nodeCtrl');
 
 const app = express();
@@ -75,6 +75,7 @@ app.delete('/api/delete-event/:id', deleteEvent);
 app.delete('/api/delete', deleteOld);
 
 app.get('/api/articles', getArticles);
+app.post('/api/article', addArticle);
 
 //node endpoints
 app.post('/api/email', requestEmail);

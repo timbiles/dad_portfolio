@@ -38,7 +38,7 @@ class ArticleList extends Component {
                 <h2>{e.title}</h2>
               </a>
               <p>
-                {e.desc && e.desc.substring(0, 200)}
+                {e.description && e.description.substring(0, 200)}
                 ...
               </p>
               <div className='alm_btm'>

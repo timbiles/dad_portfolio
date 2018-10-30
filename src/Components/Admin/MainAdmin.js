@@ -28,19 +28,22 @@ Modal.setAppElement(document.getElementById('root'));
 
 class MainAdmin extends Component {
   state = {
-    modalIsOpen: false
+    modal1: false,
+    modal2: false,
+    title: '',
+    img: '',
+    url: '',
+    date: '',
+    topic: '',
+    desc: ''
   };
 
   componentDidMount() {
     this.props.getRequests();
   }
 
-  openModal = () => {
-    this.setState({ modalIsOpen: true });
-  };
-
   closeModal = () => {
-    this.setState({ modalIsOpen: false });
+    this.setState({ modal1: false, modal2: false });
   };
 
   handleClick = e => {
@@ -93,28 +96,41 @@ class MainAdmin extends Component {
           showConfirmButton: false,
           timer: 1500
         });
-        axios.delete(`/api/delete-form/${e}`).then(()=> {
-          this.props.getRequests()
-        })
+        axios
+          .delete(`/api/delete-form/${e}`)
+          .then(() => {
+            this.props.getRequests();
+          })
 
           .catch(() => {
             swal({
               position: 'top-end',
               type: 'warning',
-              title:
-                'You cannot remove this form!'
+              title: 'You cannot remove this form!'
             });
           });
       } else if (res.dismiss === swal.DismissReason.cancel) {
         swal('Cancelled', 'The request is still here :)', 'error');
       }
     });
-
-
-    
   };
 
+  handleChange = e => {
+    this.setState({[e.target.name]: e.target.value})
+  };
+
+  handleClick2 = () => {
+    const {title, img, url, date, topic, desc} = this.state
+
+    axios.post('/api/article', {title, img, url, date, topic, desc}).then(()=> {
+      this.closeModal()
+    }).catch(err=> {
+      console.log('error', err)
+    })
+  }
+
   render() {
+    console.log(this.state)
     const { updateInput } = this.props;
     const { requests } = this.props.reducer;
 
@@ -148,11 +164,20 @@ class MainAdmin extends Component {
             </div>
           </div>
         </div>
-        <h2 className="modal_open" onClick={() => this.openModal()}>
+        <h2
+          className="modal_open open1"
+          onClick={() => this.setState({ modal1: true })}
+        >
           Add Event
         </h2>
+        <h2
+          className="modal_open open2"
+          onClick={() => this.setState({ modal2: true })}
+        >
+          Add Article
+        </h2>
         <Modal
-          isOpen={this.state.modalIsOpen}
+          isOpen={this.state.modal1}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           style={customStyles}
@@ -180,6 +205,53 @@ class MainAdmin extends Component {
                 />
               </div>
               <h3 onClick={this.handleClick}>Submit</h3>
+            </div>
+          </div>
+        </Modal>
+        <Modal
+          isOpen={this.state.modal2}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+        >
+          <div className="admin_sub3">
+            <h2 className="admin_title">Create New Article</h2>
+            <div className="events_input events_input2">
+              <div>
+                <h2>Article Title</h2>
+                <input
+                  type="text"
+                  name="title"
+                  onChange={e => this.handleChange(e)}
+                />
+                <h2>Article Image</h2>
+                <input
+                  type="text"
+                  name="img"
+                  onChange={e => this.handleChange(e)}
+                />
+                <h2>Article URL</h2>
+                <input type="text" name="url" onChange={e => this.handleChange(e)} />
+                <h2>Article date</h2>
+                <input
+                  type="text"
+                  name="date"
+                  onChange={e => this.handleChange(e)}
+                />
+                <h2>Article topics (if any)</h2>
+                <input
+                  type="text"
+                  name="topic"
+                  onChange={e => this.handleChange(e)}
+                />
+                <h2>Article description</h2>
+                <input
+                  type="text"
+                  name="desc"
+                  onChange={e => this.handleChange(e)}
+                />
+              </div>
+              <h3 onClick={this.handleClick2}>Submit</h3>
             </div>
           </div>
         </Modal>

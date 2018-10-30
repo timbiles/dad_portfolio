@@ -109,6 +109,10 @@ transform: scale(.98)
   box-shadow: 1px 1px 5px rgb(175, 175, 175);
 }
 
+.events_input2 h2 {
+  font-size: 1.2em;
+}
+
 .ce_title {
   margin-top: 5%;
 }
@@ -130,6 +134,11 @@ transform: scale(.98)
 
 .events_input h3:active {
   transform: scale(0.98);
+}
+
+.events_input input:focus{
+  outline: none;
+  background: #f2f2f2;
 }
 
 .admin_link {
@@ -206,6 +215,15 @@ right: 4%;
 border-bottom: 1px solid #000;
 cursor: pointer;
 opacity: .6;
+/* cursor: pointer; */
+}
+
+.open1 {
+  top: 55px;
+}
+
+.open2 {
+  top: 100px;
 }
 
 .modal_open:hover {

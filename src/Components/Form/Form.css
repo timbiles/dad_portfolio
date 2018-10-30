@@ -26,9 +26,8 @@
   height: 10px;
   border-radius: 50%;
   background-color: grey;
-  opacity: .2;
+  opacity: 0.2;
 }
-
 
 /* ----------- */
 
@@ -92,7 +91,7 @@
 }
 
 .submit_btn:active {
-  transform: scale(.98);
+  transform: scale(0.98);
 }
 
 .form_btn img:hover {
@@ -100,10 +99,38 @@
 }
 
 .form_btn img:active {
-  transform: scale(.98);
+  transform: scale(0.98);
 }
 
 .validation {
   color: red;
   text-align: center;
+}
+
+@media (max-width: 1100px) {
+  .form_main {
+    width: 90vw;
+  }
+}
+
+@media (max-width: 800px) {
+  .form_tracker {
+    margin-top: 5vh;
+  }
+
+  .form_container h1 {
+    font-size: 1.5em;
+  }
+
+  .form_main h2 {
+    font-size: 1em;
+  }
+
+  .has-float-label input:placeholder-shown:not(:focus) + *,
+  .has-float-label select:placeholder-shown:not(:focus) + *,
+  .has-float-label textarea:placeholder-shown:not(:focus) + * #ce_title {
+    font-size: 120%;
+
+  }
+
 }
