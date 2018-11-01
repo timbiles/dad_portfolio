@@ -1,8 +1,7 @@
 const getCalendar = (req, res) => {
   const db = req.app.get('db');
 
-  db.calendar
-    .get_calendar()
+  db.query('select * from calendar order by date')
     .then(response => {
       res.status(200).send(response);
     })
@@ -14,10 +13,8 @@ const getCalendar = (req, res) => {
 
 const addCalendar = (req, res) => {
   const db = req.app.get('db');
-  const { event, date, time, location } = req.body;
 
-  db.calendar
-    .add_to_calendar([event, date, time, location])
+  db.calendar.insert(req.body)
     .then(response => {
       res.status(200).send(response);
     })
@@ -29,10 +26,8 @@ const addCalendar = (req, res) => {
 
 const deleteEvent = (req, res) => {
   const db = req.app.get('db');
-  const { id } = req.params;
 
-  db.calendar
-    .delete_event([id])
+  db.calendar.destroy({id: req.params.id})
     .then(response => {
       res.status(200).send(response);
     })
@@ -45,8 +40,8 @@ const deleteEvent = (req, res) => {
 const deleteOld = (req, res) => {
   const db = req.app.get('db');
 
-  db.calendar
-    .delete_old()
+    db.query(`delete from calendar
+  where date < 'yesterday'`)
     .then(response => {
       res.status(200).send(response);
     })

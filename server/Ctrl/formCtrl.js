@@ -1,8 +1,7 @@
 const getForm = (req, res) => {
   const db = req.app.get('db');
 
-  db.form
-    .get_form()
+  db.query('select * from form')
     .then(response => {
       res.status(200).send(response);
     })
@@ -14,60 +13,8 @@ const getForm = (req, res) => {
 
 const addForm = (req, res) => {
   const db = req.app.get('db');
-  const {
-    organizationName,
-    contactName,
-    phoneNumber,
-    email,
-    eventName,
-    eventDate,
-    eventTime,
-    speakerRequest,
-    arrivalTime,
-    eventLocation,
-    eventDescription,
-    eventTopic,
-    presentationLength,
-    presentationTime,
-    presentationComments,
-    airport,
-    airportTransportation,
-    lodging,
-    lodgingLocation,
-    travelExpenses,
-    reimbursementReceipts,
-    bio,
-    img,
-    w2
-  } = req.body;
 
-  db.form
-    .add_form([
-      organizationName,
-      contactName,
-      phoneNumber,
-      email,
-      eventName,
-      eventDate,
-      eventTime,
-      speakerRequest,
-      arrivalTime,
-      eventLocation,
-      eventDescription,
-      eventTopic,
-      presentationLength,
-      presentationTime,
-      presentationComments,
-      airport,
-      airportTransportation,
-      lodging,
-      lodgingLocation,
-      travelExpenses,
-      reimbursementReceipts,
-      bio,
-      img,
-      w2
-    ])
+  db.form.insert(req.body)
     .then(response => {
       res.status(200).send(response);
     })
@@ -80,8 +27,7 @@ const addForm = (req, res) => {
 const deleteForm = (req, res) => {
   const db = req.app.get('db');
 
-  db.form
-    .delete_form([req.params.id])
+  db.form.destroy({id: req.params.id})
     .then(response => {
       res.status(200).send(response);
     })
