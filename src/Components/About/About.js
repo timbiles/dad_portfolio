@@ -25,6 +25,10 @@ setInterval(function() {
     .end()
     .appendTo('#slideshow');
 }, 4000);
+
+
+
+
   }
   render() {
     return (
