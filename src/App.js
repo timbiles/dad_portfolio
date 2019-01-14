@@ -32,7 +32,6 @@ class App extends Component {
           this.setState({menu: false, navClass: false})          
         }, 700)
       })
-      
   }
   };
 

@@ -39,12 +39,14 @@
   color: rgb(82, 82, 82);
 }
 
-.home_article p:hover {
-  transform: scale(1.02);
+.home_article p:hover,
+.cont_email p:hover {
+  opacity: .8;
 }
 
-.home_article p:active {
-  transform: scale(0.98);
+.home_article p:active,
+.cont_email p:active {
+  transform: scale(0.995);
 }
 
 .home_container h1 {

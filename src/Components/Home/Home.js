@@ -16,7 +16,6 @@ const IndexPage = () => (
         <div className="home_article">
           <h3>Latest Posts by Dr. Biles</h3>
           <div className='scroll'>
-
             <ArticleList />
             <Link className="article_link" to="/article">
               <p>See more...</p>

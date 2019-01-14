@@ -17,7 +17,6 @@ class ArticleList extends Component {
     this.setState({ filtered: e.toLowerCase() });
   };
   render() {
-   
 
     const { filtered, articles } = this.state;
 
@@ -63,7 +62,7 @@ class ArticleList extends Component {
       </div>
     ) : (
       <div className="article_wrapper">
-        {articles.splice(0, 3).map((e, i) => {
+        {articles.slice(0, 3).map((e, i) => {
           return (
             <div key={i} className="article_top_map">
               <a href={e.url} target="blank">
