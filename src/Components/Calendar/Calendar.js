@@ -23,7 +23,7 @@ class Calendar extends Component {
     swal({
       position: 'top-end',
       type: 'warning',
-      title: 'Removing this event is permanant.',
+      title: 'Removing this event is permanent.',
       text: 'Do you wish to continue?',
       confirmButtonText: 'Yes, remove it!',
       showCancelButton: true

@@ -98,7 +98,7 @@
 
 .social_media > div {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   margin: 2% 0;
 }
 
@@ -153,7 +153,7 @@
 
 /* Arrow */
 
-.scroll_to_top{
+.scroll_to_top {
   position: fixed;
   left: 50%;
   transform: translate(-50%) rotate(180deg);
@@ -168,8 +168,8 @@
   animation: bounce 2.5s infinite;
 }
 
-.scroll_to_top:hover{
-  opacity: .3;
+.scroll_to_top:hover {
+  opacity: 0.3;
 }
 
 @keyframes bounce {
@@ -286,7 +286,7 @@
 
 @media (max-width: 450px) {
   .article_top_map h2 {
-    font-size: .8rem;
+    font-size: 0.8rem;
     width: 100%;
   }
 }

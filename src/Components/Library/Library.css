@@ -82,7 +82,7 @@
 
 .lib_btns {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .lib_btn {
@@ -145,12 +145,11 @@
 }
 
 .cs1 {
-  border-right: 1px solid rgb(240, 240, 240);
+  border-right: 1px solid #f0f0f0;
   padding-right: 2%;
 }
 
 .chapel_sub p {
-  /* width: 50%; */
   padding-left: 2%;
   align-self: start;
   text-align: justify;
@@ -166,7 +165,7 @@
   width: 175px;
   height: 100px;
   padding-right: 5%;
-  border-right: 1px solid grey;
+  border-right: 1px solid #e1e1e1;
   transition: 0.5s;
 }
 

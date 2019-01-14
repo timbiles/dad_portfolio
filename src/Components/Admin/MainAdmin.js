@@ -82,7 +82,7 @@ class MainAdmin extends Component {
     swal({
       position: 'top-end',
       type: 'warning',
-      title: 'Removing this request is permanant.',
+      title: 'Removing this request is permanent.',
       text: 'Do you wish to continue?',
       confirmButtonText: 'Yes, remove it!',
       showCancelButton: true

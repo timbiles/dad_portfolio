@@ -19,7 +19,7 @@ class Hamburger extends Component {
     });
 
     return (
-      <div className="hamburger" id='hamburger'>
+      <div className="hamburger" id="hamburger">
         <div
           className="hamburger_icon"
           id="h1"
@@ -30,19 +30,21 @@ class Hamburger extends Component {
           <div className="burger burger3" id="h4" />
         </div>
 
-        {menu &&
-        (typeof window !== `undefined` && window.location.pathname === '/') ? (
-          <div className={this.props.navClass ? 'dropdown exit' : 'dropdown'}>
-            {map}
+        {menu && (
+          <div
+            style={
+              typeof window !== `undefined` && window.location.pathname === '/'
+                ? { background: '#1b1a1b' }
+                : { background: '#232f3e' }
+            }
+            className={this.props.navClass ? 'dropdown exit' : 'dropdown'}
+          >
+            <div>{map}</div>
+            <img
+              src="https://res.cloudinary.com/dwvrok1le/image/upload/v1547440176/open-magazine.png"
+              alt="Book"
+            />
           </div>
-        ) : (
-          menu && (
-            <div
-              className={this.props.navClass ? 'dropdown drop2 exit' : 'dropdown drop2'}
-            >
-              {map}
-            </div>
-          )
         )}
       </div>
     );

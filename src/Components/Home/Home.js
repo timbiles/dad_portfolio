@@ -46,7 +46,7 @@ const IndexPage = () => (
 
           <div className="contact_holder ch1">
             <Fade top>
-              <h3>Follow me on...</h3>
+              <h3>Follow me...</h3>
               <div className="social_media">
                 <div>
                   <a
