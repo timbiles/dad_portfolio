@@ -71,7 +71,7 @@ class Library extends Component {
       },
       {
         title: `Be a Pastor`,
-        img: `https://scontent-dfw5-2.xx.fbcdn.net/v/t31.0-8/21014185_10155431459670661_5619186887203882438_o.jpg?_nc_cat=0&oh=ba3efcb8348927471d0652f883d2eff7&oe=5BF39DBE`,
+        img: preaching1,
         date: `October 14, 2008`,
         desc: `God does not leave the care of the sheep only to earthly
         shepherds. God, Himself, promises to care for His sheep.`,
@@ -79,7 +79,6 @@ class Library extends Component {
       },
       {
         title: `A Model for Faithful Ministry`,
-        // img: `http://cdn1.swbts.edu/media/2017/5/20170413DeronBiles024Web.jpg`,
         img: preaching1,
         date: `November 14, 2006`,
         desc: `In Ezra 7:10, we find the secret to his effectiveness.

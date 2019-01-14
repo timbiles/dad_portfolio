@@ -169,13 +169,6 @@
   border-right: 1px solid grey;
   transition: 0.5s;
 }
-@media (min-width: 501px) {
-  .chapel_img:hover {
-    padding-left: 5%;
-    border-right: 1px solid rgb(231, 231, 231);
-    padding-right: 0;
-  }
-}
 
 .chapel_sub1 {
   display: flex;

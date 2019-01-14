@@ -4,7 +4,23 @@ import Verse from '../VerseGenerator/VerseGenerator';
 import './Resources.css';
 
 export default class Resources extends Component {
+  state = {
+    sermons: [
+      {link: 'http://media.swbts.edu/item/1015/how-will-you-be-remembered', title: 'How will you be remembered?', date: 'October 29, 2014'},
+      {link: 'http://media.swbts.edu/item/2302/choosing-gods-way', title: 'Choosing God\'s way', date: 'April 13, 2017'},
+      {link: 'http://preachingsource.com/sermon/swbts-chapel-deron-biles-2008/', title: 'Ezekiel Sermon', date: 'October 14, 2008'},
+      {link: 'http://preachingsource.com/sermon/swbts-chapel-deron-biles-2006/', title: 'Ezra Sermon', date: 'November 14, 2006'}
+    ]
+  }
   render() {
+    const map = this.state.sermons.map((e,i) => {
+      return <div key={i}>
+      <a href={e.link}>
+        {e.title}
+      </a>
+      <p>{e.date}</p>
+      </div>
+    })
     return (
       <div className="resources">
         <div className="bio_name_sub resources_top">
@@ -21,30 +37,7 @@ export default class Resources extends Component {
         <div className="resources_container">
           <div className='chapel_sermons'>
             <h2>SWBTS Chapel Sermons</h2>
-            <div>
-              <a href="http://media.swbts.edu/item/1015/how-will-you-be-remembered">
-                How will you be remembered?
-              </a>
-              <p>October 29, 2014</p>
-            </div>
-            <div>
-              <a href="http://media.swbts.edu/item/2302/choosing-gods-way">
-                Choosing God's way
-              </a>
-              <p>April 13, 2017</p>
-            </div>
-            <div>
-              <a href="http://preachingsource.com/sermon/swbts-chapel-deron-biles-2008/">
-                Ezekiel Sermon
-              </a>
-              <p>October 14, 2008</p>
-            </div>
-            <div>
-              <a href="http://preachingsource.com/sermon/swbts-chapel-deron-biles-2006/">
-                Ezra Sermon
-              </a>
-              <p>November 14, 2006</p>
-            </div>
+              {map}
           </div>
           <div>
             <h2>Preaching Source</h2>

@@ -2,20 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class Hamburger extends Component {
-  state = {
-    links: [
-      {name:'Home', to: '/'}, 
-      {name:'About', to: '/about'}, 
-      {name:'Library', to: '/library'}, 
-      {name:'Articles', to: '/article'}, 
-      {name:'Speaker Request', to: '/contact'}
-    ]
-  };
-
   render() {
-    const { menu } = this.props;
+    const { menu, links } = this.props;
 
-    const map = this.state.links.map((e, i) => {
+    const map = links.map((e, i) => {
       return (
         <Link
           key={i}
@@ -29,22 +19,27 @@ class Hamburger extends Component {
     });
 
     return (
-      <div className="hamburger">
-        <div className="hamburger_icon" onClick={this.props.toggleClick}>
-          <div className="burger burger1" />
-          <div className="burger burger2" />
-          <div className="burger burger3" />
+      <div className="hamburger" id='hamburger'>
+        <div
+          className="hamburger_icon"
+          id="h1"
+          onClick={this.props.toggleClick}
+        >
+          <div className="burger burger1" id="h2" />
+          <div className="burger burger2" id="h3" />
+          <div className="burger burger3" id="h4" />
         </div>
 
         {menu &&
         (typeof window !== `undefined` && window.location.pathname === '/') ? (
-          <div className="dropdown">
-          {map}
-            
+          <div className={this.props.navClass ? 'dropdown exit' : 'dropdown'}>
+            {map}
           </div>
         ) : (
           menu && (
-            <div className="dropdown drop2">
+            <div
+              className={this.props.navClass ? 'dropdown drop2 exit' : 'dropdown drop2'}
+            >
               {map}
             </div>
           )

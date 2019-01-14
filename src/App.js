@@ -9,12 +9,33 @@ import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 
 class App extends Component {
+
+  state = {
+    menu: false,
+    navClass: false
+  }
+
+  navigation = e => {
+    const id = e.target.id
+
+    if (id === 'h1' || id === 'h2' || id === 'h3' || id === 'h4') {
+      this.setState({ menu: true });
+    } else if (e.target.id !== 'hamburger') {
+      this.setState({navClass: true}, () => {
+        setTimeout( () => {
+          this.setState({menu: false, navClass: false})          
+        }, 700)
+      })
+      
+  }
+  };
+
   render() {
     return (
       <Provider store={store}>
         <Router>
-          <div className="App">
-            <Header />
+          <div className="App" onClick={this.navigation}>
+            <Header menu={this.state.menu} navClass={this.state.navClass}/>
             {routes}
             <Footer />
           </div>

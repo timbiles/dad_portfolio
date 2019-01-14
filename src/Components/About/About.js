@@ -12,26 +12,22 @@ import nanny from './nanny.jpg';
 import papa from './papa.jpg';
 
 export default class About extends Component {
-
   state = {
     image: '',
-    imageList: [
-      pic,
-      beach,
-      elijah,
-      nanny,
-      papa
-    ],
+    imageList: [pic, beach, elijah, nanny, papa],
     style: true
-  }
+  };
 
   componentDidMount() {
+    this.imageSlider();
+  }
 
-this.imageSlider()
+  componentWillUnmount() {
+    clearInterval(this.timer)
   }
 
   imageSlider = () => {
-    const { image, imageList, style } = this.state;
+    const { image, imageList } = this.state;
     let newImage;
     let counter = 0;
 
@@ -51,9 +47,8 @@ this.imageSlider()
     }
   };
 
-
   render() {
-    const { style } = this.state
+    const { style } = this.state;
     return (
       <div className="about">
         <div className="bio_name">
@@ -81,11 +76,7 @@ this.imageSlider()
         </div>
 
         <div className="about_container">
-          <img
-            className="profile_pic"
-            src={dad}
-            alt="Deron Profile"
-          />
+          <img className="profile_pic" src={dad} alt="Deron Profile" />
           <p>
             Dr. Deron J. Biles and his wife, Jaye, have four sons: Joshua,
             Timothy, Jonathan, and David. They also have four daughters-in-law
@@ -154,9 +145,13 @@ this.imageSlider()
               <h2>Family</h2>
             </div>
             <div id="slideshow">
-            <div>
-              <img className={style ? 'image_scroll' : 'image_scroll2'} src={this.state.image} alt="Carousel" />
-            </div>
+              <div>
+                <img
+                  className={style ? 'image_scroll' : 'image_scroll2'}
+                  src={this.state.image}
+                  alt="Carousel"
+                />
+              </div>
             </div>
           </div>
         </div>

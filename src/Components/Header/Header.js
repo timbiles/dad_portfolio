@@ -6,23 +6,23 @@ import './Header.css';
 
 class Header extends Component {
   state = {
-    menu: false
-  };
-
-  toggleClick = e => {
-    const {menu} = this.state
-    this.setState({menu: !menu});
-  };
-
-  toggleOff = e => {
-    this.setState({ menu: false });
-  };
-
-  handleBlur = () => {
-    this.setState({ menu: false });
+    links: [
+      {name:'Home', to: '/'}, 
+      {name:'About', to: '/about'}, 
+      {name:'Library', to: '/library'}, 
+      {name:'Articles', to: '/article'}, 
+      {name:'Speaker Request', to: '/contact'}
+    ]
   };
 
   render() {
+
+    const map = this.state.links.map((e,i) => {
+      return <Link key={i} className="header_link hl1" to={e.to}>
+      {e.name}
+    </Link>
+    })
+
     return (
       <div>
         {typeof window !== `undefined` && window.location.pathname === '/' ? (
@@ -36,31 +36,12 @@ class Header extends Component {
               </Link>
             </div>
             <Hamburger
-              toggleClick={e => this.toggleClick(e)}
-              toggleOff={e => this.toggleOff(e)}
-              menu={this.state.menu}
-              onBlur={this.handBlur}
+              menu={this.props.menu}
+              links={this.state.links}
+              navClass={this.props.navClass}
             />
             <div className="header_right">
-              <Link className="header_link hl1" to="/">
-                Home
-              </Link>
-
-              <Link className="header_link hl1" to="/about">
-                About
-              </Link>
-
-              <Link className="header_link hl1" to="/library">
-                Library
-              </Link>
-
-              <Link className="header_link hl1" to="/article">
-                Articles
-              </Link>
-
-              <Link className="header_link hl1" to="/contact">
-                Speaker Request
-              </Link>
+            {map}
             </div>
           </div>
         ) : (
@@ -78,32 +59,13 @@ class Header extends Component {
               </Link>
             </div>
             <Hamburger
-              toggleClick={e => this.toggleClick(e)}
-              toggleOff={e => this.toggleOff(e)}
-              menu={this.state.menu}
-              onBlur={this.handBlur}
+              menu={this.props.menu}
+              links={this.state.links}   
+              navClass={this.props.navClass}                         
             />
 
             <div className="header_right">
-              <Link className="header_link hl1" to="/">
-                Home
-              </Link>
-
-              <Link className="header_link hl1" to="/about">
-                About
-              </Link>
-
-              <Link className="header_link hl1" to="/library">
-                Library
-              </Link>
-
-              <Link className="header_link hl1" to="/article">
-                Articles
-              </Link>
-
-              <Link className="header_link hl1" to="/contact">
-                Speaker Request
-              </Link>
+            {map}
             </div>
           </div>
         )}

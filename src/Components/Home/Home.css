@@ -164,15 +164,12 @@
   background-position: center;
   background-size: contain;
   border-radius: 50%;
-  /* opacity: .05; */
   cursor: pointer;
   animation: bounce 2.5s infinite;
 }
 
 .scroll_to_top:hover{
   opacity: .3;
-  /* border: 1px solid #000; */
-  /* transition: .5s; */
 }
 
 @keyframes bounce {
@@ -221,7 +218,6 @@
 @media (max-width: 1100px) {
   .home_sub_2 {
     flex-direction: column;
-    /* width: 40%; */
   }
 
   .upcoming_events {
