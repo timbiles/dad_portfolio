@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
-import $ from 'jquery'
 
 import Verse from '../VerseGenerator/VerseGenerator';
 import './About.css';
@@ -14,23 +13,47 @@ import papa from './papa.jpg';
 
 export default class About extends Component {
 
-  componentDidMount() {
-    $("#slideshow > div:gt(0)").hide();
-
-setInterval(function() {
-  $('#slideshow > div:first')
-    .fadeOut(1000)
-    .next()
-    .fadeIn(1000)
-    .end()
-    .appendTo('#slideshow');
-}, 4000);
-
-
-
-
+  state = {
+    image: '',
+    imageList: [
+      pic,
+      beach,
+      elijah,
+      nanny,
+      papa
+    ],
+    style: true
   }
+
+  componentDidMount() {
+
+this.imageSlider()
+  }
+
+  imageSlider = () => {
+    const { image, imageList, style } = this.state;
+    let newImage;
+    let counter = 0;
+
+    if (counter <= imageList.length) {
+      if (!image) {
+        this.setState({ image: imageList[0] });
+        counter++;
+      }
+      this.timer = setInterval(() => {
+        newImage = imageList[counter];
+        this.setState({ image: newImage, style: !this.state.style });
+        counter++;
+        if (counter === imageList.length) {
+          counter = 0;
+        }
+      }, 4000);
+    }
+  };
+
+
   render() {
+    const { style } = this.state
     return (
       <div className="about">
         <div className="bio_name">
@@ -131,31 +154,9 @@ setInterval(function() {
               <h2>Family</h2>
             </div>
             <div id="slideshow">
-              <div>
-                <img className="family_img" src={pic} alt="" />
-              </div>
-              <div>
-                <img className="tall_img" src={beach} alt="" />
-              </div>
-              <div>
-                <img className="family_img" src="https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/10696368_737231526331556_3415798884919189700_n.jpg?_nc_cat=0&oh=e087773fa879b8050eec18192c01a0b4&oe=5C23F559" alt=""/>
-              </div>
-              <div>
-                <img className="family_img" src="https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/31948468_10155713207046379_7759025674840440832_o.jpg?_nc_cat=0&oh=c5a63acf8a47935d37ce5f77530dbeb5&oe=5C23D568" alt=""/>
-              </div>
-              <div>
-                <img className="tall_img" src="https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/36293286_1724448360943196_7299023609308119040_n.jpg?_nc_cat=0&oh=7dbedba3a4dc2542d5081d4374f12e1a&oe=5C184ACB" alt=""/>
-              </div>
-              <div>
-                <img className='tall_img' src={elijah} alt=""/>
-              </div>
-              <div>
-                <img className='tall_img' src={nanny} alt=""/>
-              </div>
-              <div>
-                <img className='tall_img' src={papa} alt=""/>
-              </div>
-              
+            <div>
+              <img className={style ? 'image_scroll' : 'image_scroll2'} src={this.state.image} alt="Carousel" />
+            </div>
             </div>
           </div>
         </div>

@@ -29,7 +29,7 @@ class ArticleList extends Component {
         );
       })
       .map((e, i) => {
-        if (!e.img) e.img = 'http://blog.lightstock.com/wp-content/uploads/2014/07/000015_Lightstock-16.jpg'
+        if (!e.img) e.img = 'https://images.pexels.com/photos/250609/pexels-photo-250609.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
         return (
           <div key={i} className="article_list_map">
             <img className="article_img" src={e.img} alt={e.title} />

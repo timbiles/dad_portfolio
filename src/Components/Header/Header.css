@@ -6,7 +6,7 @@
   padding: 0 1%;
   height: 60px;
   z-index: 1;
-  background-color: #1b1a1b;
+  background: #1b1a1b;
 }
 
 .header_right {
@@ -28,11 +28,6 @@
   color: #fff;
 }
 
-.dropdown_links:hover {
-  transform: scale(1.05);
-  color: rgb(61, 180, 168);
-}
-
 .hamburger {
   display: none;
   cursor: pointer;
@@ -49,7 +44,7 @@
   height: 0.5px;
   border: 1px solid #fff;
   border-radius: 25%;
-  background-color: #fff;
+  background: #fff;
   margin: 10% 0;
 }
 
@@ -66,20 +61,38 @@
 }
 
 .dropdown {
-  position: absolute;
+  position: fixed;
+  left: 0;
+  top: 60px;
   display: flex;
   flex-direction: column;
-  min-width: 160px;
-  padding-top: 2%;
-  /* z-index: 9999; */
-  animation: downFade 1.5s;
-  opacity: 0.95;
+  align-items: flex-end;
+  background: #1b1a1b;
+  animation: menuIn 0.5s;
+  height: calc(100vh - 60px);
 }
 
-/* .hamburger:hover .dropdown {
-  display: flex;
-  flex-direction: column;
-} */
+.drop2 {
+  background: #232F3E;
+
+}
+
+.dropdown > a {
+  color: #fff;
+  margin: 4vh 3vw;
+}
+
+@keyframes menuIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  100% {
+    opacity: 0.95;
+    transform: translate(0);
+  }
+}
 
 .name_main {
   display: flex;
@@ -89,23 +102,34 @@
 
 .name_link {
   display: none;
-animation: leftEntrance 1s;
+  animation: leftEntrance 1s;
 }
 
 .header_main {
-  transition: .5s;
+  transition: 0.5s;
 }
 
-
-.name_main:hover .name_link{
+.name_main:hover .name_link {
   display: block;
+}
+
+@keyframes menuIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  100% {
+    opacity: 0.95;
+    transform: translate(0);
+  }
 }
 
 @media (max-width: 1100px) {
   .hl1 {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
- 
+
   .header_right {
     justify-content: space-between;
     margin-right: 5%;
@@ -130,26 +154,13 @@ animation: leftEntrance 1s;
   }
 }
 
-@keyframes downFade {
-  0% {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-
-  100% {
-    opacity: 0.95;
-    transform: translateY(0);
-  }
-}
-
 @keyframes leftEntrance {
   0% {
     opacity: 0;
-    transform: translateX(-30px)
-  } 
+    transform: translateX(-30px);
+  }
   100% {
     opacity: 1;
-    transform: translateX()
-    
+    transform: translateX();
   }
 }

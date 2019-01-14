@@ -1,23 +1,22 @@
 .footer {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    height: 60px;
-    background-color: #232F3E;
-    box-shadow: 1px 1px 5px #1B1A1B;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 60px;
+  background: #232f3e;
+  box-shadow: 1px 1px 5px #1b1a1b;
 }
 
 .footer p {
-    font-size: .8rem;
-    color: rgb(212, 212, 212);
+  font-size: 0.8rem;
+  color: rgb(212, 212, 212);
 }
 
 .footer_container {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .olive {
-    height: 20px;    
-    
+  height: 20px;
 }

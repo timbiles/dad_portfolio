@@ -11,7 +11,7 @@ class Header extends Component {
 
   toggleClick = e => {
     const {menu} = this.state
-    this.setState(!menu ? { menu: true } : {menu: false});
+    this.setState({menu: !menu});
   };
 
   toggleOff = e => {
@@ -24,7 +24,6 @@ class Header extends Component {
 
   render() {
     return (
-      // const Header = ({ siteTitle }) => (
       <div>
         {typeof window !== `undefined` && window.location.pathname === '/' ? (
           <div
@@ -33,7 +32,6 @@ class Header extends Component {
           >
             <div className="header_main">
               <Link className="header_link" to="/">
-                {/* <h1 className="name_link">Dr.</h1> */}
                 <h1>Deron Biles</h1>
               </Link>
             </div>

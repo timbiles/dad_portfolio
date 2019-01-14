@@ -225,8 +225,8 @@
   display: none;
 }
 
-.chapel_sermons_sub h2:nth-of-type(2){
-margin-bottom: 0;
+.chapel_sermons_sub h2:nth-of-type(2) {
+  margin-bottom: 0;
 }
 
 .sbtc_logo {
@@ -382,7 +382,7 @@ margin-bottom: 0;
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: rgb(146, 125, 125);
+    background: rgb(146, 125, 125);
 
     visibility: hidden;
     -webkit-transform: scaleX(0);

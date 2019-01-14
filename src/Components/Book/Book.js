@@ -40,7 +40,7 @@ class Book extends Component {
                 we have been entrusted. And the impact of our success will imprint
                 a generation!`,
         img:
-          'http://csm-publishing.org/wp-content/uploads/2015/03/SEE_FA-194x300.jpg'
+          'https://csm-publishing.org/wp-content/uploads/2015/03/SEE_FA-194x300.jpg'
       },
       {
         title: 'Bible Dictionary',
@@ -78,7 +78,7 @@ class Book extends Component {
                 <div className="book_buy">
                   <img
                     className="book_icon"
-                    src="http://www.vmastoryboard.com/wp-content/uploads/2014/08/Amazon-A-Logo.jpg"
+                    src="https://www.vmastoryboard.com/wp-content/uploads/2014/08/Amazon-A-Logo.jpg"
                     alt="Amazon logo"
                   />
                   <a
@@ -106,7 +106,7 @@ class Book extends Component {
               <div className="buy buy2">
                 <img
                   className="book_icon"
-                  src="http://www.vmastoryboard.com/wp-content/uploads/2014/08/Amazon-A-Logo.jpg"
+                  src="https://www.vmastoryboard.com/wp-content/uploads/2014/08/Amazon-A-Logo.jpg"
                   alt="Amazon logo"
                 />
                 <a
@@ -121,7 +121,7 @@ class Book extends Component {
               <div className="buy buy2">
                 <img
                   className="book_icon"
-                  src="http://www.vmastoryboard.com/wp-content/uploads/2014/08/Amazon-A-Logo.jpg"
+                  src="https://www.vmastoryboard.com/wp-content/uploads/2014/08/Amazon-A-Logo.jpg"
                   alt="Amazon logo"
                 />
                 <a
@@ -139,7 +139,7 @@ class Book extends Component {
                   alt="CSM Publishing logo"
                 />
                 <a
-                  href="http://csm-publishing.org/products-page/book/seminary-education-by-extension-process-principles-practices/"
+                  href="https://res.cloudinary.com/dwvrok1le/image/upload/v1547431582/csm_publishing.jpg"
                   target="blank"
                 >
                   <p>CMS Publishing</p>
@@ -160,7 +160,7 @@ class Book extends Component {
                 <div className="book_buy">
                   <img
                     className="book_icon"
-                    src="http://www.vmastoryboard.com/wp-content/uploads/2014/08/Amazon-A-Logo.jpg"
+                    src="https://www.vmastoryboard.com/wp-content/uploads/2014/08/Amazon-A-Logo.jpg"
                     alt="Amazon logo"
                   />
                   <a
@@ -188,7 +188,7 @@ class Book extends Component {
               <div className="buy buy_2">
                 <img
                   className="book_icon"
-                  src="http://www.vmastoryboard.com/wp-content/uploads/2014/08/Amazon-A-Logo.jpg"
+                  src="https://www.vmastoryboard.com/wp-content/uploads/2014/08/Amazon-A-Logo.jpg"
                   alt="Amazon logo"
                 />
                 <a
@@ -206,7 +206,7 @@ class Book extends Component {
                   alt="CSM Publishing logo"
                 />
                 <a
-                  href="http://csm-publishing.org/products-page/book/seminary-education-by-extension-process-principles-practices/"
+                  href="https://res.cloudinary.com/dwvrok1le/image/upload/v1547431582/csm_publishing.jpg"                
                   target="blank"
                 >
                   <p>CMS Publishing</p>

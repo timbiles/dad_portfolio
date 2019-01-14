@@ -4,9 +4,7 @@ import Fade from 'react-reveal/Fade';
 
 import './Home.css';
 import Calendar from '../Calendar/Calendar';
-// import deron from './deron.jpg';
 import ArticleList from '../Article/ArticleList';
-// import Article from '../Article/Article';
 
 const IndexPage = () => (
   <div>
@@ -79,7 +77,7 @@ const IndexPage = () => (
                   >
                     <img
                       className="social_icon"
-                      src="http://s3.amazonaws.com/libapps/customers/1627/images/google_scholar.PNG"
+                      src="https://s3.amazonaws.com/libapps/customers/1627/images/google_scholar.PNG"
                       alt="Google Scholar logo"
                     />
                   </a>
@@ -89,7 +87,7 @@ const IndexPage = () => (
                   >
                     <img
                       className="social_icon"
-                      src="http://www.vmastoryboard.com/wp-content/uploads/2014/08/Amazon-A-Logo.jpg"
+                      src="https://www.vmastoryboard.com/wp-content/uploads/2014/08/Amazon-A-Logo.jpg"
                       alt="Amazon logo"
                     />
                   </a>

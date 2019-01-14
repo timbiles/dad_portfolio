@@ -2,9 +2,32 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class Hamburger extends Component {
+  state = {
+    links: [
+      {name:'Home', to: '/'}, 
+      {name:'About', to: '/about'}, 
+      {name:'Library', to: '/library'}, 
+      {name:'Articles', to: '/article'}, 
+      {name:'Speaker Request', to: '/contact'}
+    ]
+  };
 
   render() {
     const { menu } = this.props;
+
+    const map = this.state.links.map((e, i) => {
+      return (
+        <Link
+          key={i}
+          className="header_link"
+          to={e.to}
+          onClick={this.props.toggleOff}
+        >
+          {e.name}
+        </Link>
+      );
+    });
+
     return (
       <div className="hamburger">
         <div className="hamburger_icon" onClick={this.props.toggleClick}>
@@ -16,89 +39,13 @@ class Hamburger extends Component {
         {menu &&
         (typeof window !== `undefined` && window.location.pathname === '/') ? (
           <div className="dropdown">
-            <Link className="header_link" to="/" onClick={this.props.toggleOff}>
-              Home
-            </Link>
-
-            <Link
-              className="header_link"
-              to="/about"
-              onClick={this.props.toggleOff}
-            >
-              About
-            </Link>
-
-            <Link
-              className="header_link"
-              to="/library"
-              onClick={this.props.toggleOff}
-            >
-              Library
-            </Link>
-
-            <Link
-              className="header_link"
-              to="/article"
-              onClick={this.props.toggleOff}
-            >
-              Articles
-            </Link>
-
-            <Link
-              className="header_link"
-              to="/contact"
-              onClick={this.props.toggleOff}
-            >
-              Speaker Request
-            </Link>
+          {map}
+            
           </div>
         ) : (
           menu && (
-            <div className="dropdown">
-              <Link
-                className="header_link"
-                style={{ color: '#1B1A1B' }}
-                to="/"
-                onClick={this.props.toggleOff}
-              >
-                Home
-              </Link>
-
-              <Link
-                className="header_link"
-                style={{ color: '#1B1A1B' }}
-                to="/about"
-                onClick={this.props.toggleOff}
-              >
-                About
-              </Link>
-
-              <Link
-                className="header_link"
-                style={{ color: '#1B1A1B' }}
-                to="/library"
-                onClick={this.props.toggleOff}
-              >
-                Library
-              </Link>
-
-              <Link
-                className="header_link"
-                style={{ color: '#1B1A1B' }}
-                to="/article"
-                onClick={this.props.toggleOff}
-              >
-                Articles
-              </Link>
-
-              <Link
-                className="header_link"
-                style={{ color: '#1B1A1B' }}
-                to="/contact"
-                onClick={this.props.toggleOff}
-              >
-                Speaker Request
-              </Link>
+            <div className="dropdown drop2">
+              {map}
             </div>
           )
         )}

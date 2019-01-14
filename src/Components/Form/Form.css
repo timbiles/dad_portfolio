@@ -18,14 +18,14 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: rgb(76, 109, 124);
+  background: rgb(76, 109, 124);
 }
 
 .form_tracker p {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: grey;
+  background: grey;
   opacity: 0.2;
 }
 
@@ -130,7 +130,5 @@
   .has-float-label select:placeholder-shown:not(:focus) + *,
   .has-float-label textarea:placeholder-shown:not(:focus) + * #ce_title {
     font-size: 120%;
-
   }
-
 }
