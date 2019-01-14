@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
 import Hamburger from '../Hamburger/Hamburger';
@@ -7,69 +7,47 @@ import './Header.css';
 class Header extends Component {
   state = {
     links: [
-      {name:'Home', to: '/'}, 
-      {name:'About', to: '/about'}, 
-      {name:'Library', to: '/library'}, 
-      {name:'Articles', to: '/article'}, 
-      {name:'Speaker Request', to: '/contact'}
+      { name: 'Home', to: '/' },
+      { name: 'About', to: '/about' },
+      { name: 'Library', to: '/library' },
+      { name: 'Articles', to: '/article' },
+      { name: 'Speaker Request', to: '/contact' }
     ]
   };
 
   render() {
-
-    const map = this.state.links.map((e,i) => {
-      return <Link key={i} className="header_link hl1" to={e.to}>
-      {e.name}
-    </Link>
-    })
+    const map = this.state.links.map((e, i) => {
+      return (
+        <Link key={i} className="header_link hl1" to={e.to}>
+          {e.name}
+        </Link>
+      );
+    });
 
     return (
-      <div>
-        {typeof window !== `undefined` && window.location.pathname === '/' ? (
-          <div
-            className="header_container"
-            style={{ backgroundColor: 'transparent' }}
-          >
-            <div className="header_main">
-              <Link className="header_link" to="/">
-                <h1>Deron Biles</h1>
-              </Link>
-            </div>
-            <Hamburger
-              menu={this.props.menu}
-              links={this.state.links}
-              navClass={this.props.navClass}
-            />
-            <div className="header_right">
-            {map}
-            </div>
+      <Fragment>
+        <div
+          className="header_container"
+          style={
+            typeof window !== `undefined` && window.location.pathname === '/'
+              ? { backgroundColor: 'transparent' }
+              : { backgroundColor: '#232F3E', position: 'fixed', width: '100%' }
+          }
+        >
+          <div className={this.props.hidden ? "header_main exit" : "header_main"}>
+            <Link className="header_link" to="/">
+              <h1>Deron Biles</h1>
+            </Link>
           </div>
-        ) : (
-          <div
-            className="header_container"
-            style={{
-              backgroundColor: '#232F3E',
-              position: 'fixed',
-              width: '100%'
-            }}
-          >
-            <div className="header_main">
-              <Link className="header_link" to="/">
-                <h1>Deron Biles</h1>
-              </Link>
-            </div>
-            <Hamburger
-              menu={this.props.menu}
-              links={this.state.links}   
-              navClass={this.props.navClass}                         
-            />
-
-            <div className="header_right">
-            {map}
-            </div>
-          </div>
-        )}
-      </div>
+          <Hamburger
+            menu={this.props.menu}
+            links={this.state.links}
+            navClass={this.props.navClass}
+            onClick={()=> console.log('hit this')}
+          />
+          <div className="header_right">{map}</div>
+        </div>
+      </Fragment>
     );
   }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Fade from 'react-reveal/Fade';
+import { line } from '../Utils/Func/line';
 
 import Verse from '../VerseGenerator/VerseGenerator';
 import './Library.css';
@@ -136,17 +136,7 @@ class Library extends Component {
       <div className="portfolio">
         <div className="portfolio_container">
           <div className="bio_name_sub">
-            <div className="line_container">
-              <div className="a_line" />
-              <div className="a_line" />
-            </div>
-            <Fade cascade>
-              <h1>Library</h1>
-            </Fade>
-            <div className="line_container">
-              <div className="a_line" />
-              <div className="a_line" />
-            </div>
+            {line('Library')}
           </div>
           <div className="portfolio_sub books_top">{bookMap}</div>
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { line } from '../Utils/Func/line';
 
 import './Book.css';
 import VerseGenerator from '../VerseGenerator/VerseGenerator';
@@ -58,15 +59,7 @@ class Book extends Component {
     return (
       <div className="book_main">
         <div className="book_title">
-          <div className="line_container">
-            <div className="a_line" />
-            <div className="a_line" />
-          </div>
-          <h1>{book.title}</h1>
-          <div className="line_container">
-            <div className="a_line" />
-            <div className="a_line" />
-          </div>
+        {line(book.title)}
         </div>
         <div className="book_container">
           <img className="book2" src={book.img} alt={book.title} />

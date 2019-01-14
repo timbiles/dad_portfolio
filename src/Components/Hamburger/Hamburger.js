@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 class Hamburger extends Component {
   render() {
     const { menu, links } = this.props;
+    // console.log(this.props);
 
     const map = links.map((e, i) => {
       return (

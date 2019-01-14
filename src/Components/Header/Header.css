@@ -7,6 +7,7 @@
   height: 60px;
   z-index: 1;
   background: #1b1a1b;
+  transition: .4s;
 }
 
 .header_right {
@@ -42,22 +43,11 @@
 
 .burger {
   height: 0.5px;
+  width: 35px;
   border: 1px solid #fff;
-  border-radius: 25%;
+  border-radius: 15px;
   background: #fff;
   margin: 10% 0;
-}
-
-.burger1 {
-  width: 30px;
-}
-
-.burger2 {
-  width: 40px;
-}
-
-.burger3 {
-  width: 22px;
 }
 
 .dropdown {
@@ -69,6 +59,7 @@
   justify-content: space-between;
   animation: menuIn 0.5s;
   height: calc(100vh - 60px);
+  width: 200px;
   z-index: 99;
   opacity: .98;
 }

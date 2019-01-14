@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import Fade from 'react-reveal/Fade';
+import React, { Component, Fragment } from 'react';
+import { line } from '../Utils/Func/line';
 
 import Verse from '../VerseGenerator/VerseGenerator';
 import './About.css';
@@ -49,21 +49,13 @@ export default class About extends Component {
 
   render() {
     const { style } = this.state;
+
+   
     return (
       <div className="about">
         <div className="bio_name">
           <div className="bio_name_sub">
-            <div className="line_container">
-              <div className="a_line" />
-              <div className="a_line" />
-            </div>
-            <Fade cascade>
-              <h1 className="about_name">About</h1>
-            </Fade>
-            <div className="line_container">
-              <div className="a_line" />
-              <div className="a_line" />
-            </div>
+          {line('About')}
           </div>
           <div className="bio_sub">
             <p>

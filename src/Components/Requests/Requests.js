@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
 import Print from 'rc-print';
-import Fade from 'react-reveal/Fade';
+import { line } from '../Utils/Func/line';
 
 import './Requests.css';
 
@@ -22,17 +22,7 @@ class Requests extends Component {
     return (
       <div className="requests">
         <div className="requests_title">
-          <div className="line_container">
-            <div className="a_line" />
-            <div className="a_line" />
-          </div>
-          <Fade cascade>
-            <h1 className="about_name">Request Form</h1>
-          </Fade>
-          <div className="line_container">
-            <div className="a_line" />
-            <div className="a_line" />
-          </div>
+          {line('Request')}
         </div>
 
         <p className="bt_admin btn" onClick={() => this.props.history.goBack()}>

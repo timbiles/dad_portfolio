@@ -42,9 +42,7 @@ class MainAdmin extends Component {
     this.props.getRequests();
   }
 
-  closeModal = () => {
-    this.setState({ modal1: false, modal2: false });
-  };
+  closeModal = () => this.setState({ modal1: false, modal2: false });
 
   handleClick = e => {
     const { event, date, time, location } = this.props.eventReducer;
@@ -116,18 +114,21 @@ class MainAdmin extends Component {
   };
 
   handleChange = e => {
-    this.setState({[e.target.name]: e.target.value})
+    this.setState({ [e.target.name]: e.target.value });
   };
 
   handleClick2 = () => {
-    const {title, img, url, date, topic, desc} = this.state
+    const { title, img, url, date, topic, desc } = this.state;
 
-    axios.post('/api/article', {title, img, url, date, topic, desc}).then(()=> {
-      this.closeModal()
-    }).catch(err=> {
-      console.log('error', err)
-    })
-  }
+    axios
+      .post('/api/article', { title, img, url, date, topic, desc })
+      .then(() => {
+        this.closeModal();
+      })
+      .catch(err => {
+        console.log('error', err);
+      });
+  };
 
   render() {
     const { updateInput } = this.props;
@@ -230,7 +231,11 @@ class MainAdmin extends Component {
                   onChange={e => this.handleChange(e)}
                 />
                 <h2>Article URL</h2>
-                <input type="text" name="url" onChange={e => this.handleChange(e)} />
+                <input
+                  type="text"
+                  name="url"
+                  onChange={e => this.handleChange(e)}
+                />
                 <h2>Article date</h2>
                 <input
                   type="text"

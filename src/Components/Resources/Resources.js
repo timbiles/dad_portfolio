@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { line } from '../Utils/Func/line';
 
 import Verse from '../VerseGenerator/VerseGenerator';
 import './Resources.css';
@@ -24,15 +25,7 @@ export default class Resources extends Component {
     return (
       <div className="resources">
         <div className="bio_name_sub resources_top">
-          <div className="line_container">
-            <div className="a_line" />
-            <div className="a_line" />
-          </div>
-          <h1 className="about_name">Resources</h1>
-          <div className="line_container">
-            <div className="a_line" />
-            <div className="a_line" />
-          </div>
+          {line('Resources')}
         </div>
         <div className="resources_container">
           <div className='chapel_sermons'>
