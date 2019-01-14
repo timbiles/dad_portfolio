@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Fade from 'react-reveal/Fade';
 
 import './Home.css';
 import Calendar from '../Calendar/Calendar';
@@ -16,16 +15,18 @@ const IndexPage = () => (
       <div className="home_sub12">
         <div className="home_article">
           <h3>Latest Posts by Dr. Biles</h3>
-          <Fade top>
+          <div className='scroll'>
+
             <ArticleList />
             <Link className="article_link" to="/article">
               <p>See more...</p>
             </Link>
-          </Fade>
+          </div>
         </div>
         <div className="home_sub_2">
           <div className="contact_holder">
-            <Fade top>
+            <div className='scroll'>
+
               <h3>Connect with Dr. Biles</h3>
               <p>817-923-1921 x 6700</p>
               <div className="cont_email">
@@ -41,11 +42,11 @@ const IndexPage = () => (
                   <p>Faculty Page</p>
                 </a>
               </div>
-            </Fade>
+            </div>
           </div>
 
           <div className="contact_holder ch1">
-            <Fade top>
+            <div className='scroll'>            
               <h3>Follow me...</h3>
               <div className="social_media">
                 <div>
@@ -93,7 +94,7 @@ const IndexPage = () => (
                   </a>
                 </div>
               </div>
-            </Fade>
+            </div>
           </div>
         </div>
       </div>

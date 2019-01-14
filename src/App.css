@@ -1,0 +1,16 @@
+.scroll {
+    opacity: 0;
+}
+
+.fader {
+    animation: fader 1s;
+}
+
+@keyframes fader {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

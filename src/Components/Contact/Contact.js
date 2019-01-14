@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Fade from 'react-reveal/Fade';
 
 import './Contact.css';
 import Verse from '../VerseGenerator/VerseGenerator';
@@ -11,9 +10,11 @@ const SpeakerRequest = () => (
     <div className="contact_container">
       <div className="form_pic_btm">
         <div className="contact_sub request_form">
-        <Fade cascade>
-          <h1 className="speaker_name">Speaker Request Form</h1>
-        </Fade>
+
+          <div className="fader">
+            <h1 className="speaker_name">Speaker Request Form</h1>
+          </div>
+
           <h3>
             If you would like Dr. Biles to speak at an event, please follow the
             link below!

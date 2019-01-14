@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import './App.css';
+import scroll from './Components/Utils/Func/scrollFade';
 
 import store from './ducks/store';
 import routes from './routes';
@@ -14,6 +15,10 @@ class App extends Component {
     menu: false,
     navClass: false,
     hidden: false
+  }
+
+  componentDidMount(){
+    scroll()
   }
 
   navigation = e => {

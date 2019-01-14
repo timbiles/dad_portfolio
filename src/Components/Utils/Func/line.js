@@ -1,5 +1,4 @@
 import React, {Fragment} from 'react';
-import Fade from 'react-reveal/Fade';
 
 export const line = e => {
     return (
@@ -8,9 +7,9 @@ export const line = e => {
                 <div className="a_line" />
                 <div className="a_line" />
               </div>
-              <Fade cascade>
+            <div className='fader'>
                 <h1 className="about_name">{e}</h1>
-              </Fade>
+              </div>
               <div className="line_container">
                 <div className="a_line" />
                 <div className="a_line" />

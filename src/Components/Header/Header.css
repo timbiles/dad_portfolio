@@ -42,12 +42,18 @@
 }
 
 .burger {
-  height: 0.5px;
-  width: 35px;
-  border: 1px solid #fff;
-  border-radius: 15px;
-  background: #fff;
+  height: .5px;
+  width: 30px;
+  border: 1px solid #d4d4d4;
+  border-radius: 20px;
+  background: #d4d4d4;
   margin: 10% 0;
+  position: relative;
+}
+
+.hamburger_icon:hover .burger{
+  background: #fff;
+  border-color: #fff;
 }
 
 .dropdown {

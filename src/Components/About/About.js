@@ -1,20 +1,15 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { line } from '../Utils/Func/line';
-
 import Verse from '../VerseGenerator/VerseGenerator';
 import './About.css';
 
-import pic from './family.JPG';
 import beach from './beach.jpg';
-import elijah from './elijah.jpg';
 import dad from './dad.jpeg';
-import nanny from './nanny.jpg';
-import papa from './papa.jpg';
 
 export default class About extends Component {
   state = {
     image: '',
-    imageList: [pic, beach, elijah, nanny, papa],
+    imageList: ['https://res.cloudinary.com/dwvrok1le/image/upload/v1547484635/IMG_0316.jpg', beach, 'https://res.cloudinary.com/dwvrok1le/image/upload/v1547485088/elijah.jpg', 'https://res.cloudinary.com/dwvrok1le/image/upload/v1547485007/nanny.jpg', 'https://res.cloudinary.com/dwvrok1le/image/upload/v1547484982/papa.jpg'],
     style: true
   };
 

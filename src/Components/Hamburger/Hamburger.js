@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 class Hamburger extends Component {
   render() {
     const { menu, links } = this.props;
-    // console.log(this.props);
 
     const map = links.map((e, i) => {
       return (
@@ -26,9 +25,9 @@ class Hamburger extends Component {
           id="h1"
           onClick={this.props.toggleClick}
         >
-          <div className="burger burger1" id="h2" />
-          <div className="burger burger2" id="h3" />
-          <div className="burger burger3" id="h4" />
+          <div className="burger burger1" id="h2"/>
+          <div className="burger burger2" id="h3"/>
+          <div className="burger burger3" id="h4"/>
         </div>
 
         {menu && (

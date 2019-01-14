@@ -70,7 +70,6 @@
 .contact_sub > div {
   display: flex;
   justify-content: space-around;
-  width: 200px;
 }
 
 .ci_holder {

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import moment from 'moment';
-import Fade from 'react-reveal/Fade';
 import swal from 'sweetalert2';
 
 import './Calendar.css';
@@ -64,7 +63,7 @@ class Calendar extends Component {
       calendar.map(e => {
         return (
           <div key={e.id} className="upcoming_events">
-            <Fade top cascade>
+            <div className='scroll'>            
               <div className="ue_div">
                 <h5>{moment.utc(e.date).format('MMMM D, YYYY')}</h5>
                 <div className="ue_sub">
@@ -77,7 +76,7 @@ class Calendar extends Component {
                   </div>
                 </div>
               </div>
-            </Fade>
+            </div>
           </div>
         );
       });
@@ -87,7 +86,8 @@ class Calendar extends Component {
       calendar.map(e => {
         return (
           <div key={e.id} className="upcoming_events1">
-            <Fade top cascade>
+            <div className='scroll'>
+            
               <div className="ue_div">
                 <h5>{moment.utc(e.date).format('MMMM D, YYYY')}</h5>
                 <div className="ue_sub">
@@ -106,7 +106,7 @@ class Calendar extends Component {
                   </p>
                 </div>
               </div>
-            </Fade>
+            </div>
           </div>
         );
       });
