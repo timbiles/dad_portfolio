@@ -14,24 +14,44 @@ class blog extends Component {
     }
   };
 
-  bold = () => {
-   const selection = window.getSelection().toString()
-    let str = this.state.blog.replace(selection, selection.bold())
-// console.log(str)
-   console.log(selection)
-   this.setState({blog: str})
-  }
+  textSelect = (inp, s, e) => {
+    e = e || s;
+    if (inp.createTextRange) {
+      var r = inp.createTextRange();
+      r.collapse(true);
+      r.moveEnd('character', e);
+      r.moveStart('character', s);
+      r.select();
+    } else if (inp.setSelectionRange) {
+      inp.focus();
+      inp.setSelectionRange(s, e);
+    }
+  };
+
+  font = async e => {
+    const selection = window.getSelection().toString(),
+      element = document.getElementById('blog'),
+      position = element.selectionStart,
+      str = this.state.blog.replace(selection, e[0] + selection + e[0]);
+
+    if (selection) {
+      await this.setState({ blog: str });
+    } else {
+      await this.setState({ blog: this.state.blog + e });
+      await this.textSelect(element, position + 1);
+      await console.log(position);
+    }
+  };
 
   render() {
-    console.log(this.state.blog)
     return (
       <div className="blog_main">
-        <h1> Create Blog</h1>
+        {/* <h1> Create Blog</h1> */}
         <input type="text" placeholder="Title" />
-        <div className='font_style'>
-          <button onClick={this.bold}>Bold</button>
-          <button>Italic</button>
-          <button>Underline</button>
+        <div className="font_style">
+          <button onClick={() => this.font('**')}>Bold</button>
+          <button onClick={() => this.font('^^')}>Italic</button>
+          <button onClick={() => this.font('__')}>Underline</button>
         </div>
         <textarea
           autoFocus

@@ -16,3 +16,7 @@
 .font_style {
     display: flex;
 }
+
+pre {
+    font-family: sans-serif;
+}
