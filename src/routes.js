@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import About from './Components/About/About';
 import Admin from './Components/Admin/Admin';
 import Article from './Components/Article/Article';
+import Blog from './Components/Blog/Blog';
 import Book from './Components/Book/Book';
 import Contact from './Components/Contact/Contact';
 import Home from './Components/Home/Home';
@@ -18,6 +19,7 @@ export default (
     <Route path="/admin" component={Admin} />  
     <Route path="/article" component={Article} />    
     <Route path="/books/:title" component={Book} />
+    <Route path="/blog" component={Blog} />   
     <Route path="/contact" component={Contact} />   
     <Route path="/library" component={Library} />
     <Route path="/form" component={Form} />   

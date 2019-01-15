@@ -11,6 +11,7 @@ class Header extends Component {
       { name: 'About', to: '/about' },
       { name: 'Library', to: '/library' },
       { name: 'Articles', to: '/article' },
+      { name: 'Blog', to: '/blog' },
       { name: 'Speaker Request', to: '/contact' }
     ]
   };
@@ -43,7 +44,6 @@ class Header extends Component {
             menu={this.props.menu}
             links={this.state.links}
             navClass={this.props.navClass}
-            onClick={()=> console.log('hit this')}
           />
           <div className="header_right">{map}</div>
         </div>

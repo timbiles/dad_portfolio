@@ -4,6 +4,8 @@ import './VerseGenerator.css';
 
 export default class VerseGenerator extends Component {
   render() {
+    let d = new Date()
+    // const s = d.getSeconds()
     const items = [
       `"For Ezra had prepared his heart to seek the Law of the Lord, and to do it, and to teach statutes and ordinances in Israel." - Ezra 7:10`,
       `"Be diligent to present yourself approved to God, a worker who does not need to be ashamed, rightly dividing the word of truth." - 2 Timothy 2:15`,

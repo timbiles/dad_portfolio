@@ -1,0 +1,18 @@
+.blog_main {
+    min-height: 90vh;
+    padding-top: 8vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog_main h1 {
+    margin: 0;
+}
+
+.test_blog {
+    white-space: pre-line;
+}
+
+.font_style {
+    display: flex;
+}

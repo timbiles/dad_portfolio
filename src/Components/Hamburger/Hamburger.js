@@ -11,7 +11,6 @@ class Hamburger extends Component {
           key={i}
           className="header_link"
           to={e.to}
-          onClick={this.props.toggleOff}
         >
           {e.name}
         </Link>
@@ -23,7 +22,6 @@ class Hamburger extends Component {
         <div
           className="hamburger_icon"
           id="h1"
-          onClick={this.props.toggleClick}
         >
           <div className="burger burger1" id="h2"/>
           <div className="burger burger2" id="h3"/>
