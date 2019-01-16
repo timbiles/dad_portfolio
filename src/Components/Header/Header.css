@@ -98,6 +98,10 @@
   animation: exit 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
+#burger {
+  display: none;
+}
+
 @keyframes exit {
   0% {
     transform: translateX(0);

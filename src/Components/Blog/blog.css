@@ -5,6 +5,10 @@
   flex-direction: column;
 }
 
+.blog_main button {
+    width: max-content;
+}
+
 .blog_main h1 {
   margin: 0;
 }
@@ -24,8 +28,12 @@ pre {
 }
 
 #blog,
-.testBlog {
+.blog_text {
   width: 80vw;
   height: 30vh;
   margin: auto;
+}
+
+.blog_text {
+  box-shadow: 1px 1px 5px 5px #a7a7a7;
 }

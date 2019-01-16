@@ -35,7 +35,7 @@ class Header extends Component {
               : { backgroundColor: '#232F3E', position: 'fixed', width: '100%' }
           }
         >
-          <div className={this.props.hidden ? "header_main exit" : "header_main"}>
+          <div className="header_main">
             <Link className="header_link" to="/">
               <h1>Deron Biles</h1>
             </Link>

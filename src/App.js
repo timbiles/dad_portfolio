@@ -13,8 +13,7 @@ class App extends Component {
 
   state = {
     menu: false,
-    navClass: false,
-    hidden: false
+    navClass: false
   }
 
   componentDidMount(){
@@ -23,13 +22,12 @@ class App extends Component {
 
   navigation = e => {
     const id = e.target.id
-
     if (id === 'h1' || id === 'h2' || id === 'h3' || id === 'h4') {
       this.setState({ menu: true});
     } else if (e.target.id !== 'hamburger') {
       this.setState({navClass: true}, () => {
         setTimeout( () => {
-          this.setState({menu: false, navClass: false})          
+          this.setState({menu: false, navClass: false})     
         }, 700)
       })
   }
@@ -40,7 +38,7 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App" onClick={this.navigation}>
-            <Header menu={this.state.menu} navClass={this.state.navClass} hidden={this.state.hidden}/>
+            <Header menu={this.state.menu} navClass={this.state.navClass}/>
             {routes}
             <Footer />
           </div>
