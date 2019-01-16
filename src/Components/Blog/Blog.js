@@ -1,16 +1,45 @@
 import React, { Component } from 'react';
 import Test from './test';
+import axios from 'axios';
 import './blog.css';
 
 class blog extends Component {
   state = {
-    blog: ''
+    blog: '',
+    date: '12/12/2018',
+    img: 'image',
+    title: 'Testing',
+    ctrl: false,
+    articles: []
   };
 
+  componentDidMount(){
+    this.getBlog()
+  }
+
   keyPress = e => {
+    const { ctrl } = this.state;
+    if (e.key === 'Control') {
+      this.setState({ ctrl: true });
+    }
     if (e.key === 'Tab') {
       e.preventDefault();
       this.setState({ blog: this.state.blog + '    ' });
+    }
+    if (ctrl && e.key === 'b') {
+      this.font('**');
+    }
+    if (ctrl && e.key === 'u') {
+      this.font('__');
+    }
+    if (ctrl && e.key === 'i') {
+      this.font('^^');
+    }
+  };
+
+  up = e => {
+    if (e.key === 'Control') {
+      this.setState({ ctrl: false });
     }
   };
 
@@ -28,7 +57,7 @@ class blog extends Component {
     }
   };
 
-  font = async e => {
+  font = async (e) => {
     const selection = window.getSelection().toString(),
       element = document.getElementById('blog'),
       position = element.selectionStart,
@@ -36,14 +65,43 @@ class blog extends Component {
 
     if (selection) {
       await this.setState({ blog: str });
-    } else {
+    } else if (e === '**'){
+      await this.setState({ blog: this.state.blog + e });
+      await this.textSelect(element, position + 2);
+    } else{
       await this.setState({ blog: this.state.blog + e });
       await this.textSelect(element, position + 1);
-      await console.log(position);
     }
   };
 
+  send = () => {
+    const {date, img, title} = this.state
+    let str = this.state.blog.replace(/\*([^*]*)\*/g, '<b>$1</b>')
+    .replace(/\^([^^]*)\^/g, '<em>$1</em>')
+    .replace(/_([^_]*)_/g, '<u>$1</u>')
+  
+      axios
+        .post('/api/article', {blog: str, date, img, title })
+        .then(() => {
+          this.getBlog();
+        })
+        .catch(err => {
+          console.log('error', err);
+        });
+  }
+
+  getBlog = () => {
+    axios.get('/api/articles').then(res=> {
+      this.setState({articles: res.data})
+    })
+  }
+
   render() {
+    const {articles} = this.state
+    console.log(articles)
+
+    const desc = !!articles.length && articles[0].description
+
     return (
       <div className="blog_main">
         {/* <h1> Create Blog</h1> */}
@@ -61,9 +119,12 @@ class blog extends Component {
           rows="10"
           onChange={e => this.setState({ blog: e.target.value })}
           onKeyDown={this.keyPress}
+          onKeyUp={this.up}
           value={this.state.blog}
         />
         <Test blog={this.state.blog} />
+        <button onClick={this.send}>Send</button>
+        <pre className='testBlog' dangerouslySetInnerHTML={{ __html: desc }} />
       </div>
     );
   }

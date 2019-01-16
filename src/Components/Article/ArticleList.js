@@ -17,7 +17,6 @@ class ArticleList extends Component {
     this.setState({ filtered: e.toLowerCase() });
   };
   render() {
-
     const { filtered, articles } = this.state;
 
     const filter = articles

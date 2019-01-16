@@ -121,7 +121,7 @@ class MainAdmin extends Component {
     const { title, img, url, date, topic, desc } = this.state;
 
     axios
-      .post('/api/article', { title, img, url, date, topic, desc })
+      .post('/api/article', { title, img, url, date, topic, description: desc })
       .then(() => {
         this.closeModal();
       })
