@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import Test from './test';
+// import Test from './test';
 import axios from 'axios';
+import Image from '../Utils/Func/imageUploader';
+import request from 'superagent';
+
 import './blog.css';
 
 class blog extends Component {
   state = {
     blog: '',
     date: new Date(),
-    img: 'image',
+    image: '',
     title: 'Testing',
     ctrl: false,
     articles: [],
@@ -28,6 +31,7 @@ class blog extends Component {
     if (ctrl && e.key === 'b') this.font('**');
     if (ctrl && e.key === 'u') this.font('__');
     if (ctrl && e.key === 'i') this.font('^^');
+    if (ctrl && e.key === 'Enter') this.send();
   };
 
   up = e => {
@@ -52,13 +56,10 @@ class blog extends Component {
     const selection = window.getSelection().toString(),
       element = document.getElementById('blog'),
       position = element.selectionStart,
-      str = this.state.blog.replace(selection, e[0] + selection + e[0]);
+      str = this.state.blog.replace(selection, e[0] + selection + e[1]);
 
     if (selection) {
      this.setState({ blog: str });
-    } else if (e === '**') {
-      await this.setState({ blog: this.state.blog + e });
-      await this.textSelect(element, position + 2);
     } else {
       await this.setState({ blog: this.state.blog + e });
       await this.textSelect(element, position + 1);
@@ -66,11 +67,14 @@ class blog extends Component {
   };
 
   send = () => {
-    const { date, img, title } = this.state;
+    // const { date, img, title } = this.state;
     let str = this.state.blog
       .replace(/\*([^*]*)\*/g, '<b>$1</b>')
       .replace(/\^([^^]*)\^/g, '<em>$1</em>')
-      .replace(/_([^_]*)_/g, '<u>$1</u>');
+      .replace(/_([^_]*)_/g, '<u>$1</u>')
+      .replace(/#([^#]*)#/g, '<h1>$1</h1>')
+      .replace(/\{/g, '<center>')
+      .replace(/\}/g, '</center>')
 
     // axios
     //   .post('/api/article', { blog: str, date, img, title })
@@ -90,9 +94,27 @@ class blog extends Component {
     });
   };
 
+  imageUpload = file => {
+    let upload = request
+      .post(process.env.REACT_APP_CLOUDINARY_URL)
+      .field('upload_preset', process.env.REACT_APP_UPLOAD_PRESET)
+      .field('file', file);
+
+    upload.end((err, response) => {
+        console.log(response)
+      if (err) {
+        console.log(err);
+      }
+      if (response.body.secure_url !== '') {
+        this.setState({
+          image: response.body.secure_url
+        });
+      }
+    });
+  };
+
   render() {
-    const { articles } = this.state;
-    // console.log(this.state);
+    const { articles, image } = this.state;
 
     // const desc = !!articles.length && articles[0].blog;
     const desc = this.state.testStr
@@ -102,13 +124,17 @@ class blog extends Component {
         <h1> Create Blog</h1>
         <input
           type="text"
-          placeholder="Title"
+          placeholder="Article title"
+          className='blog_title'
           onChange={e => this.setState({ title: e.target.value })}
         />
+        <Image imageUpload={this.imageUpload} image={image}/>
         <div className="font_style">
           <button onClick={() => this.font('**')}>Bold</button>
           <button onClick={() => this.font('^^')}>Italic</button>
           <button onClick={() => this.font('__')}>Underline</button>
+          <button onClick={() => this.font('##')}>Header</button>
+          <button onClick={() => this.font('{}')}>Center</button>
         </div>
         <textarea
           autoFocus
@@ -127,7 +153,8 @@ class blog extends Component {
           <input type="text" />
         </div>
         <button onClick={this.send}>Send</button>
-        <pre className="blog_text" dangerouslySetInnerHTML={{ __html: desc ? desc : null}} />
+        <h2 className='blog_preview'><span>Preview</span></h2>
+        <pre className="blog_text" dangerouslySetInnerHTML={{ __html: desc}} />
       </div>
     );
   }
