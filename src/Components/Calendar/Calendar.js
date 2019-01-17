@@ -86,7 +86,7 @@ class Calendar extends Component {
       calendar.map(e => {
         return (
           <div key={e.id} className="upcoming_events1">
-            <div className='scroll'>
+            <div className='fader'>
             
               <div className="ue_div">
                 <h5>{moment.utc(e.date).format('MMMM D, YYYY')}</h5>

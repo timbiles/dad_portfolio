@@ -6,6 +6,10 @@
     animation: fader 1s;
 }
 
+button:focus {
+    outline: none;
+}
+
 @keyframes fader {
     from {
         opacity: 0;

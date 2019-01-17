@@ -15,7 +15,7 @@ class CreateBlog extends Component {
     topic: '',
     ctrl: false,
     articles: [],
-    testStr: ''
+    preview: ''
   };
 
   componentDidMount() {
@@ -39,25 +39,26 @@ class CreateBlog extends Component {
     if (e.key === 'Control') this.setState({ ctrl: false });
   };
 
-  textSelect = (elemId, caretPos) => {
-    var elem = document.getElementById(elemId);
-
+  textSelect = (elem, caretPos) => {
     if (elem != null) {
       if (elem.createTextRange) {
         var range = elem.createTextRange();
         range.move('character', caretPos);
         range.select();
+        
       } else {
         if (elem.selectionStart) {
           elem.focus();
           elem.setSelectionRange(caretPos, caretPos);
-        } else elem.focus();
+        } else {
+          elem.focus();
+        }
       }
     }
   };
 
   font = async e => {
-    const selection = window.getSelection().toString(),
+   const selection = window.getSelection().toString(),
       element = document.getElementById('blog'),
       position = element.selectionStart,
       end = element.selectionEnd,
@@ -70,17 +71,21 @@ class CreateBlog extends Component {
 
     if (selection) {
       await this.setState({ blog: str });
-      await this.textSelect(element, position + 1);
+      await this.textSelect(element, end + 2);
     } else if (e === '**' && this.state.ctrl) {
       await this.setState({ blog: this.state.blog + e });
+      await this.textSelect(element, position + 2);
+    } else if (e === '>') {
+      await this.setState({ blog: this.state.blog + e});
       await this.textSelect(element, position + 2);
     } else {
       await this.setState({ blog: this.state.blog + e });
       await this.textSelect(element, position + 1);
     }
+ 
   };
 
-  send = () => {
+  send = e => {
     const { date, image, title, topic } = this.state;
 
     let str = this.state.blog
@@ -89,22 +94,28 @@ class CreateBlog extends Component {
       .replace(/_([^_]*)_/g, '<u>$1</u>')
       .replace(/#([^#]*)#/g, '<h1>$1</h1>')
       .replace(/\{/g, '<center>')
-      .replace(/\}/g, '</center>');
+      .replace(/\}/g, '</center>')
+      .replace(/\>/g, '•');
 
-    axios
-      .post('/api/article', {
-        blog: str,
-        date: moment(date).format('MMMM D, YYYY'),
-        image,
-        title,
-        topic
-      })
-      .then(() => {
-        this.getBlog();
-      })
-      .catch(err => {
-        console.log('error', err);
-      });
+      console.log(str.slice(0, 200) + '...')
+
+    e.target.name === 'preview'
+      ? this.setState({ preview: str })
+      : axios
+          .post('/api/article', {
+            blog: str,
+            date: moment(date).format('MMMM D, YYYY'),
+            image,
+            title,
+            topic,
+            description: str.slice(0, 200) + '...'
+          })
+          .then(() => {
+            this.getBlog();
+          })
+          .catch(err => {
+            console.log('error', err);
+          });
   };
 
   getBlog = () => {
@@ -132,8 +143,9 @@ class CreateBlog extends Component {
   };
 
   render() {
-    const { articles, image } = this.state;
-    const desc = !!articles.length && articles[0].blog;
+    const { articles, image, preview } = this.state;
+    // const desc = !!articles.length && articles[0].blog;
+    const desc = preview ? preview : null;
 
     return (
       <div className="blog_main">
@@ -146,11 +158,36 @@ class CreateBlog extends Component {
         />
         <Image imageUpload={this.imageUpload} image={image} />
         <div className="font_style">
-          <button onClick={() => this.font('**')}>Bold</button>
-          <button onClick={() => this.font('^^')}>Italic</button>
-          <button onClick={() => this.font('__')}>Underline</button>
-          <button onClick={() => this.font('##')}>Header</button>
-          <button onClick={() => this.font('{}')}>Center</button>
+          <div>
+            <button onClick={(e) => this.font('**')}>
+              <b>B</b>
+            </button>
+            <button onClick={(e) => this.font('^^')}>
+              <em>I</em>
+            </button>
+            <button onClick={(e) => this.font('__')}>
+              <u>U</u>
+            </button>
+            <button onClick={(e) => this.font('##')}>Header</button>
+            <button onClick={(e) => this.font('{}')}>Center</button>
+            <button onClick={(e) => this.font('>')}>
+              <img
+                src="https://image.flaticon.com/icons/svg/483/483226.svg"
+                alt="bullets"
+              />
+            </button>
+            <button onClick={(e) => this.font('>')}>
+              <img
+                src="https://image.flaticon.com/icons/svg/59/59127.svg"
+                alt="numbered list"
+              />
+            </button>
+          </div>
+          <div>
+            <button name="preview" onClick={this.send}>
+              Preview
+            </button>
+          </div>
         </div>
         <textarea
           autoFocus

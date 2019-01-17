@@ -32,6 +32,30 @@ textarea:focus {
 
 .font_style {
   display: flex;
+  justify-content: space-between;
+  width: 80vw;
+  margin: auto;
+  margin-bottom: 1vh;
+}
+
+button > img {
+  height: 13px;
+}
+
+.font_style button {
+  padding: 5px 10px;
+  margin: 2px;
+  background: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.font_style button:hover {
+  opacity: .7;
+}
+
+.font_style button:active {
+  transform: scale(.99)
 }
 
 pre {
@@ -65,6 +89,9 @@ pre {
    background:#fff; 
    padding:0 10px; 
 }
+
+
+
 
 /* Image Uploader */
 
