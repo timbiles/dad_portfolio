@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 
 class ArticleList extends Component {
@@ -27,14 +28,23 @@ class ArticleList extends Component {
         );
       })
       .map((e, i) => {
-        if (!e.img) e.img = 'https://images.pexels.com/photos/250609/pexels-photo-250609.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+        // if (!e.img) e.img = 'https://images.pexels.com/photos/250609/pexels-photo-250609.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+        if(e.blog) {
+          // e.blog.replace(' ', '%20')
+          e.newTitle = encodeURIComponent(e.title.trim())
+        }
         return (
           <div key={i} className="article_list_map">
             <img className="article_img" src={e.img} alt={e.title} />
             <div className="alm_content">
+            {e.blog ? 
+            <Link to={`/blog/${e.newTitle}`}>{e.title}</Link>
+          :
+          
               <a href={e.url} target="blank">
                 <h2>{e.title}</h2>
               </a>
+          }
               <p>
                 {e.description && e.description.substring(0, 200)}
                 ...

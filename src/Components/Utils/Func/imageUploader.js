@@ -5,7 +5,7 @@ class imageUploader extends Component {
   
 
   onImageDrop = files => {
-    this.props.ImageUpload(files[0]);
+    this.props.imageUpload(files[0]);
   };
 
  

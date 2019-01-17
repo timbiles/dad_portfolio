@@ -95,3 +95,47 @@ pre {
   height: 100%;
   width: 100%;
 }
+
+
+/* individual */
+
+.blog_cont {
+  min-height: 100vh;
+  padding-top: 60px;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.blog_cont h1 {
+  text-align: center;
+  color: #525252
+}
+
+.blog_cont img {
+  height: 60vh;
+  width: 70vw;
+  margin: 0 auto;
+}
+
+.blog_sub {
+  width: 70vw;
+  margin: auto;
+  text-align: right;
+}
+
+.individual {
+  margin-top: 5vh;
+  box-shadow: 0 4px 2px -2px #bfbfbf;
+  padding-bottom: 5vh;
+}
+
+mark {
+  background: none;
+  color: #b67a46;
+  /* color: #2a9e7b; */
+}
+
+.blog_mark {
+  opacity: .4;
+}

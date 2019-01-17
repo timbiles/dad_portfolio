@@ -7,6 +7,7 @@ const getArticles = (req, res) => {
     .then(response => {
       response.map(e => {
         e.date = moment.utc(e.date, 'MMMM D, YYYY').format('MMMM D, YYYY');
+        if (!e.img) e.img = 'https://images.pexels.com/photos/250609/pexels-photo-250609.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
       });
       res.status(200).send(response);
     })
