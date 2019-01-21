@@ -11,7 +11,6 @@ class Header extends Component {
       { name: 'About', to: '/about' },
       { name: 'Library', to: '/library' },
       { name: 'Articles', to: '/article' },
-      { name: 'Blog', to: '/blog' },
       { name: 'Speaker Request', to: '/contact' }
     ]
   };

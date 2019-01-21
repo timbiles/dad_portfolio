@@ -16,9 +16,12 @@ class Blog extends Component {
 
   render() {
     let blog =
-      this.state.blog.find(
+    this.props.type === 'preview' 
+      ? this.props.blog
+      : this.state.blog.find(
         e => e.title.trim() === this.props.match.params.title
       ) || false;
+
     return (
       <div className="blog_cont">
         <h1>{blog && blog.title}</h1>
@@ -30,7 +33,7 @@ class Blog extends Component {
         </div>
         <pre
           className="individual blog_text"
-          dangerouslySetInnerHTML={{ __html: blog.blog }}
+          dangerouslySetInnerHTML={{ __html: this.props.type === 'preview' ? blog.preview : blog.blog }}
         />
         {blog.topic && (
           <p>

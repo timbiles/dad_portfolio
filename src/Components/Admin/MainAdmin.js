@@ -164,6 +164,8 @@ class MainAdmin extends Component {
             </div>
           </div>
         </div>
+        <div className='admin_links'>
+
         <h2
           className="modal_open open1"
           onClick={() => this.setState({ modal1: true })}
@@ -176,6 +178,8 @@ class MainAdmin extends Component {
         >
           Add Article
         </h2>
+        <Link to='/createblog'><h2>Add Blog</h2></Link>
+        </div>
         <Modal
           isOpen={this.state.modal1}
           onAfterOpen={this.afterOpenModal}

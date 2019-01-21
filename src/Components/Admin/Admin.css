@@ -206,22 +206,40 @@
   text-align: center;
 }
 
-.modal_open {
+.admin_links {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 4%;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.admin_links a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.admin_links a:hover {
+  transform: scale(1.02)  
+}
+
+/* .modal_open {
   position: fixed;
   right: 4%;
   border-bottom: 1px solid #000;
   cursor: pointer;
   opacity: 0.6;
-  /* cursor: pointer; */
-}
+ cursor: pointer; 
+} */
 
-.open1 {
+/* .open1 {
   top: 55px;
 }
 
 .open2 {
   top: 100px;
-}
+}  */
 
 .modal_open:hover {
   transform: scale(1.01);

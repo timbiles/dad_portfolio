@@ -5,7 +5,7 @@ import './App.css';
 import scroll from './Components/Utils/Func/scrollFade';
 
 import store from './ducks/store';
-import routes from './routes';
+import Routes from './routes';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 
@@ -39,7 +39,7 @@ class App extends Component {
         <Router>
           <div className="App" onClick={this.navigation}>
             <Header menu={this.state.menu} navClass={this.state.navClass}/>
-            {routes}
+            <Routes />
             <Footer />
           </div>
         </Router>

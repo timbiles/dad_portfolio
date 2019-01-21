@@ -3,24 +3,22 @@ import axios from 'axios';
 import Image from '../Utils/Func/imageUploader';
 import moment from 'moment';
 import request from 'superagent';
+import Blog from './Blog';
 
 import './blog.css';
 
 class CreateBlog extends Component {
   state = {
     blog: '',
-    date: new Date(),
+    date: moment(new Date()).format('MMMM D, YYYY'),
     image: '',
     title: 'Testing',
     topic: '',
     ctrl: false,
     articles: [],
-    preview: ''
+    preview: '',
+    hit: 0
   };
-
-  componentDidMount() {
-    this.getBlog();
-  }
 
   keyPress = e => {
     const { ctrl } = this.state;
@@ -58,7 +56,7 @@ class CreateBlog extends Component {
   };
 
   font = async e => {
-   const selection = window.getSelection().toString(),
+   let selection = window.getSelection().toString(),
       element = document.getElementById('blog'),
       position = element.selectionStart,
       end = element.selectionEnd,
@@ -80,8 +78,13 @@ class CreateBlog extends Component {
       await this.textSelect(element, position + 2);
     } else {
       await this.setState({ blog: this.state.blog + e });
+      await console.log(position)
       await this.textSelect(element, position + 1);
     }
+
+    // position = 0
+
+    
  
   };
 
@@ -89,39 +92,30 @@ class CreateBlog extends Component {
     const { date, image, title, topic } = this.state;
 
     let str = this.state.blog
+      .replace(/>/g, '•') 
       .replace(/\*([^*]*)\*/g, '<b>$1</b>')
       .replace(/\^([^^]*)\^/g, '<em>$1</em>')
       .replace(/_([^_]*)_/g, '<u>$1</u>')
       .replace(/#([^#]*)#/g, '<h1>$1</h1>')
       .replace(/\{/g, '<center>')
       .replace(/\}/g, '</center>')
-      .replace(/\>/g, '•');
-
-      console.log(str.slice(0, 200) + '...')
 
     e.target.name === 'preview'
       ? this.setState({ preview: str })
       : axios
           .post('/api/article', {
             blog: str,
-            date: moment(date).format('MMMM D, YYYY'),
+            date,
             image,
             title,
             topic,
             description: str.slice(0, 200) + '...'
           })
           .then(() => {
-            this.getBlog();
           })
           .catch(err => {
             console.log('error', err);
           });
-  };
-
-  getBlog = () => {
-    axios.get('/api/articles').then(res => {
-      this.setState({ articles: res.data });
-    });
   };
 
   imageUpload = file => {
@@ -143,13 +137,11 @@ class CreateBlog extends Component {
   };
 
   render() {
-    const { articles, image, preview } = this.state;
-    // const desc = !!articles.length && articles[0].blog;
-    const desc = preview ? preview : null;
+    const { image, preview } = this.state;
 
     return (
       <div className="blog_main">
-        <h1> Create Blog</h1>
+        <h1> Compose</h1>
         <input
           type="text"
           placeholder="Article title"
@@ -200,7 +192,7 @@ class CreateBlog extends Component {
           onKeyUp={this.up}
           value={this.state.blog}
         />
-        <div>
+        <div className='blog_topics'>
           <p>Topics (separated by a comma)</p>
           <input
             type="text"
@@ -211,7 +203,12 @@ class CreateBlog extends Component {
         <h2 className="blog_preview">
           <span>Preview</span>
         </h2>
-        <pre className="blog_text" dangerouslySetInnerHTML={{ __html: desc }} />
+        {
+          preview && 
+        // <pre className="blog_text" dangerouslySetInnerHTML={{ __html: desc }} />
+        <Blog type='preview' blog={this.state}/>
+
+        }
       </div>
     );
   }
