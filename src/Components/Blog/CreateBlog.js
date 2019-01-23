@@ -81,10 +81,6 @@ class CreateBlog extends Component {
       await console.log(position)
       await this.textSelect(element, position + 1);
     }
-
-    // position = 0
-
-    
  
   };
 

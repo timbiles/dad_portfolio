@@ -24,6 +24,7 @@ class Routes extends Component {
   }
 
   login = () => {
+    console.log('two')
     axios
       .get('/api/logged-in')
       .then(res => {
@@ -34,6 +35,8 @@ class Routes extends Component {
       });
   };
   render() {
+    console.log('one')
+    
     const { user } = this.state;
     return (
       <div>
@@ -42,10 +45,9 @@ class Routes extends Component {
           <Route path="/admin" component={Admin} />
           <Route path="/article" component={Article} />
           <Route path="/books/:title" component={Book} />
-          {/* {(user && user) === process.env.REACT_APP_USER && (
+          {(user && user) === process.env.REACT_APP_USER && (
             <Route exact path="/createblog" component={CreateBlog} />
-          )} */}
-            <Route exact path="/createblog" component={CreateBlog} />          
+          )}
           <Route path="/blog/:title" component={Blog} />
           <Route path="/contact" component={Contact} />
           <Route path="/library" component={Library} />
