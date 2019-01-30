@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { line } from '../Utils/Func/line';
+import { line } from '../Tools/Func/line';
 
 import './Book.css';
 import VerseGenerator from '../VerseGenerator/VerseGenerator';

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Image from '../Utils/Func/imageUploader';
+import Image from '../Tools/Func/imageUploader';
 import moment from 'moment';
 import request from 'superagent';
 import Blog from './Blog';

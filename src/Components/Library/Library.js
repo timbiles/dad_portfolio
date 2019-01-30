@@ -1,39 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { line } from '../Utils/Func/line';
+import { line } from '../Tools/Func/line';
+import { LIST } from '../../utils/constants'
 
 import Verse from '../VerseGenerator/VerseGenerator';
 import './Library.css';
 import preachingsource from './images/preaching-source-logo.png';
-import preaching1 from './images/preaching1.jpg';
 
 class Library extends Component {
-  state = {
-    books: [
-      {
-        title: 'Pastoral Ministry',
-        img: 'https://images-na.ssl-images-amazon.com/images/I/71MhnxAXIxL.jpg'
-      },
-      {
-        title: `After God's Heart`,
-        img:
-          'https://images-na.ssl-images-amazon.com/images/I/41Zm54tcECL._SX322_BO1,204,203,200_.jpg'
-      },
-      {
-        title: 'Seminary Education',
-        img:
-          'http://csm-publishing.org/wp-content/uploads/2015/03/SEE_FA-194x300.jpg'
-      },
-      {
-        title: 'Bible Dictionary',
-        img:
-            'https://images-na.ssl-images-amazon.com/images/I/51%2Bzx0gtW2L._SX343_BO1,204,203,200_.jpg'
-      }
-    ]
-  };
+
 
   render() {
-    const bookMap = this.state.books.map((e, i) => {
+    const bookMap = LIST.books.map((e, i) => {
       return (
         <Link key={i} to={`/books/${e.title}`}>
           <div className="portfolio_sub1">
@@ -44,49 +22,7 @@ class Library extends Component {
       );
     });
 
-    const sermons = [
-      {
-        title: `Is Doubt Sin`,
-        img: `http://cdn1.swbts.edu/media/2018/9/20180906DeronBiles042Web.jpg`,
-        date: `September 6, 2018`,
-        desc: `What should we do when we are waiting on God?  That's the situation in which the Prophet Habakkuk found himself.`,
-        url: `http://media.swbts.edu/item/2399/is-doubt-sin`
-      },
-      {
-        title: `Choosing God's Way`,
-        img: `http://cdn1.swbts.edu/media/2017/5/20170413DeronBiles024Web.jpg`,
-        date: `April 13, 2017`,
-        desc: `God's faithfulness challenges believers today to run the Way
-        of His Word.`,
-        url: `http://preachingsource.com/sermon/choosing-gods-way/`
-      },
-      {
-        title: `How will you be remembered?`,
-        img: `http://cdn1.swbts.edu/media/2014/10/10-29-14_DeronBiles72_NW_2137.jpg`,
-        date: `October 29, 2014`,
-        desc: `Hidden in a story of Jehoshaphat’s mighty men is the story of a man named, Amasiah. His story challenges us to consider how we will be remembered.`,
-        url: `http://preachingsource.com/sermon/how-will-you-be-remembered/`
-      },
-      {
-        title: `Be a Pastor`,
-        img: preaching1,
-        date: `October 14, 2008`,
-        desc: `God does not leave the care of the sheep only to earthly
-        shepherds. God, Himself, promises to care for His sheep.`,
-        url: `http://preachingsource.com/sermon/swbts-chapel-deron-biles-2008/`
-      },
-      {
-        title: `A Model for Faithful Ministry`,
-        img: preaching1,
-        date: `November 14, 2006`,
-        desc: `In Ezra 7:10, we find the secret to his effectiveness.
-        Ezra prepared his heart to study, do, and teach the Word
-        of God.`,
-        url: `http://preachingsource.com/sermon/swbts-chapel-deron-biles-2006/`
-      }
-    ];
-
-    const sermonMap = sermons.map((e, i) => {
+    const sermonMap = LIST.sermons.map((e, i) => {
       return (
         <div className="sermons_map" key={i}>
           <a
@@ -109,7 +45,7 @@ class Library extends Component {
         </div>
       );
     });
-    const sermonMap2 = sermons.map((e, i) => {
+    const sermonMap2 = LIST.sermons.map((e, i) => {
       return (
         <div className="sermons_map" key={i}>
           <div className="cs-1">
@@ -132,6 +68,17 @@ class Library extends Component {
         </div>
       );
     });
+
+    const psMap = LIST.preachingSource.map((e, i) => {
+      return <a
+      target="blank"
+      rel="noreferrer noopener"
+      href={e.url}
+    >
+      {e.text}
+    </a>
+    })
+
     return (
       <div className="portfolio">
         <div className="portfolio_container">
@@ -160,39 +107,7 @@ class Library extends Component {
                   Baptist Theological Seminary dedicated to equip preachers in
                   the art and craft of text-driven preaching.
                 </p>
-                <a
-                  target="blank"
-                  rel="noreferrer noopener"
-                  href="http://preachingsource.com/sermon-structures/genesis-sermon-structures/"
-                >
-                  Genesis Sermon Structures
-                </a>
-                <a
-                  target="blank"
-                  rel="noreferrer noopener"
-                  href="http://preachingsource.com/sermon-starter/genesis-sermon-starter/"
-                >
-                  Genesis Sermon Starter
-                </a>
-                <a
-                  target="blank"
-                  href="http://preachingsource.com/sermon-structure/2-timothy-sermon-structures/"
-                >
-                  2 Timothy Sermon Structures
-                </a>
-                <a
-                  target="blank"
-                  href="http://preachingsource.com/conference/breakout-session-deron-biles/"
-                >
-                  Breakout Session - 2017
-                </a>
-                <a
-                  target="blank"
-                  href="http://preachingsource.com/conference/breakout-session-deron-biles-2/"
-                >
-                  Breakout Session - 2018
-
-                </a>
+                { psMap }
               </div>
               <h2>Preaching Points</h2>
               <div className="chapel_sub1">

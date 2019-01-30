@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
 import Print from 'rc-print';
-import { line } from '../Utils/Func/line';
+import { line } from '../Tools/Func/line';
 
 import './Requests.css';
 

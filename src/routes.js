@@ -24,7 +24,6 @@ class Routes extends Component {
   }
 
   login = () => {
-    console.log('two')
     axios
       .get('/api/logged-in')
       .then(res => {
@@ -35,8 +34,6 @@ class Routes extends Component {
       });
   };
   render() {
-    console.log('one')
-    
     const { user } = this.state;
     return (
       <div>

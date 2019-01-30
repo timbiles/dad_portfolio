@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import './App.css';
-import scroll from './Components/Utils/Func/scrollFade';
+import scroll from './Components/Tools/Func/scrollFade';
 
 import store from './ducks/store';
 import Routes from './routes';
