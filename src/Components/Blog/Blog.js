@@ -21,6 +21,7 @@ class Blog extends Component {
       : this.state.blog.find(
         e => e.title.trim() === this.props.match.params.title
       ) || false;
+      
 
     return (
       <div className="blog_cont">
