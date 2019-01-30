@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { line } from '../Tools/Func/line';
-import { LIST } from '../../utils/constants'
+import { LIST } from '../../utils/constants/lists'
 
 import Verse from '../VerseGenerator/VerseGenerator';
 import './Library.css';
@@ -71,6 +71,7 @@ class Library extends Component {
 
     const psMap = LIST.preachingSource.map((e, i) => {
       return <a
+      key={i}
       target="blank"
       rel="noreferrer noopener"
       href={e.url}

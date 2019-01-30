@@ -4,6 +4,7 @@ import Image from '../Tools/Func/imageUploader';
 import moment from 'moment';
 import request from 'superagent';
 import Blog from './Blog';
+import swal from 'sweetalert2';
 
 import './blog.css';
 
@@ -17,7 +18,23 @@ class CreateBlog extends Component {
     ctrl: false,
     articles: [],
     preview: '',
-    hit: 0
+    hit: 0,
+    user: ''
+  };
+
+  componentDidMount() {
+    this.login();
+  }
+
+  login = () => {
+    axios
+      .get('/api/logged-in')
+      .then(res => {
+        this.setState({ user: res.data.username });
+      })
+      .catch(() => {
+        console.log('Make sure to log in.');
+      });
   };
 
   keyPress = e => {
@@ -78,7 +95,6 @@ class CreateBlog extends Component {
       await this.textSelect(element, position + 2);
     } else {
       await this.setState({ blog: this.state.blog + e });
-      await console.log(position)
       await this.textSelect(element, position + 1);
     }
  
@@ -102,12 +118,19 @@ class CreateBlog extends Component {
           .post('/api/article', {
             blog: str,
             date,
-            image,
+            img: image,
             title,
             topic,
             description: str.slice(0, 200) + '...'
           })
           .then(() => {
+            swal({
+              position: 'top-end',
+              title: `You created an article titled ${title}`,
+              showConfirmButton: false,
+              background: 'rgb(204,204,204)',
+              timer: 2000
+            });
           })
           .catch(err => {
             console.log('error', err);
@@ -133,9 +156,9 @@ class CreateBlog extends Component {
   };
 
   render() {
-    const { image, preview } = this.state;
+    const { image, preview, user } = this.state;
 
-    return (
+    return user && (
       <div className="blog_main">
         <h1> Compose</h1>
         <input
@@ -201,7 +224,6 @@ class CreateBlog extends Component {
         </h2>
         {
           preview && 
-        // <pre className="blog_text" dangerouslySetInnerHTML={{ __html: desc }} />
         <Blog type='preview' blog={this.state}/>
 
         }
