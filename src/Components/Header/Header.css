@@ -36,6 +36,7 @@
 }
 
 .hamburger_icon {
+  z-index: 99;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -49,6 +50,7 @@
   background: #d4d4d4;
   margin: 10% 0;
   position: relative;
+  z-index: -1;
 }
 
 .hamburger_icon:hover .burger{

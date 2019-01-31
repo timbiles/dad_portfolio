@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import MainAdmin from './MainAdmin';
-import './Admin.css';
+import './Admin.scss';
 
 class Admin extends Component {
   state = {

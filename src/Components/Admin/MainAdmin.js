@@ -6,7 +6,7 @@ import Modal from 'react-modal';
 import swal from 'sweetalert2';
 
 import Calendar from '../Calendar/Calendar';
-import './Admin.css';
+import BurgerIcon from '../Hamburger/burgerIcon';
 
 import { getCalendar, updateInput } from '../../ducks/eventsReducer';
 import { getRequests } from '../../ducks/requestReducer';
@@ -35,7 +35,9 @@ class MainAdmin extends Component {
     url: '',
     date: '',
     topic: '',
-    desc: ''
+    desc: '',
+    menu: false,
+    navClass: false
   };
 
   componentDidMount() {
@@ -130,9 +132,25 @@ class MainAdmin extends Component {
       });
   };
 
+  click = e => {
+    console.log(e.target.id);
+    const { id } = e.target.id;
+
+    if (e.target.id === 'admin1') {
+      this.setState({ menu: true });
+    } else if (e.target.id !== 'admin1') {
+      this.setState({ navClass: true }, () => {
+        setTimeout(() => {
+          this.setState({ menu: false, navClass: false });
+        }, 700);
+      });
+    }
+  };
+
   render() {
     const { updateInput } = this.props;
     const { requests } = this.props.reducer;
+    const { menu, navClass } = this.state;
 
     const map = requests.map(e => {
       return (
@@ -148,9 +166,50 @@ class MainAdmin extends Component {
       );
     });
     return (
-      <div className="admin_main">
+      <div className="admin_main" onClick={this.click}>
         <div className="admin_main_sub">
-          <h1>Welcome, Deron!</h1>
+          <nav>
+            <div>
+              {!menu && <BurgerIcon id="admin1" />}
+              {menu && (
+                <div
+                  style={{ background: '#232f3e' }}
+                  className={navClass ? 'dropdown exit' : 'dropdown'}
+                >
+                  <div className="admin_side">
+                    <section>
+                      <img
+                        src="https://res.cloudinary.com/dwvrok1le/image/upload/v1548956571/calendar_1.png"
+                        alt=""
+                      />
+                      <h4 onClick={() => this.setState({ modal1: true })}>
+                        Add Event
+                      </h4>
+                    </section>
+                    <section>
+                      <img
+                        src="https://res.cloudinary.com/dwvrok1le/image/upload/v1548956855/newspaper.png"
+                        alt=""
+                      />
+                      <h4 onClick={() => this.setState({ modal2: true })}>
+                        Add Article
+                      </h4>
+                    </section>
+                    <section>
+                        <img
+                          src="https://res.cloudinary.com/dwvrok1le/image/upload/v1548956924/blogging.png"
+                          alt=""
+                        />
+                      <Link to="/createblog">
+                        <h4>Create Blog</h4>
+                      </Link>
+                    </section>
+                  </div>
+                </div>
+              )}
+            </div>
+            <h1>Welcome, Deron!</h1>
+          </nav>
           <div>
             <div className="admin_sub1">
               <h2 className="admin_title">Incoming Requests</h2>
@@ -163,22 +222,6 @@ class MainAdmin extends Component {
               </div>
             </div>
           </div>
-        </div>
-        <div className='admin_links'>
-
-        <h2
-          className="modal_open open1"
-          onClick={() => this.setState({ modal1: true })}
-        >
-          Add Event
-        </h2>
-        <h2
-          className="modal_open open2"
-          onClick={() => this.setState({ modal2: true })}
-        >
-          Add Article
-        </h2>
-        <Link to='/createblog'><h2>Add Blog</h2></Link>
         </div>
         <Modal
           isOpen={this.state.modal1}

@@ -22,7 +22,8 @@ class App extends Component {
 
   navigation = e => {
     const id = e.target.id
-    if (id === 'h1' || id === 'h2' || id === 'h3' || id === 'h4') {
+    console.log(id)
+    if (id === 'h1') {
       this.setState({ menu: true});
     } else if (e.target.id !== 'hamburger') {
       this.setState({navClass: true}, () => {

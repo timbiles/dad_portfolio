@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import BurgerIcon from './burgerIcon';
 
 class Hamburger extends Component {
   render() {
     const { menu, links } = this.props;
 
-    const map = links.map((e, i) => {
+    const map = links && links.map((e, i) => {
       return (
         <Link
           key={i}
@@ -19,14 +20,7 @@ class Hamburger extends Component {
 
     return (
       <div className="hamburger" id="hamburger">
-        <div
-          className="hamburger_icon"
-          id="h1"
-        >
-          <div className="burger burger1" id="h2"/>
-          <div className="burger burger2" id="h3"/>
-          <div className="burger burger3" id="h4"/>
-        </div>
+      <BurgerIcon id='h1' />
 
         {menu && (
           <div

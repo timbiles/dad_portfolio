@@ -30,7 +30,7 @@ class Header extends Component {
           className="header_container"
           style={
             typeof window !== `undefined` && window.location.pathname === '/'
-              ? { backgroundColor: 'transparent' }
+              ? { backgroundColor: 'transparent', position: 'relative' }
               : { backgroundColor: '#232F3E', position: 'fixed', width: '100%' }
           }
         >
