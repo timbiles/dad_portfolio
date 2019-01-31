@@ -27,7 +27,7 @@ class Form4 extends Component {
             placeholder="..."
             value={airport}
             name="airport"
-            onChange={e => updateInput(e)}
+            onChange={updateInput}
           />
           <span id="ce_title">Nearest airport to your location?</span>
         </label>
@@ -39,7 +39,7 @@ class Form4 extends Component {
             placeholder="..."
             value={airportTransportation}
             name="airportTransportation"
-            onChange={e => updateInput(e)}
+            onChange={updateInput}
           />
           <span id="ce_title">Is airport transportation available</span>
         </label>
@@ -51,7 +51,7 @@ class Form4 extends Component {
             placeholder="..."
             value={lodging}
             name="lodging"
-            onChange={e => updateInput(e)}
+            onChange={updateInput}
           />
           <span id="ce_title">Lodging to be booked by...</span>
         </label>
@@ -63,7 +63,7 @@ class Form4 extends Component {
             placeholder="..."
             value={lodgingLocation}
             name="lodgingLocation"
-            onChange={e => updateInput(e)}
+            onChange={updateInput}
           />
           <span id="ce_title">Nearest Lodging or Location booked</span>
         </label>
@@ -75,7 +75,7 @@ class Form4 extends Component {
             placeholder="..."
             value={travelExpenses}
             name="travelExpenses"
-            onChange={e => updateInput(e)}
+            onChange={updateInput}
           />
           <span id="ce_title">
             Requester will reimburse the following expenses
@@ -89,7 +89,7 @@ class Form4 extends Component {
             placeholder="..."
             value={reimbursementReceipts}
             name="reimbursementReceipts"
-            onChange={e => updateInput(e)}
+            onChange={updateInput}
           />
           <span id="ce_title">Reimbursement receipts should be sent to</span>
         </label>

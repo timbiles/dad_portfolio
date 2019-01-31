@@ -133,7 +133,6 @@ class MainAdmin extends Component {
   };
 
   click = e => {
-    console.log(e.target.id);
     const { id } = e.target.id;
 
     if (e.target.id === 'admin1') {
@@ -169,7 +168,6 @@ class MainAdmin extends Component {
       <div className="admin_main" onClick={this.click}>
         <div className="admin_main_sub">
           <nav>
-            <div>
               {!menu && <BurgerIcon id="admin1" />}
               {menu && (
                 <div
@@ -205,9 +203,9 @@ class MainAdmin extends Component {
                       </Link>
                     </section>
                   </div>
+                  <p>www.deronjbiles.com</p>
                 </div>
               )}
-            </div>
             <h1>Welcome, Deron!</h1>
           </nav>
           <div>

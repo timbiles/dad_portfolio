@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import '../Form.css';
-
 import { getRequests, updateInput } from '../../../ducks/requestReducer';
 
 class Form1 extends Component {
@@ -32,7 +30,7 @@ class Form1 extends Component {
             placeholder="..."
             value={organizationName}
             name="organizationName"
-            onChange={e => updateInput(e)}
+            onChange={updateInput}
           />
           <span id="ce_title">Organization Name</span>
         </label>
@@ -44,7 +42,7 @@ class Form1 extends Component {
             placeholder="..."
             value={contactName}
             name="contactName"
-            onChange={e => updateInput(e)}
+            onChange={updateInput}
           />
           <span id="ce_title">Contact Name</span>
         </label>
@@ -56,7 +54,7 @@ class Form1 extends Component {
             placeholder="..."
             value={phoneNumber}
             name="phoneNumber"
-            onChange={e => updateInput(e)}
+            onChange={updateInput}
           />
           <span id="ce_title">Phone Number</span>
         </label>
@@ -68,7 +66,7 @@ class Form1 extends Component {
             placeholder="..."
             value={email}
             name="email"
-            onChange={e => updateInput(e)}
+            onChange={updateInput}
           />
           <span id="ce_title">Email Address</span>
         </label>

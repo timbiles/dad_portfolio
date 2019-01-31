@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
 import Hamburger from '../Hamburger/Hamburger';
-import './Header.css';
+import './Header.scss';
 
 class Header extends Component {
   state = {

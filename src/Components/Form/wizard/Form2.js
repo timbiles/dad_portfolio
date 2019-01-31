@@ -31,7 +31,7 @@ class Form2 extends Component {
             placeholder="..."
             value={eventName}
             name="eventName"
-            onChange={e => updateInput(e)}
+            onChange={updateInput}
           />
           <span id="ce_title">Name of Event</span>
         </label>
@@ -43,7 +43,7 @@ class Form2 extends Component {
             placeholder="..."
             value={eventDate}
             name="eventDate"
-            onChange={e => updateInput(e)}
+            onChange={updateInput}
           />
           <span id="ce_title">Date of Event</span>
         </label>
@@ -55,7 +55,7 @@ class Form2 extends Component {
             placeholder="12:00"
             value={eventTime}
             name="eventTime"
-            onChange={e => updateInput(e)}
+            onChange={updateInput}
           />
           <span id="ce_title">Time of Event (start to end)</span>
         </label>
@@ -67,7 +67,7 @@ class Form2 extends Component {
             placeholder="..."
             value={speakerRequest}
             name="speakerRequest"
-            onChange={e => updateInput(e)}
+            onChange={updateInput}
           />
           <span id="ce_title">Speaker Requested to attend entire event</span>
         </label>
@@ -79,7 +79,7 @@ class Form2 extends Component {
             placeholder="..."
             value={arrivalTime}
             name="arrivalTime"
-            onChange={e => updateInput(e)}
+            onChange={updateInput}
           />
           <span id="ce_title">Arrival Time</span>
         </label>
@@ -91,7 +91,7 @@ class Form2 extends Component {
             placeholder="..."
             value={eventLocation}
             name="eventLocation"
-            onChange={e => updateInput(e)}
+            onChange={updateInput}
           />
           <span id="ce_title">Event Location</span>
         </label>
@@ -103,7 +103,7 @@ class Form2 extends Component {
             placeholder="..."
             value={eventDescription}
             name="eventDescription"
-            onChange={e => updateInput(e)}
+            onChange={updateInput}
           />
           <span id="ce_title">Event Description</span>
         </label>

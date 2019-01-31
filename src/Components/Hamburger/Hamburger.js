@@ -32,10 +32,13 @@ class Hamburger extends Component {
             className={this.props.navClass ? 'dropdown exit' : 'dropdown'}
           >
             <div>{map}</div>
+            <aside>
             <img
               src="https://res.cloudinary.com/dwvrok1le/image/upload/v1547440176/open-magazine.png"
               alt="Book"
             />
+            <p>www.deronjbiles.com</p>
+            </aside>
           </div>
         )}
       </div>

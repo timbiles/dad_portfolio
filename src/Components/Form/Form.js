@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import swal from 'sweetalert2';
 
-import './Form.css';
+import './Form.scss';
 
 import Form1 from './wizard/Form1';
 import Form2 from './wizard/Form2';
@@ -25,15 +25,15 @@ class Form extends Component {
     this.props.getRequests();
   }
 
-  toggleClick1 = e => this.setState({ two: true, one: false });
-  toggleClick2 = e => this.setState({ three: true, two: false });
-  toggleClick3 = e => this.setState({ four: true, three: false });
-  toggleClick4 = e => this.setState({ five: true, four: false });
+  toggleClick1 = () => this.setState({ two: true, one: false });
+  toggleClick2 = () => this.setState({ three: true, two: false });
+  toggleClick3 = () => this.setState({ four: true, three: false });
+  toggleClick4 = () => this.setState({ five: true, four: false });
 
-  toggleClicka = e => this.setState({ one: true, two: false });
-  toggleClickb = e => this.setState({ two: true, three: false });
-  toggleClickc = e => this.setState({ three: true, four: false });
-  toggleClickd = e => this.setState({ four: true, five: false });
+  toggleClicka = () => this.setState({ one: true, two: false });
+  toggleClickb = () => this.setState({ two: true, three: false });
+  toggleClickc = () => this.setState({ three: true, four: false });
+  toggleClickd = () => this.setState({ four: true, five: false });
 
   submitForm = id => {
     let {
@@ -123,29 +123,29 @@ class Form extends Component {
           </div>
           <h1>Form</h1>
 
-          {one && <Form1 toggleClick1={e => this.toggleClick1(e)} />}
+          {one && <Form1 toggleClick1={this.toggleClick1} />}
 
           {two && (
             <Form2
-              toggleClicka={e => this.toggleClicka(e)}
-              toggleClick2={e => this.toggleClick2(e)}
+              toggleClicka={this.toggleClicka}
+              toggleClick2={this.toggleClick2}
             />
           )}
           {three && (
             <Form3
-              toggleClickb={e => this.toggleClickb(e)}
-              toggleClick3={e => this.toggleClick3(e)}
+              toggleClickb={this.toggleClickb}
+              toggleClick3={this.toggleClick3}
             />
           )}
           {four && (
             <Form4
-              toggleClickc={e => this.toggleClickc(e)}
-              toggleClick4={e => this.toggleClick4(e)}
+              toggleClickc={this.toggleClickc}
+              toggleClick4={this.toggleClick4}
             />
           )}
           {five && (
             <Form5
-              toggleClickd={e => this.toggleClickd(e)}
+              toggleClickd={this.toggleClickd}
               submitForm={id => this.submitForm(id)}
             />
           )}

@@ -25,7 +25,7 @@ class Form3 extends Component {
             placeholder="..."
             value={eventTopic}
             name='eventTopic'
-            onChange={e => updateInput(e)}
+            onChange={updateInput}
           />
           <span id="ce_title">What is the topic or theme for the event?</span>
         </label>
@@ -37,7 +37,7 @@ class Form3 extends Component {
             placeholder="..."
             value={presentationLength}
             name='presentationLength'
-            onChange={e => updateInput(e)}
+            onChange={updateInput}
           />
           <span id="ce_title">How long should the speaker present?</span>
         </label>
@@ -49,7 +49,7 @@ class Form3 extends Component {
             placeholder="..."
             value={presentationTime}
             name='presentationTime'
-            onChange={e => updateInput(e)}
+            onChange={updateInput}
           />
           <span id="ce_title">What time(s) will he speak</span>
         </label>
@@ -61,7 +61,7 @@ class Form3 extends Component {
             placeholder="..."
             value={presentationComments}
             name='presentationComments'
-            onChange={e => updateInput(e)}
+            onChange={updateInput}
           />
           <span id="ce_title">Additional information</span>
         </label>

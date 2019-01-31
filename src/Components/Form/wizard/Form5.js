@@ -20,7 +20,7 @@ class Form5 extends Component {
             placeholder="..."
             value={bio}
             name='bio'
-            onChange={e => updateInput(e)}
+            onChange={updateInput}
           />
           <span id="ce_title">Do you need biographical information</span>
         </label>
@@ -32,7 +32,7 @@ class Form5 extends Component {
             placeholder="..."
             value={img}
             name='img'
-            onChange={e => updateInput(e)}
+            onChange={updateInput}
           />
           <span id="ce_title">Do you need a photo</span>
         </label>
@@ -44,7 +44,7 @@ class Form5 extends Component {
             placeholder="..."
             value={w2}
             name='w2'
-            onChange={e => updateInput(e)}
+            onChange={updateInput}
           />
           <span id="ce_title">Do you need a W-2</span>
         </label>
