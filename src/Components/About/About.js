@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { line } from '../Tools/Func/line';
 import Verse from '../VerseGenerator/VerseGenerator';
-import './About.css';
+import './About.scss';
 
 import beach from './beach.jpg';
 import dad from './dad.jpeg';
@@ -47,7 +47,7 @@ export default class About extends Component {
 
    
     return (
-      <div className="about">
+      <Fragment>
         <div className="bio_name">
           <div className="bio_name_sub">
           {line('About')}
@@ -143,7 +143,7 @@ export default class About extends Component {
           </div>
         </div>
         <Verse />
-      </div>
+      </Fragment>
     );
   }
 }

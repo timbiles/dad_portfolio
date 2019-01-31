@@ -87,7 +87,6 @@
 .form_pic_btm {
   display: flex;
   justify-content: space-between;
-
   width: 100%;
 }
 
@@ -139,7 +138,4 @@
   .ci_holder {
     margin: 0;
   }
-}
-
-@media (max-width: 415px) {
 }
