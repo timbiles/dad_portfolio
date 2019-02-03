@@ -13,7 +13,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 70%;
 }
 
 .bio_sub p {
@@ -241,7 +240,7 @@
 
 @media (max-width: 500px) {
   .bio_name_sub {
-    width: 100%;
+    width: 80%;
   }
 }
 

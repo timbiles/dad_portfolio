@@ -133,11 +133,10 @@ class MainAdmin extends Component {
   };
 
   click = e => {
-    const { id } = e.target.id;
-
-    if (e.target.id === 'admin1') {
+    const {id} = e.target
+    if (id === 'admin1') {
       this.setState({ menu: true });
-    } else if (e.target.id !== 'admin1') {
+    } else if (id !== 'admin1') {
       this.setState({ navClass: true }, () => {
         setTimeout(() => {
           this.setState({ menu: false, navClass: false });

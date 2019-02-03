@@ -103,7 +103,7 @@ class Library extends Component {
                   src={preachingsource}
                   alt="Genesis"
                 />
-                <p>
+                <p className='ps_text'>
                   Preaching Source is a text-driven resource of Southwestern
                   Baptist Theological Seminary dedicated to equip preachers in
                   the art and craft of text-driven preaching.

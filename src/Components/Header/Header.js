@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import Hamburger from '../Hamburger/Hamburger';
@@ -25,7 +25,7 @@ class Header extends Component {
     });
 
     return (
-      <Fragment>
+      <>
         <div
           className="header_container"
           style={
@@ -46,7 +46,7 @@ class Header extends Component {
           />
           <div className="header_right">{map}</div>
         </div>
-      </Fragment>
+      </>
     );
   }
 }
