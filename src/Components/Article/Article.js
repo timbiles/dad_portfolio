@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { line } from '../Tools/Func/line';
 
-import './Article.css';
+import './Article.scss';
 import ArticleList from './ArticleList';
 
 import VerseGenerator from '../VerseGenerator/VerseGenerator';
