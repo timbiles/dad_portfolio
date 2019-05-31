@@ -1,15 +1,15 @@
 import React, { Fragment } from 'react';
 
-const burgerIcon = (props) => {
-  const {id} = props
+const burgerIcon = props => {
+  const { id } = props;
   return (
-    <Fragment>
+    <div>
       <div className="hamburger_icon" id={id}>
-        <div className="burger" />
-        <div className="burger" />
+        <div className="burger" id="burger1" />
+        <div className="burger" id="burger2" />
         {id !== 'admin1' && <div className="burger burger3" />}
       </div>
-    </Fragment>
+    </div>
   );
 };
 

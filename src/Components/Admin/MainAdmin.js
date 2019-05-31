@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Modal from 'react-modal';
+import moment from 'moment';
 import swal from 'sweetalert2';
 
 import Calendar from '../Calendar/Calendar';
@@ -37,7 +38,9 @@ class MainAdmin extends Component {
     topic: '',
     desc: '',
     menu: false,
-    navClass: false
+    navClass: false,
+    recurring: false,
+    recurringNumber: 5
   };
 
   componentDidMount() {
@@ -48,17 +51,44 @@ class MainAdmin extends Component {
 
   handleClick = e => {
     const { event, date, time, location } = this.props.eventReducer;
-    axios
-      .post('/api/add-to-calendar', {
-        event,
-        date,
-        time,
-        location
-      })
-      .then(() => {
-        this.props.getCalendar();
-        this.closeModal();
-      });
+    const { recurringNumber, recurring } = this.state;
+    const eventDate = new Date(date);
+
+    let tempDate = eventDate;
+
+    if (recurring) {
+      for (let i = 1; i <= recurringNumber; i += 1) {
+        const newDate = new Date(tempDate);
+        newDate.setDate(newDate.getDate() + 7);
+        const sendDate = moment.utc(newDate, 'L').format('L')
+        axios
+        .post('/api/add-to-calendar', {
+          event,
+          date: i === 1 ? date : sendDate,
+          time,
+          location
+        })
+        .then(() => {
+          this.props.getCalendar();
+          this.closeModal();
+        });
+        if(i !==1) {
+          tempDate = newDate;
+        }
+      }
+    } else {
+      axios
+        .post('/api/add-to-calendar', {
+          event,
+          date,
+          time,
+          location
+        })
+        .then(() => {
+          this.props.getCalendar();
+          this.closeModal();
+        });
+    }
   };
 
   handleKeyDown = e => {
@@ -133,8 +163,8 @@ class MainAdmin extends Component {
   };
 
   click = e => {
-    const {id} = e.target
-    if (id === 'admin1') {
+    const { id } = e.target;
+    if (id === 'admin1' || id === 'burger1' || id === 'burger2') {
       this.setState({ menu: true });
     } else if (id !== 'admin1') {
       this.setState({ navClass: true }, () => {
@@ -148,7 +178,7 @@ class MainAdmin extends Component {
   render() {
     const { updateInput } = this.props;
     const { requests } = this.props.reducer;
-    const { menu, navClass } = this.state;
+    const { menu, navClass, recurring, recurringNumber } = this.state;
 
     const map = requests.map(e => {
       return (
@@ -167,44 +197,44 @@ class MainAdmin extends Component {
       <div className="admin_main" onClick={this.click}>
         <div className="admin_main_sub">
           <nav>
-              {!menu && <BurgerIcon id="admin1" />}
-              {menu && (
-                <div
-                  style={{ background: '#232f3e' }}
-                  className={navClass ? 'dropdown exit' : 'dropdown'}
-                >
-                  <div className="admin_side">
-                    <section>
-                      <img
-                        src="https://res.cloudinary.com/dwvrok1le/image/upload/v1548956571/calendar_1.png"
-                        alt=""
-                      />
-                      <h4 onClick={() => this.setState({ modal1: true })}>
-                        Add Event
-                      </h4>
-                    </section>
-                    <section>
-                      <img
-                        src="https://res.cloudinary.com/dwvrok1le/image/upload/v1548956855/newspaper.png"
-                        alt=""
-                      />
-                      <h4 onClick={() => this.setState({ modal2: true })}>
-                        Add Article
-                      </h4>
-                    </section>
-                    <section>
-                        <img
-                          src="https://res.cloudinary.com/dwvrok1le/image/upload/v1548956924/blogging.png"
-                          alt=""
-                        />
-                      <Link to="/createblog">
-                        <h4>Create Blog</h4>
-                      </Link>
-                    </section>
-                  </div>
-                  <p>www.deronjbiles.com</p>
+            {!menu && <BurgerIcon id="admin1" />}
+            {menu && (
+              <div
+                style={{ background: '#232f3e' }}
+                className={navClass ? 'dropdown exit' : 'dropdown'}
+              >
+                <div className="admin_side">
+                  <section>
+                    <img
+                      src="https://res.cloudinary.com/dwvrok1le/image/upload/v1548956571/calendar_1.png"
+                      alt=""
+                    />
+                    <h4 onClick={() => this.setState({ modal1: true })}>
+                      Add Event
+                    </h4>
+                  </section>
+                  <section>
+                    <img
+                      src="https://res.cloudinary.com/dwvrok1le/image/upload/v1548956855/newspaper.png"
+                      alt=""
+                    />
+                    <h4 onClick={() => this.setState({ modal2: true })}>
+                      Add Article
+                    </h4>
+                  </section>
+                  <section>
+                    <img
+                      src="https://res.cloudinary.com/dwvrok1le/image/upload/v1548956924/blogging.png"
+                      alt=""
+                    />
+                    <Link to="/createblog">
+                      <h4>Create Blog</h4>
+                    </Link>
+                  </section>
                 </div>
-              )}
+                <p>www.deronjbiles.com</p>
+              </div>
+            )}
             <h1>Welcome, Deron!</h1>
           </nav>
           <div>
@@ -231,24 +261,44 @@ class MainAdmin extends Component {
             <div className="events_input">
               <div>
                 <h2>Event Name</h2>
+                <input type="text" name="event" onChange={updateInput} />
+                <h2>Event Date</h2>
                 <input
                   type="text"
-                  name="event"
-                  onChange={e => updateInput(e)}
+                  name="date"
+                  onChange={updateInput}
+                  placeholder="06/01/1992"
                 />
-                <h2>Event Date</h2>
-                <input type="text" name="date" onChange={e => updateInput(e)} />
                 <h2>Event Time</h2>
-                <input type="text" name="time" onChange={e => updateInput(e)} />
+                <input type="text" name="time" onChange={updateInput} />
                 <h2>Event Location</h2>
                 <input
                   type="text"
                   name="location"
-                  onChange={e => updateInput(e)}
-                  onKeyDown={e => this.handleKeyDown(e)}
+                  onChange={updateInput}
+                  onKeyDown={this.handleKeyDown}
                 />
               </div>
-              <h3 onClick={this.handleClick}>Submit</h3>
+              <div>
+                <h3 onClick={this.handleClick}>Submit</h3>
+                <div className="recurring_checkbox">
+                  <div>
+                    <input
+                      type="checkbox"
+                      name="recurring"
+                      onChange={() => this.setState({ recurring: !recurring })}
+                    />
+                    <label htmlFor="recurring">Recurring</label>
+                  </div>
+                  <input
+                    type="number"
+                    value={recurringNumber}
+                    onChange={e =>
+                      this.setState({ recurringNumber: +e.target.value })
+                    }
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </Modal>
