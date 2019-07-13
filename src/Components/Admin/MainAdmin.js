@@ -8,6 +8,7 @@ import swal from 'sweetalert2';
 
 import Calendar from '../Calendar/Calendar';
 import BurgerIcon from '../Hamburger/burgerIcon';
+import ArticleList from '../Article/ArticleList';
 
 import { getCalendar, updateInput } from '../../ducks/eventsReducer';
 import { getRequests } from '../../ducks/requestReducer';
@@ -60,19 +61,19 @@ class MainAdmin extends Component {
       for (let i = 1; i <= recurringNumber; i += 1) {
         const newDate = new Date(tempDate);
         newDate.setDate(newDate.getDate() + 7);
-        const sendDate = moment.utc(newDate, 'L').format('L')
+        const sendDate = moment.utc(newDate, 'L').format('L');
         axios
-        .post('/api/add-to-calendar', {
-          event,
-          date: i === 1 ? date : sendDate,
-          time,
-          location
-        })
-        .then(() => {
-          this.props.getCalendar();
-          this.closeModal();
-        });
-        if(i !==1) {
+          .post('/api/add-to-calendar', {
+            event,
+            date: i === 1 ? date : sendDate,
+            time,
+            location
+          })
+          .then(() => {
+            this.props.getCalendar();
+            this.closeModal();
+          });
+        if (i !== 1) {
           tempDate = newDate;
         }
       }
@@ -237,16 +238,22 @@ class MainAdmin extends Component {
             )}
             <h1>Welcome, Deron!</h1>
           </nav>
-          <div>
-            <div className="admin_sub1">
-              <h2 className="admin_title">Incoming Requests</h2>
-              <div className="admin_map">{map}</div>
-            </div>
-            <div className="admin_sub2">
-              <h2 className="admin_title">Calendar View</h2>
-              <div className="admin_calendar">
-                <Calendar />
+          <div className="admin-article-body">
+            <div className="admin-top-container">
+              <div className="admin_sub1">
+                <h2 className="admin_title">Incoming Requests</h2>
+                <div className="admin_map">{map}</div>
               </div>
+              <div className="admin_sub2">
+                <h2 className="admin_title">Calendar View</h2>
+                <div className="admin_calendar">
+                  <Calendar />
+                </div>
+              </div>
+            </div>
+            <div className="admin-bottom-container">
+              <h2 className="admin_title">Article List</h2>
+              <ArticleList type="admin" />
             </div>
           </div>
         </div>

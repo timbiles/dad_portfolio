@@ -57,6 +57,17 @@
   letter-spacing: 1.5px;
 }
 
+.admin-article-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-top-container {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .admin_login h3 {
   font-weight: 200;
   padding: 2%;

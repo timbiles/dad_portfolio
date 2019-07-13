@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
+import swal from 'sweetalert2';
 
 class ArticleList extends Component {
   state = {
@@ -8,15 +9,58 @@ class ArticleList extends Component {
     articles: []
   };
 
-  componentDidMount(){
-    axios.get('/api/articles').then(res=> {
-      this.setState({articles: res.data})
-    })
+  componentDidMount() {
+    this.getArticles();
   }
+
+  getArticles = () => {
+    axios.get('/api/articles').then(res => {
+      this.setState({ articles: res.data });
+    });
+  };
 
   handleChange = e => {
     this.setState({ filtered: e.toLowerCase() });
   };
+
+  // delete article
+  deleteArticle = article => {
+    swal({
+      position: 'top-end',
+      type: 'warning',
+      title: 'Removing this article is permanent.',
+      text: `Are you sure you want to remove article: "${article.title}"?`,
+      confirmButtonText: 'Yes, remove it!',
+      showCancelButton: true
+    }).then(res => {
+      if (res.value) {
+        swal({
+          position: 'top-end',
+          type: 'success',
+          title: 'Deleted',
+          text: 'Your Article has been deleted!',
+          showConfirmButton: false,
+          timer: 1500
+        });
+        axios
+          .delete(`/api/remove-article/${article.id}`)
+          .then(() => {
+            this.getArticles();
+          })
+
+          .catch(() => {
+            swal({
+              position: 'top-end',
+              type: 'warning',
+              title: 'Ooops! There was an error.'
+            });
+          });
+      } else if (res.dismiss === swal.DismissReason.cancel) {
+        swal('Cancelled', 'Your Event is still here :)', 'error');
+      }
+    });
+  };
+
   render() {
     const { filtered, articles } = this.state;
 
@@ -28,70 +72,117 @@ class ArticleList extends Component {
         );
       })
       .map((e, i) => {
-        if(e.blog) {
-          e.newTitle = encodeURIComponent(e.title.trim())
+        if (e.blog) {
+          e.newTitle = encodeURIComponent(e.title.trim());
         }
-        const desc = e.description && e.description
-        .replace(/<b>/gi, '')
-        .replace(/<\/b>/gi, '')
-        .replace(/<em>/gi, '')
-        .replace(/<\/em>/gi, '')
-        .replace(/<u>/gi, '')
-        .replace(/<\/u>/gi, '')
-        .replace(/<h1>/gi, '')
-        .replace(/<\/h1>/gi, '')
-        .replace(/<center>/gi, '')
-        .replace(/<\/center>/gi, '')
+        const desc =
+          e.description &&
+          e.description
+            .replace(/<b>/gi, '')
+            .replace(/<\/b>/gi, '')
+            .replace(/<em>/gi, '')
+            .replace(/<\/em>/gi, '')
+            .replace(/<u>/gi, '')
+            .replace(/<\/u>/gi, '')
+            .replace(/<h1>/gi, '')
+            .replace(/<\/h1>/gi, '')
+            .replace(/<center>/gi, '')
+            .replace(/<\/center>/gi, '');
 
         return (
           <div key={i} className="article_list_map">
             <img className="article_img" src={e.img} alt={e.title} />
             <div className="alm_content">
-            {e.blog ? 
-            <Link to={`/blog/${e.newTitle}`}><h2>{e.title}</h2></Link>
-          :
-          
-              <a href={e.url} target="blank">
-                <h2>{e.title}</h2>
-              </a>
-          }
+              {e.blog ? (
+                <Link to={`/blog/${e.newTitle}`}>
+                  <h2>{e.title}</h2>
+                </Link>
+              ) : (
+                <a href={e.url} target="blank">
+                  <h2>{e.title}</h2>
+                </a>
+              )}
               <p>
                 {desc.substring(0, 200)}
                 ...
               </p>
-              <div className='alm_btm'>
-
-              <p>{e.date}</p>
-              <p>{e.topic && e.topic.replace(/,/g, ' · ')}</p>
+              <div className="alm_btm">
+                <p>{e.date}</p>
+                <p>{e.topic && e.topic.replace(/,/g, ' · ')}</p>
               </div>
             </div>
           </div>
         );
       });
 
-    return this.props.type === 'main' ? (
-      <div className="main_articles">
-        <input
-          type="text"
-          onChange={e => this.handleChange(e.target.value)}
-          placeholder="Search by Title or Book of the Bible..."
-          className="article_search"
-        />
-        <div className="filter_content">{filter}</div>
-      </div>
-    ) : (
-      <div className="article_wrapper">
-        {articles.slice(0, 3).map((e, i) => {
-          return (
-            <div key={i} className="article_top_map">
-              <a href={e.url} target="blank">
-                <h2>{e.title}</h2>
-              </a>
-            </div>
-          );
-        })}
-      </div>
-    );
+    switch (this.props.type) {
+      case 'main':
+        return (
+          <div className="main_articles">
+            <input
+              type="text"
+              onChange={e => this.handleChange(e.target.value)}
+              placeholder="Search by Title or Book of the Bible..."
+              className="article_search"
+            />
+            <div className="filter_content">{filter}</div>
+          </div>
+        );
+      case 'admin':
+        return (
+          <div className="article_wrapper admin-article-wrapper">
+            {articles.map((e, i) => {
+              return (
+                <div key={i} className="article_top_map admin-article-map">
+                  <a href={e.url} target="blank">
+                    <h2>{e.title}</h2>
+                  </a>
+
+                  <button onClick={() => this.deleteArticle(e)}>Delete</button>
+                </div>
+              );
+            })}
+          </div>
+        );
+      default:
+        return (
+          <div className="article_wrapper">
+            {articles.slice(0, 3).map((e, i) => {
+              return (
+                <div key={i} className="article_top_map">
+                  <a href={e.url} target="blank">
+                    <h2>{e.title}</h2>
+                  </a>
+                </div>
+              );
+            })}
+          </div>
+        );
+    }
+
+    // return this.props.type === 'main' ? (
+    //   <div className="main_articles">
+    //     <input
+    //       type="text"
+    //       onChange={e => this.handleChange(e.target.value)}
+    //       placeholder="Search by Title or Book of the Bible..."
+    //       className="article_search"
+    //     />
+    //     <div className="filter_content">{filter}</div>
+    //   </div>
+    // ) : (
+    //   <div className="article_wrapper">
+    //     {articles.slice(0, 3).map((e, i) => {
+    //       return (
+    //         <div key={i} className="article_top_map">
+    //           <a href={e.url} target="blank">
+    //             <h2>{e.title}</h2>
+    //           </a>
+    //         </div>
+    //       );
+    //     })}
+    //   </div>
+    // );
   }
 }
 

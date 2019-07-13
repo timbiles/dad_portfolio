@@ -47,7 +47,7 @@ class Calendar extends Component {
               position: 'top-end',
               type: 'warning',
               title:
-                'You cannot remove an event that someone has already signed up for!'
+                'Ooops! There was an error'
             });
           });
       } else if (res.dismiss === swal.DismissReason.cancel) {
