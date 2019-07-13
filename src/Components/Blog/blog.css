@@ -90,6 +90,11 @@ pre {
   padding: 0 10px;
 }
 
+.create-blog-image-text {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
 .blog_topics {
   display: flex;
   flex-direction: column;

@@ -170,6 +170,7 @@ class CreateBlog extends Component {
             onChange={e => this.setState({ title: e.target.value })}
           />
           <Image imageUpload={this.imageUpload} image={image} />
+          <p className='create-blog-image-text'>The main article image is better optimized landscape (horizontal).</p>
           <div className="font_style">
             <div>
               <button onClick={e => this.font('**')}>
