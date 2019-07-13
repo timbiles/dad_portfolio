@@ -17,8 +17,9 @@ class ArticleList extends Component {
     await this.getArticles();
     await setTimeout(() => {
       this.setPagination();
-    }, 250);
+    }, 500);
   }
+
 
   getArticles = () => {
     axios.get('/api/articles').then(res => {
