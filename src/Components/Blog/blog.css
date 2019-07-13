@@ -166,6 +166,14 @@ pre {
   margin: 0 auto;
 }
 
+.create-blog-button-holder {
+  display: flex;
+}
+
+.blog_cont a {
+  color: #b67a46;
+}
+
 .blog_sub {
   width: 70vw;
   margin: auto;

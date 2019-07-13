@@ -13,7 +13,7 @@ class CreateBlog extends Component {
     blog: '',
     date: moment(new Date()).format('MMMM D, YYYY'),
     image: '',
-    title: 'Testing',
+    title: '',
     topic: '',
     ctrl: false,
     articles: [],
@@ -101,14 +101,22 @@ class CreateBlog extends Component {
   send = e => {
     const { date, image, title, topic } = this.state;
 
+    const blogLink = this.state.blog.split('~')
+    console.log(blogLink[1].split(','))
+
+
+
     let str = this.state.blog
       .replace(/>/g, '•')
       .replace(/\*([^*]*)\*/g, '<b>$1</b>')
       .replace(/\^([^^]*)\^/g, '<em>$1</em>')
       .replace(/_([^_]*)_/g, '<u>$1</u>')
-      .replace(/#([^#]*)#/g, '<h1>$1</h1>')
+      .replace(/#([^#]*)#/g, '<h2>$1</h2>')
       .replace(/\{/g, '<center>')
-      .replace(/\}/g, '</center>');
+      .replace(/\}/g, '</center>')
+      .replace(/\~([^~]*)\,([^~]*)~/g, '<a href="$2" target="blank">$1</a>')
+
+
 
     e.target.name === 'preview'
       ? this.setState({ preview: str })
@@ -172,30 +180,31 @@ class CreateBlog extends Component {
           <Image imageUpload={this.imageUpload} image={image} />
           <p className='create-blog-image-text'>The main article image is better optimized landscape (horizontal).</p>
           <div className="font_style">
-            <div>
-              <button onClick={e => this.font('**')}>
+            <div className='create-blog-button-holder'>
+              <button onClick={() => this.font('**')}>
                 <b>B</b>
               </button>
-              <button onClick={e => this.font('^^')}>
+              <button onClick={() => this.font('^^')}>
                 <em>I</em>
               </button>
-              <button onClick={e => this.font('__')}>
+              <button onClick={() => this.font('__')}>
                 <u>U</u>
               </button>
-              <button onClick={e => this.font('##')}>Header</button>
-              <button onClick={e => this.font('{}')}>Center</button>
-              <button onClick={e => this.font('>')}>
+              <button onClick={() => this.font('##')}>Header</button>
+              <button onClick={() => this.font('{}')}>Center</button>
+              <button onClick={() => this.font('>')}>
                 <img
                   src="https://image.flaticon.com/icons/svg/483/483226.svg"
                   alt="bullets"
                 />
               </button>
-              <button onClick={e => this.font('>')}>
+              <button onClick={() => this.font('>')}>
                 <img
                   src="https://image.flaticon.com/icons/svg/59/59127.svg"
                   alt="numbered list"
                 />
               </button>
+              <button onClick={() => this.font('~ text to display, external link ~')}>Link</button>
             </div>
             <div>
               <button name="preview" onClick={this.send}>
