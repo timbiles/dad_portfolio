@@ -60,7 +60,6 @@ class CreateBlog extends Component {
         var range = elem.createTextRange();
         range.move('character', caretPos);
         range.select();
-        
       } else {
         if (elem.selectionStart) {
           elem.focus();
@@ -73,7 +72,7 @@ class CreateBlog extends Component {
   };
 
   font = async e => {
-   let selection = window.getSelection().toString(),
+    let selection = window.getSelection().toString(),
       element = document.getElementById('blog'),
       position = element.selectionStart,
       end = element.selectionEnd,
@@ -91,26 +90,25 @@ class CreateBlog extends Component {
       await this.setState({ blog: this.state.blog + e });
       await this.textSelect(element, position + 2);
     } else if (e === '>') {
-      await this.setState({ blog: this.state.blog + e});
+      await this.setState({ blog: this.state.blog + e });
       await this.textSelect(element, position + 2);
     } else {
       await this.setState({ blog: this.state.blog + e });
       await this.textSelect(element, position + 1);
     }
- 
   };
 
   send = e => {
     const { date, image, title, topic } = this.state;
 
     let str = this.state.blog
-      .replace(/>/g, '•') 
+      .replace(/>/g, '•')
       .replace(/\*([^*]*)\*/g, '<b>$1</b>')
       .replace(/\^([^^]*)\^/g, '<em>$1</em>')
       .replace(/_([^_]*)_/g, '<u>$1</u>')
       .replace(/#([^#]*)#/g, '<h1>$1</h1>')
       .replace(/\{/g, '<center>')
-      .replace(/\}/g, '</center>')
+      .replace(/\}/g, '</center>');
 
     e.target.name === 'preview'
       ? this.setState({ preview: str })
@@ -131,6 +129,9 @@ class CreateBlog extends Component {
               background: 'rgb(204,204,204)',
               timer: 2000
             });
+            setTimeout(() => {
+              window.location.replace('/article');
+            }, 1500);
           })
           .catch(err => {
             console.log('error', err);
@@ -158,76 +159,76 @@ class CreateBlog extends Component {
   render() {
     const { image, preview, user } = this.state;
 
-    return user && (
-      <div className="blog_main">
-        <h1> Compose</h1>
-        <input
-          type="text"
-          placeholder="Article title"
-          className="blog_title"
-          onChange={e => this.setState({ title: e.target.value })}
-        />
-        <Image imageUpload={this.imageUpload} image={image} />
-        <div className="font_style">
-          <div>
-            <button onClick={(e) => this.font('**')}>
-              <b>B</b>
-            </button>
-            <button onClick={(e) => this.font('^^')}>
-              <em>I</em>
-            </button>
-            <button onClick={(e) => this.font('__')}>
-              <u>U</u>
-            </button>
-            <button onClick={(e) => this.font('##')}>Header</button>
-            <button onClick={(e) => this.font('{}')}>Center</button>
-            <button onClick={(e) => this.font('>')}>
-              <img
-                src="https://image.flaticon.com/icons/svg/483/483226.svg"
-                alt="bullets"
-              />
-            </button>
-            <button onClick={(e) => this.font('>')}>
-              <img
-                src="https://image.flaticon.com/icons/svg/59/59127.svg"
-                alt="numbered list"
-              />
-            </button>
-          </div>
-          <div>
-            <button name="preview" onClick={this.send}>
-              Preview
-            </button>
-          </div>
-        </div>
-        <textarea
-          autoFocus
-          name=""
-          id="blog"
-          cols="30"
-          rows="10"
-          onChange={e => this.setState({ blog: e.target.value })}
-          onKeyDown={this.keyPress}
-          onKeyUp={this.up}
-          value={this.state.blog}
-        />
-        <div className='blog_topics'>
-          <p>Topics (separated by a comma)</p>
+    return (
+      user && (
+        <div className="blog_main">
+          <h1> Compose</h1>
           <input
             type="text"
-            onChange={e => this.setState({ topic: e.target.value })}
+            placeholder="Article title"
+            className="blog_title"
+            onChange={e => this.setState({ title: e.target.value })}
           />
+          <Image imageUpload={this.imageUpload} image={image} />
+          <div className="font_style">
+            <div>
+              <button onClick={e => this.font('**')}>
+                <b>B</b>
+              </button>
+              <button onClick={e => this.font('^^')}>
+                <em>I</em>
+              </button>
+              <button onClick={e => this.font('__')}>
+                <u>U</u>
+              </button>
+              <button onClick={e => this.font('##')}>Header</button>
+              <button onClick={e => this.font('{}')}>Center</button>
+              <button onClick={e => this.font('>')}>
+                <img
+                  src="https://image.flaticon.com/icons/svg/483/483226.svg"
+                  alt="bullets"
+                />
+              </button>
+              <button onClick={e => this.font('>')}>
+                <img
+                  src="https://image.flaticon.com/icons/svg/59/59127.svg"
+                  alt="numbered list"
+                />
+              </button>
+            </div>
+            <div>
+              <button name="preview" onClick={this.send}>
+                Preview
+              </button>
+            </div>
+          </div>
+          <textarea
+            autoFocus
+            name=""
+            id="blog"
+            cols="30"
+            rows="10"
+            onChange={e => this.setState({ blog: e.target.value })}
+            onKeyDown={this.keyPress}
+            onKeyUp={this.up}
+            value={this.state.blog}
+          />
+          <div className="blog_topics">
+            <p>Topics (separated by a comma)</p>
+            <input
+              type="text"
+              onChange={e => this.setState({ topic: e.target.value })}
+            />
+          </div>
+          <button id="create-blog-send" onClick={this.send}>
+            Submit Article
+          </button>
+          <h2 className="blog_preview">
+            <span>Preview</span>
+          </h2>
+          {preview && <Blog type="preview" blog={this.state} />}
         </div>
-        <button onClick={this.send}>Send</button>
-        <h2 className="blog_preview">
-          <span>Preview</span>
-        </h2>
-        {
-          preview && 
-        <Blog type='preview' blog={this.state}/>
-
-        }
-      </div>
+      )
     );
   }
 }

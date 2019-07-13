@@ -92,9 +92,22 @@ pre {
 
 .blog_topics {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   width: 30vw;
+  margin-bottom: 20px;
+}
+
+#create-blog-send {
+  cursor: pointer;
+  width: 150px;
+  height: 30px;
+  border-radius: 4px;
+  background: #232f3e;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* Image Uploader */
