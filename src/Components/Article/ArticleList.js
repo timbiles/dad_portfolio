@@ -6,16 +6,60 @@ import swal from 'sweetalert2';
 class ArticleList extends Component {
   state = {
     filtered: [],
-    articles: []
+    articles: [],
+    pagination: [],
+    paginatedStart: 0,
+    paginatedEnd: 10,
+    paginatedClass: 1
   };
 
-  componentDidMount() {
-    this.getArticles();
+  async componentDidMount() {
+    await this.getArticles();
+    await setTimeout(() => {
+      this.setPagination();
+    }, 250);
   }
 
   getArticles = () => {
     axios.get('/api/articles').then(res => {
       this.setState({ articles: res.data });
+    });
+  };
+
+  setPagination = () => {
+    let tempArr = [];
+    let count = 1;
+    for (let i = 0; i < this.state.articles.length; i += 10) {
+      tempArr.push(count);
+      count += 1;
+    }
+    this.setState({ pagination: tempArr });
+  };
+
+  paginatedNumber = page => {
+    const end = page * 10;
+    this.setState({
+      paginatedStart: end - 10,
+      paginatedEnd: end,
+      paginatedClass: page
+    });
+  };
+
+  paginatedPrevious = () => {
+    const { paginatedStart, paginatedEnd, paginatedClass } = this.state;
+    this.setState({
+      paginatedStart: paginatedStart - 10,
+      paginatedEnd: paginatedEnd - 10,
+      paginatedClass: paginatedClass - 1
+    });
+  };
+
+  paginatedNext = () => {
+    const { paginatedStart, paginatedEnd, paginatedClass } = this.state;
+    this.setState({
+      paginatedStart: paginatedStart + 10,
+      paginatedEnd: paginatedEnd + 10,
+      paginatedClass: paginatedClass + 1
     });
   };
 
@@ -62,7 +106,14 @@ class ArticleList extends Component {
   };
 
   render() {
-    const { filtered, articles } = this.state;
+    const {
+      filtered,
+      articles,
+      paginatedStart,
+      paginatedEnd,
+      pagination,
+      paginatedClass
+    } = this.state;
 
     const filter = articles
       .filter((e, i) => {
@@ -131,7 +182,7 @@ class ArticleList extends Component {
       case 'admin':
         return (
           <div className="article_wrapper admin-article-wrapper">
-            {articles.map((e, i) => {
+            {articles.slice(paginatedStart, paginatedEnd).map((e, i) => {
               return (
                 <div key={i} className="article_top_map admin-article-map">
                   <a href={e.url} target="blank">
@@ -142,6 +193,31 @@ class ArticleList extends Component {
                 </div>
               );
             })}
+            <section className="admin-pagination">
+              <button
+                onClick={this.paginatedPrevious}
+                disabled={paginatedStart === 0}
+              >
+                previous
+              </button>
+              {pagination.map(page => (
+                <div
+                  key={page}
+                  className={
+                    paginatedClass === page ? 'paginated-active' : null
+                  }
+                  onClick={() => this.paginatedNumber(page)}
+                >
+                  {page}
+                </div>
+              ))}
+              <button
+                onClick={this.paginatedNext}
+                disabled={articles.length < paginatedEnd}
+              >
+                Next
+              </button>
+            </section>
           </div>
         );
       default:

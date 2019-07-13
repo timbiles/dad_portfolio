@@ -102,6 +102,33 @@
 .admin-article-wrapper {
   width: 95%;
   margin: auto;
+  margin-bottom: 50px;
+
+  .admin-pagination {
+    display: flex;
+    margin: auto;
+    margin-top: 30px;
+
+    .paginated-active {
+      border-bottom: 1px solid #232f3e;
+    }
+
+    div {
+      margin: 5px 20px;
+      color: #232f3e;
+      cursor: pointer;
+    }
+    button {
+      border: 0;
+      color: #232f3e;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      cursor: auto;
+      opacity: 0.5;
+    }
+  }
 }
 
 .admin-article-map {
@@ -119,7 +146,7 @@
   }
   button:hover {
     transform: scale(1.05);
-    opacity: .7;
+    opacity: 0.7;
   }
 }
 
