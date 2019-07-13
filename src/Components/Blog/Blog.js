@@ -22,11 +22,10 @@ class Blog extends Component {
         e => e.title.trim() === this.props.match.params.title
       ) || false;
       
-
     return (
       <div className="blog_cont">
         <h1>{blog && blog.title}</h1>
-        <img src={blog.image} alt={blog.title} />
+        <img src={blog.img} alt={blog.title} />
         <div className="blog_sub">
           <p>
             <mark>Dr. Deron Biles</mark> | {blog.date}

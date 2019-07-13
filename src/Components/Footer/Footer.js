@@ -13,14 +13,14 @@ const Footer = () => (
         <div className="footer_container">
           <p
             style={{color: '#000'}}
-          >© 2018 Olive Branch Designs</p>
+          >© {new Date().getFullYear()} Olive Branch Designs</p>
           <img className="olive" src="https://image.flaticon.com/icons/svg/85/85254.svg" alt="Olive Branch" />
         </div>
       </div>
     ) : (
       <div className="footer">
         <div className="footer_container">
-          <p>© 2018 Olive Branch Designs</p>
+          <p>© {new Date().getFullYear()} Olive Branch Designs</p>
           <img className="olive" src={Olive} alt="Olive Branch" />
         </div>
       </div>
