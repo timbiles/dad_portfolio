@@ -48,6 +48,31 @@ class CreateBlog extends Component {
     if (ctrl && e.key === 'u') this.font('__');
     if (ctrl && e.key === 'i') this.font('^^');
     if (ctrl && e.key === 'Enter') this.send();
+
+    if (e.key === 'Enter') {
+      const textArea = document.getElementById('blog');
+      const currentLine = textArea.value
+        .substr(0, textArea.selectionStart)
+        .split('\n');
+      const lineIndex =
+        textArea.value.substr(0, textArea.selectionStart).split('\n').length -
+        1;
+
+      if (currentLine[lineIndex].includes('•')) {
+        setTimeout(() => {
+          this.font('• ');
+        }, 0);
+      }
+
+      if (currentLine[lineIndex].match(/^[0-9]\.\s([a-zA-Z0-9\s.,!:;?\\-])*$/gm)) {
+        const currentNumber = currentLine[lineIndex].trim()[0];
+        setTimeout(async () => {
+          await this.font(`${+currentNumber + 1}. `);
+          textArea.selectionStart = await textArea.selectionStart + 2;
+          textArea.selectionEnd = await textArea.selectionEnd + 2;
+        }, 0);
+      }
+    }
   };
 
   up = e => {
@@ -92,6 +117,12 @@ class CreateBlog extends Component {
     } else if (e === '>') {
       await this.setState({ blog: this.state.blog + e });
       await this.textSelect(element, position + 2);
+    } else if (e === '1. '){
+      await this.setState({ blog: this.state.blog + e });
+      await this.textSelect(element, position + 4);
+    } else if (e === '• '){
+      await this.setState({ blog: this.state.blog + e });
+      await this.textSelect(element, position + 3);
     } else {
       await this.setState({ blog: this.state.blog + e });
       await this.textSelect(element, position + 1);
@@ -101,11 +132,6 @@ class CreateBlog extends Component {
   send = e => {
     const { date, image, title, topic } = this.state;
 
-    const blogLink = this.state.blog.split('~')
-    console.log(blogLink[1].split(','))
-
-
-
     let str = this.state.blog
       .replace(/>/g, '•')
       .replace(/\*([^*]*)\*/g, '<b>$1</b>')
@@ -114,9 +140,7 @@ class CreateBlog extends Component {
       .replace(/#([^#]*)#/g, '<h2>$1</h2>')
       .replace(/\{/g, '<center>')
       .replace(/\}/g, '</center>')
-      .replace(/\~([^~]*)\,([^~]*)~/g, '<a href="$2" target="blank">$1</a>')
-
-
+      .replace(/\~([^~]*)\,([^~]*)~/g, '<a href="$2" target="blank">$1</a>');
 
     e.target.name === 'preview'
       ? this.setState({ preview: str })
@@ -178,9 +202,11 @@ class CreateBlog extends Component {
             onChange={e => this.setState({ title: e.target.value })}
           />
           <Image imageUpload={this.imageUpload} image={image} />
-          <p className='create-blog-image-text'>The main article image is better optimized landscape (horizontal).</p>
+          <p className="create-blog-image-text">
+            The main article image is better optimized landscape (horizontal).
+          </p>
           <div className="font_style">
-            <div className='create-blog-button-holder'>
+            <div className="create-blog-button-holder">
               <button onClick={() => this.font('**')}>
                 <b>B</b>
               </button>
@@ -192,19 +218,23 @@ class CreateBlog extends Component {
               </button>
               <button onClick={() => this.font('##')}>Header</button>
               <button onClick={() => this.font('{}')}>Center</button>
-              <button onClick={() => this.font('>')}>
+              <button onClick={() => this.font('• ')}>
                 <img
                   src="https://image.flaticon.com/icons/svg/483/483226.svg"
                   alt="bullets"
                 />
               </button>
-              <button onClick={() => this.font('>')}>
+              <button onClick={() => this.font('1. ')}>
                 <img
                   src="https://image.flaticon.com/icons/svg/59/59127.svg"
                   alt="numbered list"
                 />
               </button>
-              <button onClick={() => this.font('~ text to display, external link ~')}>Link</button>
+              <button
+                onClick={() => this.font('~ text to display, external link ~')}
+              >
+                Link
+              </button>
             </div>
             <div>
               <button name="preview" onClick={this.send}>
