@@ -64,12 +64,20 @@ class CreateBlog extends Component {
         }, 0);
       }
 
-      if (currentLine[lineIndex].match(/^[0-9]\.\s([a-zA-Z0-9\s.,!:;?\\-])*$/gm)) {
-        const currentNumber = currentLine[lineIndex].trim()[0];
+      if (
+        currentLine[lineIndex].match(
+          /^[0-9]{1,2}\.\s([a-zA-Z0-9\s.,!:;?\\-])*$/gm
+        )
+      ) {
+        // const currentNumber = currentLine[lineIndex].trim()[0];
+        const currentNumber = currentLine[lineIndex].trim().split('.')[0];
+        const numberLength = (+currentNumber + 1).toString().length;
         setTimeout(async () => {
           await this.font(`${+currentNumber + 1}. `);
-          textArea.selectionStart = await textArea.selectionStart + 2;
-          textArea.selectionEnd = await textArea.selectionEnd + 2;
+          textArea.selectionStart =
+            (await textArea.selectionStart) + numberLength + 2;
+          textArea.selectionEnd =
+            (await textArea.selectionEnd) + numberLength + 2;
         }, 0);
       }
     }
@@ -117,10 +125,10 @@ class CreateBlog extends Component {
     } else if (e === '>') {
       await this.setState({ blog: this.state.blog + e });
       await this.textSelect(element, position + 2);
-    } else if (e === '1. '){
+    } else if (e === '1. ') {
       await this.setState({ blog: this.state.blog + e });
       await this.textSelect(element, position + 4);
-    } else if (e === '• '){
+    } else if (e === '• ') {
       await this.setState({ blog: this.state.blog + e });
       await this.textSelect(element, position + 3);
     } else {
