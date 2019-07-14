@@ -16,16 +16,23 @@ class Blog extends Component {
 
   render() {
     let blog =
-    this.props.type === 'preview' 
-      ? this.props.blog
-      : this.state.blog.find(
-        e => e.title.trim() === this.props.match.params.title
-      ) || false;
-      
+      this.props.type === 'preview'
+        ? this.props.blog
+        : this.state.blog.find(
+            e => e.title.trim() === this.props.match.params.title
+          ) || false;
+
+    let font;
+    if (this.props.type === 'preview') {
+      font = +blog.fontSize + 4 + 'px';
+    } else {
+      font = +blog.fontSize + 4 + 'px';
+    }
+
     return (
       <div className="blog_cont">
         <h1>{blog && blog.title}</h1>
-        <img src={blog.image} alt={blog.title} />
+        <img src={blog.image || blog.img} alt={blog.title} />
         <div className="blog_sub">
           <p>
             <mark>Dr. Deron Biles</mark> | {blog.date}
@@ -33,7 +40,10 @@ class Blog extends Component {
         </div>
         <pre
           className="individual blog_text"
-          dangerouslySetInnerHTML={{ __html: this.props.type === 'preview' ? blog.preview : blog.blog }}
+          style={{ fontSize: font }}
+          dangerouslySetInnerHTML={{
+            __html: this.props.type === 'preview' ? blog.preview : blog.blog
+          }}
         />
         {blog.topic && (
           <p>

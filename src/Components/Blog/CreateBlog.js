@@ -19,7 +19,8 @@ class CreateBlog extends Component {
     articles: [],
     preview: '',
     hit: 0,
-    user: ''
+    user: '',
+    fontSize: 12
   };
 
   componentDidMount() {
@@ -138,7 +139,7 @@ class CreateBlog extends Component {
   };
 
   send = e => {
-    const { date, image, title, topic } = this.state;
+    const { date, image, title, topic, fontSize } = this.state;
 
     let str = this.state.blog
       .replace(/>/g, '•')
@@ -159,6 +160,7 @@ class CreateBlog extends Component {
             img: image,
             title,
             topic,
+            fontSize,
             description: str.slice(0, 200) + '...'
           })
           .then(() => {
@@ -196,8 +198,12 @@ class CreateBlog extends Component {
     });
   };
 
+  changeFontSize = e => {
+    this.setState({ fontSize: e.target.value });
+  };
+
   render() {
-    const { image, preview, user } = this.state;
+    const { image, preview, user, fontSize } = this.state;
 
     return (
       user && (
@@ -224,6 +230,12 @@ class CreateBlog extends Component {
               <button onClick={() => this.font('__')}>
                 <u>U</u>
               </button>
+              <input
+                type="number"
+                className="font-size"
+                value={fontSize}
+                onChange={this.changeFontSize}
+              />
               <button onClick={() => this.font('##')}>Header</button>
               <button onClick={() => this.font('{}')}>Center</button>
               <button onClick={() => this.font('• ')}>

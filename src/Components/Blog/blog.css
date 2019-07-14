@@ -39,6 +39,10 @@ textarea:focus {
   margin-bottom: 1vh;
 }
 
+.font-size {
+  width: 30px;
+}
+
 button > img {
   height: 13px;
 }
@@ -69,6 +73,10 @@ pre {
   width: 80vw;
   min-height: 30vh;
   margin: auto;
+}
+
+.blog_text h2 {
+font-size: 24px;
 }
 
 .blog_text {
