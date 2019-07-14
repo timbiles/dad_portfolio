@@ -43,7 +43,7 @@
   img {
     border-radius: 3%;
     transition: 0.2s;
-    height: 300px !important;
+    // height: 300px !important;
     width: 500px;
     top: 0;
     opacity: 0.9;
@@ -211,11 +211,11 @@
 
 @media (max-width: 650px) {
   .article_list_map {
-    width: 400px;
+    width: 90%;
   }
   .article_list_map img {
     height: 250px;
-    width: 400px;
+    width: 100%;
   }
 
   .alm_content p {
@@ -233,11 +233,10 @@
 
 @media (max-width: 430px) {
   .article_list_map {
-    width: 300px;
   }
   .article_list_map img {
     height: 200px;
-    width: 300px;
+    width: 100%;
   }
 
   .article_search {

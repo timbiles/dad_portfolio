@@ -20,7 +20,6 @@ class ArticleList extends Component {
     }, 500);
   }
 
-
   getArticles = () => {
     axios.get('/api/articles').then(res => {
       this.setState({ articles: res.data });
@@ -106,6 +105,11 @@ class ArticleList extends Component {
     });
   };
 
+  imgError = e => {
+    return (e.target.src =
+      'https://images.pexels.com/photos/250609/pexels-photo-250609.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  };
+
   render() {
     const {
       filtered,
@@ -143,7 +147,12 @@ class ArticleList extends Component {
 
         return (
           <div key={i} className="article_list_map">
-            <img className="article_img" src={e.img} alt={e.title} />
+            <img
+              className="article_img"
+              src={e.img}
+              alt={e.title}
+              onError={this.imgError}
+            />
             <div className="alm_content">
               {e.blog ? (
                 <Link to={`/blog/${e.newTitle}`}>
