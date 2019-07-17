@@ -13,21 +13,19 @@ class Blog extends Component {
       this.setState({ blog: res.data });
     });
 
-    this.setState({title: this.props.match.params.title.replace(/-/g, ' ')})
-
-    console.log(this.props.match.params);
-
-    // console.log(document.location.pathname.replace(/%20/g, '-'));
-    // window.history.pushState(null, null, document.location.pathname.replace(/%20/g, '-'))
+    if (this.props.type !== 'preview') {
+      this.setState({
+        title: this.props.match.params.title.replace(/-/g, ' ')
+      });
+    }
   }
 
   render() {
     let blog =
       this.props.type === 'preview'
         ? this.props.blog
-        : this.state.blog.find(
-            e => e.title.trim() === this.state.title
-          ) || false;
+        : this.state.blog.find(e => e.title.trim() === this.state.title) ||
+          false;
 
     let font;
     if (this.props.type === 'preview') {
@@ -58,6 +56,17 @@ class Blog extends Component {
             <mark>{blog.topic.replace(/,/g, ' · ')}</mark>
           </p>
         )}
+        <div className="about-the-author">
+          <div className="about-the-author-sub">
+            <p>
+              Written by
+              <span>Dr. Deron Biles</span>
+            </p>
+            <a href="/about">
+              <p>Check out his bio.</p>
+            </a>
+          </div>
+        </div>
         <VerseGenerator />
       </div>
     );

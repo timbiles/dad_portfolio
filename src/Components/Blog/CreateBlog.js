@@ -38,11 +38,35 @@ class CreateBlog extends Component {
       });
   };
 
+  enableTab = id => {
+    // const element = document.getElementById('blog');
+    var el = document.getElementById('blog');
+    el.onkeydown = function(e) {
+      if (e.keyCode === 9) {
+        // tab was pressed
+
+        // get caret position/selection
+        var val = this.value,
+          start = this.selectionStart,
+          end = this.selectionEnd;
+
+        // set textarea value to: text before caret + tab + text after caret
+        this.value = val.substring(0, start) + '\t' + val.substring(end);
+
+        // put caret at right position again
+        this.selectionStart = this.selectionEnd = start + 1;
+
+        // prevent the focus lose
+        return false;
+      }
+    };
+  };
+
   keyPress = e => {
     const { ctrl } = this.state;
     if (e.key === 'Tab') {
       e.preventDefault();
-      this.setState({ blog: this.state.blog + '    ' });
+      this.enableTab();
     }
     if (e.key === 'Control') this.setState({ ctrl: true });
     if (ctrl && e.key === 'b') this.font('**');
@@ -70,7 +94,6 @@ class CreateBlog extends Component {
           /^[0-9]{1,2}\.\s([a-zA-Z0-9\s.,!:;?\\-])*$/gm
         )
       ) {
-        // const currentNumber = currentLine[lineIndex].trim()[0];
         const currentNumber = currentLine[lineIndex].trim().split('.')[0];
         const numberLength = (+currentNumber + 1).toString().length;
         setTimeout(async () => {
@@ -149,7 +172,8 @@ class CreateBlog extends Component {
       .replace(/#([^#]*)#/g, '<h2>$1</h2>')
       .replace(/\{/g, '<center>')
       .replace(/\}/g, '</center>')
-      .replace(/\~([^~]*)\,([^~]*)~/g, '<a href="$2" target="blank">$1</a>');
+      .replace(/\~([^~]*)\,([^~]*)~/g, '<a href="$2" target="blank">$1</a>')
+      .replace(/↵/g, '<br />')
 
     e.target.name === 'preview'
       ? this.setState({ preview: str })
@@ -206,89 +230,91 @@ class CreateBlog extends Component {
     const { image, preview, user, fontSize } = this.state;
 
     return (
-      user && (
-        <div className="blog_main">
-          <h1> Compose</h1>
+      // user && (
+      <div className="blog_main">
+        <h1> Compose</h1>
+        <input
+          type="text"
+          placeholder="Article title"
+          className="blog_title"
+          onChange={e => this.setState({ title: e.target.value })}
+        />
+        <Image imageUpload={this.imageUpload} image={image} />
+        <p className="create-blog-image-text">
+          The main article image is better optimized landscape (horizontal).
+        </p>
+        <div className="font_style">
+          <div className="create-blog-button-holder">
+            <button onClick={() => this.font('**')}>
+              <b>B</b>
+            </button>
+            <button onClick={() => this.font('^^')}>
+              <em>I</em>
+            </button>
+            <button onClick={() => this.font('__')}>
+              <u>U</u>
+            </button>
+            <input
+              type="number"
+              className="font-size"
+              value={fontSize}
+              onChange={this.changeFontSize}
+            />
+            <button onClick={() => this.font('##')}>Header</button>
+            <button onClick={() => this.font('{}')}>Center</button>
+            <button onClick={() => this.font('• ')}>
+              <img
+                src="https://image.flaticon.com/icons/svg/483/483226.svg"
+                alt="bullets"
+              />
+            </button>
+            <button onClick={() => this.font('1. ')}>
+              <img
+                src="https://image.flaticon.com/icons/svg/59/59127.svg"
+                alt="numbered list"
+              />
+            </button>
+            <button
+              onClick={() => this.font('~ text to display, external link ~')}
+            >
+              Link
+            </button>
+          </div>
+          <div>
+            <button name="preview" onClick={this.send}>
+              Preview
+            </button>
+          </div>
+        </div>
+        <textarea
+          autoFocus
+          name=""
+          id="blog"
+          cols="30"
+          rows="10"
+          onChange={e => this.setState({ blog: e.target.value })}
+          onKeyDown={this.keyPress}
+          onKeyUp={this.up}
+          value={this.state.blog}
+        />
+        <div className="blog_topics">
+          <p>Topics (separated by a comma)</p>
           <input
             type="text"
-            placeholder="Article title"
             className="blog_title"
-            onChange={e => this.setState({ title: e.target.value })}
+            placeholder="Blog Topics"
+            onChange={e => this.setState({ topic: e.target.value })}
           />
-          <Image imageUpload={this.imageUpload} image={image} />
-          <p className="create-blog-image-text">
-            The main article image is better optimized landscape (horizontal).
-          </p>
-          <div className="font_style">
-            <div className="create-blog-button-holder">
-              <button onClick={() => this.font('**')}>
-                <b>B</b>
-              </button>
-              <button onClick={() => this.font('^^')}>
-                <em>I</em>
-              </button>
-              <button onClick={() => this.font('__')}>
-                <u>U</u>
-              </button>
-              <input
-                type="number"
-                className="font-size"
-                value={fontSize}
-                onChange={this.changeFontSize}
-              />
-              <button onClick={() => this.font('##')}>Header</button>
-              <button onClick={() => this.font('{}')}>Center</button>
-              <button onClick={() => this.font('• ')}>
-                <img
-                  src="https://image.flaticon.com/icons/svg/483/483226.svg"
-                  alt="bullets"
-                />
-              </button>
-              <button onClick={() => this.font('1. ')}>
-                <img
-                  src="https://image.flaticon.com/icons/svg/59/59127.svg"
-                  alt="numbered list"
-                />
-              </button>
-              <button
-                onClick={() => this.font('~ text to display, external link ~')}
-              >
-                Link
-              </button>
-            </div>
-            <div>
-              <button name="preview" onClick={this.send}>
-                Preview
-              </button>
-            </div>
-          </div>
-          <textarea
-            autoFocus
-            name=""
-            id="blog"
-            cols="30"
-            rows="10"
-            onChange={e => this.setState({ blog: e.target.value })}
-            onKeyDown={this.keyPress}
-            onKeyUp={this.up}
-            value={this.state.blog}
-          />
-          <div className="blog_topics">
-            <p>Topics (separated by a comma)</p>
-            <input
-              type="text"
-              onChange={e => this.setState({ topic: e.target.value })}
-            />
-          </div>
-          <button id="create-blog-send" onClick={this.send}>
-            Submit Article
-          </button>
-          <h2 className="blog_preview">
-            <span>Preview</span>
-          </h2>
-          {preview && <Blog type="preview" blog={this.state} />}
         </div>
-      )
+        <button id="create-blog-send" onClick={this.send}>
+          Submit Article
+        </button>
+        <h2 className="blog_preview">
+          <span>Preview</span>
+        </h2>
+        {preview && <Blog type="preview" blog={this.state} />}
+      </div>
+      // )
     );
   }
 }
