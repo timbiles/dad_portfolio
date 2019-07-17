@@ -230,7 +230,7 @@ class CreateBlog extends Component {
     const { image, preview, user, fontSize } = this.state;
 
     return (
-      // user && (
+      user && (
       <div className="blog_main">
         <h1> Compose</h1>
         <input
@@ -314,7 +314,7 @@ class CreateBlog extends Component {
         </h2>
         {preview && <Blog type="preview" blog={this.state} />}
       </div>
-      // )
+      )
     );
   }
 }

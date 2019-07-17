@@ -235,9 +235,10 @@ class ArticleList extends Component {
         return (
           <div className="article_wrapper">
             {articles.slice(0, 3).map((e, i) => {
+              console.log(e)
               return (
                 <div key={i} className="article_top_map">
-                  <a href={e.url} target="blank">
+                  <a href={e.url || `/blog/${e.newTitle}`} target="blank">
                     <h2>{e.title}</h2>
                   </a>
                 </div>

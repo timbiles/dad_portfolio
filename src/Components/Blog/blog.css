@@ -197,7 +197,10 @@ pre {
 mark {
   background: none;
   color: #b67a46;
-  /* color: #2a9e7b; */
+}
+
+.blog_sub mark {
+  margin-right: 2px;
 }
 
 .blog_mark {
@@ -217,6 +220,14 @@ mark {
   text-transform: uppercase;
   font-size: 12px;
   box-shadow: 0 4px 2px -2px #bfbfbf;
+}
+
+.about-the-author-sub > a {
+  text-decoration: none;
+}
+
+.about-the-author-sub > a:hover {
+  text-decoration: underline;
 }
 
 .about-the-author p {
@@ -247,11 +258,14 @@ mark {
 
 @media (max-width: 600px) {
   .blog_cont img,
-  .blog_sub {
+  .blog_sub,
+  .about-the-author {
     width: 95vw;
   }
 
   .individual {
     width: 95vw;
   }
+
+
 }
