@@ -130,6 +130,7 @@ class ArticleList extends Component {
       .map((e, i) => {
         if (e.blog) {
           e.newTitle = encodeURIComponent(e.title.trim());
+          e.newTitle = e.newTitle.replace(/%20/g, '-');
         }
         const desc =
           e.description &&

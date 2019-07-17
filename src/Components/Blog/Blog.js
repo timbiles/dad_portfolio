@@ -12,6 +12,13 @@ class Blog extends Component {
     axios.get('/api/articles').then(res => {
       this.setState({ blog: res.data });
     });
+
+    this.setState({title: this.props.match.params.title.replace(/-/g, ' ')})
+
+    console.log(this.props.match.params);
+
+    // console.log(document.location.pathname.replace(/%20/g, '-'));
+    // window.history.pushState(null, null, document.location.pathname.replace(/%20/g, '-'))
   }
 
   render() {
@@ -19,7 +26,7 @@ class Blog extends Component {
       this.props.type === 'preview'
         ? this.props.blog
         : this.state.blog.find(
-            e => e.title.trim() === this.props.match.params.title
+            e => e.title.trim() === this.state.title
           ) || false;
 
     let font;
