@@ -70,7 +70,7 @@ pre {
 
 #blog,
 .blog_text {
-  width: 90vw;
+  width: 80vw;
   min-height: 30vh;
   margin: auto;
 }
@@ -190,7 +190,7 @@ pre {
 }
 
 .individual {
-  margin-top: 5vh;
+  margin-top: 8vh;
   box-shadow: 0 4px 2px -2px #bfbfbf;
   padding-bottom: 5vh;
 }
@@ -262,6 +262,9 @@ mark {
   .blog_sub,
   .about-the-author {
     width: 95vw;
+  }
+  .blog_cont img {
+    height: 40vh;
   }
 
   .individual {
