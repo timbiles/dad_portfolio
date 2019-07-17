@@ -166,6 +166,7 @@ font-size: 24px;
 .blog_cont h1 {
   text-align: center;
   color: #525252;
+  margin: 40px 0 30px 0;
 }
 
 .blog_cont img {
@@ -202,4 +203,28 @@ mark {
 
 .blog_mark {
   opacity: 0.4;
+}
+
+@media (max-width: 900px) {
+  .blog_cont img {
+    width: 85vw;
+    height: 50vh;
+  }
+
+  .blog_sub {
+    width: 85vw;
+  }
+  
+}
+
+@media (max-width: 600px) {
+  .blog_cont img,
+  .blog_sub {
+    width: 95vw;
+  }
+
+  .individual {
+    width: 95vw;
+  }
+  
 }
