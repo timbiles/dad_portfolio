@@ -34,7 +34,7 @@ textarea:focus {
 .font_style {
   display: flex;
   justify-content: space-between;
-  width: 80vw;
+  width: 90vw;
   margin: auto;
   margin-bottom: 1vh;
 }
@@ -70,7 +70,7 @@ pre {
 
 #blog,
 .blog_text {
-  width: 80vw;
+  width: 90vw;
   min-height: 30vh;
   margin: auto;
 }
@@ -176,6 +176,7 @@ pre {
 
 .create-blog-button-holder {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .blog_cont a {
