@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  FacebookIcon,
+  TwitterIcon
+} from 'react-share';
 
 import VerseGenerator from '../VerseGenerator/VerseGenerator';
 
@@ -34,6 +40,8 @@ class Blog extends Component {
       font = +blog.fontSize + 4 + 'px';
     }
 
+    const url = `${process.env.REACT_APP_URL}${window.location.pathname}`;
+
     return (
       <div className="blog_cont">
         <h1>{blog && blog.title}</h1>
@@ -50,12 +58,24 @@ class Blog extends Component {
             __html: this.props.type === 'preview' ? blog.preview : blog.blog
           }}
         />
+
+        <div className="share-icons">
+          <p>Share Article</p>
+          <FacebookShareButton url={url}>
+            <FacebookIcon size="1.8em" round />
+          </FacebookShareButton>
+          <TwitterShareButton url={url}>
+            <TwitterIcon size="1.8em" round />
+          </TwitterShareButton>
+        </div>
+
         {blog.topic && (
-          <p>
+          <p className="blog-keywords">
             <span className="blog_mark">Keywords </span>|{' '}
             <mark>{blog.topic.replace(/,/g, ' · ')}</mark>
           </p>
         )}
+
         <div className="about-the-author">
           <div className="about-the-author-sub">
             <p>
@@ -67,6 +87,7 @@ class Blog extends Component {
             </a>
           </div>
         </div>
+
         <VerseGenerator />
       </div>
     );
