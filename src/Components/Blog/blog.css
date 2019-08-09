@@ -223,7 +223,7 @@ pre {
   cursor: pointer;
 }
 .share-icons div:hover {
-  color: #b67a46;
+  transform: scale(1.01)
 }
 
 mark {
