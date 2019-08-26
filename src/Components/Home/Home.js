@@ -29,8 +29,8 @@ const IndexPage = () => (
               <h3>Connect with Dr. Biles</h3>
               <p>817-923-1921 x 6700</p>
               <div className="cont_email">
-                <a className="contact_email" href={'mailto:dbiles@swbts.com'}>
-                  <p>dbiles@swbts.com</p>
+                <a className="contact_email" href={'mailto:dbiles@swbts.edu'}>
+                  <p>dbiles@swbts.edu</p>
                 </a>
               </div>
               <div className="cont_email">
