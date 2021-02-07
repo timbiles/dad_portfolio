@@ -2,7 +2,7 @@ export const purchase = [
 // pastoral ministry
 {
     className: 'book_buy',
-    img: 'https://www.vmastoryboard.com/wp-content/uploads/2014/08/Amazon-A-Logo.jpg',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Amazon_icon.png',
     url: 'https://www.amazon.com/gp/product/1462751024/ref=dbs_a_def_rwt_bibl_vppi_i0',
     text: 'Amazon'
 },
@@ -14,19 +14,19 @@ export const purchase = [
 },
 {
     className: 'buy buy2',
-    img: 'https://www.vmastoryboard.com/wp-content/uploads/2014/08/Amazon-A-Logo.jpg',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Amazon_icon.png',
     url: 'https://www.amazon.com/gp/product/143274836X/ref=dbs_a_def_rwt_bibl_vppi_i1',
     text: 'Amazon'
 },
 {
     className: 'buy buy2',
-    img: 'https://www.vmastoryboard.com/wp-content/uploads/2014/08/Amazon-A-Logo.jpg',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Amazon_icon.png',
     url: 'https://www.amazon.com/Baker-Illustrated-Bible-Dictionary/dp/080101297X',
     text: 'Amazon'
 },
 {
     className: 'buy buy2',
-    img: 'https://pbs.twimg.com/profile_images/634254671708729344/dSkivS_4_400x400.jpg',
+    img: 'https://res.cloudinary.com/dwvrok1le/image/upload/v1547431582/csm_publishing.jpg',
     url: 'https://res.cloudinary.com/dwvrok1le/image/upload/v1547431582/csm_publishing.jpg',
     text: 'CMS Publishing'
 }

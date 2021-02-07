@@ -21,6 +21,8 @@ class Book extends Component {
   render() {
     let book =
       LIST.books.find(e => e.title === this.props.match.params.title) || false;
+
+      console.log('this.props.match', this.props.match)
     return (
       <div className="book_main">
         <div className="book_title">{line(book.title)}</div>

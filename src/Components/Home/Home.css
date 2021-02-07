@@ -41,7 +41,7 @@
 
 .home_article p:hover,
 .cont_email p:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .home_article p:active,
@@ -104,8 +104,8 @@
 }
 
 .social_icon {
-  height: 35px;
-  width: 40px;
+  /* height: 35px;
+  width: 40px; */
 }
 
 .social_icon:hover {
@@ -224,7 +224,6 @@
   .upcoming_events {
     width: 90%;
   }
-
 }
 
 @media (max-width: 900px) {

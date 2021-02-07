@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import './Home.css';
 import Calendar from '../Calendar/Calendar';
 import ArticleList from '../Article/ArticleList';
+import TwitterIcon from '../../utils/images/TwitterIcon';
+import FacebookIcon from '../../utils/images/FacebookIcon';
+import AmazonIcon from '../../utils/images/AmazonIcon';
 
 const IndexPage = () => (
   <div>
@@ -15,7 +18,7 @@ const IndexPage = () => (
       <div className="home_sub12">
         <div className="home_article">
           <h3>Latest Posts by Dr. Biles</h3>
-          <div className='scroll'>
+          <div className="scroll">
             <ArticleList />
             <Link className="article_link" to="/article">
               <p>See more...</p>
@@ -24,8 +27,7 @@ const IndexPage = () => (
         </div>
         <div className="home_sub_2">
           <div className="contact_holder">
-            <div className='scroll'>
-
+            <div className="scroll">
               <h3>Connect with Dr. Biles</h3>
               <p>817-923-1921 x 6700</p>
               <div className="cont_email">
@@ -45,7 +47,7 @@ const IndexPage = () => (
           </div>
 
           <div className="contact_holder ch1">
-            <div className='scroll'>            
+            <div className="scroll">
               <h3>Follow me...</h3>
               <div className="social_media">
                 <div>
@@ -53,21 +55,13 @@ const IndexPage = () => (
                     href="https://twitter.com/deronjbiles?lang=en"
                     target="blank"
                   >
-                    <img
-                      className="twitter social_icon"
-                      src="https://seeklogo.com/images/T/twitter-2012-negative-logo-5C6C1F1521-seeklogo.com.png"
-                      alt="Twitter logo"
-                    />
+                    <TwitterIcon color="#525252" />
                   </a>
                   <a
                     href="https://www.facebook.com/deron.biles?fb_dtsg_ag=Ady9PVQTaXhtskpq54ugszp0ak9UJLM3eu8gM0WpS2nrqw%3AAdx_PsC8HP9JHqAgJx7Q2qclW_TwACIf3P98JwT1vGjRVQ"
                     target="blank"
                   >
-                    <img
-                      className="facebook social_icon"
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Facebook_logo_%28square%29.png/600px-Facebook_logo_%28square%29.png"
-                      alt="Facebook logo"
-                    />
+                    <FacebookIcon color="#525252" />
                   </a>
                 </div>
                 <div>
@@ -79,17 +73,15 @@ const IndexPage = () => (
                       className="social_icon"
                       src="https://s3.amazonaws.com/libapps/customers/1627/images/google_scholar.PNG"
                       alt="Google Scholar logo"
+                      height="24px"
+                      width="24px"
                     />
                   </a>
                   <a
                     href="https://www.amazon.com/Deron-J.-Biles/e/B076V691MB/ref=dp_byline_cont_book_1"
                     target="blank"
                   >
-                    <img
-                      className="social_icon"
-                      src="https://www.vmastoryboard.com/wp-content/uploads/2014/08/Amazon-A-Logo.jpg"
-                      alt="Amazon logo"
-                    />
+                    <AmazonIcon color="#525252" />
                   </a>
                 </div>
               </div>

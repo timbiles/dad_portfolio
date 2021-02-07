@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { line } from '../Tools/Func/line';
-import { LIST } from '../../utils/constants/lists'
+import { LIST } from '../../utils/constants/lists';
 
 import Verse from '../VerseGenerator/VerseGenerator';
 import './Library.css';
 import preachingsource from './images/preaching-source-logo.png';
 
 class Library extends Component {
-
-
   render() {
     const bookMap = LIST.books.map((e, i) => {
       return (
-        <Link key={i} to={`/books/${e.title}`}>
+        <Link key={i} to={`/books/${e.title.replace(/%20/g, '-')}`}>
           <div className="portfolio_sub1">
             <img className="book" src={e.img} alt={e.title} />
           </div>
-        
         </Link>
       );
     });
@@ -70,22 +67,17 @@ class Library extends Component {
     });
 
     const psMap = LIST.preachingSource.map((e, i) => {
-      return <a
-      key={i}
-      target="blank"
-      rel="noreferrer noopener"
-      href={e.url}
-    >
-      {e.text}
-    </a>
-    })
+      return (
+        <a key={i} target="blank" rel="noreferrer noopener" href={e.url}>
+          {e.text}
+        </a>
+      );
+    });
 
     return (
       <div className="portfolio">
         <div className="portfolio_container">
-          <div className="bio_name_sub">
-            {line('Library')}
-          </div>
+          <div className="bio_name_sub">{line('Library')}</div>
           <div className="portfolio_sub books_top">{bookMap}</div>
 
           <div className="chapel_sermons">
@@ -103,23 +95,21 @@ class Library extends Component {
                   src={preachingsource}
                   alt="Genesis"
                 />
-                <p className='ps_text'>
+                <p className="ps_text">
                   Preaching Source is a text-driven resource of Southwestern
                   Baptist Theological Seminary dedicated to equip preachers in
                   the art and craft of text-driven preaching.
                 </p>
-                { psMap }
+                {psMap}
               </div>
               <h2>Preaching Points</h2>
               <div className="chapel_sub1">
                 <img
                   className="preaching_source sbtc_logo"
-                  src='https://i.vimeocdn.com/portrait/14963457_300x300'
+                  src="https://i.vimeocdn.com/portrait/14963457_300x300"
                   alt="SBTC"
                 />
-                <p>
-                  Preaching Points from SBTC
-                </p>
+                <p>Preaching Points from SBTC</p>
                 <a
                   target="blank"
                   rel="noreferrer noopener"
@@ -127,7 +117,7 @@ class Library extends Component {
                 >
                   Minor Prophets series
                 </a>
-                </div>
+              </div>
             </div>
           </div>
           <Verse />
