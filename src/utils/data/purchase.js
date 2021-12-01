@@ -29,5 +29,11 @@ export const purchase = [
     img: 'https://res.cloudinary.com/dwvrok1le/image/upload/v1547431582/csm_publishing.jpg',
     url: 'https://res.cloudinary.com/dwvrok1le/image/upload/v1547431582/csm_publishing.jpg',
     text: 'CMS Publishing'
-}
+},
+{
+    className: 'buy buy2',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Amazon_icon.png',
+    url: 'https://www.amazon.com/dp/1953606113/ref=sr_1_4?keywords=deron+biles&qid=1638283663&s=books&sr=1-4',
+    text: 'Amazon'
+},
 ]

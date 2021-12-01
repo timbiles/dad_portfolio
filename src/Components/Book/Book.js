@@ -19,10 +19,10 @@ class Book extends Component {
   };
 
   render() {
+    const { params } = this.props.match;
     let book =
-      LIST.books.find(e => e.title === this.props.match.params.title) || false;
+      LIST.books.find(e => e.title === this.props.match.params.title.replace(/-/g, ' ')) || false;
 
-      console.log('this.props.match', this.props.match)
     return (
       <div className="book_main">
         <div className="book_title">{line(book.title)}</div>
@@ -31,15 +31,17 @@ class Book extends Component {
           <div className="book_sub">
             <p>{book.description}</p>
             <p>Buy now on:</p>
-            {window.location.pathname === '/books/Pastoral%20Ministry' ? (
+            {params.title === 'Pastoral-Ministry' ? (
               <div className="buy">
                 {this.map(purchase[0])}
 
                 {this.map(purchase[1])}
               </div>
-            ) : window.location.pathname === `/books/After%20God's%20Heart` ? (
+            ) : params.title === `After-God's-Heart:-Becoming-Who-God-is-Seeking` ? (
+              this.map(purchase[5])
+            ) : params.title === `After-God's-Heart` ? (
               this.map(purchase[2])
-            ) : window.location.pathname === `/books/Bible%20Dictionary` ? (
+            ) : params.title === `Bible-Dictionary` ? (
               this.map(purchase[3])
             ) : (
               this.map(purchase[4])
@@ -53,13 +55,15 @@ class Book extends Component {
           </div>
           <div className="book_sub">
             <p>Buy now on:</p>
-            {window.location.pathname === '/books/Pastoral%20Ministry' ? (
+            {params.title === 'Pastoral-Ministry' ? (
               <div className="buy">
                 {this.map(purchase[0])}
 
                 {this.map(purchase[1])}
               </div>
-            ) : window.location.pathname === `/books/After%20God's%20Heart` ? (
+            ) : params.title === `After-God's-Heart:-Becoming-Who-God-is-Seeking` ? (
+                this.map(purchase[5])
+            ) : params.title === `After-God's-Heart` ? (
               this.map(purchase[2])
             ) : (
               this.map(purchase[4])

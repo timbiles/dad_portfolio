@@ -1,5 +1,26 @@
 export const books = [
   {
+    title: "After God's Heart: Becoming Who God is Seeking",
+    img: 'https://res.cloudinary.com/dwvrok1le/image/upload/v1638369128/41ZWxkFSvAL._SX322_BO1_204_203_200_.jpg',
+    description: `Throughout history, God has been looking for faithful men and women.
+                In the story of David, we meet a man God found. Throughout David’s life,
+                we learn about the riches of God’s grace, the heights of God’s love,
+                the depths of His patience, the trauma of our sin, and the dependability
+                of God’s Promises. David was a good man. But he was also a sinful man.
+                He loved God, served God, obeyed God, and worshiped God. He also failed
+                God … a lot. At times he sought God, and, at other times, he seemed to
+                avoid Him. In the end, the hero of this story isn’t David. Maybe the
+                times when David forgot that are the moments of his deepest failures.
+                The story of David is a story about God. It’s a story about a seeking,
+                loving, holy, and faithful God. God saw David. He saw David’s humility
+                in his obscurity, and He saw David’s arrogance in his prominence.
+                Through everything and despite everything, God loved David, sought
+                David, chose David, and used David. Believers today can be encouraged
+                that God wants to do the same for us. He loves you, is seeking you, is
+                calling you, and wants to use you. The question you must answer is:
+                What will it take for you to become a man or a woman after God’s heart?`
+  },
+  {
     title: 'Pastoral Ministry',
     img: 'https://images-na.ssl-images-amazon.com/images/I/71MhnxAXIxL.jpg',
     description: `Being a pastor is an audacious calling—both a remarkable privilege

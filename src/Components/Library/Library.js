@@ -11,7 +11,7 @@ class Library extends Component {
   render() {
     const bookMap = LIST.books.map((e, i) => {
       return (
-        <Link key={i} to={`/books/${e.title.replace(/%20/g, '-')}`}>
+        <Link key={i} to={`/books/${e.title.replace(/ /g, '-')}`}>
           <div className="portfolio_sub1">
             <img className="book" src={e.img} alt={e.title} />
           </div>
